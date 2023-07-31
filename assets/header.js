@@ -40,7 +40,7 @@ class HeaderDrawer  extends MenuDrawer {
 
       this.changeToggleText('menu');
       document.querySelector('header').classList.add('menu-is-open'); 
-      this.querySelector('aside').style.height = `calc(101vh - ${document.querySelector('sticky-header').clientHeight + 'px'})`
+      this.querySelector('aside').style.height = `calc(101vh - ${document.querySelector('[data-sticky-header]').clientHeight + 'px'})`
       trapFocus(this, this.headerDrawerToggle);
 
   }
