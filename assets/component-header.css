@@ -464,7 +464,7 @@ menu-drawer>details[open]>summary::before {
 
 header-drawer .menu-drawer {
     position: absolute;
-    background-color: rgb(var(--color-base-background-1));
+    background-color: rgb(var(--color-base-background-2));
     width: 100%;
     z-index: 3;
     left: 0;
@@ -473,6 +473,7 @@ header-drawer .menu-drawer {
     overflow-x: hidden;
     height: 100vh;
     z-index: 0;
+    color: rgb(var(--color-base-text-2));
 }
 
 
@@ -576,7 +577,7 @@ header-drawer a.menu-drawer__menu-item:focus {
 }
 
 header-drawer .menu-drawer__menu-item.menu-drawer__menu-item--no-children {
-    margin-bottom: var(--level5);
+    margin-bottom: var(--level1);
     display: block;
 }
 
@@ -587,7 +588,7 @@ header-drawer .menu-drawer__menu-item.menu-drawer__menu-item--utility-link {
 }
 
 header-drawer .menu-drawer__menu-item {
-    color: rgba(var(--color-base-text));
+    color: rgba(var(--color-base-text-2));
 }
 
 /*TODO STYLE PER NO JS WAY*/

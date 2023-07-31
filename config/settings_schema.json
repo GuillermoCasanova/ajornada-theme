@@ -18,7 +18,14 @@
         "type": "color",
         "id": "colors_text",
         "default": "#FFFFFF",
-        "label": "Text Color",
+        "label": "Text Color 1",
+        "info": "Color used for text site-wide"
+      },
+      {
+        "type": "color",
+        "id": "colors_text_2",
+        "default": "#EEEDE8",
+        "label": "Text Color 2",
         "info": "Color used for text site-wide"
       },
       {

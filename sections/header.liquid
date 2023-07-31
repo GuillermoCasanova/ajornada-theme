@@ -84,7 +84,7 @@
     
                     <div class="menu-drawer__utility-links  hide-for-large-up">
                       <ul>
-                        {%- for link in section.settings.menu.links -%}
+                        {%- for link in section.settings.footer-menu.links -%}
                           <li>
                             <a href="{{ link.url }}" class="menu-drawer__menu-item  menu-drawer__menu-item--utility-link {% if link.current %} menu-drawer__menu-item--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
                               {{ link.title | escape }}
@@ -93,35 +93,6 @@
                           {% endfor %}
                       </ul>
 
-                      <ul class="menu-drawer__utility-links__contact">
-    
-                        {% if section.settings.general_email %}
-                        <li>
-                          <div class="utility-links__contact__email">
-                              <span class="email__label">
-                                General <span class="visually-hidden">Inquiries</span>
-                              </span>
-                              <a href="mailto:{{ section.settings.general_email }}" tile="Contact us about general inquiries">
-                                {{ section.settings.general_email }}
-                              </a>
-                          </div>
-                        </li>
-                        {% endif %}
-    
-                        {% if section.settings.orders_email %}
-                        <li>
-                          <div class="utility-links__contact__email">
-                            <span class="email__label">
-                              Orders <span class="visually-hidden">Inquiries</span>
-                            </span>
-                            <a href="mailto:{{ section.settings.orders_email }}" tile="Contact us about your order">
-                            {{ section.settings.orders_email }}
-                            </a>
-                          </div>
-                        </li>
-                        {% endif %}
-                        
-                      </ul>
                     </div>
                   </nav>
 
