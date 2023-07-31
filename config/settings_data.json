@@ -120,10 +120,9 @@
       "header": {
         "type": "header",
         "settings": {
-          "menu": "",
+          "menu": "main-menu",
           "featured-collections": [
-            "summer-23",
-            "jordan-x-htg-2023"
+
           ],
           "footer-menu": "footer",
           "general_email": "info@honorthegift.co",
