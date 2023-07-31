@@ -5,6 +5,7 @@
       "blocks": {
         "heading": {
           "type": "heading",
+          "disabled": true,
           "settings": {
             "heading": "Image banner"
           }
@@ -14,7 +15,8 @@
         "heading"
       ],
       "settings": {
-        "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e584f58b5e96469c8d6d25e18bff535e.mp4",
+        "image": "shopify:\/\/shop_images\/ajornada-logo_574c18dc-bd7f-4a5f-9b5f-d1e73002c116.png",
+        "video": "",
         "cta-url": "shopify:\/\/pages\/summer-23"
       }
     },
@@ -24,19 +26,16 @@
         "b1fdfaba-4310-4665-86e8-ecc41592a16e": {
           "type": "collection_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/SU23_-_LOOKBOOK_4bfaf1f3-837b-4ef4-8495-9ddf9f93317a.jpg"
           }
         },
         "121024ea-b182-4533-a61e-42f1675396ae": {
           "type": "collection_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/SU23_-_LOOKBOOK_4_f433fe80-a21b-410f-9b96-ad6adf31d351.jpg"
           }
         },
         "605a9d86-4767-43aa-9955-7230fbc1c293": {
           "type": "collection_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/SU23_-_LOOKBOOK_17_698829f2-ba0c-46be-8c05-d1fa56b56fab.jpg"
           }
         }
       },
@@ -57,10 +56,8 @@
       "type": "featured-collection-cta",
       "settings": {
         "collection-name": "Defined",
-        "left-image": "shopify:\/\/shop_images\/SU23_-_LOOKBOOK_6_80699df5-77f2-4ce9-9c7e-ec2a4b45c19c.jpg",
         "left-cta-text": "Shop Mens",
         "left-cta-url": "shopify:\/\/collections\/mens",
-        "right-image": "shopify:\/\/shop_images\/SU23_-_LOOKBOOK_10_10b3ef7e-c7d4-4d58-b87a-8b951a2c8da4.jpg",
         "right-cta-text": "Shop Womens",
         "right-cta-url": "shopify:\/\/collections\/womens",
         "top_border": "no",
@@ -72,10 +69,8 @@
       "settings": {
         "heading": "Summer 2023 – Kids",
         "body": "",
-        "collection_hero_image": "shopify:\/\/shop_images\/HP_Kid_Left_5e2deeb7-c58a-40c1-b74b-7e67957492f7.jpg",
         "lookbook_url_text": "View Lookbook",
         "lookbook_url": "https:\/\/honorthegift.co\/pages\/summer-2023-kids",
-        "right_image": "shopify:\/\/shop_images\/HP-Kid-Right_7fe9bf78-b8c2-47d0-bf64-ea13f97fdebf.jpg",
         "right_cta_text": "Shop Kids",
         "right_cta_url": "shopify:\/\/collections\/summer-23-kids",
         "top_border": "no",
@@ -88,7 +83,6 @@
       "settings": {
         "heading": "Jordan x Honor The Gift®",
         "body": "<p>Jordan x Honor The Gift® announce our latest apparel collection. For this collection, Jordan teams up with Russell Westbrook's Honor The Gift® to bring a collection rooted in quality and integrity, inspired by Russell's youth as a kid from the inner city of Los Angeles. <\/p><p><\/p><p><strong>Never forget where you came from—or where you can take yourself.<\/strong><\/p><p><\/p><p><a href=\"https:\/\/honorthegift.co\/collections\/jordan-x-htg-2023\" title=\"https:\/\/honorthegift.co\/collections\/jordan-x-htg-2023\">SHOP NOW<\/a><\/p>",
-        "image": "shopify:\/\/shop_images\/Shoe_HP.jpg",
         "section-alignment": "normal",
         "copy-bg-color": "background-1",
         "top_border": "no",
@@ -100,7 +94,6 @@
       "settings": {
         "heading": "For The Inner City",
         "body": "<p>Created by a kid from the Inner City of Los Angeles. A brand founded on self-belief and dedication to never stop working towards your greatness no matter the hardship. Representing a personal promise to Honor the Gift He has given you. <br\/><br\/>A body of work with a focus on quality, purpose, and storytelling. These core concepts are applied to the construction of the product all the way to the physical spaces they live in. Inspired by Russell Westbrook’s youth, Honor the Gift is built out of respect for where he came from and where anyone can take themselves.<\/p>",
-        "image": "shopify:\/\/shop_images\/HP_RW_77f14c77-ea74-46b1-b8cb-e4a2270c367d.jpg",
         "section-alignment": "flipped",
         "copy-bg-color": "background-1",
         "top_border": "no",
@@ -120,7 +113,6 @@
       "settings": {
         "heading": "Honor The Gift® Store",
         "body": "<p>130 N La Brea, Los Angeles 90036<\/p>",
-        "image": "shopify:\/\/shop_images\/IG_3.jpg",
         "section-alignment": "normal",
         "copy-bg-color": "background-1",
         "top_border": "no",
