@@ -115,14 +115,17 @@
         "block_order": [
           "announcement-bar-0"
         ],
-        "settings": {}
+        "settings": {
+        }
       },
       "header": {
         "type": "header",
         "settings": {
           "menu": "main-menu",
-          "featured-collections": [],
-          "footer-menu": "footer",
+          "featured-collections": [
+
+          ],
+          "footer-menu": "drawer-footer-menu",
           "general_email": "info@honorthegift.co",
           "orders_email": "help@honorthegift.co",
           "enable_sticky_header": true
@@ -161,12 +164,15 @@
         }
       }
     },
-    "content_for_index": [],
+    "content_for_index": [
+
+    ],
     "blocks": {
       "855628211100114053": {
         "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": false,
-        "settings": {}
+        "settings": {
+        }
       }
     }
   },
@@ -284,7 +290,8 @@
           "block_order": [
             "announcement-bar-0"
           ],
-          "settings": {}
+          "settings": {
+          }
         },
         "header": {
           "type": "header",
