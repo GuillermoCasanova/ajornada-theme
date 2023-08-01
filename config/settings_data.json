@@ -125,10 +125,7 @@
           "featured-collections": [
 
           ],
-          "footer-menu": "drawer-footer-menu",
-          "general_email": "info@honorthegift.co",
-          "orders_email": "help@honorthegift.co",
-          "enable_sticky_header": true
+          "footer-menu": "drawer-footer-menu"
         }
       },
       "footer": {
