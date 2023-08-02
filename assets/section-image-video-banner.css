@@ -12,8 +12,18 @@
 .image-banner {
   position: relative;
   width: 100%;
-  padding-bottom: 56.8%;
+  padding-bottom: 90%;
 }
+
+
+@media screen and (min-width: 700px) {
+  .image-banner {
+    min-width: 42rem;
+    padding-bottom: 60%;
+  }
+}
+
+
 
 
 @media screen and (min-width: 930px) {

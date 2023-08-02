@@ -472,7 +472,7 @@ h6:empty {
 
 
 /*------------------------------------*\
-    #Grid
+    #Main Padding + Margin Top
 \*------------------------------------*/
 
 main {
@@ -487,25 +487,29 @@ main {
 
 @media screen and (min-width: 930px) {
   main {
-    margin-top: 5rem;
+    margin-top: 4.5rem;
   }
 }
-
-
 
 .master-padding-top {
   padding-top: var(--level6);
 }
 
-.master-padding-top--product-page {
-  padding-top: 0;
-}
 
 @media screen and (min-width: 930px) {
   .master-padding-top {
     padding-top: var(--level7);
   }
 }
+
+
+
+
+
+/*------------------------------------*\
+    #Page Width Container
+\*------------------------------------*/
+
 
 .page-width {
   max-width: 107rem;
@@ -536,7 +540,7 @@ main {
 
 
 /*------------------------------------*\
-    #Component Media
+    #Media Component
 \*------------------------------------*/
 
 .media {
@@ -612,7 +616,10 @@ deferred-media {
 
 
 
-/* base-details-summary */
+/*------------------------------------*\
+    #Summary + Details  Base
+\*------------------------------------*/
+
 summary {
   cursor: pointer;
   list-style: none;
@@ -629,6 +636,14 @@ summary .icon-caret {
 summary::-webkit-details-marker {
   display: none;
 }
+
+
+
+
+/*------------------------------------*\
+    #Disclosure
+\*------------------------------------*/
+
 
 .disclosure-has-popup {
   position: relative;
@@ -664,6 +679,9 @@ summary::-webkit-details-marker {
     z-index: 2;
   }
 }
+
+
+
 
 
 /*------------------------------------*\
@@ -1053,6 +1071,65 @@ button:hover {
 
 
 
+
+
+
+/*------------------------------------*\
+  #Button Sizes 
+\*------------------------------------*/
+
+
+.button--medium {
+  padding-top: .65rem;
+  padding-bottom: .85rem;
+  font-size: var(--h4);
+}
+
+.button--medium .button__text {
+  margin-right: 1rem;
+}
+
+.button--medium .button__icon {
+  display: block;
+  height: 2rem;
+  width: 3.5rem;
+}
+
+.button--medium .button__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.button--large {
+  padding-top: var(--level4);
+  padding-bottom: var(--level3);
+  font-size: var(--h6);
+}
+
+.styled-link:hover,
+.styled-link:focus {
+  text-decoration: none;
+}
+
+
+.has-top-border {
+  border-top: 1px solid black;
+}
+
+
+.has-bottom-border {
+  border-bottom: 1px solid black;
+}
+
+
+
+
+
+/*------------------------------------*\
+  #Load More Products Button 
+\*------------------------------------*/
+
+
 .load-more-products-button-container {
   max-width: 20rem;
   margin-right: auto;
@@ -1131,56 +1208,4 @@ button:hover {
   100% {
     transform: rotate(360deg);
   }
-}
-
-
-
-
-
-
-/*------------------------------------*\
-  #Button Sizes 
-\*------------------------------------*/
-
-
-.button--medium {
-  padding-top: .65rem;
-  padding-bottom: .85rem;
-  font-size: var(--h4);
-}
-
-.button--medium .button__text {
-  margin-right: 1rem;
-}
-
-.button--medium .button__icon {
-  display: block;
-  height: 2rem;
-  width: 3.5rem;
-}
-
-.button--medium .button__icon svg {
-  width: 100%;
-  height: 100%;
-}
-
-.button--large {
-  padding-top: var(--level4);
-  padding-bottom: var(--level3);
-  font-size: var(--h6);
-}
-
-.styled-link:hover,
-.styled-link:focus {
-  text-decoration: none;
-}
-
-
-.has-top-border {
-  border-top: 1px solid black;
-}
-
-
-.has-bottom-border {
-  border-bottom: 1px solid black;
 }
