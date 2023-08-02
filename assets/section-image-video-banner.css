@@ -2,6 +2,9 @@
     #Image Banner  
 \*------------------------------------*/
 
+image-video-banner {
+  display: block;
+}
 
 .image-banner-container {
   padding-bottom: 0;
@@ -22,8 +25,6 @@
     padding-bottom: 60%;
   }
 }
-
-
 
 
 @media screen and (min-width: 930px) {

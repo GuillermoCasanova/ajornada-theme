@@ -1,10 +1,9 @@
 {{ 'section-image-video-banner.css' | asset_url | stylesheet_tag }} 
 
 
-
-<div id="Banner-{{ section.id }}" class="image-banner">
-      <a href="{{ section.settings.cta-url }}">
-        <div class="image-banner__media">
+<image-video-banner id="Banner-{{ section.id }}" class="image-banner">
+      <a href="{{ section.settings.cta-url }}" data-banner-media>
+        <div class="image-banner__media" >
           {% if section.settings.image != blank %}
             <img srcset="{%- if section.settings.image.width >= 375 -%}{{ section.settings.image | image_url: width: 375 }} 375w,{%- endif -%}
             {%- if section.settings.image.width >= 750 -%}{{ section.settings.image | image_url: width: 750 }} 750w,{%- endif -%}
@@ -25,37 +24,83 @@
           <video  data-lazy-src="{{ section.settings.video }}" id="hero-video"  width="100%" allowfullscreen="true" muted="muted"  autoplay loop muted playsinline playsinline="playsinline" loop="loop"  class="image-banner__media__image">
             <source src="" type="video/mp4" />
           </video>
-          <script defer>
-            window.addEventListener('DOMContentLoaded', function() {
-
-                let mediaQueries = {
-                  mediumDown: window.matchMedia('(max-width: 974px)'),
-                  largeUp: window.matchMedia('(min-width: 975px)')
-              }
-
-              let vidSrc = document.querySelector('#hero-video').dataset.lazySrc; 
-
-              function startVideo(pSource) {
-                  document.querySelector('#hero-video').querySelector('[type="video/mp4"]').src = pSource;
-                  document.querySelector('#hero-video').load(); 
-                  
-                  setTimeout(function() {
-                  document.querySelector('#hero-video').classList.add('is-loaded');
-                  document.querySelector('#hero-video').play(); 
-                  }, 500); 
-              }
-
-              startVideo(vidSrc)
-
-            }); 
-          </script>
           {% endif %}
         </div>
     </a>
-  </div>
+  </image-video-banner>
 
+  <script defer>
 
+  class ImageVideoBanner extends HTMLElement {
+      constructor() {
+        super(); 
+        this.initCursorEffect(); 
+        if(this.querySelector('video')) {
+          this.initVideo(); 
+        }
+      }
 
+      initVideo() {
+          window.addEventListener('DOMContentLoaded', function() {
+
+              let mediaQueries = {
+                mediumDown: window.matchMedia('(max-width: 974px)'),
+                largeUp: window.matchMedia('(min-width: 975px)')
+            }
+
+            let vidSrc = document.querySelector('#hero-video').dataset.lazySrc; 
+
+            function startVideo(pSource) {
+                document.querySelector('#hero-video').querySelector('[type="video/mp4"]').src = pSource;
+                document.querySelector('#hero-video').load(); 
+                
+                setTimeout(function() {
+                document.querySelector('#hero-video').classList.add('is-loaded');
+                document.querySelector('#hero-video').play(); 
+                }, 500); 
+            }
+
+            startVideo(vidSrc)
+
+          }); 
+      }
+
+      initCursorEffect() {
+
+          function setCursorToSVG(elementId, svgCode, pContainer) {
+            const element = pContainer.querySelector("[data-banner-media]");
+
+            if (element) {
+              element.style.cursor = `url("data:image/svg+xml,${encodeURIComponent(svgCode)}"), auto`;
+            } else {
+              console.error(`Element with ID '${elementId}' not found.`);
+            }
+          }
+
+          // SVG code for the cursor
+          const customCursorSVG = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="111" fill="none"><path fill="#fff" d="M7.293 110.707a1 1 0 0 0 1.414 0l6.364-6.364a1 1 0 1 0-1.414-1.414L8 108.586l-5.657-5.657a1 1 0 1 0-1.414 1.414l6.364 6.364ZM7 0v110h2V0H7Z"/></svg>
+          `;
+
+          // Add event listener to the target element
+          const targetElement = this.querySelector("[data-banner-media]");
+
+          if (targetElement) {
+            targetElement.addEventListener("mouseenter", () => {
+              setCursorToSVG("targetElement", customCursorSVG, this);
+            });
+
+            targetElement.addEventListener("mouseleave", () => {
+              targetElement.style.cursor = "auto";
+            });
+          } else {
+            console.error("Target element not found.");
+          }
+      }
+  }
+
+  customElements.define('image-video-banner', ImageVideoBanner)
+  </script>
 
 
 {% schema %}
