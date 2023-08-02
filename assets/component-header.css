@@ -82,16 +82,12 @@
 @media screen and (min-width: 1280px) {
     .header__inner {
         max-width: 85%;
-        padding-top: var(--level8);
-        padding-bottom: var(--level8);
     }
 }
 
 @media screen and (min-width: 1800px) {
     .header__inner {
         max-width: 80%;
-        padding-top: var(--level7);
-        padding-bottom: var(--level7);
     }
 }
 
