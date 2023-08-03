@@ -532,6 +532,7 @@ main {
   .page-width {
     padding-left: var(--level8);
     padding-right: var(--level8);
+    max-width: 115rem;
   }
 }
 

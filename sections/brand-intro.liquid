@@ -2,11 +2,11 @@
 
 
 <section class="brand-intro-section">
-    <div class="brand-intro__inner">
-        <div class="page-width">
+    <div class="brand-intro__inner page-width">
 
             <div class="brand-intro__image">
-                   <div class="blurb-section__image__inner">
+                 <div class="brand-intro__image__inner">
+                        <div class="brand-intro__image-wrapper">
                         {%if section.settings.image != blank %}
                         <img
                             srcset="{%- if section.settings.image.width >= 165 -%}{{ section.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
@@ -32,16 +32,19 @@
 
             <div class="brand-intro__copy">
                 <div class="brand-intro__copy__inner">
-                    <div class="brand-intro__copy__heading">
-                        <h2>
+                    <div class="brand-intro__copy__header">
+                        <h2 class="brand-intro__copy__heading">
                         {{section.settings.headline}}
                         </h2>
+                        <p  class="brand-intro__copy__subline">
+                            {{section.settings.subline}}
+                        {% comment %} <span class="subline__decorative-elem">
+                        </span>
+                            <span class="subline__text">
+                            </span> {% endcomment %}
+                        </p>
                     </div>
-                      <div class="brand-intro__copy__subline">
-                        <h2>
-                        {{section.settings.subline}}
-                        </h2>
-                    </div>
+
                     <div class="brand-intro__copy__body">
                         {{section.settings.body}}
                     </div>
@@ -52,7 +55,16 @@
                     </div>
                 </div>
             </div>
-        </div>
+
+            <div class="brand-intro__awards">
+                {% for block in section.blocks %}
+                <div class="block">
+                    <div>
+                        <img src="{{ block.settings.graphic | img_url: 'master' }}" alt="{{ block.settings.name }}">
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
     </div>
 </section>
 
@@ -112,7 +124,8 @@
                 "type": "text",
                 "label": "Name",
                 "id": "name",
-                "default": "Block 1 Title"
+                "default": "Block 1 Title",
+                "info": "This text doesn't appar on the DOM, it is only for screen readers and SEO."
             },
             {
                 "type": "image_picker",
