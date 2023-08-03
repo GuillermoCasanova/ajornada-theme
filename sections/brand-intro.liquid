@@ -1,20 +1,55 @@
+<link rel="stylesheet" href="{{ 'section-brand-intro.css' | asset_url }}" media="print" onload="this.media='all'">
 
 
 <section class="brand-intro-section">
     <div class="brand-intro__inner">
         <div class="page-width">
 
-
-                <h2>
-                {{section.settings.headline}}
-                </h2>
-                <div>
-                    {{section.settings.body}}
+            <div class="brand-intro__image">
+                   <div class="blurb-section__image__inner">
+                        <img
+                            srcset="{%- if section.settings.image.width >= 165 -%}{{ section.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
+                            {%- if section.settings.image.width >= 360 -%}{{ section.settings.image | image_url: width: 360 }} 360w,{%- endif -%}
+                            {%- if section.settings.image.width >= 533 -%}{{ section.settings.image | image_url: width: 533 }} 533w,{%- endif -%}
+                            {%- if section.settings.image.width >= 720 -%}{{ section.settings.image | image_url: width: 720 }} 720w,{%- endif -%}
+                            {%- if section.settings.image.width >= 800 -%}{{ section.settings.image | image_url: width: 800 }} 800w,{%- endif -%}
+                            {%- if section.settings.image.width >= 940 -%}{{ section.settings.image | image_url: width: 940 }} 940w,{%- endif -%}
+                            {%- if section.settings.image.width >= 1066 -%}{{ section.settings.image | image_url: width: 1066 }} 1066w,{%- endif -%}
+                            {{ section.settings.image | image_url }} {{ section.settings.image.width }}w"
+                            src="{{ section.settings.image | image_url: width: 533 }}"
+                            sizes="(min-width: 700px) 50vw, 90vw"
+                            alt="{{ section.settings.image.alt | escape }}"
+                            class="motion-reduce"
+                            loading="lazy"
+                            width="{{ section.settings.image.width }}"
+                            height="{{ section.settings.image.height }}"
+                        >
+                    </div>
                 </div>
+            </div>
 
-                <a href="{{section.settings.cta_url}}">
-                    {{section.settings.cta_text}}
-                </a>
+            <div class="brand-intro__copy">
+                <div class="brand-intro__copy__inner">
+                    <div class="brand-intro__copy__heading">
+                        <h2>
+                        {{section.settings.headline}}
+                        </h2>
+                    </div>
+                      <div class="brand-intro__copy__subline">
+                        <h2>
+                        {{section.settings.subline}}
+                        </h2>
+                    </div>
+                    <div class="brand-intro__copy__body">
+                        {{section.settings.body}}
+                    </div>
+                    <div class="brand-intro__copy__cta">
+                        <a href="{{section.settings.cta_url}}">
+                            {{section.settings.cta_text}}
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -31,13 +66,19 @@
     {
       "type": "image_picker",
       "label": "Image",
-      "id": "image_upload"
+      "id": "image"
     },
     {
       "type": "text",
       "label": "Headline",
       "id": "headline",
       "default": "Lorem Ipsum"
+    },
+    {
+      "type": "text",
+      "label": "Subline",
+      "id": "subline",
+      "default": "About"
     },
     {
       "type": "richtext",
