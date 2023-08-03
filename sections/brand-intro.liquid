@@ -7,6 +7,7 @@
 
             <div class="brand-intro__image">
                    <div class="blurb-section__image__inner">
+                        {%if section.settings.image != blank %}
                         <img
                             srcset="{%- if section.settings.image.width >= 165 -%}{{ section.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
                             {%- if section.settings.image.width >= 360 -%}{{ section.settings.image | image_url: width: 360 }} 360w,{%- endif -%}
@@ -24,6 +25,7 @@
                             width="{{ section.settings.image.width }}"
                             height="{{ section.settings.image.height }}"
                         >
+                        {%endif%}
                     </div>
                 </div>
             </div>
