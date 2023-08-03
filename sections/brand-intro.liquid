@@ -1,0 +1,87 @@
+
+
+<section class="brand-intro-section">
+    <div class="brand-intro__inner">
+        <div class="page-width">
+
+
+                <h2>
+                {{section.settings.headline}}
+                </h2>
+                <div>
+                    {{section.settings.body}}
+                </div>
+
+                <a href="{{section.settings.cta_url}}">
+                    {{section.settings.cta_text}}
+                </a>
+        </div>
+    </div>
+</section>
+
+
+{%schema%}
+{
+  "name": "Brand Intro",
+  "settings": [
+    {
+      "type": "image_picker",
+      "label": "Image",
+      "id": "image_upload"
+    },
+    {
+      "type": "text",
+      "label": "Headline",
+      "id": "headline",
+      "default": "Lorem Ipsum"
+    },
+    {
+      "type": "richtext",
+      "label": "Rich Text",
+      "id": "body"
+    },
+    {
+        "type": "header", 
+        "content": "Call To Action"
+    },
+    {
+      "type": "text",
+      "label": "CTA Text",
+      "id": "cta_text",
+      "default": "Lorem Ipsum"
+    },
+    {
+      "type": "url",
+      "label": "CTA URL",
+      "id": "cta_url"
+    }
+  ],
+    "blocks": [
+        {
+            "type": "block",
+            "name": "Award & Accolade",
+            "settings": [
+            {
+                "type": "text",
+                "label": "Name",
+                "id": "name",
+                "default": "Block 1 Title"
+            },
+            {
+                "type": "image_picker",
+                "label": "Graphic",
+                "id": "graphic"
+            }
+            ]
+        }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "category": "Custom Sections"
+    }
+  ]
+}
+
+
+{%endschema%}
