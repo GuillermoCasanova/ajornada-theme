@@ -14,7 +14,7 @@
       <div class="footer__newsletter">
           <div class="newsletter-form">
             {%- if section.settings.newsletter_heading != blank -%}
-              <h2 class="footer-block__heading  newsletter-form__heading">{{ section.settings.newsletter_heading | escape }}</h2>
+              <h2 class="footer__block__heading  newsletter-form__heading">{{ section.settings.newsletter_heading | escape }}</h2>
             {%- endif -%}
             {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter newsletter-form' -%}
               <input type="hidden" name="contact[tags]" value="newsletter">
@@ -69,7 +69,7 @@
         {%- for block in section.blocks -%}
           <div class="footer__block" >
             {%- if block.settings.heading != blank -%}
-              <h2 class="footer-block__heading visually-hidden" id="{{- block.settings.heading | escape -}}">{{- block.settings.heading | escape -}}</h2>
+              <h2 class="footer__block__heading visually-hidden" id="{{- block.settings.heading | escape -}}">{{- block.settings.heading | escape -}}</h2>
             {%- endif -%}
 
             {%- case block.type -%}
@@ -87,7 +87,7 @@
                 {%- endif -%}
               {%- when 'contact_emails' -%}
                 {%- if block.settings.heading != blank -%}
-                  <h2 class="footer-block__heading  footer-block__heading--contact " id="{{- block.settings.heading | escape -}}">{{- block.settings.heading | escape -}}</h2>
+                  <h2 class="footer__block__heading  footer__block__heading--contact " id="{{- block.settings.heading | escape -}}">{{- block.settings.heading | escape -}}</h2>
                 {%- endif -%}
                 <ul class="footer__block__contact" aria-describedby="{{- block.settings.heading | escape -}}">
                   {% if block.settings.general_email %}
@@ -116,6 +116,69 @@
                   </li>
                   {% endif %}
                 </ul>
+                {%- when 'social_media' -%}
+                 {%- if block.settings.heading != blank -%}
+                  <h2 class="footer__block__heading  visually-hidden " id="{{- block.settings.heading | escape -}}">{{- block.settings.heading | escape -}}</h2>
+                  <ul class="footer__block__social-media" aria-describedby="{{- block.settings.heading | escape -}}">
+                  {%if settings.social_instagram_link != blank %}
+                    <li>
+                      <a class="footer__block__link" target="_blank" href="{{ settings.social_instagram_link }}">
+                      Instagram
+                      </a>
+                    </li>
+                    {%endif%}
+                    {%if settings.social_facebook_link != blank %}
+                    <li>
+                      <a class="footer__block__link" target="_blank" href="{{ settings.social_facebook_link }}">
+                      Facebook
+                      </a>
+                    </li>
+                    {%endif%}
+                    {%if settings.social_twitter_link != blank %}
+                    <li>
+                      <a class="footer__block__link" target="_blank" href="{{ settings.social_twitter_link }}">
+                      Twitter
+                      </a>
+                    </li>
+                    {%endif%}
+                    {%if settings.social_pinterest_link != blank %}
+                    <li>
+                      <a class="footer__block__link" target="_blank" href="{{ settings.social_pinterest_link }}">
+                      Pinterest
+                      </a>
+                    </li>
+                    {%endif%}
+           
+                     {%if settings.social_tiktok_link != blank %}
+                    <li>
+                      <a class="footer__block__link" target="_blank" href="{{ settings.social_tiktok_link }}">
+                      TikTok
+                      </a>
+                    </li>
+                    {%endif%}
+                    {%if settings.social_snapchat_link != blank %}
+                    <li>
+                      <a class="footer__block__link" target="_blank" href="{{ settings.social_snapchat_link }}">
+                      Snapchat
+                      </a>
+                    </li>
+                    {%endif%}
+                   {%if settings.social_youtube_link != blank %}
+                    <li>
+                      <a class="footer__block__link" target="_blank" href="{{ settings.social_youtube_link }}">
+                      YouTube
+                      </a>
+                    </li>
+                    {%endif%}
+                    {%if settings.social_vimeo_link != blank %}
+                    <li>
+                      <a class="footer__block__link" target="_blank" href="{{ settings.social_vimeo_link }}">
+                      Vimeo
+                      </a>
+                    </li>
+                    {%endif%}
+                  </ul>
+                {%- endif -%}
               {%- endcase -%}
           </div>
         {%- endfor -%}
@@ -132,7 +195,7 @@
             </svg>
       </div>
       <div class="footer__copyright">
-        <small class="copyright__content">Copyright &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: routes.root_url }}</small>
+        <small class="copyright__content">Copyright &copy; {{ 'now' | date: "%Y" }}, Ajornada</small>
       </div>
     </div>
   </div>
@@ -218,6 +281,7 @@
       "type": "contact_emails",
       "name": "Contact Emails",
       "settings": [
+  
         {
           "type": "text",
           "id": "heading",
@@ -229,13 +293,30 @@
           "type": "text",
           "id": "general_email",
           "label": "General Inquiries Email",
-          "default": "info@honorthegift.co"
+          "default": "info@ajornada.com"
         },
         {
           "type": "text",
           "id": "orders_email",
           "label": "Order Inquiries Email",
-          "default": "help@honorthegift.co"
+          "default": "help@ajornada.com"
+        }
+      ]
+    },
+    {
+      "type": "social_media", 
+      "name": "Social Media", 
+      "settings": [
+        {
+          "type": "paragraph", 
+          "content": "A block containing all the defined social media links in the site's settings."
+        },
+        {
+          "type": "text", 
+          "id": "heading", 
+          "default": "Follow Us",
+          "label": "Link List title", 
+          "info": "The hidden headline to give the social media link list for screen readers and SEO."
         }
       ]
     }
