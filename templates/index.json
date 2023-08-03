@@ -20,6 +20,15 @@
         "cta-url": "shopify:\/\/pages\/summer-23"
       }
     },
+    "a91f73fa-9991-492c-bca6-4dfe59bea098": {
+      "type": "brand-intro",
+      "settings": {
+        "headline": "Lorem Ipsum",
+        "body": "",
+        "cta_text": "Lorem Ipsum",
+        "cta_url": ""
+      }
+    },
     "1655920347d426af19": {
       "type": "instagram-feed",
       "settings": {
@@ -31,6 +40,7 @@
   },
   "order": [
     "image_banner",
+    "a91f73fa-9991-492c-bca6-4dfe59bea098",
     "1655920347d426af19"
   ]
 }
