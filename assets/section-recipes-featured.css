@@ -1,0 +1,30 @@
+/*------------------------------------*\
+    #Recipes Featured
+\*------------------------------------*/
+
+
+.recipes-featured-section {
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: rgb(var(--color-base-background-1));
+}
+
+.recipes-featured__inner {
+    padding-top: var(--level10);
+}
+
+@media screen and (min-width:700px) {
+    .recipes-featured__inner {
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: wrap;
+        padding-bottom: var(--level10);
+    }
+}
+
+@media screen and (min-width:940px) {
+    .recipes-featured__inner {
+        padding-top: calc(var(--level10) + var(--level8));
+        padding-bottom: calc(var(--level10) + var(--level8));
+    }
+}

@@ -1,0 +1,146 @@
+<link
+  rel="stylesheet"
+  href="{{ 'section-recipes-featured.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'">
+
+<section
+  class="recipes-featured__section">
+  <div
+    class="recipes-featured__inner">
+    <div
+      class="page-width  recipes-featured__header">
+      <h2>
+        {{ section.settings.headline }}
+      </h2>
+      <p>
+        {{ section.settings.subline }}
+      </p>
+    </div>
+
+    {% for block in section.blocks %}
+      <div
+        class="recipe-card">
+        <a
+          href="{{ block.settings.recipe_post.url }}">
+
+          <div
+            class="recipe-card__inner">
+
+
+            {%- assign image = block.settings.recipe_post.image -%}
+            <div
+              class="recipe-card__image-container">
+              <div
+                class="recipe-card__image">
+
+                <img
+                  srcset="{%- if image.width >= 165 -%}
+                  {{ image | image_url: width: 165 }} 165w,{%- endif -%}
+                {%- if image.width >= 360 -%}
+                  {{ image | image_url: width: 360 }} 360w,{%- endif -%}
+                {%- if image.width >= 533 -%}
+                  {{ image | image_url: width: 533 }} 533w,{%- endif -%}
+                {%- if image.width >= 720 -%}
+                  {{ image | image_url: width: 720 }} 720w,{%- endif -%}
+                {{ image | image_url }} {{ image.width }}w"
+                src="{{ image | img_url: width: 200 }}"
+                sizes="(min-width: 1200px) 45vw, (min-width: 940px) 100vw-60vw, 90vw"
+                alt="{{ image.alt | escape }}"
+                class="motion-reduce responsive-image"
+                aria-hidden="true"
+                width="{{ image.width }}"
+                height="{{ image.height }}">
+              </div>
+            </div>
+
+
+            <p>{{ block.settings.recipe_preview }}</p>
+
+            <h2>
+              {{ block.settings.recipe_post.title }}
+            </h2>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+
+</section>
+
+{% schema %}
+  {
+    "name": "Recipes Featured",
+    "templates": [
+      "index", "page"
+    ],
+    "settings": [
+      {
+        "type": "text",
+        "id": "headline",
+        "label": "Headline"
+      },
+      {
+        "type": "text",
+        "id": "subline",
+        "label": "Subline"
+      },
+      {
+        "type": "url",
+        "id": "cta_url",
+        "label": "Section Call To Action"
+      },
+      {
+        "type": "radio",
+        "id": "top_border",
+        "label": "Top Border",
+        "options": [
+          {
+            "value": "yes",
+            "label": "Yes"
+          }, {
+            "value": "no",
+            "label": "No"
+          }
+        ],
+        "default": "no"
+      }, {
+        "type": "radio",
+        "id": "bottom_border",
+        "label": "Bottom Border",
+        "options": [
+          {
+            "value": "yes",
+            "label": "Yes"
+          }, {
+            "value": "no",
+            "label": "No"
+          }
+        ],
+        "default": "yes"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "recipe_card",
+        "name": "Recipe Card",
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "recipe_preview",
+            "label": "Recipe Preview"
+          }, {
+            "type": "article",
+            "id": "recipe_post",
+            "label": "Recipe Post"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Recipes Featured Section"
+      }
+    ]
+  }
+{% endschema %}
