@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="{{ 'section-recipes-featured.css' | asset_url }}" media="print" onload="this.media='all'">
 
-<section class="recipes-featured__section">
+<section class="recipes-featured-section">
   <div class="recipes-featured__inner">
     <div class="page-width">
       <div class="recipes-featured__header">
@@ -32,6 +32,13 @@
                       <div class="recipe-card__flip-card__inner" data-card>
                         <div class="recipe-card__front">
                           <div class="recipe-card__image-container">
+                            <svg focusable="false" class="flip-indicator">
+                              <title>
+                                Click card to flip it and reveal the recipe details
+                              </title>
+                              <use href="#icon-flip-indicator">
+                            </svg>
+
                             <div class="recipe-card__image">
                               {%- assign image = block.settings.recipe_post.image -%}
                               <img

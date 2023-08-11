@@ -7,6 +7,7 @@
     padding-top: 0;
     padding-bottom: 0;
     background-color: rgb(var(--color-base-background-1));
+    border-top: 2px solid black;
 }
 
 .brand-intro__inner {

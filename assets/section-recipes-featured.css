@@ -7,6 +7,7 @@
     padding-top: 0;
     padding-bottom: 0;
     background-color: rgb(var(--color-base-background-1));
+    border-top: 2px solid black;
 }
 
 .recipes-featured__inner {
@@ -156,6 +157,10 @@
     }
 }
 
+[data-flip-trigger]:hover {
+    cursor: pointer;
+}
+
 .recipes-featured__card-list .swiper-slide {
     width: 95%;
     max-width: 25rem;
@@ -213,8 +218,6 @@
 .recipe-card__flip-card__inner {
     transform-style: preserve-3d;
     transition: transform 0.5s;
-    transform: rotateY(180deg);
-
 }
 
 .recipe-card__front,
@@ -334,4 +337,13 @@
     .recipe-card__recipe-name {
         font-size: var(--h2);
     }
+}
+
+.flip-indicator {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    z-index: 2;
 }
