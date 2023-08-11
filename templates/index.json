@@ -20,6 +20,47 @@
         "cta-url": "shopify:\/\/pages\/summer-23"
       }
     },
+    "a91f73fa-9991-492c-bca6-4dfe59bea098": {
+      "type": "brand-intro",
+      "blocks": {
+        "c415600d-6c94-4a34-93b3-52702b58bfd1": {
+          "type": "block",
+          "settings": {
+            "name": "Awards",
+            "graphic": "shopify:\/\/shop_images\/image_1_5ab71236-c6f6-4109-a4db-57687ed9738c.png"
+          }
+        },
+        "103bafa0-d500-4162-b4df-7ccf1af13032": {
+          "type": "block",
+          "settings": {
+            "name": "Awards",
+            "graphic": "shopify:\/\/shop_images\/image_1_5ab71236-c6f6-4109-a4db-57687ed9738c.png"
+          }
+        },
+        "bf964e86-0b84-4976-84fc-be9d310c3c2e": {
+          "type": "block",
+          "settings": {
+            "name": "Awards",
+            "graphic": "shopify:\/\/shop_images\/image_1_5ab71236-c6f6-4109-a4db-57687ed9738c.png"
+          }
+        }
+      },
+      "block_order": [
+        "c415600d-6c94-4a34-93b3-52702b58bfd1",
+        "103bafa0-d500-4162-b4df-7ccf1af13032",
+        "bf964e86-0b84-4976-84fc-be9d310c3c2e"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Hold-Drink.jpg",
+        "headline": "Lorem Ipsum",
+        "subline": "About",
+        "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum aute irure dolor.<\/p>",
+        "cta_text": "Explore Community & Recipes",
+        "cta_url": "shopify:\/\/pages\/community",
+        "top_border": "no",
+        "bottom_border": "yes"
+      }
+    },
     "2bb814ef-d55a-470e-bc5c-8bf06b1dfe81": {
       "type": "recipes-feastured",
       "blocks": {
@@ -66,47 +107,6 @@
         "bottom_border": "yes"
       }
     },
-    "a91f73fa-9991-492c-bca6-4dfe59bea098": {
-      "type": "brand-intro",
-      "blocks": {
-        "c415600d-6c94-4a34-93b3-52702b58bfd1": {
-          "type": "block",
-          "settings": {
-            "name": "Awards",
-            "graphic": "shopify:\/\/shop_images\/image_1_5ab71236-c6f6-4109-a4db-57687ed9738c.png"
-          }
-        },
-        "103bafa0-d500-4162-b4df-7ccf1af13032": {
-          "type": "block",
-          "settings": {
-            "name": "Awards",
-            "graphic": "shopify:\/\/shop_images\/image_1_5ab71236-c6f6-4109-a4db-57687ed9738c.png"
-          }
-        },
-        "bf964e86-0b84-4976-84fc-be9d310c3c2e": {
-          "type": "block",
-          "settings": {
-            "name": "Awards",
-            "graphic": "shopify:\/\/shop_images\/image_1_5ab71236-c6f6-4109-a4db-57687ed9738c.png"
-          }
-        }
-      },
-      "block_order": [
-        "c415600d-6c94-4a34-93b3-52702b58bfd1",
-        "103bafa0-d500-4162-b4df-7ccf1af13032",
-        "bf964e86-0b84-4976-84fc-be9d310c3c2e"
-      ],
-      "settings": {
-        "image": "shopify:\/\/shop_images\/Hold-Drink.jpg",
-        "headline": "Lorem Ipsum",
-        "subline": "About",
-        "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum aute irure dolor.<\/p>",
-        "cta_text": "Explore Community & Recipes",
-        "cta_url": "shopify:\/\/pages\/community",
-        "top_border": "no",
-        "bottom_border": "yes"
-      }
-    },
     "1655920347d426af19": {
       "type": "instagram-feed",
       "settings": {
@@ -118,8 +118,8 @@
   },
   "order": [
     "image_banner",
-    "2bb814ef-d55a-470e-bc5c-8bf06b1dfe81",
     "a91f73fa-9991-492c-bca6-4dfe59bea098",
+    "2bb814ef-d55a-470e-bc5c-8bf06b1dfe81",
     "1655920347d426af19"
   ]
 }
