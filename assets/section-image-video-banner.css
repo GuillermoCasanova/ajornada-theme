@@ -27,7 +27,7 @@ image-video-banner {
 }
 
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
   .image-banner {
     min-width: 42rem;
     padding-bottom: 50%;

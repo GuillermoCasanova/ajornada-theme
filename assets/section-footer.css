@@ -26,7 +26,7 @@
   }
 }
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
   .footer__inner {
     grid-template-areas:
       'badge badge badge badge'
@@ -41,7 +41,7 @@
 }
 
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
 
   .footer__content-bottom-wrapper {
     display: flex;
@@ -59,7 +59,7 @@
   margin-left: auto;
 }
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
   .footer__content-bottom {
     margin-top: -3.5rem;
     pointer-events: none;
@@ -88,7 +88,7 @@
   }
 }
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
   .footer__blocks {
     flex-direction: row;
   }
@@ -106,7 +106,7 @@
 }
 
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
   .footer__block {
     width: auto;
     margin-right: calc(var(--level10) + var(--level2));
@@ -125,7 +125,7 @@
   margin-bottom: var(--level4);
 }
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
   .footer__block__heading--contact {
     text-transform: uppercase;
     font-size: var(--h4);
@@ -142,7 +142,7 @@
   justify-items: left;
 }
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
   .footer__block__links-list {
     display: block;
     columns: 3;
@@ -155,7 +155,7 @@
   margin-bottom: var(--level8);
 }
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
   .footer__block__links-list li:nth-child(4n) {
     margin-bottom: 0;
   }
@@ -182,7 +182,7 @@
   text-transform: uppercase;
 }
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
   .footer__block__link {
     text-transform: uppercase;
     font-size: var(--h4);
@@ -245,7 +245,7 @@
   width: 100%;
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
   .footer__logo-container {
     margin-bottom: 0;
   }
@@ -274,7 +274,7 @@
     #Social Media
 \*------------------------------------*/
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
   .footer__block__social-media {
     display: flex;
     align-items: center;
@@ -297,7 +297,7 @@
   text-transform: uppercase;
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
   .footer__copyright {
     text-align: right;
     margin-bottom: var(--level10)
@@ -309,7 +309,7 @@
 }
 
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
   .copyright__content {
     font-size: var(--normal);
   }

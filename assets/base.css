@@ -209,11 +209,19 @@ body {
   }
 }
 
+/*MEDIUM-UP*/
+@media screen and (min-width: 800px) {
+  :root {
+    font-size: 1rem;
+  }
+}
+
+
 
 /*LARGE-UP*/
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
   :root {
-    font-size: .8rem;
+    font-size: .7rem;
   }
 }
 
@@ -352,7 +360,7 @@ section {
   padding-bottom: var(--level7);
 }
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
   section {
     padding-bottom: calc(var(--level7) * 2);
   }
@@ -378,7 +386,7 @@ section {
   }
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
   .overflow-hidden-tablet {
     overflow: auto;
   }
@@ -397,7 +405,7 @@ section {
   display: none;
 }
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
   .show-for-large-up {
     display: block;
   }
@@ -408,7 +416,7 @@ section {
   display: block;
 }
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
   .hide-for-large-up {
     display: none;
     pointer-events: none;
@@ -485,7 +493,7 @@ main {
   }
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
   main {
     margin-top: 4.5rem;
   }
@@ -496,7 +504,7 @@ main {
 }
 
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
   .master-padding-top {
     padding-top: var(--level7);
   }
@@ -528,7 +536,7 @@ main {
 
 
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
   .page-width {
     padding-left: var(--level8);
     padding-right: var(--level8);

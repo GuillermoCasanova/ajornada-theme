@@ -97,7 +97,7 @@
     }
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
     .cart-notification {
         padding-top: 8rem;
     }
@@ -110,7 +110,7 @@
 
 
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
 
     .cart-notification {
         transform: translateX(100%);
@@ -130,7 +130,7 @@
     }
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
     .cart-notification {
         width: 38rem;
     }
@@ -150,7 +150,7 @@
     height: 100%
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
     .cart-notification__inner {
         max-width: 34em;
         margin-right: auto;
@@ -185,7 +185,7 @@
     display: none;
 }
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
     .cart-notification-overlay {
         display: block;
         top: 0;
@@ -224,7 +224,7 @@
     margin-top: 5.5rem;
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
     .cart-notification__header {
         margin-top: 3rem;
         padding-bottom: 0;
@@ -250,7 +250,7 @@
     top: .25rem;
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
     .cart-notification__heading {
         font-size: var(--h3)
     }
@@ -323,7 +323,7 @@
     margin-bottom: 2rem;
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
     .cart-notification__product {
         margin-right: auto;
         margin-left: auto;
@@ -350,7 +350,7 @@
     width: 45%;
 }
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
     .cart-notification__product__image-container {
         max-width: 8rem;
     }
@@ -387,7 +387,7 @@
     width: 100%;
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
     .cart-notification__product__info {
         padding-left: var(--level6);
     }
@@ -484,7 +484,7 @@
     padding-right: 2.25rem;
 }
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
     .cart-notification__footer {
         max-width: 34em;
         margin-right: auto;
@@ -517,7 +517,7 @@
     margin-bottom: 0;
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
     .cart-nofication__totals__subtotal {}
 }
 
@@ -534,7 +534,7 @@
 }
 
 
-@media screen and (min-width: 930px) {}
+@media screen and (min-width: 940px) {}
 
 
 
@@ -550,7 +550,7 @@
 }
 
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
     .cart-notification-product {
         height: 78%
     }

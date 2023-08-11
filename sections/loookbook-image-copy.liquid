@@ -28,7 +28,7 @@
                     {%- if section.settings.image.width >= 1600 -%}{{ section.settings.image | image_url: width: 1600 }} 1600w,{%- endif -%}
                     {{ section.settings.image | image_url }} {{ section.settings.image.width }}w"
                     src="{{ section.settings.image | image_url: width: 533 }}"
-                    sizes="(min-width: 1600px) 48vw, (min-width: 930px) calc(50vw  - 8rem), (min-width: 700px) calc(50vw  - 6rem), 30rem"
+                    sizes="(min-width: 1600px) 48vw, (min-width: 940px) calc(50vw  - 8rem), (min-width: 700px) calc(50vw  - 6rem), 30rem"
                     alt="{{ section.settings.image.alt | escape }}"
                     class="motion-reduce"
                     loading="lazy"

@@ -17,7 +17,7 @@
     flex-wrap: wrap;
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
     .lookbook-images-section__inner {
         padding-top: var(--level9);
         column-gap: var(--level9);
@@ -30,7 +30,7 @@
     margin-bottom: var(--level7);
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
     .lookbook-images-section__image-container {
         margin-bottom: var(--level9);
     }
@@ -45,7 +45,7 @@
     .lookbook-images-section__image {}
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
     .lookbook-images-section__image {}
 }
 

@@ -99,7 +99,7 @@
   }
 }
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
   .quick-add-button {
     height: auto;
     padding-top: var(--level2);
@@ -128,7 +128,7 @@
   margin-right: .25rem;
 }
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
   .quick-add-color-picker__color {
     width: 1.25rem;
     height: 1.25rem;
@@ -233,7 +233,7 @@
 }
 
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
   .quick-add-variants__option {
     font-size: var(--normal);
     margin-right: .7rem;

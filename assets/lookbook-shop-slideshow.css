@@ -100,7 +100,7 @@
     overflow: hidden;
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
     .evm_look_book_title {
         font-size: var(--micro) !important;
         margin-bottom: 0 !important;
@@ -132,7 +132,7 @@
     font-family: var(--primary-font-family) !important;
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
     .evm_shop_now_container a {
         font-size: var(--mini) !important;
     }

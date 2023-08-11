@@ -29,7 +29,7 @@
     }
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
     .lookbook-display-grid__heading {
         font-size: var(--h3);
         padding-top: calc(var(--level10) + var(--level7));
@@ -91,7 +91,7 @@
     transform: scale(1.03);
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
     .lookbook-collection-grid__product {
         margin-bottom: calc(var(--level6) * -1);
     }
@@ -110,7 +110,7 @@
     font-size: var(--h5)
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
     .lookbook-display-grid__cta {
         text-align: center;
         font-size: var(--h4);

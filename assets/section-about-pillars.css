@@ -13,7 +13,7 @@
     flex-direction: column;
 }
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
     .about-pillars__inner {
         display: flex;
         flex-direction: row;
@@ -33,7 +33,7 @@
 }
 
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
     .about-pillars__pillar {
         border-top: 0;
         padding-top: calc(var(--level9) + var(--level10));
@@ -56,7 +56,7 @@
     padding-left: var(--level7);
 }
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
     .about-pillars__pillar__copy {
         font-size: var(--h4);
         padding-right: var(--level8);
@@ -78,7 +78,7 @@
     }
 }
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
     .about-pillars__pillar__copy__heading {
         font-size: var(--h2);
     }

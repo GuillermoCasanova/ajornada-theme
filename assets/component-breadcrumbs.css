@@ -8,7 +8,7 @@
   margin-bottom: var(--level7);
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
   .breadcrumbs {
     margin-bottom: var(--level10);
   }
@@ -19,7 +19,7 @@
   display: none;
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
   .breadcrumbs--product-page {
     display: block;
     margin-bottom: calc(var(--level7));
@@ -51,7 +51,7 @@
 }
 
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
   .breadcrumbs__inner a {
     font-size: var(--h6);
   }

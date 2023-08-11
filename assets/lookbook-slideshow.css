@@ -19,7 +19,7 @@
     }
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
     .lookbook-slideshow {
         padding-bottom: 50%;
     }
@@ -59,7 +59,7 @@
 }
 
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
     .lookbook-slideshow__inner.swiper-wrapper {
         height: 100%;
         margin-left: 0;

@@ -14,7 +14,7 @@ class LookbookSlideshow extends HTMLElement {
         }
 
         this.mediaQueries = {
-            largeUp: window.matchMedia('(min-width: 930px)')
+            largeUp: window.matchMedia('(min-width: 940px)')
         }
         
         this.init(); 

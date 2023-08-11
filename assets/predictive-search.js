@@ -11,7 +11,7 @@ class PredictiveSearch extends HTMLElement {
     this.setupEventListeners();
     
     this.mediaQueries = {
-      largeUp: window.matchMedia('(min-width: 930px)')
+      largeUp: window.matchMedia('(min-width: 940px)')
     }
 
   }

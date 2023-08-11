@@ -119,7 +119,7 @@ class CustomColorPicker extends HTMLElement {
                                     ${processImageSrc(pSource, '1066x')} 1066w,
                                     ${processImageSrc(pSource, '2000x')} 2000w"
                             src="${processImageSrc(pSource, '533x')}"
-                            sizes="(min-width: 1200px) 50vw, (min-width: 930px) 40vw, 100vw"
+                            sizes="(min-width: 1200px) 50vw, (min-width: 940px) 40vw, 100vw"
                             loading="lazy"
                             alt="${pAlt}"
                             aria-hidden="true"
@@ -140,7 +140,7 @@ class CustomColorPicker extends HTMLElement {
                                     ${processImageSrc(pSource, '360x')} 360w,
                                     ${processImageSrc(pSource, '533x')} 533w"
                             src="${processImageSrc(pSource, '533x')}"
-                            sizes="(min-width: 930px) 15vw, 25vw"
+                            sizes="(min-width: 940px) 15vw, 25vw"
                             alt="${pAlt}"
                             aria-hidden="true"
                             loading="lazy"

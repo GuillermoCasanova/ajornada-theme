@@ -10,7 +10,7 @@
     font-size: var(--h2)
 }
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
     .text-page__header__heading {
         font-size: var(--h1)
     }
@@ -24,7 +24,7 @@
 }
 
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
     .text-page__body {
         font-size: var(--normal);
     }

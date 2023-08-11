@@ -239,7 +239,7 @@ a:focus {
     #Account + Order Pages (Main page)
 \*------------------------------------*/
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
   .customer-main-page {
     display: grid;
     grid-template-columns: minmax(0, calc(100vw - 30rem)) 1fr;
@@ -274,7 +274,7 @@ a:focus {
   flex-shrink: 0;
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
   .account-breadcrumbs__link {
     display: none;
     flex-shrink: 0;
@@ -287,7 +287,7 @@ a:focus {
   margin-bottom: var(--level8);
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
   .account-header {
     text-align: left;
     font-size: var(--h4);
@@ -306,14 +306,14 @@ a:focus {
   text-transform: capitalize;
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
   .order-history__header {
     font-size: var(--h4);
   }
 }
 
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
   .order-history-table {
     max-width: 40rem;
   }
@@ -332,7 +332,7 @@ a:focus {
 }
 
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
   .account-details {
     padding-left: var(--level10);
   }
@@ -345,7 +345,7 @@ a:focus {
   text-transform: capitalize;
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
   .account-details__header {
     font-size: var(--h4);
     margin-bottom: var(--level7);
@@ -363,7 +363,7 @@ a:focus {
   }
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
   .account-details__address p {
     line-height: 1.5;
   }
@@ -378,7 +378,7 @@ a:focus {
   text-decoration: none;
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
   .account-details__edit-cta {
     font-size: var(--h4);
   }
@@ -438,7 +438,7 @@ a:focus {
   }
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
   .customer tr td[data-label="Order"] {
     padding-right: var(--level7);
   }
@@ -486,7 +486,7 @@ a:focus {
   text-transform: capitalize;
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
   .order-header {
     font-size: var(--h4);
     margin-bottom: var(--level7);
@@ -694,7 +694,7 @@ a:focus {
   margin-bottom: var(--level10);
 }
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
   .page-width.addresses-main-page {
     display: grid;
     max-width: 107rem;
@@ -806,7 +806,7 @@ label[for='AddressProvinceNew'] {
   text-transform: capitalize;
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
 
   .current-address-header,
   .new-address-header,

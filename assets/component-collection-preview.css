@@ -16,7 +16,7 @@
 }
 
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
     .collection-preview__header {
         margin-bottom: var(--level6);
     }
@@ -28,7 +28,7 @@
     font-size: var(--h3);
 }
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
     .collection-preview__header__headline {
         margin-bottom: var(--level4);
     }
@@ -90,7 +90,7 @@
     }
 }
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
     .collection-preview__footer {
         padding-top: 0;
         margin-bottom: var(--level6);
@@ -110,7 +110,7 @@
     }
 }
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
     .collection-preview__footer__cta {
         font-size: var(--h3);
     }

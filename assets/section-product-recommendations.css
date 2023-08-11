@@ -19,7 +19,7 @@
   font-size: var(--h4);
 }
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
   .product-recommendations__heading {
     text-align: left;
     margin-bottom: var(--level8);

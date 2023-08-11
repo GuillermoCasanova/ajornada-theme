@@ -48,7 +48,7 @@
     }
 }
 
-@media screen and (min-width:930px) {
+@media screen and (min-width:940px) {
     .header-list-collections__image {
         padding-bottom: 120%;
     }
@@ -80,7 +80,7 @@
     }
 }
 
-@media screen and (min-width:930px) {
+@media screen and (min-width:940px) {
     .header-list-collections__image img {
         object-position: bottom;
     }
@@ -100,7 +100,7 @@
     }
 }
 
-@media screen and (min-width:930px) {
+@media screen and (min-width:940px) {
     .header-list-collections__copy {
         width: 55vw;
     }
@@ -124,7 +124,7 @@
     }
 }
 
-@media screen and (min-width:930px) {
+@media screen and (min-width:940px) {
     .header-list-collections__copy__inner {
         padding-bottom: var(--level10);
     }
@@ -148,7 +148,7 @@
     }
 }
 
-@media screen and (min-width:930px) {
+@media screen and (min-width:940px) {
     .header-list-collections__copy__heading {
         font-size: var(--h1);
         margin-bottom: var(--level8);
@@ -170,7 +170,7 @@
     }
 }
 
-@media screen and (min-width:930px) {
+@media screen and (min-width:940px) {
     .header-list-collections__copy__body {
         font-size: var(--h6);
         max-width: 30rem;
@@ -188,14 +188,14 @@
     margin-bottom: var(--level9);
 }
 
-@media screen and (min-width:930px) {
+@media screen and (min-width:940px) {
     .header-list-collections__copy__body__cta {
         font-size: var(--h6);
     }
 }
 
 
-@media screen and (min-width:930px) {
+@media screen and (min-width:940px) {
     .header-list-collections__copy__body__cta {
         font-size: var(--h4);
     }

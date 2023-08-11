@@ -14,7 +14,7 @@
                 {%- if block.settings.thumbnail.width >= 940 -%}{{ block.settings.thumbnail | image_url: width: 940 }} 940w,{%- endif -%}
                 {{ block.settings.thumbnail | image_url }} {{ block.settings.thumbnail.width }}w"
               src="{{ block.settings.thumbnail | image_url: width: 533 }}"
-              sizes="(min-width: 930px) 30vw, 50vw"
+              sizes="(min-width: 940px) 30vw, 50vw"
               alt="{{ block.settings.thumbnail.alt | escape }}"
               class="motion-reduce"
               aria-hidden="true"

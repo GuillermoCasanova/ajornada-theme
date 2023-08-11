@@ -9,7 +9,7 @@ class instagramFeed extends HTMLElement {
 
         this.mediaQueries = {
             mediumUp: window.matchMedia('(min-width: 600px)'),
-            largeUp: window.matchMedia('(min-width: 930px)')
+            largeUp: window.matchMedia('(min-width: 940px)')
         }
 
         this.initObserver(); 

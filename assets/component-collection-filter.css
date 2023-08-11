@@ -24,7 +24,7 @@ collection-filters {
     }
 }
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
     .collection-filters {
         margin-top: calc(var(--level2) * -1)
     }
@@ -340,7 +340,7 @@ collection-filters {
     display: block;
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
     .sort-option label {
         font-size: var(--normal);
     }

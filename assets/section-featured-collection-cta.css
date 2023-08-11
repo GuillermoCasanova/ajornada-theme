@@ -47,7 +47,7 @@
     position: relative;
 }
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
     .featured-collection-cta-section__collection__text {
         text-align: center;
         font-family: var(--tertiary-font-family);
@@ -95,7 +95,7 @@
 }
 
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
     .featured-collection-cta-section__collection__image {
         padding-bottom: 94%;
     }
@@ -114,7 +114,7 @@
 }
 
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
     .featured-collection-cta-section__collection__image img {
         object-position: top;
     }

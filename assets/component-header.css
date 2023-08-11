@@ -35,7 +35,7 @@
 
 
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
     sticky-header {
         z-index: 2;
     }
@@ -68,7 +68,7 @@
 
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
     .header__inner {
         display: flex;
         padding-top: var(--level7);
@@ -114,7 +114,7 @@
     z-index: 2;
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
     .header__heading {
         position: absolute;
     }
@@ -148,7 +148,7 @@
 
 
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
     .header__logo {
         top: -.1rem;
         position: relative;
@@ -182,7 +182,7 @@
     background: rgb(var(--color-base-background-2));
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
     header-drawer {
         display: none;
     }
@@ -201,7 +201,7 @@
 }
 
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
     .header__icons {
         top: 0;
     }
@@ -259,7 +259,7 @@ cart-toggle.hide-for-large-up {
     display: Flex;
 }
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
     cart-toggle.hide-for-large-up {
         display: none;
     }
@@ -330,7 +330,7 @@ cart-toggle.hide-for-large-up {
     opacity: .5;
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
     .header__icon--cart.is-open {
         opacity: 1;
     }
@@ -759,7 +759,7 @@ a.menu-drawer__menu-item:focus {
 }
 
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
     .header__menu {
         display: flex;
         width: 100%;
@@ -847,7 +847,7 @@ a.menu-drawer__menu-item:focus {
     display: inline-block;
 }
 
-@media screen and (min-width: 930px) {
+@media screen and (min-width: 940px) {
 
     .header__actions-menuspan:after,
     .header__menu-item:focus span:after {
@@ -869,7 +869,7 @@ a.menu-drawer__menu-item:focus {
     #Header Action Menus
 \*------------------------------------*/
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
 
     .header__actions-menu {
         display: flex;
@@ -890,7 +890,7 @@ a.menu-drawer__menu-item:focus {
     #Header Sub Menus
 \*------------------------------------*/
 
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 940px) {
 
     .header__submenu {
         transition: all var(--duration-default) cubic-bezier(0.16, 1, 0.3, 1);
