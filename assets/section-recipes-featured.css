@@ -124,7 +124,19 @@
 
 .recipes-featured__card-list .swiper-slide {
     width: 84%;
+    max-width: 25rem;
 }
+
+.recipes-featured__card-list .swiper-pagination-bullet {
+    background-color: #F9EFB2;
+    border: 1px solid #000000;
+    opacity: 1;
+}
+
+.recipes-featured__card-list .swiper-pagination-bullet-active {
+    background-color: rgb(var(--color-base-background-2));
+}
+
 
 .recipe-card {
     margin-bottom: var(--level10);
@@ -187,7 +199,8 @@ a {
     z-index: 1;
     position: relative;
     padding: var(--level7);
-    color: rgb(var(--color-base-text-2))
+    color: rgb(var(--color-base-text-2));
+    height: 100%;
 }
 
 
@@ -213,13 +226,37 @@ a {
     font-size: var(--level4);
 }
 
+.recipe-card__back__cta {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-left: var(--level3);
+    padding-right: var(--level3);
+    padding-bottom: var(--level10);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.recipe-card__back__cta a {
+    text-decoration: underline;
+    color: rgb(var(--color-base-text-2));
+    font-size: var(--h5);
+}
+
+.recipe-card__back__cta a:focus,
+.recipe-card__back__cta a:hover {
+    text-decoration: none;
+}
+
 .recipe-card__image-container {
     position: relative;
 }
 
 .recipe-card__image {
     position: relative;
-    padding-bottom: 160%;
+    padding-bottom: 155%;
     overflow: hidden
 }
 

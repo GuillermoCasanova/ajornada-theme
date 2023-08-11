@@ -263,7 +263,7 @@
     font-size: var(--h5);
     position: relative;
     z-index: 0;
-    margin-bottom: var(--level7);
+    margin-bottom: var(--level10);
 }
 
 @media screen and (min-width:700px) {
