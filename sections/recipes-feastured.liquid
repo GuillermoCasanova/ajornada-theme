@@ -11,26 +11,56 @@
           {{ section.settings.subline }}
         </p>
       </div>
-    </div>
-    <div class="recipes-featured__card-list">
-      <div class="recipes-featured__card-list__inner">
-        <!-- Recipe Cards -->
-        <custom-slideshow
-          slidesPerView="auto"
-          pagination="true"
-          spaceBetween="20"
-          centeredSlides="true"
-        >
-          {%- for block in section.blocks -%}
-            <click-to-flip>
-              <div class="recipe-card" data-flip-trigger>
-                <div class="recipe-card__inner">
-                  <div class="recipe-card__flip-card">
-                    <div class="recipe-card__flip-card__inner" data-card>
-                      <div class="recipe-card__front">
-                        <div class="recipe-card__image-container">
-                          <div class="recipe-card__image">
-                            {%- assign image = block.settings.recipe_post.image -%}
+
+      <div class="recipes-featured__card-list">
+        <div class="recipes-featured__card-list__inner">
+          <!-- Recipe Cards -->
+          <custom-slideshow
+            slidesPerView="auto"
+            pagination="true"
+            spaceBetween="20"
+            centeredSlides="true"
+            freeMode="false"
+            centeredSlidesBounds="true"
+            breakpoints='{"940": {"pagination": false, "spaceBetween": 80, "freeMode": true}}'
+          >
+            {%- for block in section.blocks -%}
+              <click-to-flip>
+                <div class="recipe-card" data-flip-trigger>
+                  <div class="recipe-card__inner">
+                    <div class="recipe-card__flip-card">
+                      <div class="recipe-card__flip-card__inner" data-card>
+                        <div class="recipe-card__front">
+                          <div class="recipe-card__image-container">
+                            <div class="recipe-card__image">
+                              {%- assign image = block.settings.recipe_post.image -%}
+                              <img
+                                srcset="
+                                  {%- if image.width >= 165 -%}
+                                    {{ image | image_url: width: 165 }} 165w,{%- endif -%}
+                                  {%- if image.width >= 360 -%}
+                                    {{ image | image_url: width: 360 }} 360w,{%- endif -%}
+                                  {%- if image.width >= 533 -%}
+                                    {{ image | image_url: width: 533 }} 533w,{%- endif -%}
+                                  {%- if image.width >= 720 -%}
+                                    {{ image | image_url: width: 720 }} 720w,{%- endif -%}
+                                  {{ image | image_url }} {{ image.width }}w
+                                "
+                                src="{{ image | image_url: width: 100, height: 100, width: 200 }}"
+                                sizes="(min-width: 1200px) 45vw, (min-width: 940px) 100vw-60vw, 90vw"
+                                alt="{{ image.alt | escape }}"
+                                class="motion-reduce responsive-image"
+                                aria-hidden="true"
+                                loading="lazy"
+                                width="{{ image.width }}"
+                                height="{{ image.height }}"
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="recipe-card__back">
+                          <div class="recipe-card__back__background">
+                            {%- assign image = section.settings.cards_background -%}
                             <img
                               srcset="
                                 {%- if image.width >= 165 -%}
@@ -53,68 +83,53 @@
                               height="{{ image.height }}"
                             >
                           </div>
-                        </div>
-                      </div>
-                      <div class="recipe-card__back">
-                        <div class="recipe-card__back__background">
-                          {%- assign image = section.settings.cards_background -%}
-                          <img
-                            srcset="
-                              {%- if image.width >= 165 -%}
-                                {{ image | image_url: width: 165 }} 165w,{%- endif -%}
-                              {%- if image.width >= 360 -%}
-                                {{ image | image_url: width: 360 }} 360w,{%- endif -%}
-                              {%- if image.width >= 533 -%}
-                                {{ image | image_url: width: 533 }} 533w,{%- endif -%}
-                              {%- if image.width >= 720 -%}
-                                {{ image | image_url: width: 720 }} 720w,{%- endif -%}
-                              {{ image | image_url }} {{ image.width }}w
-                            "
-                            src="{{ image | image_url: width: 100, height: 100, width: 200 }}"
-                            sizes="(min-width: 1200px) 45vw, (min-width: 940px) 100vw-60vw, 90vw"
-                            alt="{{ image.alt | escape }}"
-                            class="motion-reduce responsive-image"
-                            aria-hidden="true"
-                            loading="lazy"
-                            width="{{ image.width }}"
-                            height="{{ image.height }}"
-                          >
-                        </div>
 
-                        <div class="recipe-card__back__content">
-                          <p class="recipe-card__back__heading">
-                            {{ block.settings.recipe_post.title }}
-                          </p>
+                          <div class="recipe-card__back__content">
+                            <p class="recipe-card__back__heading">
+                              {{ block.settings.recipe_post.title }}
+                            </p>
 
-                          <div class="recipe-card__back__body">
-                            {{ block.settings.recipe_preview }}
-                          </div>
+                            <div class="recipe-card__back__body">
+                              {{ block.settings.recipe_preview }}
+                            </div>
 
-                          <div class="recipe-card__back__cta">
-                            <a
-                              href="{{ block.settings.recipe_post.url }}"
-                              aria-label="Go to recipe page for  {{ block.settings.recipe_post.title }}"
-                            >
-                              Full Recipe
-                            </a>
+                            <div class="recipe-card__back__cta">
+                              <a
+                                href="{{ block.settings.recipe_post.url }}"
+                                aria-label="Go to recipe page for  {{ block.settings.recipe_post.title }}"
+                              >
+                                Full Recipe
+                              </a>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
+                    <a
+                      href="{{ block.settings.recipe_post.url }}"
+                      aria-label="Go to recipe page for  {{ block.settings.recipe_post.title }}"
+                    >
+                      <h2 class="recipe-card__recipe-name">
+                        {{ block.settings.recipe_post.title }}
+                      </h2>
+                    </a>
                   </div>
-                  <a
-                    href="{{ block.settings.recipe_post.url }}"
-                    aria-label="Go to recipe page for  {{ block.settings.recipe_post.title }}"
-                  >
-                    <h2 class="recipe-card__recipe-name">
-                      {{ block.settings.recipe_post.title }}
-                    </h2>
-                  </a>
                 </div>
-              </div>
-            </click-to-flip>
-          {%- endfor -%}
-        </custom-slideshow>
+              </click-to-flip>
+            {%- endfor -%}
+          </custom-slideshow>
+        </div>
+      </div>
+
+      <div class="recipes-featured__cta">
+        <a
+          class="styled-link"
+          href="{{ section.settings.cta_url }}"
+          aria-label="View all recipes from Ajornada"
+          title="View all Ajornada recipes"
+        >
+          Explore Recipes
+        </a>
       </div>
     </div>
   </div>

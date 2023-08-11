@@ -218,15 +218,6 @@
     top: 5%;
 }
 
-/* 
-.brand-intro__copy__subline span {
-    position: relative;
-    z-index: 1;
-    display: block;
-} */
-
-
-
 .brand-intro__copy__body {
     font-size: var(--normal);
     margin-bottom: var(--level9);
@@ -276,6 +267,12 @@
     background-color: #F9EFB2;
     padding-left: var(--level1);
     padding-right: var(--level1);
+    text-decoration: underline;
+}
+
+.brand-intro__copy__cta a:hover,
+.brand-intro__copy__cta a:focus {
+    text-decoration: none;
 }
 
 @media screen and (min-width:940px) {

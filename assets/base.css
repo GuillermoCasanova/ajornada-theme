@@ -532,11 +532,12 @@ main {
 
 
 .page-width {
-  max-width: 107rem;
+  max-width: 105rem;
   margin: 0 auto;
   padding-left: var(--level3);
   padding-right: var(--level3);
   display: block;
+  width: 100%;
 }
 
 @media screen and (min-width: 360px) {
@@ -1090,7 +1091,19 @@ button:hover {
   color: rgb(var(--color-base-background-2));
 }
 
+.styled-link {
+  text-transform: uppercase;
+  position: relative;
+  z-index: 0;
+  padding-left: var(--level1);
+  padding-right: var(--level1);
+  text-decoration: underline;
+}
 
+.styled-link:hover,
+.styled-link:focus {
+  text-decoration: none;
+}
 
 
 

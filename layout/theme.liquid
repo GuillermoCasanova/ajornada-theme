@@ -236,7 +236,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         --letter-spacing-4: 5px;
         --kilo: 3.5rem;
         --h1: 3rem;
-        --h2: 2.25rem;
+        --h2: 1.9rem;
         --h3: 1.60rem;
         --h4: 1.45rem;
         --h5: 1.25rem;
@@ -260,9 +260,9 @@ fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;d
    {% endstyle %}
 
 
-  {%if settings.show_announcement_bar%}
+  {% if settings.show_announcement_bar %}
     {{ 'component-announcement-bar.css' | asset_url | stylesheet_tag }}  
-  {%endif%}
+  {% endif %}
 
     
    {{ 'base.css' | asset_url | stylesheet_tag }}  
@@ -297,9 +297,9 @@ fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;d
 
     <div data-sticky-header>
     
-      {%if settings.show_announcement_bar%}
+      {% if settings.show_announcement_bar %}
         {% section 'announcement-bar' %}
-      {%endif%}
+      {% endif %}
       
     {% section 'header' %}
     </div>
