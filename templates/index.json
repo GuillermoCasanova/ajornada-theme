@@ -67,7 +67,7 @@
         "690aeb7b-d9cc-42c3-8aa4-d736de3a7d75": {
           "type": "recipe_card",
           "settings": {
-            "recipe_preview": "<p>- 1 can (14 oz) coconut milk<br\/>- 14 oz sweet condensed milk<br\/>- 1 cup cachaça<br\/>- 1 cup coconut water<br\/>- 1\/4 cup toasted coconut (optional)<br\/><br\/>1. Combine all liquid ingredients in a blender.<br\/>2. Blend until frothy.<br\/>3. Pour the cocktail into a glass.<br\/>4. If desired, garnish with toasted coconut.<\/p>",
+            "recipe_preview": "<p>1 can (14 oz) coconut milk<br\/>14 oz sweet condensed milk<br\/>1 cup cachaça<br\/>1 cup coconut water<br\/>1\/4 cup toasted coconut (optional)<br\/><br\/>1. Combine all liquid ingredients in a blender.<br\/>2. Blend until frothy.<br\/>3. Pour the cocktail into a glass.<br\/>4. If desired, garnish with toasted coconut.<\/p>",
             "recipe_post": "recipes\/infusion-tension"
           }
         },
@@ -103,7 +103,7 @@
         "headline": "Recipes",
         "subline": "Our Cocktails",
         "cards_background": "shopify:\/\/shop_images\/v82_1085.png",
-        "cta_url": "",
+        "cta_url": "shopify:\/\/blogs\/news",
         "top_border": "no",
         "bottom_border": "yes"
       }
