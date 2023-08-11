@@ -4,7 +4,7 @@ class ImageSlideshow extends HTMLElement {
       super();
 
       // Extract attributes and convert them into an object
-      const { autoplay, slidesPerView,  a11y, freeMode, pagination, navigation, loop, disableOn} = this.attributes;
+      const { autoplay, slidesPerView,  a11y, freeMode, pagination, navigation, loop, disableOn, spaceBetween, centeredSlides} = this.attributes;
 
       this.mediaQueries = {
         mediumUp: window.matchMedia('(min-width: 700px)'),
@@ -17,25 +17,28 @@ class ImageSlideshow extends HTMLElement {
       }
 
      this.options = {
-          autoplay: {
-          enabled: autoplay && autoplay.value === 'true',
-          delay: 0 
-          },
-          createElements: true,
-          slidesPerView: parseInt(slidesPerView.value) || 1,
-          navigation: navigation  && navigation.value === 'true',
+          autoplay: autoplay && autoplay.value === 'true' ? {
+            enabled: true,
+            delay: 0 
+          } : false,
+ 
+          pagination:  pagination && pagination.value === 'true' ?  {
+            el: '.swiper-pagination',
+            type: 'bullets',
+          } : false,
+          preloadImages: true,
+          freeMode: freeMode && freeMode.value === 'true' ? {
+            enabled: true,
+            sticky: false
+          } : false, 
+          resistance: false,
           loop: loop && loop.value == 'true' || false,
           speed: autoplay ? 5000 : 1000,
-          pagination: pagination  && pagination.value === 'true', 
-          navigation: navigation  && pagination.value === 'true', 
-          preloadImages: true,
-          freeMode: {
-            enabled: freeMode && freeMode.value === 'true' || false, 
-            sticky: false
-          }, 
-          resistance: false,
-          spaceBetween: 20,
+          navigation: false,
+          spaceBetween: spaceBetween ? parseInt(spaceBetween.value) : 20,
           touchReleaseOnEdges: true,
+          slidesPerView: slidesPerView ? slidesPerView.value : 1,
+          centeredSlides: centeredSlides && centeredSlides.value === "true",
       }
 
 
@@ -74,6 +77,8 @@ class ImageSlideshow extends HTMLElement {
       this.originalChildren.forEach(child => this.appendChild(child.cloneNode(true)));
     }
 
+   
+
     setUpHtml(pOptions) {
 
       // Save the original HTML content of children elements
@@ -90,14 +95,13 @@ class ImageSlideshow extends HTMLElement {
       
           .swiper-container {
             width: 100%;
+            position: relative; 
           }
           .swiper-slide {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
-            height: 300px;
           }
+
+          .swiper-content {
+            }
         </style>
         <div class="swiper-container">
           <div class="swiper-wrapper ${pOptions.autoplay ? 'marquee-timing': ''}">
@@ -105,6 +109,7 @@ class ImageSlideshow extends HTMLElement {
               .map(child => `<div class="swiper-slide">${child.outerHTML}</div>`)
               .join('')}
           </div>
+          <div class="swiper-pagination"></div>
         </div>
       `;
 

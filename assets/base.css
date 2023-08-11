@@ -115,6 +115,16 @@ summary::before {
   position: fixed;
 }
 
+.responsive-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 main {
   min-height: calc(70vw - 300px);
@@ -125,6 +135,8 @@ body {
   overflow-x: hidden;
   position: relative;
 }
+
+
 
 
 
@@ -299,7 +311,7 @@ body {
   font-size: 1rem;
   line-height: 1.5;
   font-display: fallback;
-  background: rgb(var(--color-background));
+  background: rgb(var(--color-base-background-1));
   color: black;
 }
 

@@ -1,146 +1,227 @@
-<link
-  rel="stylesheet"
-  href="{{ 'section-recipes-featured.css' | asset_url }}"
-  media="print"
-  onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'section-recipes-featured.css' | asset_url }}" media="print" onload="this.media='all'">
 
-<section
-  class="recipes-featured__section">
-  <div
-    class="recipes-featured__inner">
-    <div
-      class="page-width  recipes-featured__header">
-      <h2>
-        {{ section.settings.headline }}
-      </h2>
-      <p>
-        {{ section.settings.subline }}
-      </p>
+<section class="recipes-featured__section">
+  <div class="recipes-featured__inner">
+    <div class="page-width">
+      <div class="recipes-featured__header">
+        <h2 class="recipes-featured__heading">
+          {{ section.settings.headline }}
+        </h2>
+        <p class="recipes-featured__subline">
+          {{ section.settings.subline }}
+        </p>
+      </div>
     </div>
-
-    {% for block in section.blocks %}
-      <div
-        class="recipe-card">
-        <a
-          href="{{ block.settings.recipe_post.url }}">
-
-          <div
-            class="recipe-card__inner">
-
-
-            {%- assign image = block.settings.recipe_post.image -%}
-            <div
-              class="recipe-card__image-container">
-              <div
-                class="recipe-card__image">
-
-                <img
-                  srcset="{%- if image.width >= 165 -%}
-                  {{ image | image_url: width: 165 }} 165w,{%- endif -%}
-                {%- if image.width >= 360 -%}
-                  {{ image | image_url: width: 360 }} 360w,{%- endif -%}
-                {%- if image.width >= 533 -%}
-                  {{ image | image_url: width: 533 }} 533w,{%- endif -%}
-                {%- if image.width >= 720 -%}
-                  {{ image | image_url: width: 720 }} 720w,{%- endif -%}
-                {{ image | image_url }} {{ image.width }}w"
-                src="{{ image | img_url: width: 200 }}"
-                sizes="(min-width: 1200px) 45vw, (min-width: 940px) 100vw-60vw, 90vw"
-                alt="{{ image.alt | escape }}"
-                class="motion-reduce responsive-image"
-                aria-hidden="true"
-                width="{{ image.width }}"
-                height="{{ image.height }}">
+    <div class="recipes-featured__card-list">
+      <!-- Recipe Cards -->
+      <custom-slideshow
+        slidesPerView="auto"
+        pagination="true"
+        spaceBetween="20"
+        centeredSlides="true"
+      >
+        {%- for block in section.blocks -%}
+          <click-to-flip>
+            <div class="recipe-card" data-flip-trigger>
+              <div class="recipe-card__inner">
+                <div class="recipe-card__flip-card">
+                  <div class="recipe-card__flip-card__inner" data-card>
+                    <div class="recipe-card__front">
+                      <div class="recipe-card__image-container">
+                        <div class="recipe-card__image">
+                          {%- assign image = block.settings.recipe_post.image -%}
+                          <img
+                            srcset="
+                              {%- if image.width >= 165 -%}
+                                {{ image | image_url: width: 165 }} 165w,{%- endif -%}
+                              {%- if image.width >= 360 -%}
+                                {{ image | image_url: width: 360 }} 360w,{%- endif -%}
+                              {%- if image.width >= 533 -%}
+                                {{ image | image_url: width: 533 }} 533w,{%- endif -%}
+                              {%- if image.width >= 720 -%}
+                                {{ image | image_url: width: 720 }} 720w,{%- endif -%}
+                              {{ image | image_url }} {{ image.width }}w
+                            "
+                            src="{{ image | image_url: width: 100, height: 100, width: 200 }}"
+                            sizes="(min-width: 1200px) 45vw, (min-width: 940px) 100vw-60vw, 90vw"
+                            alt="{{ image.alt | escape }}"
+                            class="motion-reduce responsive-image"
+                            aria-hidden="true"
+                            loading="lazy"
+                            width="{{ image.width }}"
+                            height="{{ image.height }}"
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="recipe-card__back">
+                      <div>
+                        {%- assign image = section.settings.cards_background -%}
+                        <img
+                          srcset="
+                            {%- if image.width >= 165 -%}
+                              {{ image | image_url: width: 165 }} 165w,{%- endif -%}
+                            {%- if image.width >= 360 -%}
+                              {{ image | image_url: width: 360 }} 360w,{%- endif -%}
+                            {%- if image.width >= 533 -%}
+                              {{ image | image_url: width: 533 }} 533w,{%- endif -%}
+                            {%- if image.width >= 720 -%}
+                              {{ image | image_url: width: 720 }} 720w,{%- endif -%}
+                            {{ image | image_url }} {{ image.width }}w
+                          "
+                          src="{{ image | image_url: width: 100, height: 100, width: 200 }}"
+                          sizes="(min-width: 1200px) 45vw, (min-width: 940px) 100vw-60vw, 90vw"
+                          alt="{{ image.alt | escape }}"
+                          class="motion-reduce responsive-image"
+                          aria-hidden="true"
+                          loading="lazy"
+                          width="{{ image.width }}"
+                          height="{{ image.height }}"
+                        >
+                      </div>
+                      <p>
+                        {{ block.settings.recipe_post.title }}
+                      </p>
+                      <div class="recipe-card__back__body">
+                        {{ block.settings.recipe_preview }}
+                      </div>
+                      <div>
+                        <a
+                          href="{{ block.settings.recipe_post.url }}"
+                          aria-label="Go to recipe page for  {{ block.settings.recipe_post.title }}"
+                        >
+                          Full Recipe
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a
+                  href="{{ block.settings.recipe_post.url }}"
+                  aria-label="Go to recipe page for  {{ block.settings.recipe_post.title }}"
+                >
+                  <h2 class="recipe-card__recipe-name">
+                    {{ block.settings.recipe_post.title }}
+                  </h2>
+                </a>
               </div>
             </div>
-
-
-            <p>{{ block.settings.recipe_preview }}</p>
-
-            <h2>
-              {{ block.settings.recipe_post.title }}
-            </h2>
-          </div>
-        </a>
-      </div>
-    {% endfor %}
+          </click-to-flip>
+        {%- endfor -%}
+      </custom-slideshow>
+    </div>
   </div>
-
 </section>
 
-{% schema %}
-  {
-    "name": "Recipes Featured",
-    "templates": [
-      "index", "page"
-    ],
-    "settings": [
-      {
-        "type": "text",
-        "id": "headline",
-        "label": "Headline"
-      },
-      {
-        "type": "text",
-        "id": "subline",
-        "label": "Subline"
-      },
-      {
-        "type": "url",
-        "id": "cta_url",
-        "label": "Section Call To Action"
-      },
-      {
-        "type": "radio",
-        "id": "top_border",
-        "label": "Top Border",
-        "options": [
-          {
-            "value": "yes",
-            "label": "Yes"
-          }, {
-            "value": "no",
-            "label": "No"
-          }
-        ],
-        "default": "no"
-      }, {
-        "type": "radio",
-        "id": "bottom_border",
-        "label": "Bottom Border",
-        "options": [
-          {
-            "value": "yes",
-            "label": "Yes"
-          }, {
-            "value": "no",
-            "label": "No"
-          }
-        ],
-        "default": "yes"
-      }
-    ],
-    "blocks": [
-      {
-        "type": "recipe_card",
-        "name": "Recipe Card",
-        "settings": [
-          {
-            "type": "richtext",
-            "id": "recipe_preview",
-            "label": "Recipe Preview"
-          }, {
-            "type": "article",
-            "id": "recipe_post",
-            "label": "Recipe Post"
-          }
-        ]
-      }
-    ],
-    "presets": [
-      {
-        "name": "Recipes Featured Section"
-      }
-    ]
+<script type="module" src="{{ 'custom-slideshow.js' | asset_url }}" defer="defer"></script>
+
+<script type="module">
+  class ClickToFlip extends HTMLElement {
+    constructor() {
+      super();
+
+      // Get the class to be added from the attribute
+      this.highlightClass = 'is-active';
+
+      // Attach the click event listener to each element
+      this.querySelector('[data-flip-trigger]').addEventListener('click', this.toggleHighlight.bind(this));
+    }
+
+    toggleHighlight(event) {
+      this.querySelector('[data-card]').classList.toggle('is-active');
+    }
   }
+
+  customElements.define('click-to-flip', ClickToFlip);
+</script>
+
+<link
+  rel="preload"
+  href="{{ 'vendor-swiper.css' | asset_url }}"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+>
+
+{% schema %}
+{
+  "name": "Recipes Featured",
+  "templates": ["index", "page"],
+  "settings": [
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline"
+    },
+    {
+      "type": "text",
+      "id": "subline",
+      "label": "Subline"
+    },
+    {
+      "type": "image_picker",
+      "id": "cards_background",
+      "label": "Cards Back Image"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Section Call To Action"
+    },
+    {
+      "type": "radio",
+      "id": "top_border",
+      "label": "Top Border",
+      "options": [
+        {
+          "value": "yes",
+          "label": "Yes"
+        },
+        {
+          "value": "no",
+          "label": "No"
+        }
+      ],
+      "default": "no"
+    },
+    {
+      "type": "radio",
+      "id": "bottom_border",
+      "label": "Bottom Border",
+      "options": [
+        {
+          "value": "yes",
+          "label": "Yes"
+        },
+        {
+          "value": "no",
+          "label": "No"
+        }
+      ],
+      "default": "yes"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "recipe_card",
+      "name": "Recipe Card",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "recipe_preview",
+          "label": "Recipe Preview"
+        },
+        {
+          "type": "article",
+          "id": "recipe_post",
+          "label": "Recipe Post"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Recipes Featured Section"
+    }
+  ]
+}
 {% endschema %}
