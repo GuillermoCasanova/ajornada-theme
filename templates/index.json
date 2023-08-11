@@ -20,6 +20,52 @@
         "cta-url": "shopify:\/\/pages\/summer-23"
       }
     },
+    "2bb814ef-d55a-470e-bc5c-8bf06b1dfe81": {
+      "type": "recipes-feastured",
+      "blocks": {
+        "690aeb7b-d9cc-42c3-8aa4-d736de3a7d75": {
+          "type": "recipe_card",
+          "settings": {
+            "recipe_preview": "<p>Ingredients:<br\/>- 1 can (14 oz) coconut milk<br\/>- 14 oz sweet condensed milk<br\/>- 1 cup cachaça<br\/>- 1 cup coconut water<br\/>- 1\/4 cup toasted coconut (optional)<br\/><br\/>Instructions:<br\/>1. Combine all liquid ingredients in a blender.<br\/>2. Blend until frothy.<br\/>3. Pour the cocktail into a glass.<br\/>4. If desired, garnish with toasted coconut.<\/p>",
+            "recipe_post": "recipes\/infusion-tension"
+          }
+        },
+        "0f46c363-66a7-496c-86d0-62ec0db059ef": {
+          "type": "recipe_card",
+          "settings": {
+            "recipe_preview": "<p>Ingredients:<br\/>- 1 can (14 oz) coconut milk<br\/>- 14 oz sweet condensed milk<br\/>- 1 cup cachaça<br\/>- 1 cup coconut water<br\/>- 1\/4 cup toasted coconut (optional)<br\/><br\/>Instructions:<br\/>1. Combine all liquid ingredients in a blender.<br\/>2. Blend until frothy.<br\/>3. Pour the cocktail into a glass.<br\/>4. If desired, garnish with toasted coconut.<\/p>",
+            "recipe_post": "news\/strawberry-coconut-paradise"
+          }
+        },
+        "becd8793-473f-4c5f-951b-01c7a5dffc6e": {
+          "type": "recipe_card",
+          "settings": {
+            "recipe_preview": "<p>Ingredients:<br\/>- 1 can (14 oz) coconut milk<br\/>- 14 oz sweet condensed milk<br\/>- 1 cup cachaça<br\/>- 1 cup coconut water<br\/>- 1\/4 cup toasted coconut (optional)<br\/><br\/>Instructions:<br\/>1. Combine all liquid ingredients in a blender.<br\/>2. Blend until frothy.<br\/>3. Pour the cocktail into a glass.<br\/>4. If desired, garnish with toasted coconut.<\/p>",
+            "recipe_post": "recipes\/flor-de-jamaica"
+          }
+        },
+        "692b2f02-6b79-450f-9b05-5ef6954d5d33": {
+          "type": "recipe_card",
+          "settings": {
+            "recipe_preview": "<p>Ingredients:<br\/>- 1 can (14 oz) coconut milk<br\/>- 14 oz sweet condensed milk<br\/>- 1 cup cachaça<br\/>- 1 cup coconut water<br\/>- 1\/4 cup toasted coconut (optional)<br\/><br\/>Instructions:<br\/>1. Combine all liquid ingredients in a blender.<br\/>2. Blend until frothy.<br\/>3. Pour the cocktail into a glass.<br\/>4. If desired, garnish with toasted coconut.<\/p>",
+            "recipe_post": "recipes\/batida-de-coco-recipe"
+          }
+        }
+      },
+      "block_order": [
+        "690aeb7b-d9cc-42c3-8aa4-d736de3a7d75",
+        "0f46c363-66a7-496c-86d0-62ec0db059ef",
+        "becd8793-473f-4c5f-951b-01c7a5dffc6e",
+        "692b2f02-6b79-450f-9b05-5ef6954d5d33"
+      ],
+      "settings": {
+        "headline": "",
+        "subline": "",
+        "cta_url": "",
+        "top_border": "no",
+        "bottom_border": "yes"
+      }
+    },
     "a91f73fa-9991-492c-bca6-4dfe59bea098": {
       "type": "brand-intro",
       "blocks": {
@@ -56,7 +102,9 @@
         "subline": "About",
         "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum aute irure dolor.<\/p>",
         "cta_text": "Explore Community & Recipes",
-        "cta_url": "shopify:\/\/pages\/community"
+        "cta_url": "shopify:\/\/pages\/community",
+        "top_border": "no",
+        "bottom_border": "yes"
       }
     },
     "1655920347d426af19": {
@@ -70,6 +118,7 @@
   },
   "order": [
     "image_banner",
+    "2bb814ef-d55a-470e-bc5c-8bf06b1dfe81",
     "a91f73fa-9991-492c-bca6-4dfe59bea098",
     "1655920347d426af19"
   ]
