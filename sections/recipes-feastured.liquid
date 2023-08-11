@@ -55,7 +55,7 @@
                       </div>
                     </div>
                     <div class="recipe-card__back">
-                      <div>
+                      <div class="recipe-card__back__background">
                         {%- assign image = section.settings.cards_background -%}
                         <img
                           srcset="
@@ -79,19 +79,24 @@
                           height="{{ image.height }}"
                         >
                       </div>
-                      <p>
-                        {{ block.settings.recipe_post.title }}
-                      </p>
-                      <div class="recipe-card__back__body">
-                        {{ block.settings.recipe_preview }}
-                      </div>
-                      <div>
-                        <a
-                          href="{{ block.settings.recipe_post.url }}"
-                          aria-label="Go to recipe page for  {{ block.settings.recipe_post.title }}"
-                        >
-                          Full Recipe
-                        </a>
+
+                      <div class="recipe-card__back__content">
+                        <p class="recipe-card__back__heading">
+                          {{ block.settings.recipe_post.title }}
+                        </p>
+
+                        <div class="recipe-card__back__body">
+                          {{ block.settings.recipe_preview }}
+                        </div>
+
+                        <div class="recipe-card__back__cta">
+                          <a
+                            href="{{ block.settings.recipe_post.url }}"
+                            aria-label="Go to recipe page for  {{ block.settings.recipe_post.title }}"
+                          >
+                            Full Recipe
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>

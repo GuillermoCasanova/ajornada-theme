@@ -183,6 +183,35 @@ a {
 }
 
 
+.recipe-card__back__content {
+    z-index: 1;
+    position: relative;
+    padding: var(--level7);
+    color: rgb(var(--color-base-text-2))
+}
+
+
+.recipe-card__back__heading {
+    font-size: var(--h3);
+    position: relative;
+    display: inline-block;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+}
+
+.recipe-card__back__heading:after {
+    content: ' ';
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    bottom: -.25rem;
+    left: 0;
+}
+
+.recipe-card__back__body {
+    font-size: var(--level4);
+}
 
 .recipe-card__image-container {
     position: relative;
