@@ -102,6 +102,7 @@
       "settings": {
         "headline": "Recipes",
         "subline": "Our Cocktails",
+        "cards_background": "shopify:\/\/shop_images\/v82_1085.png",
         "cta_url": "",
         "top_border": "no",
         "bottom_border": "yes"
