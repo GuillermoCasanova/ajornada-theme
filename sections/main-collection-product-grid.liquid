@@ -888,7 +888,7 @@ opacity: 1;
                   "variants":   {{ product.variants | json }},
                   "available":   {{ product.available | json }},
                   "price": {{ product.price | json }},
-                  "compare_at_price": {{product.compare_at_price | json}},
+                  "compare_at_price": {{ product.compare_at_price | json }},
                   "tags":   {{ product.tags | json }},
                   "options_with_values": {{ product.options_with_values | json }}{%- unless product.metafields.color_swatch == empty -%},{%- endunless -%}
                   {%- unless product.metafields.color_swatch == empty -%} 
@@ -939,12 +939,6 @@ opacity: 1;
   <div class="section-{{ section.id }}-padding"   data-collection-id="{{ collection.handle }}">
     <div>
       
-      {{ 'component-collection-filter.css' | asset_url | stylesheet_tag }}
-
-      <aside aria-labelledby="verticalTitle" class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}" id="main-collection-filters" data-id="{{ section.id }}">
-        {% render 'facets', results: collection.products %}
-      </aside>
-
       {% assign paginationNum = 16 %}
       <collection-grid data-paginate-by="{{ paginationNum }}"  data-collection-count="{{ collection.products.length }}"  data-collection-url="{{ collection.url }}" data-section-id="{{ section.id }}">
         <div class="product-grid-container" id="ProductGridContainer">
@@ -996,7 +990,6 @@ opacity: 1;
 
   <script src="{{ 'lodash.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'collection-grid.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
 
 {% endif %}
 
