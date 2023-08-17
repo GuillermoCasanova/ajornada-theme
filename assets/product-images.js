@@ -49,23 +49,24 @@ class ProductImagesSlideshow extends HTMLElement {
         let slideshowProps = {}; 
 
         if(pEvent.matches) {
-            this.appendThumbImages();
-            document.querySelector(this.selectors.thumbnails).classList.add('swiper'); 
-            document.querySelector(this.selectors.thumbnails).querySelector(this.selectors.thumbnailsWrapper).classList.add('swiper-wrapper');
-            document.querySelector(this.selectors.thumbnails).querySelectorAll(this.selectors.thumbnailSlides).forEach(element => {
-                element.classList.add('swiper-slide');
-            });
-
-            this.slideshowThumbs = new Swiper.default(this.querySelector(this.selectors.thumbnails), {
-                spaceBetween: 14,
-                slidesPerView: 4,
-                direction: 'horizontal',
-                loop: false
-            });
-
+        
         } else {
-            this.destroy('thumbs'); 
+            //this.destroy('thumbs'); 
         }
+
+        this.appendThumbImages();
+        document.querySelector(this.selectors.thumbnails).classList.add('swiper'); 
+        document.querySelector(this.selectors.thumbnails).querySelector(this.selectors.thumbnailsWrapper).classList.add('swiper-wrapper');
+        document.querySelector(this.selectors.thumbnails).querySelectorAll(this.selectors.thumbnailSlides).forEach(element => {
+            element.classList.add('swiper-slide');
+        });
+
+        this.slideshowThumbs = new Swiper.default(this.querySelector(this.selectors.thumbnails), {
+            spaceBetween: 14,
+            slidesPerView: 4,
+            direction: 'horizontal',
+            loop: false
+        });
 
 
         if(pEvent.matches) {
@@ -92,6 +93,7 @@ class ProductImagesSlideshow extends HTMLElement {
                 loop: true,
                 loopedSlides: 6,
                 grabCursor: false, 
+                spaceBetween: 20,
                 preventInteractionOnTransition: true,
                 pagination: {
                     el: this.selectors.pagination,
@@ -99,6 +101,9 @@ class ProductImagesSlideshow extends HTMLElement {
                     renderBullet: function (index, className) {
                         return '<button aria-label="Slide to product image ' + (index + 1) + '" class="' + className + '"><span class="visually-hidden">' + 'Slide to product image ' + (index + 1) + "</span></button>";
                     }
+                },
+                thumbs: {
+                    swiper: this.slideshowThumbs
                 }
             }
         }
