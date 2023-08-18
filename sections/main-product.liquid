@@ -143,7 +143,7 @@
       id="ProductInfo-{{ section.id }}"
       class="product__info-container{% if section.settings.enable_sticky_info %} product__info-container--sticky{% endif %}"
     >
-      <div class="product__content-header">
+      <div class="product__info-header">
         {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
         {%- for block in section.blocks -%}
@@ -157,7 +157,7 @@
               </h1>
 
             {%- when 'product_type' -%}
-              <p class="product-header__subline">
+              <p class="product__subline">
                 {{ product.type }}
               </p>
             {%- when 'price' -%}

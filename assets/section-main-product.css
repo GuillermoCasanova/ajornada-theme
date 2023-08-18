@@ -369,6 +369,7 @@
   font-family: var(--tertiary-font-family);
   margin-bottom: var(--level2);
   font-weight: var(--font-weight-bold);
+  width: 100%;
 }
 
 @media screen and (min-width: 700px) {
@@ -385,7 +386,16 @@
 }
 
 
+.product__subline {
+  width: 50%;
+  text-align: right;
+  text-transform: uppercase;
+}
 
+.product__price {
+  width: 50%;
+
+}
 
 
 
@@ -393,11 +403,24 @@
     #Product Content Header
 \*------------------------------------*/
 
-.product__content-header {
+.product__info-header {
   border-bottom: 1px solid rgb(var(--color-base-background-3));
-  padding-bottom: var(--level5);
-  margin-bottom: var(--level6);
+  padding-bottom: var(--level2);
+  margin-bottom: var(--level3);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
+
+@media screen and (min-width: 940px) {
+  .product__info-header {
+    padding-bottom: var(--level5);
+    margin-bottom: var(--level6);
+  }
+
+}
+
+
 
 
 
@@ -508,8 +531,8 @@
   margin-bottom: var(--level6);
   padding-left: var(--level4);
   padding-right: var(--level4);
-  padding-top: var(--level3);
-  padding-bottom: var(--level7);
+  padding-top: var(--level2);
+  padding-bottom: var(--level6);
   border-bottom: 1px solid rgb(var(--color-base-background-3));
 }
 
@@ -520,8 +543,9 @@
 @media only screen and (min-width: 940px) {
   .product__text {
     font-size: var(--h5);
+    padding-top: var(--level3);
+    padding-bottom: var(--level7);
   }
-
 }
 
 
@@ -539,18 +563,6 @@
   margin-bottom: calc(var(--level5) * 2);
 }
 
-
-@media screen and (min-width: 700px) {
-  .product__description {}
-}
-
-@media screen and (min-width: 940px) {
-  .product__description {}
-}
-
-
-
-
 .product__description-headline {
   font-size: var(--h6);
   font-family: var(--primary-font-family);
@@ -567,15 +579,28 @@
 
 .product__content__information .product__accordion {
   border-bottom: 1px solid rgb(var(--color-base-background-3));
-  margin-bottom: var(--level4);
-  margin-top: calc(-1 * var(--level4));
+  margin-bottom: var(--level5);
+  margin-top: calc(-1 * var(--level5));
+}
+
+@media screen and (min-width: 940px) {
+  .product__content__information .product__accordion {
+    margin-bottom: var(--level4);
+    margin-top: calc(-1 * var(--level4));
+
+  }
 }
 
 .product-information summary {
   padding-top: 0;
-  padding-bottom: var(--level2);
+  padding-bottom: var(--level1);
 }
 
+@media screen and (min-width: 940px) {
+  .product-information summary {
+    padding-bottom: var(--level2);
+  }
+}
 
 
 
