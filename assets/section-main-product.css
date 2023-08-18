@@ -1256,6 +1256,12 @@ modal-buy-near-me {
   width: 100%;
 }
 
+@media screen and (min-width: 940px) {
+  modal-buy-near-me {
+    z-index: 0;
+  }
+}
+
 .buy-near-me-map-container {
   padding-bottom: 140%;
   background: peru
@@ -1271,13 +1277,17 @@ modal-buy-near-me {
 @media screen and (min-width: 940px) {
   modal-buy-near-me .modal {
     position: relative;
-    height: auto;
+    overflow: hidden;
+    transition: height 0.6s ease-in-out;
+  }
+
+  modal-buy-near-me .modal[aria-hidden="true"] {
+    height: 0;
+    overflow: hidden;
   }
 }
 
-modal-buy-near-me .modal[aria-hidden="true"] {
-  display: none;
-}
+
 
 modal-buy-near-me .modal__cover {
   display: none;

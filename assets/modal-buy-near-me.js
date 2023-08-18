@@ -6,8 +6,12 @@ class ModalBuyNearMe extends GlobalModal {
 
     openModal(pEvent) {
       super.openModal(pEvent); 
-      console.log('hello');
       this.scrollToSection(); 
+      this.expandModal(); 
+    }
+    closeModal(pEvent) {
+      super.closeModal(pEvent); 
+      this.collapseModal(); 
     }
 
     scrollToSection() {
@@ -18,6 +22,14 @@ class ModalBuyNearMe extends GlobalModal {
           window.pageYOffset -
           offset;
         window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+    }
+
+    expandModal() {
+      this.modal.style.height = this.querySelector('.modal__inner').scrollHeight + 'px';
+    }
+
+    collapseModal() {
+      this.modal.style.height = 0; 
     }
   }
 
