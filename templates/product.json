@@ -13,22 +13,6 @@
           "settings": {
           }
         },
-        "34366f39-86f7-4ae7-841a-74111be1f772": {
-          "type": "text",
-          "settings": {
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.",
-            "text_style": "body"
-          }
-        },
-        "74558a6e-8443-460e-9474-b3cde2068699": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Collapsible tab",
-            "content": "<p>sadasdasd<\/p>",
-            "page": "",
-            "icon": "check_mark"
-          }
-        },
         "description": {
           "type": "description",
           "settings": {
@@ -39,17 +23,7 @@
           "settings": {
             "heading": "Legal",
             "content": "<p>sdsdsdsd<\/p>",
-            "page": "",
-            "icon": "leather"
-          }
-        },
-        "collapsible-row-2": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Size and Fit",
-            "content": "",
-            "page": "",
-            "icon": "ruler"
+            "page": ""
           }
         },
         "variant_picker": {
@@ -73,11 +47,8 @@
       "block_order": [
         "title",
         "price",
-        "34366f39-86f7-4ae7-841a-74111be1f772",
-        "74558a6e-8443-460e-9474-b3cde2068699",
         "description",
         "collapsible-row-0",
-        "collapsible-row-2",
         "variant_picker",
         "quantity_selector",
         "buy_buttons"
