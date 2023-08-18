@@ -343,10 +343,14 @@
           {%- for block in section.blocks -%}
             {%- case block.type -%}
               {%- when 'quantity_selector' -%}
-                <div class="product-form__input product-form__input--quantity" {{ block.shopify_attributes }}>
-                  <label class="form__label" for="Quantity-{{ section.id }}">
+                <div
+                  class="product-form__input product-form__quantity"
+                  {{ block.shopify_attributes }}
+                >
+                  <label class="form__label visually-hidden" for="Quantity-{{ section.id }}">
                     {{ 'products.product.quantity.label' | t }}
                   </label>
+
                   <quantity-input class="quantity">
                     <button class="quantity__button no-js-hidden" name="minus" type="button">
                       <span class="visually-hidden">
