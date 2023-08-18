@@ -18,6 +18,11 @@
           "settings": {
           }
         },
+        "2dfa20b7-9a1e-469a-bb82-687c339f60e4": {
+          "type": "flavor_profile",
+          "settings": {
+          }
+        },
         "collapsible-row-0": {
           "type": "collapsible_tab",
           "settings": {
@@ -37,11 +42,6 @@
           "settings": {
           }
         },
-        "2dfa20b7-9a1e-469a-bb82-687c339f60e4": {
-          "type": "flavor_profile",
-          "settings": {
-          }
-        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -53,10 +53,10 @@
         "title",
         "price",
         "description",
+        "2dfa20b7-9a1e-469a-bb82-687c339f60e4",
         "collapsible-row-0",
         "variant_picker",
         "quantity_selector",
-        "2dfa20b7-9a1e-469a-bb82-687c339f60e4",
         "buy_buttons"
       ],
       "settings": {
