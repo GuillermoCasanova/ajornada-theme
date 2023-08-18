@@ -46,13 +46,6 @@ class HeaderDrawer  extends MenuDrawer {
   }
 
   toggleHeaderMenus() {
-      // if(this.offCanvasCart.querySelector('[data-cart]').classList.contains('is-active')) {
-      //     this.offCanvasCart.close();
-      //     document.querySelector('[data-cart-toggle]').classList.remove('is-open');
-      //     return
-      // }
-
-      console.log('toggle me');
       
       if(this.headerDrawerMenuContainer.hasAttribute('open')) {
           this.closeDrawer();
@@ -73,12 +66,20 @@ class HeaderDrawer  extends MenuDrawer {
   setUpEvents() {
       this.offCanvasCart = document.querySelector('cart-notification');
       this.headerDrawerToggle = this.querySelector('[data-header-drawer-toggle]'); 
+      this.headerClose = this.querySelectorAll('a, button'); 
       this.headerDrawerMenu = this.querySelector('[data-header-drawer-menu]');
       this.headerDrawerMenuContainer = this.querySelector('[data-menu-drawer-container]');
      
       this.headerDrawerToggle.addEventListener('click', () => {
           this.toggleHeaderMenus(); 
       }); 
+
+      this.headerClose.forEach((elem)=> {
+        elem.addEventListener('click', (event) => {
+          this.closeDrawer();
+          this.closeMenuDrawer(event); 
+        }); 
+      });
   }
 }
 

@@ -26,6 +26,7 @@
 <link rel="stylesheet" href="{{ 'component-deferred-media.css' | asset_url }}" media="print" onload="this.media='all'">
 
 {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+{{ 'component-modal.css' | asset_url | stylesheet_tag }}
 
 <a class="skip-to-content-link button visually-hidden" href="#ProductInfo-{{ section.id }}">
   {{ 'accessibility.skip_to_product_info' | t }}
@@ -624,6 +625,32 @@
     </div>
   </div>
 
+  <modal-buy-near-me id="buy-near-me">
+    <div
+      role="dialog"
+      aria-live="assertive"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+      id="buy-near-me-modal"
+      aria-hidden="true"
+      class="modal"
+    >
+      <div class="modal__inner">
+        <div class="modal__close">
+          <button aria-label="Close Modal" data-modal-close>
+            <span class="button__text">Close</span>
+            <span class="button__decorative-elem"></span>
+          </button>
+        </div>
+        <div class="modal__content">
+          <h1 id="modal-title" class="visually-hidden">Find Ajornada Near You</h1>
+          <div class="buy-near-me-map-container">ssd</div>
+        </div>
+      </div>
+      <div class="modal__cover" aria-hidden="true"></div>
+    </div>
+  </modal-buy-near-me>
+
   <script type="application/ld+json">
     {
       "@context": "http://schema.org/",
@@ -661,15 +688,8 @@
   </script>
 </section>
 
-<global-modal id="buy-near-me">
-  <div role="dialog" aria-modal="true" aria-labelledby="modal-title" id="buy-near-me-modal" class="">
-    <button aria-label="Close Modal" data-modal-close>Close</button>
-    <h1 id="modal-title">test me</h1>
-  </div>
-</global-modal>
-
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'modal-global.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'modal-buy-near-me.js' | asset_url }}" defer="defer"></script>
 <script type="module" src="{{ 'product-images.js' | asset_url }}" defer="defer"></script>
 
 {% schema %}

@@ -19,6 +19,7 @@
     flex-direction: row;
     margin-bottom: 10rem;
     max-width: 90rem;
+    flex-wrap: wrap;
     margin-left: auto;
     margin-right: auto;
     padding-left: var(--level7);
@@ -1243,3 +1244,19 @@ variant-selects {
 
 
 .size-chart tbody tr:nth-child(even) {}
+
+
+
+/*------------------------------------*\
+    #Buy Near Me
+\*------------------------------------*/
+
+modal-buy-near-me {
+  display: block;
+  width: 100%;
+}
+
+.buy-near-me-map-container {
+  padding-bottom: 140%;
+  background: peru
+}
