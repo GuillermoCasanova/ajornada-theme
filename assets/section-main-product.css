@@ -1260,3 +1260,30 @@ modal-buy-near-me {
   padding-bottom: 140%;
   background: peru
 }
+
+@media screen and (min-width: 940px) {
+  .buy-near-me-map-container {
+    padding-bottom: 50%;
+  }
+}
+
+
+@media screen and (min-width: 940px) {
+  modal-buy-near-me .modal {
+    position: relative;
+    height: auto;
+  }
+}
+
+modal-buy-near-me .modal[aria-hidden="true"] {
+  display: none;
+}
+
+modal-buy-near-me .modal__cover {
+  display: none;
+}
+
+modal-buy-near-me .modal__inner {
+  transform: translateY(0) !important;
+  border: 0;
+}
