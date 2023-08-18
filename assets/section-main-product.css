@@ -507,7 +507,7 @@
 
 
 .product__text {
-  max-width: 27rem;
+  max-width: 90%;
   margin-bottom: var(--level6);
 }
 
