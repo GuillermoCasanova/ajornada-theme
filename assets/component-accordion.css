@@ -2,10 +2,6 @@
     #Accordions
 \*------------------------------------*/
 
-.product__content__information .product__accordion {
-  border-top: 1px solid rgb(var(--color-base-text));
-}
-
 .accordion .summary__title {
   display: flex;
   flex: 1;

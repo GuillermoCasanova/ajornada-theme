@@ -162,6 +162,10 @@
             <h1 class="product__title" {{ block.shopify_attributes }}>
               {{ product.title | escape }}
             </h1>
+          {%- when 'product_type' -%}
+            <p class="product-header__subline">
+              {{ product.type }}
+            </p>
           {%- when 'price' -%}
             <div class="no-js-hidden" id="price-{{ section.id }}" {{ block.shopify_attributes }}>
               {%- render 'price',
@@ -336,6 +340,13 @@
                       {{ block.settings.page }}
                     </div>
                   </details>
+                </div>
+
+              {%- when 'collapsible_tab' -%}
+                <div class="product__flavor-profile">
+                  {% if product.metafields.description.flavor_profile %}
+                    {{ product.metafields.description.flavor_profile | metafield_tag }}
+                  {% endif %}
                 </div>
             {%- endcase -%}
           {% endfor %}
@@ -761,8 +772,23 @@
       ]
     },
     {
+      "type": "flavor_profile",
+      "name": "Flavor Profile",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Pulls from the product's flavor profile metafield if they have one set."
+        }
+      ]
+    },
+    {
       "type": "title",
       "name": "t:sections.main-product.blocks.title.name",
+      "limit": 1
+    },
+    {
+      "type": "product_type",
+      "name": "Product Type",
       "limit": 1
     },
     {

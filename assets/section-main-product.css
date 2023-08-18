@@ -472,9 +472,8 @@
   z-index: 0;
   position: absolute;
   background-color: rgb(var(--color-base-background-1));
-  width: 100vw;
+  width: 100%;
   height: 100%;
-  left: calc(var(--level4) * -1);
   right: 0;
   bottom: 0;
   padding-top: 1rem;
@@ -556,6 +555,38 @@
 }
 
 
+
+
+/*------------------------------------*\
+    #Product Accordions
+\*------------------------------------*/
+
+.product__content__information .product__accordion {
+  border-top: 1px solid rgb(var(--color-base-text-1));
+  border-bottom: 1px solid rgb(var(--color-base-text-1));
+  margin-bottom: var(--level4);
+}
+
+
+
+
+
+
+/*------------------------------------*\
+    #Product Flavor Profile
+\*------------------------------------*/
+
+.product__flavor-profile ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--level2);
+}
+
+.product__flavor-profile em {
+  text-transform: uppercase;
+  font-style: normal;
+}
 
 
 
