@@ -13,13 +13,13 @@
           "settings": {
           }
         },
-        "2dfa20b7-9a1e-469a-bb82-687c339f60e4": {
-          "type": "flavor_profile",
+        "description": {
+          "type": "description",
           "settings": {
           }
         },
-        "description": {
-          "type": "description",
+        "2dfa20b7-9a1e-469a-bb82-687c339f60e4": {
+          "type": "flavor_profile",
           "settings": {
           }
         },
@@ -52,8 +52,8 @@
       "block_order": [
         "title",
         "price",
-        "2dfa20b7-9a1e-469a-bb82-687c339f60e4",
         "description",
+        "2dfa20b7-9a1e-469a-bb82-687c339f60e4",
         "collapsible-row-0",
         "variant_picker",
         "quantity_selector",
