@@ -261,7 +261,7 @@
                     {{- block.settings.text -}}
                   </p>
                 </div>
-              {%- when 'rich-text' -%}
+              {%- when 'rich_text' -%}
                 <div class="product__text">
                   {{- block.settings.text -}}
                 </div>
@@ -749,6 +749,18 @@
       ]
     },
     {
+      "type": "rich_text",
+      "name": "t:sections.main-product.blocks.text.name",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "Text block",
+          "label": "t:sections.main-product.blocks.text.settings.text.label"
+        }
+      ]
+    },
+    {
       "type": "title",
       "name": "t:sections.main-product.blocks.title.name",
       "limit": 1
@@ -816,21 +828,6 @@
       "type": "description",
       "name": "t:sections.main-product.blocks.description.name",
       "limit": 1
-    },
-    {
-      "type": "share",
-      "name": "t:sections.main-product.blocks.share.name",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "paragraph",
-          "content": "t:sections.main-product.blocks.share.settings.featured_image_info.content"
-        },
-        {
-          "type": "paragraph",
-          "content": "t:sections.main-product.blocks.share.settings.title_info.content"
-        }
-      ]
     },
     {
       "type": "collapsible_tab",
