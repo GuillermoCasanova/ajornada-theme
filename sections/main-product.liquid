@@ -606,7 +606,16 @@
 
               {% when 'buy_near_me' %}
                 <div class="product__buy-near-me">
-                  <button class="button--large button--primary">Buy Near Me</button>
+                  <button
+                    class="button--large button--primary"
+                    data-modal="buy-near-me"
+                    aria-expanded="false"
+                    aria-haspopup="dialog"
+                    aria-label="Open buy near me modal"
+                    aria-controls="buy-near-me-modal"
+                  >
+                    Buy Near Me
+                  </button>
                 </div>
             {%- endcase -%}
           {%- endfor -%}
@@ -652,7 +661,15 @@
   </script>
 </section>
 
+<global-modal id="buy-near-me">
+  <div role="dialog" aria-modal="true" aria-labelledby="modal-title" id="buy-near-me-modal" class="">
+    <button aria-label="Close Modal" data-modal-close>Close</button>
+    <h1 id="modal-title">test me</h1>
+  </div>
+</global-modal>
+
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'modal-global.js' | asset_url }}" defer="defer"></script>
 <script type="module" src="{{ 'product-images.js' | asset_url }}" defer="defer"></script>
 
 {% schema %}

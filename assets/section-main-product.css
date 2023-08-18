@@ -149,6 +149,7 @@
   .product__media-wrapper {
     width: 32vw;
     max-width: 38rem;
+    min-width: 35rem;
   }
 }
 
