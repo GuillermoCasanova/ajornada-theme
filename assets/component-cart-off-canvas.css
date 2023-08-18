@@ -431,8 +431,6 @@
     left: 8rem;
     margin-bottom: 0;
     top: auto;
-    display: none;
-    position: absolute;
 }
 
 .cart-notification__product__info__quantity-select select {

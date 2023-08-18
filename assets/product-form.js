@@ -8,6 +8,9 @@ if (!customElements.get('product-form')) {
       this.form.querySelector('[name=id]').disabled = false;
       this.form.addEventListener('submit', this.onSubmitHandler.bind(this));
       this.cartNotification = document.querySelector('cart-notification');
+      this.submitButton = this.querySelector('[type="submit"]');
+      this.submitButton.setAttribute('aria-haspopup', 'dialog');
+
     }
   
     handleErrorMessage(errorMessage = false) {
@@ -32,9 +35,17 @@ if (!customElements.get('product-form')) {
       
       const body = JSON.stringify({
         ...JSON.parse(serializeForm(this.form))
-        // sections: this.cartNotification.getSectionsToRender().map((section) => section.id),
-        // sections_url: window.location.pathname
       });
+
+      const formData = new FormData(this.form);
+
+      for (var [key, value] of formData.entries()) { 
+        console.log(key, value);
+      }
+      
+      console.log(this.form);
+      console.log(body); 
+
   
       fetch(`${routes.cart_add_url}`, { ...fetchConfig('javascript'), body })
         .then((response) => response.json())

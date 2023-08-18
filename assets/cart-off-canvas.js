@@ -233,7 +233,9 @@ class CartOffCanvas extends HTMLElement {
             : true,
         vendor: cartItem.vendor
       };
-  
+      
+      console.log(item); 
+      
        allProducts.push(item); 
   
   

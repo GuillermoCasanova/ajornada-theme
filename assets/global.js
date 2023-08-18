@@ -594,6 +594,7 @@ class VariantSelects extends HTMLElement {
   }
 
   onVariantChange() {
+    console.log('quantity change'); 
     this.updateOptions();
     this.updateMasterVariantId();
     this.setSoldOutOptions()
