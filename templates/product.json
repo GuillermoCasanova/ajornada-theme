@@ -52,6 +52,11 @@
           "settings": {
             "show_dynamic_checkout": true
           }
+        },
+        "4a4006c8-0436-4eae-ac13-f3f73fc097c4": {
+          "type": "buy_near_me",
+          "settings": {
+          }
         }
       },
       "block_order": [
@@ -63,7 +68,8 @@
         "collapsible-row-0",
         "variant_picker",
         "quantity_selector",
-        "buy_buttons"
+        "buy_buttons",
+        "4a4006c8-0436-4eae-ac13-f3f73fc097c4"
       ],
       "settings": {
         "enable_sticky_info": false,
