@@ -382,19 +382,21 @@
 @media screen and (min-width: 940px) {
   .product__title {
     font-size: var(--h1);
+    margin-bottom: var(--level5);
   }
 }
 
 
 .product__subline {
   width: 50%;
-  text-align: right;
   text-transform: uppercase;
+  margin-bottom: 0;
+  font-size: var(--h5);
 }
+
 
 .product__price {
   width: 50%;
-
 }
 
 
@@ -410,6 +412,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
 }
 
 @media screen and (min-width: 940px) {
