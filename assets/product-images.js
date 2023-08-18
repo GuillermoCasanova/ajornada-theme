@@ -63,7 +63,7 @@ class ProductImagesSlideshow extends HTMLElement {
 
         this.slideshowThumbs = new Swiper.default(this.querySelector(this.selectors.thumbnails), {
             spaceBetween: 14,
-            slidesPerView: 4,
+            slidesPerView: 3,
             direction: 'horizontal',
             loop: false
         });

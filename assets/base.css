@@ -1079,10 +1079,11 @@ button:hover {
 }
 
 .button--secondary {
-  background-color: transparent;
+  background-color: rgb(var(--color-base-background-2));
   border: 2px solid rgb(var(--color-base-text-2));
   border-radius: 0;
   border-radius: 8px;
+  color: rgb(var(--color-base-text-2));
 }
 
 .button--secondary:hover,
