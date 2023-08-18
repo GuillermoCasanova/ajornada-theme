@@ -87,7 +87,7 @@
 
 @media screen and (min-width: 1800px) {
     .header__inner {
-        max-width: 80%;
+        max-width: 115rem;
     }
 }
 

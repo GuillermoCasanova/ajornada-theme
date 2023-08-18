@@ -55,14 +55,6 @@
               data-product-images-modal-open
               data-id="{{ forloop.index }}"
             >
-              <button
-                class="zoom-image-indicator"
-                data-id="{{ forloop.index }}"
-                aria-label="Image can be zoomed in"
-                data-product-images-modal-open
-              >
-                {% render 'icon-zoom-in' %}
-              </button>
               <div class="product-images-slideshow__image-container">
                 {% if forloop.index == 1 %}
                   <img
@@ -151,40 +143,36 @@
       id="ProductInfo-{{ section.id }}"
       class="product__info-container{% if section.settings.enable_sticky_info %} product__info-container--sticky{% endif %}"
     >
-      {%- assign product_form_id = 'product-form-' | append: section.id -%}
+      <div class="product__content-header">
+        {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
-      {%- for block in section.blocks -%}
-        {%- case block.type -%}
-          {%- when '@app' -%}
-            {% render block %}
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when '@app' -%}
+              {% render block %}
 
-          {%- when 'title' -%}
-            <h1 class="product__title" {{ block.shopify_attributes }}>
-              {{ product.title | escape }}
-            </h1>
-          {%- when 'product_type' -%}
-            <p class="product-header__subline">
-              {{ product.type }}
-            </p>
-          {%- when 'price' -%}
-            <div class="no-js-hidden" id="price-{{ section.id }}" {{ block.shopify_attributes }}>
-              {%- render 'price',
-                product: product,
-                use_variant: true,
-                show_badges: true,
-                price_class: 'price--large'
-              -%}
-            </div>
-            {% comment %}
-              <div {{ block.shopify_attributes }}>
-                {%- form 'product', product, id: 'product-form-installment', class: 'installment caption-large' -%}
-                  <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-                  {{ form | payment_terms }}
-                {%- endform -%}
+            {%- when 'title' -%}
+              <h1 class="product__title" {{ block.shopify_attributes }}>
+                {{ product.title | escape }}
+              </h1>
+
+            {%- when 'product_type' -%}
+              <p class="product-header__subline">
+                {{ product.type }}
+              </p>
+            {%- when 'price' -%}
+              <div class="no-js-hidden" id="price-{{ section.id }}" {{ block.shopify_attributes }}>
+                {%- render 'price',
+                  product: product,
+                  use_variant: true,
+                  show_badges: true,
+                  price_class: 'price--large'
+                -%}
               </div>
-            {% endcomment %}
-        {%- endcase -%}
-      {% endfor %}
+          {%- endcase -%}
+        {% endfor %}
+      </div>
+      <!-- Product Form -->
       <div class="product__content">
         <div class="product__content__information">
           {%- for block in section.blocks -%}
@@ -342,8 +330,8 @@
                   </details>
                 </div>
 
-              {%- when 'collapsible_tab' -%}
-                <div class="product__flavor-profile">
+              {%- when 'flavor_profile' -%}
+                <div class="product__text  product__flavor-profile">
                   {% if product.metafields.description.flavor_profile %}
                     {{ product.metafields.description.flavor_profile | metafield_tag }}
                   {% endif %}
@@ -655,60 +643,9 @@
   </div>
 </section>
 
-<product-zoom-modal
-  data-zoom-script-url="{{ 'panzoom.min.js' | asset_url }}"
-  role="dialog"
-  class="product-zoom-modal  is-hidden show-for-large-up"
-  data-product-images-modal
->
-  <div class="product-zoom-modal__inner">
-    <button class="product-zoom-modal__close" data-product-images-modal-close aria-label="Close product images modal">
-      Close
-    </button>
-    <div class="product-zoom-modal__pagination-container">
-      <div class="product-zoom-modal__pagination">
-        <ul
-          class="product-images-slideshow__pagination__wrapper  product-zoom-modal__pagination"
-          data-product-images-modal-slideshow-pagination
-        >
-          {% for image in product.images %}
-            <li
-              class="slide product-images-slideshow__pagination__thumb"
-              data-images-scroller-thumb
-              role="button"
-              tabindex="0"
-              data-id="{{ forloop.index }}"
-              data-img-url="{{ image.src | image_url: width: 80, height: 80 }}"
-              alt="{{ image.alt | escape }}"
-            ></li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-
-    <div class="product-zoom-modal__slideshow">
-      <ul class="slides  product-zoom-modal__wrapper" data-product-images-modal-slideshow>
-        {% for image in product.images %}
-          <li
-            class="slide"
-            data-id="{{ forloop.index }}"
-            data-product-images-modal-slideshow-slide
-            data-id="{{ forloop.index }}"
-            data-img-url="{{ image.src | image_url: width: 2000, height: 2000 }}"
-            alt="{{ image.alt | escape }}"
-          ></li>
-        {% endfor %}
-      </ul>
-    </div>
-  </div>
-</product-zoom-modal>
-
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'custom-color-picker.js' | asset_url }}" defer="defer"></script>
 <script type="module" src="{{ 'product-images.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'product-zoom-modal.js' | asset_url }}" defer="defer"></script>
-
-<link rel="stylesheet" href="{{ 'product-zoom-modal.css' | asset_url }}" media="print" onload="this.media='all'">
 
 <script>
   {
