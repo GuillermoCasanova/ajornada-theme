@@ -8,13 +8,13 @@
           "settings": {
           }
         },
-        "price": {
-          "type": "price",
+        "c6eaf4ed-a42d-44fa-a5f0-c1424c20c12a": {
+          "type": "product_type",
           "settings": {
           }
         },
-        "c6eaf4ed-a42d-44fa-a5f0-c1424c20c12a": {
-          "type": "product_type",
+        "price": {
+          "type": "price",
           "settings": {
           }
         },
@@ -56,8 +56,8 @@
       },
       "block_order": [
         "title",
-        "price",
         "c6eaf4ed-a42d-44fa-a5f0-c1424c20c12a",
+        "price",
         "2dfa20b7-9a1e-469a-bb82-687c339f60e4",
         "description",
         "collapsible-row-0",
