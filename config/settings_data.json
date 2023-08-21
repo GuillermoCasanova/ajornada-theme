@@ -123,9 +123,6 @@
         "type": "header",
         "settings": {
           "menu": "main-menu",
-          "featured-collections": [
-
-          ],
           "footer-menu": "drawer-footer-menu"
         }
       },
