@@ -68,7 +68,7 @@
           "type": "Slide",
           "settings": {
             "image": "shopify:\/\/shop_images\/v82_1079.png",
-            "heading": "Lorem Ipsum Headline It Is 1",
+            "heading": "Lorem Ipsum",
             "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>"
           }
         },
@@ -76,7 +76,7 @@
           "type": "Slide",
           "settings": {
             "image": "shopify:\/\/shop_images\/v82_1104.png",
-            "heading": "Lorem Ipsum Headline It Is 2",
+            "heading": "Lorem Ipsum",
             "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>"
           }
         },
