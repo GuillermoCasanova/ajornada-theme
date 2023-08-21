@@ -4,7 +4,7 @@ class ImageSlideshow extends HTMLElement {
     super();
 
     // Extract attributes and convert them into an object
-    const { autoplay, slidesPerView,  a11y, freeMode, pagination, navigation, loop, disableOn, spaceBetween, centeredSlides, breakpoints, numberPagination, effect, controlContainer} = this.attributes;
+    const { autoplay, slidesPerView,  a11y, freeMode, pagination, navigation, loop, disableOn, spaceBetween, centeredSlides, breakpoints, numberPagination, effect, controlContainer, fadeOnLargeUp} = this.attributes;
 
 
     
@@ -47,6 +47,13 @@ class ImageSlideshow extends HTMLElement {
         controlContainer: controlContainer ? controlContainer.value : false
     }
 
+
+    if(fadeOnLargeUp && this.mediaQueries.mediumUp.matches) {
+      this.options.effect = 'fade';
+      this.options.fadeEffect = {
+        crossFade: true
+      }
+    }
 
 
     if(numberPagination) {
