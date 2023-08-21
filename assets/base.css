@@ -264,7 +264,7 @@ body {
 /*WIDESCREEN-UP*/
 @media screen and (min-width: 2000px) {
   :root {
-    font-size: 95rem;
+    font-size: .95rem;
   }
 }
 
