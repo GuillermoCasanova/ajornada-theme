@@ -91,7 +91,7 @@
         "e1f0be6f-c49d-4044-919f-51c1790821b0": {
           "type": "Slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/v82_1079.png",
+            "image": "shopify:\/\/shop_images\/v82_1105.png",
             "headline": "Lorem Headline Ipsum It Is",
             "rich_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>"
           }
@@ -99,8 +99,8 @@
         "ef66dcf3-25a4-4b27-bab7-98da42c0dbe1": {
           "type": "Slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/v82_1079.png",
-            "headline": "Lorem Headline Ipsum It Is",
+            "image": "shopify:\/\/shop_images\/v82_1102.png",
+            "headline": "Lorem Headline Ipsum It Is 100",
             "rich_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>"
           }
         }
