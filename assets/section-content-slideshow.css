@@ -312,15 +312,18 @@
 
 .content-slideshow__images-slideshow .swiper-slide {
     width: 95%;
-    max-width: 90%;
+    max-width: 32rem;
 }
 
 
 
 .content-slideshow__images-slideshow__inner {
     position: relative;
-    padding-bottom: 100%;
+    padding-bottom: 78%;
     overflow: hidden;
+    max-height: 60rem;
+    overflow: hidden;
+    min-height: 36rem;
 }
 
 .content-slideshow .swiper-pagination {
