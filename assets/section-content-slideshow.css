@@ -119,6 +119,7 @@
 .content-slideshow__copy {
     text-align: center;
     position: absolute;
+    background-color: rgb(var(--color-base-background-1));
 }
 
 @media screen and (min-width:700px) {

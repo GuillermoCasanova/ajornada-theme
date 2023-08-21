@@ -160,41 +160,42 @@ class ImageSlideshow extends HTMLElement {
     }
   
     return new Promise((resolve, reject) => {
-      import('./swiper.module.js').then((Swiper) => {
-        if (this.attributes.preventLoad && this.attributes.preventLoad.value === 'true') {
-          console.log('loading prevented'); 
-          reject(new Error('Loading is prevented'));
-          return;
-        }
+      if (this.attributes.preventLoad && this.attributes.preventLoad.value === 'true') {
+        return;
+      }
   
-        if (this.options.controlContainer) {
-          console.log('has control container'); 
-          const controlElement = document.querySelector(this.options.controlContainer);
-          controlElement.setAttribute('preventLoad', 'false');
-          controlElement.initSwiper().then(()=> {
-
-              this.options.controller = {
-                by: 'slide',
-                control: controlElement.getSwiper(),
-              };
-
+      import('./swiper.module.js')
+        .then((Swiper) => {
+          if (this.options.controlContainer) {
+            console.log('has control container');
+            const controlElement = document.querySelector(this.options.controlContainer);
+            controlElement.setAttribute('preventLoad', 'false');
+            return controlElement.initSwiper().then(()=> {
+              if (this.options.controlContainer) {
+                this.options.controller = {
+                  by: 'slide',
+                  control: controlElement.getSwiper(),
+                };
+              }
               this.setUpHtml(this.options);
               this.swiper = new Swiper.default(this.querySelector('.swiper-container'), this.options);
-      
-          });
-
-        }else {
-         this.setUpHtml(this.options);
+              controlElement.getSwiper().controller.control = this.swiper; 
+            }); // Return the promise from initSwiper
+          }
+  
+  
+          this.setUpHtml(this.options);
           this.swiper = new Swiper.default(this.querySelector('.swiper-container'), this.options);
-        }
-          
-        resolve(this.swiper); // Resolve the promise with the initialized swiper instance
-      }).catch(error => {
-        reject(error); // Reject the promise if there was an error during import
-      });
+  
+          resolve(this.swiper); // Resolve the promise with the initialized swiper instance
+         ///return Promise.resolve(); // Return a resolved promise if no controlContainer
+        })
+        .catch(error => {
+          reject(error); // Reject the promise if there was an error during import or initialization
+        });
     });
   }
-  
+
   getSwiper() {
     return this.swiper; 
   }
