@@ -1,6 +1,43 @@
+<section class="content-slideshow">
+  <div class="content-slideshow__inner">
+    <div class="content-slideshow__images-slideshow">
+      <div class="">
+        {% for block in section.blocks %}
+          <div class="content-slideshow__image">
+            <img
+              loading="lazy"
+              class="block-image"
+              width="500"
+              height="500"
+              src="{{ block.image | image_url }}"
+              alt="{{ block.headline }}"
+            >
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="content-slideshow__copy-slideshow">
+      {% for block in section.blocks %}
+        <div class="content-slideshow__copy">
+          <div class="content-slideshow__copy__inner">
+            <div>
+              <h2 class="block-headline">{{ block.headline }}</h2>
+            </div>
+
+            <div class="block-rich-text">
+              {{ block.rich_text | rich_text }}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
 {% schema %}
 {
   "name": "Content Slideshow",
+  "max_blocks": 7,
   "settings": [],
   "blocks": [
     {
