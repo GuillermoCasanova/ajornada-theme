@@ -1,16 +1,31 @@
+{{ 'section-content-slideshow.css' | asset_url | stylesheet_tag }}
+
 <section class="content-slideshow">
   <div class="content-slideshow__inner">
     <div class="content-slideshow__images-slideshow">
-      <div class="">
+      <div class="content-slideshow__images-slideshow__inner">
         {% for block in section.blocks %}
           <div class="content-slideshow__image">
+            {% assign image_url = block.settings.image %}
+
             <img
+              srcset="
+                {%- if image_url.width >= 165 -%}{{ image_url | image_url: width: 165 }} 165w,{%- endif -%}
+                {%- if image_url.width >= 360 -%}{{ image_url | image_url: width: 360 }} 360w,{%- endif -%}
+                {%- if image_url.width >= 533 -%}{{ image_url | image_url: width: 533 }} 533w,{%- endif -%}
+                {%- if image_url.width >= 720 -%}{{ image_url | image_url: width: 720 }} 720w,{%- endif -%}
+                {%- if image_url.width >= 800 -%}{{ image_url | image_url: width: 800 }} 800w,{%- endif -%}
+                {%- if image_url.width >= 940 -%}{{ image_url | image_url: width: 940 }} 940w,{%- endif -%}
+                {%- if image_url.width >= 1066 -%}{{ image_url | image_url: width: 1066 }} 1066w,{%- endif -%}
+                {{ image_url | image_url }} {{ image_url.width }}w
+              "
+              src="{{ image_url | image_url: width: 533 }}"
+              sizes="(min-width: 700px) 50vw, 90vw"
+              alt="{{ image_url.alt | escape }}"
+              class="responsive-image  motion-reduce"
               loading="lazy"
-              class="block-image"
-              width="500"
-              height="500"
-              src="{{ block.image | image_url }}"
-              alt="{{ block.headline }}"
+              width="{{ image_url.width }}"
+              height="{{ image_url.height }}"
             >
           </div>
         {% endfor %}
@@ -21,11 +36,11 @@
         <div class="content-slideshow__copy">
           <div class="content-slideshow__copy__inner">
             <div>
-              <h2 class="block-headline">{{ block.headline }}</h2>
+              <h2 class="block-headline">{{ block.settings.heading }}</h2>
             </div>
 
             <div class="block-rich-text">
-              {{ block.rich_text | rich_text }}
+              {{ block.settings.body }}
             </div>
           </div>
         </div>
@@ -51,13 +66,13 @@
         },
         {
           "type": "text",
-          "label": "Headline",
-          "id": "headline"
+          "label": "Heading",
+          "id": "heading"
         },
         {
           "type": "richtext",
           "label": "Rich Text",
-          "id": "rich_text"
+          "id": "body"
         }
       ]
     }

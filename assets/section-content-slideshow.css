@@ -1,0 +1,11 @@
+.content-slideshow__image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.content-slideshow__images-slideshow__inner {
+    position: relative;
+    padding-bottom: 100%;
+    overflow: hidden;
+}
