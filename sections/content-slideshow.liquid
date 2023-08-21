@@ -1,0 +1,35 @@
+{% schema %}
+{
+  "name": "Content Slideshow",
+  "settings": [],
+  "blocks": [
+    {
+      "name": "Slide",
+      "type": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "Image",
+          "id": "image"
+        },
+        {
+          "type": "text",
+          "label": "Headline",
+          "id": "headline"
+        },
+        {
+          "type": "richtext",
+          "label": "Rich Text",
+          "id": "rich_text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Content Slideshow",
+      "category": "Sections"
+    }
+  ]
+}
+{% endschema %}
