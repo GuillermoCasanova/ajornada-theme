@@ -4,11 +4,10 @@ class ImageSlideshow extends HTMLElement {
     super();
 
     // Extract attributes and convert them into an object
-    const { autoplay, slidesPerView,  a11y, freeMode, pagination, navigation, loop, disableOn, spaceBetween, centeredSlides, breakpoints} = this.attributes;
+    const { autoplay, slidesPerView,  a11y, freeMode, pagination, navigation, loop, disableOn, spaceBetween, centeredSlides, breakpoints, numberPagination, effect, controlContainer} = this.attributes;
 
 
-    console.log(breakpoints); 
-
+    
     this.mediaQueries = {
       mediumUp: window.matchMedia('(min-width: 700px)'),
       largeUp: window.matchMedia('(min-width: 940px)')
@@ -37,6 +36,7 @@ class ImageSlideshow extends HTMLElement {
         resistance: false,
         loop: loop && loop.value == 'true' || false,
         speed: 200,
+        effect: effect ? effect.value : 'slide',
         navigation: false,
         spaceBetween: spaceBetween ? parseInt(spaceBetween.value) : 20,
         touchReleaseOnEdges: true,
@@ -44,8 +44,22 @@ class ImageSlideshow extends HTMLElement {
         centeredSlides: centeredSlides && centeredSlides.value === "true",
         breakpoints: breakpoints ? convertToObject(breakpoints.value) : false,
         centeredSlidesBounds: centeredSlides && centeredSlides.value === "true",
+        controlContainer: controlContainer ? controlContainer.value : false
     }
 
+
+
+    if(numberPagination) {
+      this.options.pagination = {
+        el: ".swiper-pagination",
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + "0" + (index + 1) + "</span>";
+        }
+      }
+    }
+
+   
     function convertToObject(pStringObject) {
       const inputString = pStringObject;
       const jsonString = inputString.replace(/'/g, '"'); // Replace single quotes with double quotes
@@ -94,6 +108,8 @@ class ImageSlideshow extends HTMLElement {
 
   setUpHtml(pOptions) {
 
+    console.log('html setup'); 
+    
     // Save the original HTML content of children elements
     this.originalChildren = Array.from(this.children).map(child => child.cloneNode(true));
 
@@ -139,13 +155,48 @@ class ImageSlideshow extends HTMLElement {
   }
 
   initSwiper() {
-    if (!this.swiper) {
-      this.setUpHtml(this.options);
-      import('./swiper.module.js').then((Swiper) => {
-        //this.mediaQueries.largeUp.addEventListener("change", this.handleLargeUp.bind(this)); 
-        this.swiper = new Swiper.default(this.querySelector('.swiper-container'), this.options);
-      }); 
+    if (this.swiper) {
+      return Promise.resolve(this.swiper); // Already initialized, resolve with the existing instance
     }
+  
+    return new Promise((resolve, reject) => {
+      import('./swiper.module.js').then((Swiper) => {
+        if (this.attributes.preventLoad && this.attributes.preventLoad.value === 'true') {
+          console.log('loading prevented'); 
+          reject(new Error('Loading is prevented'));
+          return;
+        }
+  
+        if (this.options.controlContainer) {
+          console.log('has control container'); 
+          const controlElement = document.querySelector(this.options.controlContainer);
+          controlElement.setAttribute('preventLoad', 'false');
+          controlElement.initSwiper().then(()=> {
+
+              this.options.controller = {
+                by: 'slide',
+                control: controlElement.getSwiper(),
+              };
+
+              this.setUpHtml(this.options);
+              this.swiper = new Swiper.default(this.querySelector('.swiper-container'), this.options);
+      
+          });
+
+        }else {
+         this.setUpHtml(this.options);
+          this.swiper = new Swiper.default(this.querySelector('.swiper-container'), this.options);
+        }
+          
+        resolve(this.swiper); // Resolve the promise with the initialized swiper instance
+      }).catch(error => {
+        reject(error); // Reject the promise if there was an error during import
+      });
+    });
+  }
+  
+  getSwiper() {
+    return this.swiper; 
   }
 }
 

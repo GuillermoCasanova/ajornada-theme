@@ -4,50 +4,83 @@
   <div class="content-slideshow__inner">
     <div class="content-slideshow__images-slideshow">
       <div class="content-slideshow__images-slideshow__inner">
-        {% for block in section.blocks %}
-          <div class="content-slideshow__image">
-            {% assign image_url = block.settings.image %}
+        <custom-slideshow
+          slidesPerView="auto"
+          pagination="false"
+          spaceBetween="20"
+          centeredSlides="true"
+          freeMode="false"
+          centeredSlidesBounds="true"
+          preventLoad="true"
+          content-slideshow-images
+        >
+          {% for block in section.blocks %}
+            <div class="content-slideshow__image">
+              <div class="content-slideshow__image-inner">
+                <div class="content-slideshow__image-wrapper">
+                  {% assign image_url = block.settings.image %}
+                  {% comment %} <div class="swiper-lazy-preloader"></div> {% endcomment %}
 
-            <img
-              srcset="
-                {%- if image_url.width >= 165 -%}{{ image_url | image_url: width: 165 }} 165w,{%- endif -%}
-                {%- if image_url.width >= 360 -%}{{ image_url | image_url: width: 360 }} 360w,{%- endif -%}
-                {%- if image_url.width >= 533 -%}{{ image_url | image_url: width: 533 }} 533w,{%- endif -%}
-                {%- if image_url.width >= 720 -%}{{ image_url | image_url: width: 720 }} 720w,{%- endif -%}
-                {%- if image_url.width >= 800 -%}{{ image_url | image_url: width: 800 }} 800w,{%- endif -%}
-                {%- if image_url.width >= 940 -%}{{ image_url | image_url: width: 940 }} 940w,{%- endif -%}
-                {%- if image_url.width >= 1066 -%}{{ image_url | image_url: width: 1066 }} 1066w,{%- endif -%}
-                {{ image_url | image_url }} {{ image_url.width }}w
-              "
-              src="{{ image_url | image_url: width: 533 }}"
-              sizes="(min-width: 700px) 50vw, 90vw"
-              alt="{{ image_url.alt | escape }}"
-              class="responsive-image  motion-reduce"
-              loading="lazy"
-              width="{{ image_url.width }}"
-              height="{{ image_url.height }}"
-            >
-          </div>
-        {% endfor %}
+                  <img
+                    srcset="
+                      {%- if image_url.width >= 165 -%}{{ image_url | image_url: width: 165 }} 165w,{%- endif -%}
+                      {%- if image_url.width >= 360 -%}{{ image_url | image_url: width: 360 }} 360w,{%- endif -%}
+                      {%- if image_url.width >= 533 -%}{{ image_url | image_url: width: 533 }} 533w,{%- endif -%}
+                      {%- if image_url.width >= 720 -%}{{ image_url | image_url: width: 720 }} 720w,{%- endif -%}
+                      {%- if image_url.width >= 800 -%}{{ image_url | image_url: width: 800 }} 800w,{%- endif -%}
+                      {%- if image_url.width >= 940 -%}{{ image_url | image_url: width: 940 }} 940w,{%- endif -%}
+                      {%- if image_url.width >= 1066 -%}{{ image_url | image_url: width: 1066 }} 1066w,{%- endif -%}
+                      {{ image_url | image_url }} {{ image_url.width }}w
+                    "
+                    src="{{ image_url | image_url: width: 533 }}"
+                    sizes="(min-width: 700px) 50vw, 90vw"
+                    alt="{{ image_url.alt | escape }}"
+                    class="responsive-image  motion-reduce"
+                    loading="lazy"
+                    width="{{ image_url.width }}"
+                    height="{{ image_url.height }}"
+                  >
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </custom-slideshow>
       </div>
     </div>
     <div class="content-slideshow__copy-slideshow">
-      {% for block in section.blocks %}
-        <div class="content-slideshow__copy">
-          <div class="content-slideshow__copy__inner">
-            <div>
-              <h2 class="block-headline">{{ block.settings.heading }}</h2>
-            </div>
-
-            <div class="block-rich-text">
-              {{ block.settings.body }}
+      <custom-slideshow
+        slidesPerView="1"
+        pagination="true"
+        spaceBetween="20"
+        centeredSlides="true"
+        freeMode="false"
+        centeredSlidesBounds="true"
+        numberPagination="true"
+        effect="fade"
+        controlContainer="[content-slideshow-images]"
+        content-slideshow-copy
+      >
+        {% for block in section.blocks %}
+          <div class="content-slideshow__copy">
+            <div class="content-slideshow__copy__inner">
+              <div class="content-slideshow__copy__header">
+                <h2 class="content-slideshow__copy__heading">
+                  {{ block.settings.heading }}
+                </h2>
+                <p class="content-slideshow__copy__subline">0{{ forloop.index }}</p>
+              </div>
+              <div class="block-rich-text  content-slideshow__copy__body">
+                {{ block.settings.body }}
+              </div>
             </div>
           </div>
-        </div>
-      {% endfor %}
+        {% endfor %}
+      </custom-slideshow>
     </div>
   </div>
 </section>
+
+<script type="module" src="{{ 'custom-slideshow.js' | asset_url }}" defer="defer"></script>
 
 {% schema %}
 {
