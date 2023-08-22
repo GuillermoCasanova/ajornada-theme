@@ -1,7 +1,7 @@
 {{ 'section-content-slideshow.css' | asset_url | stylesheet_tag }}
 
 <section class="content-slideshow">
-  <div class="content-slideshow__inner">
+  <div class="content-slideshow__inner page-width-on-medium-up">
     <div class="content-slideshow__images-slideshow">
       <div class="content-slideshow__images-slideshow__inner">
         <custom-slideshow
@@ -11,9 +11,9 @@
           centeredSlides="true"
           freeMode="false"
           centeredSlidesBounds="true"
-          preventLoad="true"
           content-slideshow-images
           fadeOnLargeUp="true"
+          preventLoad="true"
         >
           {% for block in section.blocks %}
             <div class="content-slideshow__image">
