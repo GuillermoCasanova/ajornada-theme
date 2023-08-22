@@ -39,6 +39,9 @@ class CartOffCanvas extends HTMLElement {
         this.overlay.classList.add('is-visible');
       }
 
+      this.showLatestCart();
+
+
     }
     
     showAddedItemMessage() {
