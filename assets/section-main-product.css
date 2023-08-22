@@ -1293,7 +1293,9 @@ modal-buy-near-me .modal__cover {
   display: none;
 }
 
-modal-buy-near-me .modal__inner {
-  transform: translateY(0) !important;
-  border: 0;
+@media screen and (min-width: 940px) {
+  modal-buy-near-me .modal__inner {
+    transform: translateY(0) !important;
+    border: 0;
+  }
 }

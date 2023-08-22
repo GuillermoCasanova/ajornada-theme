@@ -12,8 +12,6 @@
     align-items: flex-end;
 }
 
-
-
 .modal[aria-hidden="true"] {
     pointer-events: none;
 }

@@ -9,7 +9,7 @@
 
 
 .cart-notification {
-    background-color: rgb(var(--color-background));
+    background-color: rgb(var(--color-base-background-2));
     border-color: rgba(var(--color-foreground), 0.2);
     border-style: solid;
     border-width: 0 0 0.1rem;

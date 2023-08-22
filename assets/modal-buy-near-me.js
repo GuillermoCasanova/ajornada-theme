@@ -2,16 +2,28 @@ class ModalBuyNearMe extends GlobalModal {
     constructor() {
       super();
       this.modal = document.querySelector("#buy-near-me-modal");
+
+            
+      this.mediaQueries = {
+        mediumUp: window.matchMedia('(min-width: 700px)'),
+        largeUp: window.matchMedia('(min-width: 940px)')
+    }
+    
     }
 
     openModal(pEvent) {
       super.openModal(pEvent); 
-      this.scrollToSection(); 
-      this.expandModal(); 
+
+      if(this.mediaQueries.largeUp.matches === true) {
+        this.scrollToSection(); 
+        this.expandModal(); 
+      }
     }
     closeModal(pEvent) {
       super.closeModal(pEvent); 
+      if(this.mediaQueries.largeUp.matches === true) {
       this.collapseModal(); 
+    }
     }
 
     scrollToSection() {

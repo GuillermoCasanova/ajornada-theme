@@ -34,9 +34,12 @@
 \*------------------------------------*/
 
 
+[data-sticky-header] {
+    z-index: 2;
+}
 
 @media only screen and (min-width: 940px) {
-    sticky-header {
+    [data-sticky-header] {
         z-index: 2;
     }
 }
