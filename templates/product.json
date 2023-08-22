@@ -75,9 +75,26 @@
         "enable_sticky_info": false,
         "enable_video_looping": false
       }
+    },
+    "3d95728d-ae23-4b0e-8ca3-268a5188e23b": {
+      "type": "content-slideshow",
+      "blocks": {
+        "96125306-14a4-4032-9a07-157e5111a60d": {
+          "type": "Slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/v82_1102.png"
+          }
+        }
+      },
+      "block_order": [
+        "96125306-14a4-4032-9a07-157e5111a60d"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "3d95728d-ae23-4b0e-8ca3-268a5188e23b"
   ]
 }
