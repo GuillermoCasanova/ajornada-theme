@@ -1,17 +1,15 @@
 {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
-{{ 'component-breadcrumbs.css' | asset_url | stylesheet_tag }}
 
-<div class="collection-header master-padding-top">
-  <div class="collection-header__inner page-width">
-    <div class="collection-header__text-wrapper">
-      <h1 class="collection-header__title  visually-hidden ">
-        <span>{{ 'sections.collection_template.title' | t }}: </span>
-        {{ collection.title | escape }}
-        {{ current_tags[0] }}
-      </h1>
+<section class="collection-header master-padding-top">
+  <div class="page-width">
+    <div class="collection-header__inner">
+      <span class="collection-header__heading"> Products </span>
+      <span class="collection-header__subline">
+        {{ collection.title }}
+      </span>
     </div>
   </div>
-</div>
+</section>
 
 {% schema %}
 {
