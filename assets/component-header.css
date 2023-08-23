@@ -39,9 +39,7 @@
 }
 
 @media only screen and (min-width: 940px) {
-    [data-sticky-header] {
-        z-index: 2;
-    }
+    [data-sticky-header] {}
 }
 
 .header-wrapper {

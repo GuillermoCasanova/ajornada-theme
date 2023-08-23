@@ -272,6 +272,13 @@ class CartOffCanvas extends HTMLElement {
           </div>`;
   
         let cartFooterTemplate = `
+          <div data-cart-notification-totals class="cart-nofication__totals">
+              <h3 class="cart-nofication__totals__subtotal">SubTotal</h3>
+              <p class="cart-nofication__totals__subtotal-value" data-cart-subtotal>
+              ${total}
+              </p>
+          </div>
+        
           <div class="cart-notification__links">
             <form action="${formAction}" method="post" id="cart">
               <button class="button button--secondary  button--large button--full-width" name="checkout" form="cart">
@@ -282,10 +289,10 @@ class CartOffCanvas extends HTMLElement {
         
   
         if(products.length <= 0) {
-          this.cartOrderDetails.innerHTML = orderDetailsTemplate; 
+          //this.cartOrderDetails.innerHTML = orderDetailsTemplate; 
           this.showEmptyCartState();
         } else {
-          this.cartOrderDetails.innerHTML = orderDetailsTemplate; 
+          //this.cartOrderDetails.innerHTML = orderDetailsTemplate; 
           this.productsContainer.innerHTML = productList; 
           this.cartFooter.innerHTML = cartFooterTemplate; 
           this.resetCartState(); 
@@ -402,75 +409,62 @@ class CartOffCanvas extends HTMLElement {
                     </h3>
                    
                       ${variantTemplate(prod_contents)}
-
-                      <p class="cart-notification__product__info__price">
-                         ${pProduct.subtotal}
-                      </p>
-  
-                      <p class="cart-notification__product__info__quantity-select">
-                      <quantity-select data-index="${productIndex}">
+                      <div class="cart-notification__product__info__section">
+                      <p class="cart-notification__product__info__quantity">
                     
-                      <label class="option-name" for="Quantity-${productIndex}"> 
+                      <label class="option-name" for="Quantity-${productIndex}" data-index="${productIndex}"> 
                       
                         <span class="visually-hidden">
                         Quantity
                         </span>
   
-                        <span aria-hidden="true">
+                        <span class="visually-hidden" aria-hidden="true">
                           Qty:
                         </span>
                       </label>
-                      <span class="option-name">
-                      ${prod_contents.itemQty}
-                      </span>
-                      <select  
-                        class="quantity__input"
-                        name="updates[]"
-                        data-quantity-update
-                        value="${prod_contents.itemQty}"
-                        id="Quantity-${productIndex}"  data-index="${productIndex}">
-                          <option value="0" ${prod_contents.itemQty === 0 ? 'selected' : '' }>
-                              0
-                          </option>
-                          <option value="1"  ${prod_contents.itemQty === 1 ? 'selected' : '' }>
-                              1
-                          </option>
-                          <option value="2"  ${prod_contents.itemQty === 2 ? 'selected' : '' }>
-                              2
-                          </option>
-                          <option value="3"  ${prod_contents.itemQty === 3 ? 'selected' : '' }>
-                              3
-                          </option>
-                          <option value="4"  ${prod_contents.itemQty === 4 ? 'selected' : '' }>
-                              4
-                          </option>
-                          <option value="5"  ${prod_contents.itemQty === 5 ? 'selected' : '' }>
-                            5
-                          </option>
-                          <option value="6"  ${prod_contents.itemQty === 6 ? 'selected' : '' }>
-                            6
-                          </option>
-                          <option value="7"  ${prod_contents.itemQty === 7 ? 'selected' : '' }>
-                            7
-                          </option>
-                          <option value="8"  ${prod_contents.itemQty === 8 ? 'selected' : '' }>
-                            8
-                          </option>
-                          <option value="9"  ${prod_contents.itemQty === 9 ? 'selected' : '' }>
-                            9
-                          </option>
-                      </select>
-                </quantity-select>
-            
+                     
+
+                          <quantity-input class="quantity">
+                          <button class="quantity__button no-js-hidden" name="minus" type="button">
+                            <span class="visually-hidden">
+                              {{- 'products.product.quantity.decrease' | t: product: product.title | escape -}}
+                            </span>
+                            -
+                          </button>
+                          <input
+                          data-quantity-update
+                            class="quantity__input"
+                            type="number"
+                            name="quantity"
+                            id="Quantity-{{ section.id }}"
+                            min="1"
+                            form="{{ product_form_id }}"
+                            value="${prod_contents.itemQty}"
+                            id="Quantity-${productIndex}"  data-index="${productIndex}"
+                          >
+                          <button class="quantity__button no-js-hidden" name="plus" type="button">
+                            <span class="visually-hidden">
+                              {{- 'products.product.quantity.increase' | t: product: product.title | escape -}}
+                            </span>
+                            +
+                          </button>
+                        </quantity-input>
                       </p>
+
+                      <p class="cart-notification__product__info__price">
+                         ${pProduct.subtotal}
+                      </p>
+                      </div>
+                    
                   </div>
   
                   <div class="cart-notification__remove-btn"> 
                     <cart-remove-button id="Remove-${productIndex}" data-index="${productIndex}">
                       <a href="${pProduct.url}" class="button button--tertiary">
                       
-                        Remove
-  
+                          <svg class="icon">
+                              <use href="#icon-close">
+                            </svg>
                         <span class="visually-hidden">
                         ${prod_contents.name}
                         ${variantTemplate(prod_contents)}
