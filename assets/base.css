@@ -550,11 +550,27 @@ main {
 
 @media screen and (min-width: 940px) {
   .page-width {
-    padding-left: var(--level8);
-    padding-right: var(--level8);
-    max-width: 115rem;
+    padding-left: var(--level10);
+    padding-right: var(--level10);
+    max-width: 90rem;
   }
 }
+
+@media screen and (min-width: 1300px) {
+  .page-width {
+    max-width: 98rem;
+  }
+}
+
+
+
+@media screen and (min-width: 1700px) {
+  .page-width {
+    max-width: 120rem;
+  }
+}
+
+
 
 
 
@@ -568,6 +584,8 @@ main {
     margin-right: auto;
   }
 }
+
+
 
 
 
@@ -626,7 +644,7 @@ deferred-media {
 }
 
 .media--portrait {
-  padding-bottom: 130%;
+  padding-bottom: 140%;
 }
 
 .media--landscape {

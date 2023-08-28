@@ -76,7 +76,7 @@
       data-section-id="{{ section.id }}"
     >
       <div class="product-grid-container" id="ProductGridContainer">
-        <div class="collection{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}">
+        <div class="collection page-width">
           <div class="loading-overlay gradient">
             <div class="lds-ring">
               <div></div>
@@ -88,7 +88,7 @@
 
           <ul
             data-id="{{ section.id }}"
-            class="                grid product-grid"
+            class="grid product-grid"
           >
             {% paginate collection.products by 8 %}
               {%- for product in collection.products -%}

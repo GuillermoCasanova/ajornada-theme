@@ -45,7 +45,7 @@
 }
 
 @media screen and (max-width: 749px) {
-  .collection .grid__item:only-child {
+  .product-grid .grid__item:only-child {
     flex: 0 0 100%;
     max-width: 100%;
   }

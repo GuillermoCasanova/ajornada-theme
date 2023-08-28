@@ -1,0 +1,16 @@
+/*------------------------------------*\
+    #Dynamic Collection Template
+\*------------------------------------*/
+
+.dynamic-product-grid {
+    display: grid;
+}
+
+/* .dynamic-product-grid__product {
+    width: 33.33%
+}
+
+.dynamic-product-grid__video,
+.dynamic-product-grid__image {
+    width: 66.66%;
+} */
