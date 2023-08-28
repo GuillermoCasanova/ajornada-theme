@@ -1,16 +1,78 @@
 {
-    "sections": {
-        "banner": {
-            "type": "main-collection-banner",
-            "settings": {}
-        },
-        "product-grid": {
-            "type": "dynamic-collection-grid",
-            "settings": {}
-        }
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+      }
     },
-    "order": [
-        "banner",
-        "product-grid"
-    ]
+    "product-grid": {
+      "type": "dynamic-collection-grid",
+      "blocks": {
+        "896aa8b4-6729-4de7-bb2d-317038749d9c": {
+          "type": "product",
+          "settings": {
+            "product": "copy-of-lorem-bottle"
+          }
+        },
+        "3f6d558e-ce47-418d-ac63-68dc9b1db25c": {
+          "type": "product",
+          "settings": {
+            "product": "copy-of-copy-of-copy-of-lorem-bottle-110"
+          }
+        },
+        "27850d43-2a24-4657-9aac-0ac7919a72d5": {
+          "type": "product",
+          "settings": {
+            "product": "lorem-shirt"
+          }
+        },
+        "40783a2a-f62e-4e40-ad8a-dcf05d433ce9": {
+          "type": "image",
+          "settings": {
+            "image_with_text_image": "shopify:\/\/shop_images\/v82_1105.png"
+          }
+        },
+        "0be45de7-d393-4376-9fd8-efdbee7d2cb1": {
+          "type": "product",
+          "settings": {
+            "product": "lorem-shirt"
+          }
+        },
+        "ef311fbf-dca0-42c4-bc04-b71891c3b3af": {
+          "type": "product",
+          "settings": {
+            "product": "copy-of-lorem-bottle"
+          }
+        },
+        "20e40805-f50e-483c-8850-8fc149e546f4": {
+          "type": "product",
+          "settings": {
+            "product": "copy-of-lorem-bottle-101"
+          }
+        },
+        "17a49410-1463-4f05-9f30-ae49c3d68d45": {
+          "type": "video_embed",
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/ajornada-desktop-compressed.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "896aa8b4-6729-4de7-bb2d-317038749d9c",
+        "3f6d558e-ce47-418d-ac63-68dc9b1db25c",
+        "27850d43-2a24-4657-9aac-0ac7919a72d5",
+        "40783a2a-f62e-4e40-ad8a-dcf05d433ce9",
+        "0be45de7-d393-4376-9fd8-efdbee7d2cb1",
+        "ef311fbf-dca0-42c4-bc04-b71891c3b3af",
+        "20e40805-f50e-483c-8850-8fc149e546f4",
+        "17a49410-1463-4f05-9f30-ae49c3d68d45"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid"
+  ]
 }
