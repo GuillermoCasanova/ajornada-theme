@@ -14,3 +14,32 @@
 .dynamic-product-grid__image {
     width: 66.66%;
 } */
+
+
+.image-card {
+    margin-bottom: calc(var(--level9) + var(--level9));
+}
+
+
+.image-card .media {
+    border-radius: 20px;
+}
+
+.image-card__inner {
+    width: 100%;
+}
+
+.image-card .media {
+    position: relative;
+    padding-bottom: 100%;
+}
+
+@media screen and (min-width: 700px) {
+    .image-card .media {
+        padding-bottom: 50%;
+    }
+}
+
+.image-card--portrait .media {
+    padding-bottom: 140%;
+}
