@@ -5,7 +5,7 @@
             "settings": {}
         },
         "product-grid": {
-            "type": "collection-dynamic-product-grid",
+            "type": "dynamic-collection-grid",
             "settings": {}
         }
     },
