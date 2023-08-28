@@ -1,7 +1,6 @@
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'component-product-card.css' | asset_url | stylesheet_tag }}
-<link rel="stylesheet" href="{{ 'quick-add.css' | asset_url }}" media="print" onload="this.media='all'">
 
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 
@@ -138,7 +137,7 @@
 
 <script src="{{ 'lodash.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'collection-grid.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
+{% comment %} <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script> {% endcomment %}
 
 {% schema %}
 {

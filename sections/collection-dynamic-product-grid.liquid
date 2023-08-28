@@ -1,0 +1,54 @@
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-product-card.css' | asset_url | stylesheet_tag }}
+
+<!-- Loop through and display blocks -->
+<section class="collection-dynamic-product-grid">
+  <div class="collection-dynamic-product-grid__inner">
+    <div class="block-section">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'product' %}
+            <div class="product-block">
+              <!-- Display product block content -->
+            </div>
+          {% when 'video_embed' %}
+            <div class="video-embed-block">
+              <!-- Display video embed block content -->
+            </div>
+          {% when 'image' %}
+            <div class="image-block">
+              <!-- Display image block content -->
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection Dynamic Product Grid",
+  "settings": [],
+  "blocks": [
+    {
+      "name": "Product",
+      "type": "product",
+      "settings": [],
+      "fields": []
+    },
+    {
+      "name": "Video Embed",
+      "type": "video_embed",
+      "settings": [],
+      "fields": []
+    },
+    {
+      "name": "Image",
+      "type": "image",
+      "settings": [],
+      "fields": []
+    }
+  ]
+}
+{% endschema %}
