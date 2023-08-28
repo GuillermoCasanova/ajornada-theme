@@ -12,7 +12,7 @@
             <div class="product-block">
               {% render 'product-card',
                 heading_level: 'h3',
-                card_product: product,
+                card_product: block.settings.product,
                 section_id: section.id,
                 product_collection: collection
               %}
@@ -83,7 +83,7 @@
       "settings": [
         {
           "type": "image_picker",
-          "id": "image_with_text_image",
+          "id": "image",
           "label": "Image or GIF"
         }
       ]
