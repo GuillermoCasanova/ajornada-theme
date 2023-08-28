@@ -4,14 +4,15 @@
 {{ 'component-product-card.css' | asset_url | stylesheet_tag }}
 
 <!-- Loop through and display blocks -->
+
 <section class="dynamic-collection-grid">
   <div class="dynamic-collection-grid-grid__inner">
     <div class="product-grid-container page-width">
-      <ul class="block-section  grid product-grid dynamic-product-grid">
+      <ul class="block-section  grid dynamic-product-grid">
         {% for block in section.blocks %}
           {% case block.type %}
             {% when 'product' %}
-              <li class="grid__item dynamic-product-grid__product">
+              <li class=" dynamic-product-grid__product">
                 {% render 'product-card',
                   heading_level: 'h3',
                   card_product: block.settings.product,
@@ -20,12 +21,19 @@
                 %}
               </li>
             {% when 'video_embed' %}
-              <li class="grid__item  dynamic-product-grid__video">
-                {{ block.settings.video.video_source.url }}
-                <div class="video-card"><video src="{{ block.settings.video.video_source.url }}"></video></div>
+              <li class="  dynamic-product-grid__video">
+                <div class="video-card">
+                  <div class="video-card__inner">
+                    {% if block.settings.autoplay == 'true' %}
+                      {{ block.settings.video | video_tag: autoplay: true, loop: true, muted: true, controls: false }}
+                    {% else %}
+                      {{ block.settings.video | video_tag: muted: true }}
+                    {% endif %}
+                  </div>
+                </div>
               </li>
             {% when 'image' %}
-              <li class="grid_item  dynamic-product-grid__image">
+              <li class="dynamic-product-grid__image">
                 <div class="image-card {% if block.settings.art_direction == 'portrait' %} image-card--portrait{% endif %}">
                   <div class="image-card__inner">
                     <div class="media">
@@ -83,6 +91,22 @@
           "type": "video",
           "id": "video",
           "label": "A Shopify-hosted video"
+        },
+        {
+          "type": "radio",
+          "id": "autoplay",
+          "label": "Autoplay",
+          "options": [
+            {
+              "value": "false",
+              "label": "Off"
+            },
+            {
+              "value": "true",
+              "label": "On"
+            }
+          ],
+          "default": "true"
         }
       ]
     },
