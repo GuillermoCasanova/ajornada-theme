@@ -18,11 +18,6 @@
           "settings": {
           }
         },
-        "2dfa20b7-9a1e-469a-bb82-687c339f60e4": {
-          "type": "flavor_profile",
-          "settings": {
-          }
-        },
         "description": {
           "type": "description",
           "settings": {
@@ -50,7 +45,6 @@
         "title",
         "c6eaf4ed-a42d-44fa-a5f0-c1424c20c12a",
         "price",
-        "2dfa20b7-9a1e-469a-bb82-687c339f60e4",
         "description",
         "variant_picker",
         "quantity_selector",
