@@ -63,7 +63,7 @@ class instagramFeed extends HTMLElement {
         } 
 
         script.onload = () => {
-            fetch('https://ig.instant-tokens.com/users/88352ce5-9a6e-4f98-9171-c08b585aa65c/instagram/17841406217784312/token?userSecret=mdowgpka9xcke3cngny8')
+            fetch('https://ig.instant-tokens.com/users/a03f4aaa-7012-41e7-a105-227723134e45/instagram/6356665524442787/token?userSecret=j5urnamfttl8spsdxxit6b')
             .then(resp => resp.json())
             .then(data => {
                 feedOptions.accessToken = data.Token;
