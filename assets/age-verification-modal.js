@@ -27,6 +27,7 @@ class AgeVerificationModal extends HTMLElement {
     }
     closeModal() {
       this.modal.classList.add('is-hidden');
+      localStorage.setItem("ageVerified", "true");
       setTimeout(() => {
         this.body.style.overflow = 'visible';
       }, 200);
