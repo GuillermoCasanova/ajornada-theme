@@ -1,7 +1,7 @@
 function getFocusableElements(container) {
   return Array.from(
     container.querySelectorAll(
-      "summary, a[href], button:enabled, [role='button'], [tabindex]:not([tabindex^='-']), [draggable], area, input:not([type=hidden]):enabled, select:enabled, textarea:enabled, object, iframe"
+      "button, summary, a[href], button:enabled, [role='button'], [tabindex]:not([tabindex^='-']), [draggable], area, input:not([type=hidden]):enabled, select:enabled, textarea:enabled, object, iframe"
     )
   );
 }
@@ -25,12 +25,16 @@ document.querySelectorAll('[id^="Details-"] summary').forEach((summary) => {
 const trapFocusHandlers = {};
 
 function trapFocus(container, elementToFocus = container) {
-  
+
   var elements = getFocusableElements(container);
   var first = elements[0];
   var last = elements[elements.length - 1];
 
-  removeTrapFocus();
+  console.log(elements);
+  console.log(first);
+  console.log(last); 
+
+  //removeTrapFocus();
 
   trapFocusHandlers.focusin = (event) => {
     if (
@@ -69,6 +73,8 @@ function trapFocus(container, elementToFocus = container) {
   document.addEventListener('focusout', trapFocusHandlers.focusout);
   document.addEventListener('focusin', trapFocusHandlers.focusin);
 
+  elementToFocus = first;
+  console.log(elementToFocus); 
   elementToFocus.focus();
 }
 
