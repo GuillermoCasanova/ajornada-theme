@@ -1,112 +1,105 @@
 {
-    "sections": {
-        "main": {
-            "type": "main-product",
-            "blocks": {
-                "title": {
-                    "type": "title",
-                    "settings": {}
-                },
-                "c6eaf4ed-a42d-44fa-a5f0-c1424c20c12a": {
-                    "type": "product_type",
-                    "settings": {}
-                },
-                "price": {
-                    "type": "price",
-                    "settings": {}
-                },
-                "2dfa20b7-9a1e-469a-bb82-687c339f60e4": {
-                    "type": "flavor_profile",
-                    "settings": {}
-                },
-                "description": {
-                    "type": "description",
-                    "settings": {}
-                },
-                "collapsible-row-0": {
-                    "type": "collapsible_tab",
-                    "settings": {
-                        "heading": "Legal",
-                        "content": "<p>sdsdsdsd<\/p>",
-                        "page": ""
-                    }
-                },
-                "variant_picker": {
-                    "type": "variant_picker",
-                    "settings": {
-                        "picker_type": "button"
-                    }
-                },
-                "quantity_selector": {
-                    "type": "quantity_selector",
-                    "settings": {}
-                },
-                "buy_buttons": {
-                    "type": "buy_buttons",
-                    "settings": {
-                        "show_dynamic_checkout": true
-                    }
-                },
-                "4a4006c8-0436-4eae-ac13-f3f73fc097c4": {
-                    "type": "buy_near_me",
-                    "settings": {}
-                }
-            },
-            "block_order": [
-                "title",
-                "c6eaf4ed-a42d-44fa-a5f0-c1424c20c12a",
-                "price",
-                "2dfa20b7-9a1e-469a-bb82-687c339f60e4",
-                "description",
-                "collapsible-row-0",
-                "variant_picker",
-                "quantity_selector",
-                "buy_buttons",
-                "4a4006c8-0436-4eae-ac13-f3f73fc097c4"
-            ],
-            "settings": {
-                "enable_sticky_info": false,
-                "enable_video_looping": false
-            }
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+          }
         },
-        "3d95728d-ae23-4b0e-8ca3-268a5188e23b": {
-            "type": "content-slideshow",
-            "blocks": {
-                "96125306-14a4-4032-9a07-157e5111a60d": {
-                    "type": "Slide",
-                    "settings": {
-                        "image": "shopify:\/\/shop_images\/v82_1102.png",
-                        "heading": "Lorem Ipsum Example",
-                        "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum aute irure dolor.<\/p>"
-                    }
-                },
-                "332146d8-89e1-49bf-a5cd-345ec71b3d80": {
-                    "type": "Slide",
-                    "settings": {
-                        "image": "shopify:\/\/shop_images\/v82_1079.png",
-                        "heading": "Lorem Ipsum",
-                        "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum aute irure dolor.<\/p>"
-                    }
-                },
-                "a36ae783-a801-4e9e-b077-e54a13c7164e": {
-                    "type": "Slide",
-                    "settings": {
-                        "image": "shopify:\/\/shop_images\/v82_1105.png",
-                        "heading": "Lorem Ipsum Headline 3",
-                        "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum aute irure dolor.<\/p>"
-                    }
-                }
-            },
-            "block_order": [
-                "96125306-14a4-4032-9a07-157e5111a60d",
-                "332146d8-89e1-49bf-a5cd-345ec71b3d80",
-                "a36ae783-a801-4e9e-b077-e54a13c7164e"
-            ],
-            "settings": {}
+        "c6eaf4ed-a42d-44fa-a5f0-c1424c20c12a": {
+          "type": "product_type",
+          "settings": {
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "2dfa20b7-9a1e-469a-bb82-687c339f60e4": {
+          "type": "flavor_profile",
+          "settings": {
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true
+          }
         }
+      },
+      "block_order": [
+        "title",
+        "c6eaf4ed-a42d-44fa-a5f0-c1424c20c12a",
+        "price",
+        "2dfa20b7-9a1e-469a-bb82-687c339f60e4",
+        "description",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons"
+      ],
+      "settings": {
+        "enable_sticky_info": false,
+        "enable_video_looping": false
+      }
     },
-    "order": [
-        "main",
-        "3d95728d-ae23-4b0e-8ca3-268a5188e23b"
-    ]
+    "3d95728d-ae23-4b0e-8ca3-268a5188e23b": {
+      "type": "content-slideshow",
+      "blocks": {
+        "96125306-14a4-4032-9a07-157e5111a60d": {
+          "type": "Slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/v82_1102.png",
+            "heading": "Lorem Ipsum Example",
+            "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum aute irure dolor.<\/p>"
+          }
+        },
+        "332146d8-89e1-49bf-a5cd-345ec71b3d80": {
+          "type": "Slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/v82_1079.png",
+            "heading": "Lorem Ipsum",
+            "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum aute irure dolor.<\/p>"
+          }
+        },
+        "a36ae783-a801-4e9e-b077-e54a13c7164e": {
+          "type": "Slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/v82_1105.png",
+            "heading": "Lorem Ipsum Headline 3",
+            "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum aute irure dolor.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "96125306-14a4-4032-9a07-157e5111a60d",
+        "332146d8-89e1-49bf-a5cd-345ec71b3d80",
+        "a36ae783-a801-4e9e-b077-e54a13c7164e"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "3d95728d-ae23-4b0e-8ca3-268a5188e23b"
+  ]
 }
