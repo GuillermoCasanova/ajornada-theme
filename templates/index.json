@@ -130,11 +130,10 @@
         "043d4e27-5e13-46c4-91e1-48977eee1b2b",
         "e7b8f891-f0e0-4772-a2c4-cc4e9624ebd8"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
     "2bb814ef-d55a-470e-bc5c-8bf06b1dfe81": {
-      "type": "recipes-feastured",
+      "type": "recipes-featured",
       "blocks": {
         "690aeb7b-d9cc-42c3-8aa4-d736de3a7d75": {
           "type": "recipe_card",

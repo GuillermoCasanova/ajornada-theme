@@ -1,3 +1,7 @@
+/*------------------------------------*\
+    #Recipe Post 
+\*------------------------------------*/
+
 @media screen and (min-width: 940px) {
     .recipe-header {
         display: flex;
@@ -72,8 +76,6 @@
     }
 }
 
-
-
 .recipe-header__subline:after {
     content: " ";
     position: absolute;
@@ -109,6 +111,10 @@
     }
 }
 
+
+
+
+
 .recipe-images {
     position: relative;
     margin-bottom: var(--level10);
@@ -123,7 +129,13 @@
     }
 }
 
-.recipe-images img {
+.recipes-images__image {
+    position: relative;
+    padding-bottom: 150%;
+    margin-bottom: var(--level10);
+}
+
+.recipes-images__image img {
     position: absolute;
     border-radius: 40px;
     object-fit: cover;
@@ -131,10 +143,7 @@
     width: 100%;
 }
 
-.recipe-images__inner {
-    position: relative;
-    padding-bottom: 150%;
-}
+
 
 .recipe-information {
     position: fixed;
@@ -166,6 +175,7 @@
         width: 98%;
         max-width: 36rem;
         margin-bottom: calc(var(--level10) + var(--level10));
+        z-index: 0;
     }
 }
 

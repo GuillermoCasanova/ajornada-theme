@@ -12,9 +12,11 @@
     </div>
     <div class="recipe-body">
       <div class="recipe-images">
-        <div class="recipe-images__inner">
-          {{ article.content }}
-        </div>
+        <scroll-opacity-images>
+          <div class="recipe-images__inner">
+            {{ article.content }}
+          </div>
+        </scroll-opacity-images>
       </div>
       <div class="recipe-information">
         <div class="recipe-information__inner">
@@ -72,6 +74,52 @@
 
   // Define the custom element's tag name
   customElements.define('recipe-information-toggle', RecipeInformationToggle);
+
+  class ScrollOpacityImages extends HTMLElement {
+    constructor() {
+      super();
+      this.images = this.querySelectorAll('img');
+    }
+    connectedCallback() {
+      this.setUpDOM();
+      window.addEventListener('scroll', () => this.handleScroll());
+    }
+
+    setUpDOM() {
+      function wrap(el, wrapper) {
+        el.parentNode.insertBefore(wrapper, el);
+        wrapper.appendChild(el);
+      }
+
+      this.images.forEach((image, index) => {
+        const wrapper = document.createElement('div');
+        wrapper.classList.add('recipes-images__image');
+        wrap(image, wrapper);
+      });
+    }
+    handleScroll() {
+      const windowHeight = window.innerHeight;
+      const containerRect = this.getBoundingClientRect();
+
+      this.images.forEach((image, index) => {
+        const imageRect = image.getBoundingClientRect();
+
+        // Calculate the distance from the top of the container to the top of the image
+        const distanceFromTop = imageRect.top - containerRect.top;
+
+        // Calculate the opacity based on the distance from the top
+        const opacity = 1 - distanceFromTop / windowHeight;
+
+        // Ensure opacity is within the range [0, 1]
+        const clampedOpacity = Math.max(0, Math.min(1, opacity));
+
+        // Apply the opacity to the image
+        image.style.opacity = clampedOpacity;
+      });
+    }
+  }
+
+  customElements.define('scroll-opacity-images', ScrollOpacityImages);
 </script>
 
 {% schema %}

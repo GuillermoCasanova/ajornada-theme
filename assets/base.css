@@ -568,7 +568,7 @@ main {
 
 
 
-@media screen and (min-width: 1700px) {
+@media screen and (min-width: 2000px) {
   .page-width {
     max-width: 120rem;
   }
