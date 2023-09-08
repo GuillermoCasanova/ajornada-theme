@@ -4,7 +4,6 @@ class AgeVerificationModal extends HTMLElement {
       super();
 
       this.ageVerified = localStorage.getItem('ageVerified');
-
       this.submitButtons = this.querySelectorAll('button');
       this.submitButtons.forEach((elem) => {
         elem.addEventListener('click', this.handleSubmit.bind(this));
@@ -25,7 +24,11 @@ class AgeVerificationModal extends HTMLElement {
         trapFocus(this.modal);
       }, 200); 
     }
-    closeModal() {
+    closeModal(pPreventAnimation) {
+      if(pPreventAnimation) {
+          this.modal.style.display = "none"; 
+          return
+      }
       this.modal.classList.add('is-hidden');
       localStorage.setItem("ageVerified", "true");
       setTimeout(() => {
@@ -48,7 +51,10 @@ class AgeVerificationModal extends HTMLElement {
 
     connectedCallback() {
       if (!this.ageVerified) {
-        this.addEventListener('DOMContentLoaded', this.openModal, false);
+        this.modal.style.display = "block"; 
+        this.addEventListener('DOMContentLoaded', this.openModal);
+      } else {
+       this.closeModal(true);
       }
     }
   }
