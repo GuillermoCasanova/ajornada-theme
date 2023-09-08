@@ -1,0 +1,89 @@
+{{ 'section-article-post.css' | asset_url | stylesheet_tag }}
+
+<article class="article-template section--main" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="page-width is-small ">
+    <div class="recipe-header master-padding-top">
+      <div class="recipe-header__inner ">
+        <h1 class="recipe-header__subline">
+          {{ article.title }}
+        </h1>
+        <p class="recipe-header__heading">Recipe</p>
+      </div>
+    </div>
+    <div class="recipe-body">
+      <div class="recipe-images">
+        <div class="recipe-images__inner">
+          {{ article.content }}
+        </div>
+      </div>
+      <div class="recipe-information">
+        <div class="recipe-information__inner">
+          <recipe-information-toggle>
+            <button class="recipe-information__toggle" aria-label="Slide up information panel">
+              <span>Slide Up</span>
+            </button>
+          </recipe-information-toggle>
+
+          <div class="recipe-information__header">
+            <p class="recipe-information__name">{{ article.title }}</p>
+            <p class="recipe-information__description">
+              {{ article.excerpt }}
+            </p>
+          </div>
+          <div class="recipe-information__section">
+            <h2 class="recipe-information__section__heading">Ingredients:</h2>
+            <div class="ingredients-list">
+              {{ article.metafields.recipe_details.ingredients | metafield_tag }}
+            </div>
+          </div>
+          <div class="recipe-information__section">
+            <h2 class="recipe-information__section__heading">Ingredients:</h2>
+            <div class="instructions-list">
+              {{ article.metafields.recipe_details.instructions | metafield_tag }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<script type="module">
+  // Define the custom element
+  class RecipeInformationToggle extends HTMLElement {
+    constructor() {
+      super();
+
+      // Create a button element inside the shadow DOM
+      const button = this.querySelector('button');
+
+      // Attach a click event listener to the button
+      button.addEventListener('click', () => {
+        // Find the parent element with the class ".recipe-information"
+        const recipeInfo = this.closest('.recipe-information');
+
+        // Toggle a CSS class on the parent element
+        if (recipeInfo) {
+          recipeInfo.classList.toggle('is-active');
+        }
+      });
+    }
+  }
+
+  // Define the custom element's tag name
+  customElements.define('recipe-information-toggle', RecipeInformationToggle);
+</script>
+
+{% schema %}
+{
+  "name": "Recipe Post",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "images",
+      "name": "Image Block",
+      "settings": []
+    }
+  ]
+}
+{% endschema %}

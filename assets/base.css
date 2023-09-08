@@ -224,7 +224,7 @@ body {
 /*MEDIUM-UP*/
 @media screen and (min-width: 800px) {
   :root {
-    font-size: 1rem;
+    font-size: .85rem;
   }
 }
 
@@ -495,18 +495,18 @@ h6:empty {
 \*------------------------------------*/
 
 main {
-  margin-top: 4rem;
+  margin-top: 6rem;
 }
 
 @media screen and (min-width: 700px) {
   main {
-    margin-top: 4rem;
+    margin-top: 6rem;
   }
 }
 
 @media screen and (min-width: 940px) {
   main {
-    margin-top: 4.5rem;
+    margin-top: 6.5rem;
   }
 }
 
@@ -560,6 +560,10 @@ main {
   .page-width {
     max-width: 98rem;
   }
+
+  .page-width.is-small {
+    max-width: 90rem;
+  }
 }
 
 
@@ -567,6 +571,10 @@ main {
 @media screen and (min-width: 1700px) {
   .page-width {
     max-width: 120rem;
+  }
+
+  .page-width.is-small {
+    max-width: 90rem;
   }
 }
 
@@ -1197,4 +1205,15 @@ button:hover {
   100% {
     transform: rotate(360deg);
   }
+}
+
+
+.metafield-rich_text_field ul,
+.metafield-rich_text_field li {
+  list-style: disc;
+  margin-left: .75rem;
+}
+
+.metafield-rich_text_field li {
+  margin-bottom: var(--level3);
 }
