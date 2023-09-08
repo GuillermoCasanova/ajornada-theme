@@ -269,6 +269,7 @@
     text-transform: uppercase;
 }
 
+
 .recipe-card__back__heading:after {
     content: ' ';
     height: 2px;

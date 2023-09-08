@@ -1,4 +1,4 @@
-{{ 'section-article-post.css' | asset_url | stylesheet_tag }}
+{{ 'section-recipe-post.css' | asset_url | stylesheet_tag }}
 
 <article class="article-template section--main" itemscope itemtype="http://schema.org/BlogPosting">
   <div class="page-width is-small ">
@@ -32,13 +32,13 @@
           </div>
           <div class="recipe-information__section">
             <h2 class="recipe-information__section__heading">Ingredients:</h2>
-            <div class="ingredients-list">
+            <div class="recipe-information__section__body  ingredients-list">
               {{ article.metafields.recipe_details.ingredients | metafield_tag }}
             </div>
           </div>
           <div class="recipe-information__section">
             <h2 class="recipe-information__section__heading">Ingredients:</h2>
-            <div class="instructions-list">
+            <div class="recipe-information__section__body  instructions-list">
               {{ article.metafields.recipe_details.instructions | metafield_tag }}
             </div>
           </div>
