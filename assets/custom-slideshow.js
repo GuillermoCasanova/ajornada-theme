@@ -5,8 +5,6 @@ class ImageSlideshow extends HTMLElement {
 
     // Extract attributes and convert them into an object
     const { autoplay, slidesPerView,  a11y, freeMode, pagination, navigation, loop, disableOn, spaceBetween, centeredSlides, breakpoints, numberPagination, effect, controlContainer, fadeOnLargeUp} = this.attributes;
-
-
     
     this.mediaQueries = {
       mediumUp: window.matchMedia('(min-width: 700px)'),
@@ -111,12 +109,8 @@ class ImageSlideshow extends HTMLElement {
     this.originalChildren.forEach(child => this.appendChild(child.cloneNode(true)));
   }
 
- 
-
   setUpHtml(pOptions) {
 
-    console.log('html setup'); 
-    
     // Save the original HTML content of children elements
     this.originalChildren = Array.from(this.children).map(child => child.cloneNode(true));
 

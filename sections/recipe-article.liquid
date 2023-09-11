@@ -50,7 +50,8 @@
   </div>
 </article>
 
-<script type="module">
+<!-- Include GSAP 3 from the Shopify CDN -->
+<script defer type="module">
   // Define the custom element
   class RecipeInformationToggle extends HTMLElement {
     constructor() {
@@ -74,7 +75,6 @@
 
   // Define the custom element's tag name
   customElements.define('recipe-information-toggle', RecipeInformationToggle);
-
   class ScrollOpacityImages extends HTMLElement {
     constructor() {
       super();
@@ -82,7 +82,7 @@
     }
     connectedCallback() {
       this.setUpDOM();
-      window.addEventListener('scroll', () => this.handleScroll());
+      this.setUpImagesAnimation();
     }
 
     setUpDOM() {
@@ -92,30 +92,42 @@
       }
 
       this.images.forEach((image, index) => {
+        image.style.webkitFilter = 'blur(10px)';
+        image.style.opacity = 0;
         const wrapper = document.createElement('div');
         wrapper.classList.add('recipes-images__image');
         wrap(image, wrapper);
       });
     }
-    handleScroll() {
-      const windowHeight = window.innerHeight;
-      const containerRect = this.getBoundingClientRect();
+    setUpImagesAnimation() {
+      let container = this;
 
-      this.images.forEach((image, index) => {
-        const imageRect = image.getBoundingClientRect();
+      loadScript('https://cdn.shopify.com/s/files/1/0638/6201/4197/files/gsap.min.js?v=1694471182')
+        .then(() => {
+          loadScript('https://cdn.shopify.com/s/files/1/0638/6201/4197/files/ScrollTrigger.min.js?v=1694471189"').then(
+            () => {
+              gsap.registerPlugin('ScrollTrigger');
 
-        // Calculate the distance from the top of the container to the top of the image
-        const distanceFromTop = imageRect.top - containerRect.top;
-
-        // Calculate the opacity based on the distance from the top
-        const opacity = 1 - distanceFromTop / windowHeight;
-
-        // Ensure opacity is within the range [0, 1]
-        const clampedOpacity = Math.max(0, Math.min(1, opacity));
-
-        // Apply the opacity to the image
-        image.style.opacity = clampedOpacity;
-      });
+              gsap.to(this.querySelectorAll('img'), {
+                webkitFilter: 'blur(0px)',
+                opacity: 1,
+                ease: 'none',
+                stagger: 0.2,
+                scrollTrigger: {
+                  trigger: container,
+                  scrub: true,
+                  reverse: true,
+                  start: '-=92%  top',
+                  end: 'bottom bottom',
+                  toggleActions: 'restart',
+                },
+              });
+            }
+          );
+        })
+        .catch(() => {
+          console.error('Script loading failed! Handle this error');
+        });
     }
   }
 
