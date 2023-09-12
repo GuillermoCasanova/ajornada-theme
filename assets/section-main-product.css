@@ -1111,6 +1111,27 @@ variant-selects {
   margin-bottom: var(--level1);
   display: block;
   margin-right: .25rem;
+  display: flex;
+  text-transform: uppercase;
+  margin-bottom: var(--level2);
+  display: block;
+  margin-right: 0.25rem;
+  width: 100%;
+  font-size: var(--h4);
+  color: rgb(var(--color-base-background-2));
+  font-weight: bold;
+}
+
+.custom-color-picker__current-color__name {
+  display: flex;
+  text-transform: uppercase;
+  margin-bottom: var(--level2);
+  display: block;
+  margin-right: 0.25rem;
+  width: 100%;
+  font-size: var(--h4);
+  color: rgb(var(--color-base-background-2));
+  font-weight: normal;
 }
 
 
@@ -1134,8 +1155,18 @@ variant-selects {
   position: absolute;
   width: 100%;
   height: 100%;
+  display: flex;
+  text-transform: uppercase;
+  margin-bottom: var(--level2);
   display: block;
+  margin-right: .25rem;
+  width: 100%;
+  font-size: var(--h4);
+  color: rgb(var(--color-base-background-2));
+  font-weight: bold;
 }
+
+
 
 .custom-color-picker__color label:hover {
   cursor: pointer;

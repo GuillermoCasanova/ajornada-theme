@@ -106,9 +106,6 @@ class CustomColorPicker extends HTMLElement {
             if(pImageType === 'slide') {
                 imageTemplate = `
                 <li class="slide swiper-slide"  data-product-images-slideshow-slide  data-product-images-modal-open data-id="${index}">
-                <button class="zoom-image-indicator" data-id="{{forloop.index}}" aria-label="Image can be zoomed in" data-product-images-modal-open >
-                    <svg  fill="none" viewBox="0 0 24 25"><title>Zoom In</title><path stroke="#8A8A8A" d="m22.7608 1-6.9776 6.97755M15.3398 2.03809v6.23525h6.2353M.99999 23.8018l6.97755-6.9776M8.4209 22.7637v-6.2353H2.18564"/></svg>
-                </button>
                 <div class="product-images-slideshow__image-container">
                             <img
                             srcset="${processImageSrc(pSource, '155x')} 165w,
