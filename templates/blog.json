@@ -1,5 +1,24 @@
 {
   "sections": {
+    "5c8f955f-ef36-4d0d-ab49-e2f71b13568f": {
+      "type": "blog-header",
+      "blocks": {
+        "template--16783451619573__5c8f955f-ef36-4d0d-ab49-e2f71b13568f-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image banner"
+          }
+        }
+      },
+      "block_order": [
+        "template--16783451619573__5c8f955f-ef36-4d0d-ab49-e2f71b13568f-heading-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/v80_882.png",
+        "video": "",
+        "cta-url": ""
+      }
+    },
     "main": {
       "type": "main-blog",
       "settings": {
@@ -31,6 +50,7 @@
     }
   },
   "order": [
+    "5c8f955f-ef36-4d0d-ab49-e2f71b13568f",
     "main",
     "16944799603a2158b9"
   ]
