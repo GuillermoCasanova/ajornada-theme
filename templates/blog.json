@@ -8,10 +8,17 @@
           "settings": {
             "heading": "Image banner"
           }
+        },
+        "86bf2952-b1dd-481b-bc60-0d2006f0fed1": {
+          "type": "body",
+          "settings": {
+            "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>"
+          }
         }
       },
       "block_order": [
-        "template--16783451619573__5c8f955f-ef36-4d0d-ab49-e2f71b13568f-heading-1"
+        "template--16783451619573__5c8f955f-ef36-4d0d-ab49-e2f71b13568f-heading-1",
+        "86bf2952-b1dd-481b-bc60-0d2006f0fed1"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/v80_882.png",
