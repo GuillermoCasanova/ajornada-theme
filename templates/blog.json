@@ -6,12 +6,19 @@
         "template--16783451619573__5c8f955f-ef36-4d0d-ab49-e2f71b13568f-heading-1": {
           "type": "heading",
           "settings": {
-            "heading": "Image banner"
+            "heading": "Lorem Headline Is This Ipsum"
+          }
+        },
+        "86bf2952-b1dd-481b-bc60-0d2006f0fed1": {
+          "type": "body",
+          "settings": {
+            "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>"
           }
         }
       },
       "block_order": [
-        "template--16783451619573__5c8f955f-ef36-4d0d-ab49-e2f71b13568f-heading-1"
+        "template--16783451619573__5c8f955f-ef36-4d0d-ab49-e2f71b13568f-heading-1",
+        "86bf2952-b1dd-481b-bc60-0d2006f0fed1"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/v80_882.png",
@@ -34,12 +41,6 @@
             "blog": "recipes"
           }
         },
-        "9af56689-43d0-4937-931a-d92ce560a4a1": {
-          "type": "blog",
-          "settings": {
-            "blog": ""
-          }
-        },
         "bef18de7-667d-46b8-a82d-52de466e41af": {
           "type": "blog",
           "settings": {
@@ -50,7 +51,6 @@
       "block_order": [
         "template--16783451619573__16805d2d-658b-4e22-8d79-5290de6f24c8-blog-1",
         "82e0c60d-cf85-4edb-abb6-9dbd3a3688ec",
-        "9af56689-43d0-4937-931a-d92ce560a4a1",
         "bef18de7-667d-46b8-a82d-52de466e41af"
       ],
       "settings": {
