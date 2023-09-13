@@ -51,9 +51,9 @@
       <div class="blog-header__copy__inner">
         {% for block in section.blocks %}
           {% if block.type == 'heading' %}
-            <h1 class="blog-header__copy__heading">
+            <p class="blog-header__copy__heading">
               {{ block.settings.heading }}
-            </h1>
+            </p>
           {% endif %}
           {% if block.type == 'body' %}
             <div class="blog-header__copy__body">

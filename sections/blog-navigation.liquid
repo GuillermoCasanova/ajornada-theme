@@ -1,0 +1,55 @@
+{{ 'component-blog-nav.css' | asset_url | stylesheet_tag }}
+
+<nav class="blog-nav" aria-label="{{ section.settings.name }}">
+  <ul class="blog-nav__inner page-width">
+    {% for block in section.blocks %}
+      {% assign selected_blog = block.settings.blog %}
+      <li class="blog-nav__item">
+        <a class="blog-nav__link" href="{{ selected_blog.url }}" title="View our {{ selected_blog.title }} posts">
+          {{- selected_blog.title -}}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
+
+{% schema %}
+{
+  "name": "Blog Navigation",
+  "tag": "section",
+  "templates": ["blog"],
+  "settings": [
+    {
+      "type": "text",
+      "label": "Name",
+      "id": "name",
+      "default": "Blog Navigation",
+      "info": "Enter the title for the navigation. Also for accesibility purposes."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "blog",
+      "name": "Blog Link",
+      "settings": [
+        {
+          "label": "Select Blog",
+          "id": "blog",
+          "type": "blog",
+          "info": "A blog to display as a link in the navigation."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog Navigation",
+      "blocks": [
+        {
+          "type": "blog"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
