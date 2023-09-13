@@ -67,11 +67,13 @@
 }
 
 .blog-nav__link:hover,
-.blog-nav__link:focus {
+.blog-nav__link:focus,
+.blog-nav__link.is-current {
     color: rgb(var(--color-base-background-2));
 }
 
 .blog-nav__link:hover:after,
-.blog-nav__link:focus:after {
+.blog-nav__link:focus:after,
+.blog-nav__link.is-current:after {
     opacity: 1;
 }

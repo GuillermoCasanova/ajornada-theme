@@ -5,7 +5,11 @@
     {% for block in section.blocks %}
       {% assign selected_blog = block.settings.blog %}
       <li class="blog-nav__item">
-        <a class="blog-nav__link" href="{{ selected_blog.url }}" title="View our {{ selected_blog.title }} posts">
+        <a
+          class="blog-nav__link   {% if blog.handle == selected_blog.handle %} is-current {% endif %}"
+          href="{{ selected_blog.url }}"
+          title="View our {{ selected_blog.title }} posts"
+        >
           {{- selected_blog.title -}}
         </a>
       </li>
