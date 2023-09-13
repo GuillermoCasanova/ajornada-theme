@@ -1,3 +1,5 @@
+{{ 'component-article-card.css' | asset_url | stylesheet_tag }}
+
 <div class="blog-posts-header">
   <div class="blog-posts-header__inner  page-width">
     <h1>
@@ -6,23 +8,19 @@
   </div>
 </div>
 
-<span> Ajornada </span>
-
 {%- paginate blog.articles by 6 -%}
-  <div class="main-blog page-width section-{{ section.id }}-padding">
+  <div class="main-blog page-width  section-{{ section.id }}-padding">
     <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
       {%- for article in blog.articles -%}
-        <div class="blog-articles__article article">
-          {%- render 'article-card',
-            article: article,
-            media_height: section.settings.image_height,
-            media_aspect_ratio: article.image.aspect_ratio,
-            show_image: section.settings.show_image,
-            show_date: section.settings.show_date,
-            show_author: section.settings.show_author,
-            show_excerpt: true
-          -%}
-        </div>
+        {%- render 'article-card',
+          article: article,
+          media_height: section.settings.image_height,
+          media_aspect_ratio: article.image.aspect_ratio,
+          show_image: section.settings.show_image,
+          show_date: section.settings.show_date,
+          show_author: section.settings.show_author,
+          show_excerpt: false
+        -%}
       {%- endfor -%}
     </div>
 
