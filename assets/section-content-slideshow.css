@@ -33,7 +33,7 @@
         padding-right: var(--level8);
         padding-top: calc(var(--level10) + var(--level8));
         padding-bottom: calc(var(--level10) + var(--level8));
-        max-width: 115rem;
+        max-width: var(--max-width-large)
     }
 }
 

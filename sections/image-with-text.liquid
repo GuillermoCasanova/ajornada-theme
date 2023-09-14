@@ -1,43 +1,56 @@
 {{ 'component-image-with-text.css' | asset_url | stylesheet_tag }}
 
-<div class="custom-section">
-  <img src="{{ section.settings.image | image_url: width: 600 }}" alt="Section Image" width="500" loading="lazy">
-
-  <h2>{{ section.settings.headline }}</h2>
-
-  <div class="rich-text">
-    {{ section.settings.richtext | richtext }}
-  </div>
-
-  {% if section.settings.show_symbol %}
-    <!-- Symbol input here -->
-    <p>Show Symbol input is enabled</p>
-  {% else %}
-    <!-- Symbol input is disabled -->
-    <p>Show Symbol input is disabled</p>
-  {% endif %}
-
-  <div class="headline-style">
-    <h3>
-      {% if section.settings.headline_style == 'style_1' %}
-        Style 1 Headline
-      {% else %}
-        Style 2 Headline
+<section
+  class="
+    image-with-text custom-section  {% if section.settings.orientation == 'left_to_right' %}
+    is-left-to-right
+    {% else %}
+    is-right-to-left
+    {% endif %}
+  "
+>
+  <div class="image-with-text__inner page-width">
+    <div class="image-with-text__image">
+      {% if section.settings.show_symbol %}
+        <div class="image-with-text__symbol">
+          <svg>
+            <use href="#illust-flower-default"/>
+          </svg>
+        </div>
       {% endif %}
-    </h3>
-  </div>
+      <div class="image-with-text__image__inner">
+        <img
+          class="responsive-image"
+          src="{{ section.settings.image | image_url: width: 600 }}"
+          alt="Section Image"
+          width="500"
+          height="auto"
+          loading="lazy"
+        >
+      </div>
+    </div>
 
-  <div class="orientation">
-    <h4>Orientation:</h4>
-    <p>
-      {% if section.settings.orientation == 'left_to_right' %}
-        Left to Right
-      {% else %}
-        Right to Left
-      {% endif %}
-    </p>
+    <div class="image-with-text__copy">
+      <div class="image-with-text__copy__inner">
+        <h2
+          class="
+            image-with-text__copy__heading   {% if section.settings.headline_style == 'style_1' %}
+              is-style-1
+            {% else %}
+              is-style-2
+            {% endif %}
+          "
+        >
+          {{ section.settings.headline }}
+        </h2>
+
+        <div class="image-with-text__copy__body">
+          {{ section.settings.richtext }}
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</section>
 
 {% schema %}
 {

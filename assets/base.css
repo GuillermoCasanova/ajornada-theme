@@ -178,6 +178,9 @@ body {
   --level8: 2.5rem;
   --level9: 3rem;
   --level10: 3.5rem;
+  --max-width-small: 90rem;
+  --max-width-medium: 105rem;
+  --max-width-large: 115rem;
 }
 
 
@@ -531,7 +534,7 @@ main {
 
 
 .page-width {
-  max-width: 105rem;
+  max-width: var(--max-width-medium);
   margin: 0 auto;
   padding-left: var(--level3);
   padding-right: var(--level3);
@@ -550,33 +553,27 @@ main {
 
 @media screen and (min-width: 940px) {
   .page-width {
-    padding-left: var(--level10);
-    padding-right: var(--level10);
-    max-width: 90rem;
+    padding-left: var(--level8);
+    padding-right: var(--level8);
+    max-width: var(--max-width-large);
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 @media screen and (min-width: 1300px) {
   .page-width {
-    max-width: 98rem;
+    /* max-width: 98rem; */
+    max-width: var(--max-width-large);
   }
 
   .page-width.is-small {
     max-width: 90rem;
+    max-width: var(--max-width-small);
   }
 }
 
 
-
-@media screen and (min-width: 2000px) {
-  .page-width {
-    max-width: 120rem;
-  }
-
-  .page-width.is-small {
-    max-width: 90rem;
-  }
-}
 
 
 
@@ -587,7 +584,7 @@ main {
   .page-width-on-medium-up {
     padding-left: var(--level8);
     padding-right: var(--level8);
-    max-width: 115rem;
+    max-width: var(--max-width-large);
     margin-left: auto;
     margin-right: auto;
   }
