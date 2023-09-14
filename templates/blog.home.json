@@ -1,96 +1,96 @@
 {
-    "sections": {
-        "5c8f955f-ef36-4d0d-ab49-e2f71b13568f": {
-            "type": "blog-header",
-            "blocks": {
-                "template--16783451619573__5c8f955f-ef36-4d0d-ab49-e2f71b13568f-heading-1": {
-                    "type": "heading",
-                    "settings": {
-                        "heading": "Lorem Headline Is This Ipsum"
-                    }
-                },
-                "86bf2952-b1dd-481b-bc60-0d2006f0fed1": {
-                    "type": "body",
-                    "settings": {
-                        "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>"
-                    }
-                }
-            },
-            "block_order": [
-                "template--16783451619573__5c8f955f-ef36-4d0d-ab49-e2f71b13568f-heading-1",
-                "86bf2952-b1dd-481b-bc60-0d2006f0fed1"
-            ],
-            "settings": {
-                "image": "shopify:\/\/shop_images\/v80_882.png",
-                "video": "",
-                "cta-url": ""
-            }
+  "sections": {
+    "5c8f955f-ef36-4d0d-ab49-e2f71b13568f": {
+      "type": "blog-header",
+      "blocks": {
+        "template--16783451619573__5c8f955f-ef36-4d0d-ab49-e2f71b13568f-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Lorem Headline Is This Ipsum"
+          }
         },
-        "16805d2d-658b-4e22-8d79-5290de6f24c8": {
-            "type": "blog-navigation",
-            "blocks": {
-                "template--16783451619573__16805d2d-658b-4e22-8d79-5290de6f24c8-blog-1": {
-                    "type": "blog",
-                    "settings": {
-                        "blog": "community"
-                    }
-                },
-                "82e0c60d-cf85-4edb-abb6-9dbd3a3688ec": {
-                    "type": "blog",
-                    "settings": {
-                        "blog": "recipes"
-                    }
-                },
-                "bef18de7-667d-46b8-a82d-52de466e41af": {
-                    "type": "blog",
-                    "settings": {
-                        "blog": "news"
-                    }
-                }
-            },
-            "block_order": [
-                "template--16783451619573__16805d2d-658b-4e22-8d79-5290de6f24c8-blog-1",
-                "82e0c60d-cf85-4edb-abb6-9dbd3a3688ec",
-                "bef18de7-667d-46b8-a82d-52de466e41af"
-            ],
-            "settings": {
-                "name": "Blog Navigation"
-            }
-        },
-        "main": {
-            "type": "main-blog",
-            "settings": {
-                "layout": "collage",
-                "show_image": true,
-                "image_height": "medium",
-                "show_date": true,
-                "show_author": false,
-                "padding_top": 36,
-                "padding_bottom": 36
-            }
-        },
-        "16944799603a2158b9": {
-            "type": "apps",
-            "blocks": {
-                "119a1e2f-21f0-4769-89ad-812773ed890a": {
-                    "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/form-embed-block\/2632fe16-c075-4321-a88b-50b567f42507",
-                    "settings": {
-                        "formId": ""
-                    }
-                }
-            },
-            "block_order": [
-                "119a1e2f-21f0-4769-89ad-812773ed890a"
-            ],
-            "settings": {
-                "include_margins": true
-            }
+        "86bf2952-b1dd-481b-bc60-0d2006f0fed1": {
+          "type": "body",
+          "settings": {
+            "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>"
+          }
         }
+      },
+      "block_order": [
+        "template--16783451619573__5c8f955f-ef36-4d0d-ab49-e2f71b13568f-heading-1",
+        "86bf2952-b1dd-481b-bc60-0d2006f0fed1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/v80_882.png",
+        "video": "",
+        "cta-url": ""
+      }
     },
-    "order": [
-        "5c8f955f-ef36-4d0d-ab49-e2f71b13568f",
-        "16805d2d-658b-4e22-8d79-5290de6f24c8",
-        "main",
-        "16944799603a2158b9"
-    ]
+    "16805d2d-658b-4e22-8d79-5290de6f24c8": {
+      "type": "blog-navigation",
+      "blocks": {
+        "template--16783451619573__16805d2d-658b-4e22-8d79-5290de6f24c8-blog-1": {
+          "type": "blog",
+          "settings": {
+            "blog": "community"
+          }
+        },
+        "82e0c60d-cf85-4edb-abb6-9dbd3a3688ec": {
+          "type": "blog",
+          "settings": {
+            "blog": "recipes"
+          }
+        },
+        "bef18de7-667d-46b8-a82d-52de466e41af": {
+          "type": "blog",
+          "settings": {
+            "blog": "news"
+          }
+        }
+      },
+      "block_order": [
+        "template--16783451619573__16805d2d-658b-4e22-8d79-5290de6f24c8-blog-1",
+        "82e0c60d-cf85-4edb-abb6-9dbd3a3688ec",
+        "bef18de7-667d-46b8-a82d-52de466e41af"
+      ],
+      "settings": {
+        "name": "Blog Navigation"
+      }
+    },
+    "main": {
+      "type": "main-blog",
+      "settings": {
+        "layout": "collage",
+        "show_image": true,
+        "image_height": "medium",
+        "show_date": true,
+        "show_author": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "16944799603a2158b9": {
+      "type": "apps",
+      "blocks": {
+        "119a1e2f-21f0-4769-89ad-812773ed890a": {
+          "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/form-embed-block\/2632fe16-c075-4321-a88b-50b567f42507",
+          "settings": {
+            "formId": ""
+          }
+        }
+      },
+      "block_order": [
+        "119a1e2f-21f0-4769-89ad-812773ed890a"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "5c8f955f-ef36-4d0d-ab49-e2f71b13568f",
+    "16805d2d-658b-4e22-8d79-5290de6f24c8",
+    "main",
+    "16944799603a2158b9"
+  ]
 }
