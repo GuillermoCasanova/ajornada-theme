@@ -1,14 +1,6 @@
 {
   "sections": {
     "main": {
-      "type": "main-page",
-      "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28,
-        "hide_body": "false"
-      }
-    },
-    "485f3d7f-a351-4158-912c-0bcfd0afd025": {
       "type": "section-faqs",
       "blocks": {
         "97e89cb5-05ca-478d-853d-cfd51f98b511": {
@@ -60,7 +52,6 @@
     }
   },
   "order": [
-    "main",
-    "485f3d7f-a351-4158-912c-0bcfd0afd025"
+    "main"
   ]
 }
