@@ -93,16 +93,6 @@
 <blog-nav id="navigated">
   <nav class="blog-nav" aria-label="{{ section.settings.name }}">
     <ul class="blog-nav__inner page-width">
-      <li class="blog-nav__item">
-        <a
-          id="{{ selected_blog.handle }}"
-          class="blog-nav__link   {% if blog.handle == selected_blog.handle %} is-current {% endif %}"
-          href="{{ selected_blog.url }}#navigated"
-          title="View our {{ selected_blog.title }} posts"
-        >
-          All
-        </a>
-      </li>
       {% for block in section.blocks %}
         {% assign selected_blog = block.settings.blog %}
         <li class="blog-nav__item">
