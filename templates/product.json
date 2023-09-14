@@ -136,6 +136,18 @@
     },
     "845785f8-fb96-4ded-a27b-d90d31c351db": {
       "type": "recipes-featured",
+      "blocks": {
+        "11246dca-e060-45f2-a722-229ccd5a2a52": {
+          "type": "recipe_card",
+          "settings": {
+            "recipe_preview": "<p>Preview Text for Recipe here<\/p>",
+            "recipe_post": "recipes\/flor-de-jamaica"
+          }
+        }
+      },
+      "block_order": [
+        "11246dca-e060-45f2-a722-229ccd5a2a52"
+      ],
       "settings": {
         "headline": "Recipes",
         "subline": "Ajornada",
