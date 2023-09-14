@@ -7,6 +7,16 @@
     border-bottom: 1px solid black;
 }
 
+@media screen and (min-width: 940px) {
+    .blog-nav {
+        margin-top: -8rem;
+        top: 8rem;
+        position: relative;
+        margin-bottom: 8rem;
+    }
+
+}
+
 .blog-nav__inner {
     display: flex;
     justify-content: space-between;
