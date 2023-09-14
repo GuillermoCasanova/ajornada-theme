@@ -56,7 +56,7 @@
         "subline": "About",
         "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum aute irure dolor.<\/p>",
         "cta_text": "Explore Community & Recipes",
-        "cta_url": "shopify:\/\/pages\/community",
+        "cta_url": "shopify:\/\/blogs\/all",
         "top_border": "no",
         "bottom_border": "yes"
       }
@@ -130,7 +130,8 @@
         "043d4e27-5e13-46c4-91e1-48977eee1b2b",
         "e7b8f891-f0e0-4772-a2c4-cc4e9624ebd8"
       ],
-      "settings": {}
+      "settings": {
+      }
     },
     "2bb814ef-d55a-470e-bc5c-8bf06b1dfe81": {
       "type": "recipes-featured",
