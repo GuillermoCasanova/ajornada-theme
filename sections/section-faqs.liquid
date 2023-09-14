@@ -5,7 +5,7 @@
 <faq-list>
   <section class="faq-section">
     <div class="faq-section__inner page-width">
-      <h2 class="faq-section__heading">{{ section.settings.name }}</h2>
+      <h2 class="faq-section__heading">{{ section.settings.heading }}</h2>
 
       <div class="faq-section__questions-list">
         {% for block in section.blocks %}
@@ -18,8 +18,11 @@
             >
               {{ block.settings.question }}
               <span class="faq-item__icon">
-                <svg>
+                <svg class="open-icon">
                   <use href="#icon-plus-sign"/>
+                </svg>
+                <svg class="close-icon">
+                  <use href="#icon-negative-sign"/>
                 </svg>
               </span>
             </summary>
