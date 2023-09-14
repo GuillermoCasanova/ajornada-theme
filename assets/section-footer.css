@@ -166,7 +166,7 @@
   }
 
   .footer__block__links-list li:nth-child(n+5) {
-    right: -12%;
+    /* right: -12%; */
     position: relative;
     display: block;
   }
