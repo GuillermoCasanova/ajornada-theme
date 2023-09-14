@@ -65,7 +65,37 @@
       }
     },
     "main": {
-      "type": "main-blog-home"
+      "type": "main-blog-home",
+      "blocks": {
+        "25a0cb6a-fdb6-4af0-aef6-d20d20794f05": {
+          "type": "blog",
+          "settings": {
+            "blog": "community"
+          }
+        },
+        "dab777b0-fd69-403b-b143-2c48b3b4e527": {
+          "type": "blog",
+          "settings": {
+            "blog": "recipes"
+          }
+        },
+        "0dbdc3d5-ccef-4e10-85f2-993f076e4008": {
+          "type": "blog",
+          "settings": {
+            "blog": "news"
+          }
+        }
+      },
+      "block_order": [
+        "25a0cb6a-fdb6-4af0-aef6-d20d20794f05",
+        "dab777b0-fd69-403b-b143-2c48b3b4e527",
+        "0dbdc3d5-ccef-4e10-85f2-993f076e4008"
+      ],
+      "settings": {
+        "show_image": true,
+        "show_date": true,
+        "show_author": false
+      }
     },
     "16944799603a2158b9": {
       "type": "apps",
