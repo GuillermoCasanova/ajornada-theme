@@ -111,10 +111,22 @@
       ],
       "settings": {
       }
+    },
+    "3c0fdf85-c0af-4b84-8f17-4c336242cd7d": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Distillary.jpg",
+        "headline": "Lorem Ipsum",
+        "richtext": "<p>Lorem ipsum dolor sit lovers amet, consectetur  fjid adipiscing elit, sed do ffdwz eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, chis quis nostrud the net fje exercitation<\/p>",
+        "show_symbol": true,
+        "headline_style": "style_1",
+        "orientation": "left_to_right"
+      }
     }
   },
   "order": [
     "main",
-    "3d95728d-ae23-4b0e-8ca3-268a5188e23b"
+    "3d95728d-ae23-4b0e-8ca3-268a5188e23b",
+    "3c0fdf85-c0af-4b84-8f17-4c336242cd7d"
   ]
 }
