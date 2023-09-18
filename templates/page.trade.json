@@ -1,10 +1,24 @@
 {
-    "sections": {
-        "main": {
-            "type": "main-trade-page"
+  "sections": {
+    "main": {
+      "type": "main-trade-page",
+      "blocks": {
+        "f3ec8c0b-fa62-4491-a7e8-d0cb8478cbf3": {
+          "type": "trade_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/LALO-Server-Card-V2_2022-10-05-210900_qrot.jpg",
+            "headline": "Server Card"
+          }
         }
-    },
-    "order": [
-        "main"
-    ]
+      },
+      "block_order": [
+        "f3ec8c0b-fa62-4491-a7e8-d0cb8478cbf3"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
 }
