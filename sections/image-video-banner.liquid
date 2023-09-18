@@ -1,7 +1,7 @@
 {{ 'section-image-video-banner.css' | asset_url | stylesheet_tag }}
 
 <image-video-banner id="Banner-{{ section.id }}" class="image-banner">
-  <a href="{{ section.settings.cta-url }}" data-banner-media>
+  <div data-banner-media>
     <div class="image-banner__media">
       {% if section.settings.image != blank %}
         <img
@@ -41,7 +41,7 @@
         </video>
       {% endif %}
     </div>
-  </a>
+  </div>
 </image-video-banner>
 
 <script defer>
@@ -49,6 +49,7 @@
     constructor() {
       super();
       this.initCursorEffect();
+      this.initEvents();
       if (this.querySelector('video')) {
         this.initVideo();
       }
@@ -74,6 +75,29 @@
         }
 
         startVideo(vidSrc);
+      });
+    }
+
+    initEvents() {
+      function smoothScrollToSection(pElementId, pOffsetPixels) {
+        // Find the target section element by its ID
+        const targetSection = document.getElementById(pElementId);
+        // Check if the target section exists
+        if (targetSection) {
+          // Get the final scroll position
+          const scrollPosition = targetSection.offsetTop;
+          // Scroll to the target section with smooth behavior
+          window.scrollTo({
+            top: scrollPosition,
+            behavior: 'smooth',
+          });
+        }
+      }
+
+      this.addEventListener('click', () => {
+        console.log('click');
+        const sectionIdToScroll = 'brand-intro';
+        smoothScrollToSection(sectionIdToScroll);
       });
     }
 
@@ -129,11 +153,6 @@
       "type": "text",
       "id": "video",
       "label": "Background Video"
-    },
-    {
-      "type": "url",
-      "id": "cta-url",
-      "label": "CTA Url"
     }
   ],
   "blocks": [

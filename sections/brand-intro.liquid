@@ -1,6 +1,9 @@
 <link rel="stylesheet" href="{{ 'section-brand-intro.css' | asset_url }}" media="print" onload="this.media='all'">
 
-<section class="brand-intro-section {% if section.settings.top_border == 'yes' %}has-top-border{% endif %} {% if section.settings.bottom_border == 'yes' %}has-bottom-border{% endif %}">
+<section
+  class="brand-intro-section {% if section.settings.top_border == 'yes' %}has-top-border{% endif %} {% if section.settings.bottom_border == 'yes' %}has-bottom-border{% endif %}"
+  id="brand-intro"
+>
   <div class="brand-intro__inner page-width">
     <div class="brand-intro__image">
       <div class="brand-intro__image__inner">
