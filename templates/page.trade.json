@@ -1,10 +1,75 @@
 {
-    "sections": {
-        "main": {
-            "type": "main-trade-page"
+  "sections": {
+    "83fcff43-f969-4100-ac6c-b004a32e977f": {
+      "type": "blog-header",
+      "blocks": {
+        "template--16809139732725__83fcff43-f969-4100-ac6c-b004a32e977f-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "About this blog"
+          }
+        },
+        "86bb5c2e-937f-441c-acb7-171a156d97ed": {
+          "type": "body",
+          "settings": {
+            "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <\/p>"
+          }
         }
+      },
+      "block_order": [
+        "template--16809139732725__83fcff43-f969-4100-ac6c-b004a32e977f-heading-1",
+        "86bb5c2e-937f-441c-acb7-171a156d97ed"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/v80_882.png",
+        "video": "",
+        "cta-url": ""
+      }
     },
-    "order": [
-        "main"
-    ]
+    "main": {
+      "type": "main-trade-page",
+      "blocks": {
+        "f3ec8c0b-fa62-4491-a7e8-d0cb8478cbf3": {
+          "type": "trade_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/LALO-Server-Card-V2_2022-10-05-210900_qrot.jpg",
+            "headline": "Server Card"
+          }
+        },
+        "54518637-9e32-46c0-88f5-9d4806d93691": {
+          "type": "trade_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/LALO-Shelf-Talkers-V1_2022-10-05-220316_iywl.png",
+            "headline": "Shelf Talkers"
+          }
+        },
+        "229adf53-92d1-4d6a-a9f9-92aea2d4c269": {
+          "type": "trade_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Ajornada-Logo_1.png",
+            "headline": "Ajornada logo Black"
+          }
+        },
+        "1416c966-b968-4a43-ab87-7126a12da846": {
+          "type": "trade_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/v82_1104.png",
+            "headline": "Product Photography"
+          }
+        }
+      },
+      "block_order": [
+        "f3ec8c0b-fa62-4491-a7e8-d0cb8478cbf3",
+        "54518637-9e32-46c0-88f5-9d4806d93691",
+        "229adf53-92d1-4d6a-a9f9-92aea2d4c269",
+        "1416c966-b968-4a43-ab87-7126a12da846"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "83fcff43-f969-4100-ac6c-b004a32e977f",
+    "main"
+  ]
 }
