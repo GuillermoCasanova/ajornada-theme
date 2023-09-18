@@ -121,6 +121,8 @@
         "a36ae783-a801-4e9e-b077-e54a13c7164e"
       ],
       "settings": {
+        "top_border": "no",
+        "bottom_border": "no"
       }
     },
     "a1ec1272-815b-43bc-9e6f-e6f679902ead": {
