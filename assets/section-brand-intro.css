@@ -7,7 +7,14 @@
     padding-top: 0;
     padding-bottom: 0;
     background-color: rgb(var(--color-base-background-1));
+}
+
+.brand-intro-section.has-top-border {
     border-top: 2px solid black;
+}
+
+.brand-intro-section.has-bottom-border {
+    border-bottom: 2px solid black;
 }
 
 .brand-intro__inner {

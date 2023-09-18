@@ -1097,3 +1097,42 @@ function loadScript(scriptUrl) {
     }
   });
 }
+
+
+// Setsup custom green dot cursor across all links with "green-dot-hover prop"
+
+function initGreenDotEffect() {
+  function setCursorToSVG(elementId, svgCode, pContainer) {
+    const element = pContainer;
+    if (element) {
+      element.style.cursor = `url("data:image/svg+xml,${encodeURIComponent(svgCode)}"), auto`;
+    } else {
+      console.error(`Element with ID '${elementId}' not found.`);
+    }
+  }
+
+  // SVG code for the cursor
+  const customCursorSVG = `
+  <svg width="14" height="14" xmlns="http://www.w3.org/2000/svg">
+	      <circle  fill="#5E7461"  cx="7" cy="7" r="7"/>
+    </svg>
+      `;
+
+  // Add event listener to the target elements
+  const targetElements = document.querySelectorAll('[data-green-dot-cursor], .swiper-pagination-bullet');
+  
+  if (targetElements) {
+    targetElements.forEach((elem)=> {
+      elem.addEventListener('mouseenter', function(){
+        setCursorToSVG('targetElement', customCursorSVG, this);
+      });
+      elem.addEventListener('mouseleave', function()  {
+        this.style.cursor = 'auto';
+      });
+    });
+  } else {
+    console.error('Target element not found.');
+  }
+}
+
+initGreenDotEffect()

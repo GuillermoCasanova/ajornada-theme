@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="{{ 'section-recipes-featured.css' | asset_url }}" media="print" onload="this.media='all'">
 
-<section class="recipes-featured-section">
+<section class="recipes-featured-section {% if section.settings.top_border == 'yes' %}has-top-border{% endif %} {% if section.settings.bottom_border == 'yes' %}has-bottom-border{% endif %}">
   <div class="recipes-featured__inner">
     <div class="page-width">
       <div class="recipes-featured__header">
@@ -134,6 +134,7 @@
           href="{{ section.settings.cta_url }}"
           aria-label="View all recipes from Ajornada"
           title="View all Ajornada recipes"
+          data-green-dot-cursor
         >
           Explore Recipes
         </a>

@@ -1,98 +1,108 @@
 <link rel="stylesheet" href="{{ 'section-brand-intro.css' | asset_url }}" media="print" onload="this.media='all'">
 
-<section class="brand-intro-section">
-    <div class="brand-intro__inner page-width">
-
-            <div class="brand-intro__image">
-                 <div class="brand-intro__image__inner">
-                        <div class="brand-intro__image-wrapper">
-                        {%if section.settings.image != blank %}
-                        <img
-                            srcset="{%- if section.settings.image.width >= 165 -%}{{ section.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
-                            {%- if section.settings.image.width >= 360 -%}{{ section.settings.image | image_url: width: 360 }} 360w,{%- endif -%}
-                            {%- if section.settings.image.width >= 533 -%}{{ section.settings.image | image_url: width: 533 }} 533w,{%- endif -%}
-                            {%- if section.settings.image.width >= 720 -%}{{ section.settings.image | image_url: width: 720 }} 720w,{%- endif -%}
-                            {%- if section.settings.image.width >= 800 -%}{{ section.settings.image | image_url: width: 800 }} 800w,{%- endif -%}
-                            {%- if section.settings.image.width >= 940 -%}{{ section.settings.image | image_url: width: 940 }} 940w,{%- endif -%}
-                            {%- if section.settings.image.width >= 1066 -%}{{ section.settings.image | image_url: width: 1066 }} 1066w,{%- endif -%}
-                            {{ section.settings.image | image_url }} {{ section.settings.image.width }}w"
-                            src="{{ section.settings.image | image_url: width: 533 }}"
-                            sizes="(min-width: 700px) 50vw, 90vw"
-                            alt="{{ section.settings.image.alt | escape }}"
-                            class="motion-reduce"
-                            loading="lazy"
-                            width="{{ section.settings.image.width }}"
-                            height="{{ section.settings.image.height }}"
-                        >
-                        {%endif%}
-                    </div>
-                </div>
-            </div>
-
-            <div class="brand-intro__copy">
-                <div class="brand-intro__copy__inner">
-                    <div class="brand-intro__copy__header">
-                        <h2 class="brand-intro__copy__heading">
-                        {{section.settings.headline}}
-                        </h2>
-                        <p  class="brand-intro__copy__subline">
-                            {{section.settings.subline}}
-                        {% comment %} <span class="subline__decorative-elem">
-                        </span>
-                            <span class="subline__text">
-                            </span> {% endcomment %}
-                        </p>
-                    </div>
-
-                    <div class="brand-intro__copy__body">
-                        {{section.settings.body}}
-                    </div>
-                    <div class="brand-intro__copy__cta">
-                        <a href="{{section.settings.cta_url}}">
-                            {{section.settings.cta_text}}
-                        </a>
-                    </div>
-
-                    <div class="brand-intro__awards">
-                      {%if section.blocks.size > 2%}
-                        <custom-slideshow   class="brand-intro__awards__inner" slidesPerView="2" pagination="false" navigation="false" freeMode="true" a11y="false" loop="false" disableOn="mediumUp">
-                              {% for block in section.blocks %}
-                              <div class="brand-intro__awards__award">
-                                  <div>
-                                      <img src="{{ block.settings.graphic | img_url: 'master' }}" alt="{{ block.settings.name }}">
-                                  </div>
-                              </div>
-                              {% endfor %}
-                        </custom-slideshow>
-                        {%else%}
-                            {% for block in section.blocks %}
-                              <div class="brand-intro__awards__award">
-                                  <div>
-                                      <img src="{{ block.settings.graphic | img_url: 'master' }}" alt="{{ block.settings.name }}">
-                                  </div>
-                              </div>
-                              {% endfor %}
-                        {%endif%}
-                    </div>
-                </div>
-            </div>
-            
-
-
+<section class="brand-intro-section {% if section.settings.top_border == 'yes' %}has-top-border{% endif %} {% if section.settings.bottom_border == 'yes' %}has-bottom-border{% endif %}">
+  <div class="brand-intro__inner page-width">
+    <div class="brand-intro__image">
+      <div class="brand-intro__image__inner">
+        <div class="brand-intro__image-wrapper">
+          {% if section.settings.image != blank %}
+            <img
+              srcset="
+                {%- if section.settings.image.width >= 165 -%}{{ section.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
+                {%- if section.settings.image.width >= 360 -%}{{ section.settings.image | image_url: width: 360 }} 360w,{%- endif -%}
+                {%- if section.settings.image.width >= 533 -%}{{ section.settings.image | image_url: width: 533 }} 533w,{%- endif -%}
+                {%- if section.settings.image.width >= 720 -%}{{ section.settings.image | image_url: width: 720 }} 720w,{%- endif -%}
+                {%- if section.settings.image.width >= 800 -%}{{ section.settings.image | image_url: width: 800 }} 800w,{%- endif -%}
+                {%- if section.settings.image.width >= 940 -%}{{ section.settings.image | image_url: width: 940 }} 940w,{%- endif -%}
+                {%- if section.settings.image.width >= 1066 -%}{{ section.settings.image | image_url: width: 1066 }} 1066w,{%- endif -%}
+                {{ section.settings.image | image_url }} {{ section.settings.image.width }}w
+              "
+              src="{{ section.settings.image | image_url: width: 533 }}"
+              sizes="(min-width: 700px) 50vw, 90vw"
+              alt="{{ section.settings.image.alt | escape }}"
+              class="motion-reduce"
+              loading="lazy"
+              width="{{ section.settings.image.width }}"
+              height="{{ section.settings.image.height }}"
+            >
+          {% endif %}
+        </div>
+      </div>
     </div>
+
+    <div class="brand-intro__copy">
+      <div class="brand-intro__copy__inner">
+        <div class="brand-intro__copy__header">
+          <h2 class="brand-intro__copy__heading">
+            {{ section.settings.headline }}
+          </h2>
+          <p class="brand-intro__copy__subline">
+            {{ section.settings.subline }}
+            {% comment %}
+              <span class="subline__decorative-elem">
+              </span>
+                  <span class="subline__text">
+                  </span>
+            {% endcomment %}
+          </p>
+        </div>
+
+        <div class="brand-intro__copy__body">
+          {{ section.settings.body }}
+        </div>
+        <div class="brand-intro__copy__cta">
+          <a href="{{ section.settings.cta_url }}" rel="internal" data-green-dot-cursor>
+            {{ section.settings.cta_text }}
+          </a>
+        </div>
+
+        <div class="brand-intro__awards">
+          {% if section.blocks.size > 2 %}
+            <custom-slideshow
+              class="brand-intro__awards__inner"
+              slidesPerView="2"
+              pagination="false"
+              navigation="false"
+              freeMode="true"
+              a11y="false"
+              loop="false"
+              disableOn="mediumUp"
+            >
+              {% for block in section.blocks %}
+                <div class="brand-intro__awards__award">
+                  <div>
+                    <img src="{{ block.settings.graphic | image_url }}" alt="{{ block.settings.name }}">
+                  </div>
+                </div>
+              {% endfor %}
+            </custom-slideshow>
+          {% else %}
+            {% for block in section.blocks %}
+              <div class="brand-intro__awards__award">
+                <div>
+                  <img src="{{ block.settings.graphic | image_url }}" alt="{{ block.settings.name }}">
+                </div>
+              </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <script type="module" src="{{ 'custom-slideshow.js' | asset_url }}" defer="defer"></script>
-<link rel="preload" href="{{ 'vendor-swiper.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link
+  rel="preload"
+  href="{{ 'vendor-swiper.css' | asset_url }}"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+>
 
-
-{%schema%}
+{% schema %}
 {
   "name": "Brand Intro",
-    "templates": [
-    "index",
-    "page"
-  ],
+  "templates": ["index", "page"],
   "settings": [
     {
       "type": "image_picker",
@@ -117,8 +127,8 @@
       "id": "body"
     },
     {
-        "type": "header", 
-        "content": "Call To Action"
+      "type": "header",
+      "content": "Call To Action"
     },
     {
       "type": "text",
@@ -164,25 +174,25 @@
       "default": "yes"
     }
   ],
-    "blocks": [
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Award & Accolade",
+      "settings": [
         {
-            "type": "block",
-            "name": "Award & Accolade",
-            "settings": [
-            {
-                "type": "text",
-                "label": "Name",
-                "id": "name",
-                "default": "Block 1 Title",
-                "info": "This text doesn't appar on the DOM, it is only for screen readers and SEO."
-            },
-            {
-                "type": "image_picker",
-                "label": "Graphic",
-                "id": "graphic"
-            }
-            ]
+          "type": "text",
+          "label": "Name",
+          "id": "name",
+          "default": "Block 1 Title",
+          "info": "This text doesn't appar on the DOM, it is only for screen readers and SEO."
+        },
+        {
+          "type": "image_picker",
+          "label": "Graphic",
+          "id": "graphic"
         }
+      ]
+    }
   ],
   "presets": [
     {
@@ -190,6 +200,4 @@
     }
   ]
 }
-
-
-{%endschema%}
+{% endschema %}

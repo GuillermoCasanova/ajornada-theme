@@ -1,6 +1,6 @@
 {{ 'section-content-slideshow.css' | asset_url | stylesheet_tag }}
 
-<section class="content-slideshow">
+<section class="content-slideshow {% if section.settings.top_border == 'yes' %}has-top-border{% endif %} {% if section.settings.bottom_border == 'yes' %}has-bottom-border{% endif %}">
   <div class="content-slideshow__inner page-width-on-medium-up">
     <div class="content-slideshow__images-slideshow">
       <div class="content-slideshow__images-slideshow__inner">
