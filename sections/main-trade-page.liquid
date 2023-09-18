@@ -1,0 +1,36 @@
+<div class="main-trade-page page-width  section-{{ section.id }}-padding">
+  <div class="main-trade-page__inner">
+    {%- for bloock in section.blocks -%}
+      a trade item goes here
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Main Trade Page",
+  "tag": "section",
+  "templates": ["page"],
+  "blocks": [
+    {
+      "type": "trade_item",
+      "name": "Trade Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "Image",
+          "id": "image",
+          "info": "Select the image that will be downloadable. "
+        },
+        {
+          "type": "text",
+          "label": "Item Title",
+          "id": "headline",
+          "default": "Enter Title",
+          "info": "Enter the title for this downloadable trade item."
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

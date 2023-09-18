@@ -128,11 +128,7 @@ summary::before {
 
 main {
   min-height: calc(70vw - 300px);
-}
-
-
-body {
-  overflow-x: hidden;
+  overflow: hidden;
   position: relative;
 }
 
@@ -498,7 +494,7 @@ h6:empty {
 \*------------------------------------*/
 
 main {
-  margin-top: 6rem;
+  margin-top: 5rem;
 }
 
 @media screen and (min-width: 700px) {
