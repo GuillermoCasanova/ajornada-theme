@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="{{ 'section-brand-intro.css' | asset_url }}" media="print" onload="this.media='all'">
 
-<section
+<div
   class="brand-intro-section {% if section.settings.top_border == 'yes' %}has-top-border{% endif %} {% if section.settings.bottom_border == 'yes' %}has-bottom-border{% endif %}"
   id="brand-intro"
 >
@@ -41,12 +41,6 @@
           </h2>
           <p class="brand-intro__copy__subline">
             {{ section.settings.subline }}
-            {% comment %}
-              <span class="subline__decorative-elem">
-              </span>
-                  <span class="subline__text">
-                  </span>
-            {% endcomment %}
           </p>
         </div>
 
@@ -92,7 +86,7 @@
       </div>
     </div>
   </div>
-</section>
+</div>
 
 <script type="module" src="{{ 'custom-slideshow.js' | asset_url }}" defer="defer"></script>
 <link
@@ -105,6 +99,7 @@
 {% schema %}
 {
   "name": "Brand Intro",
+  "tag": "section",
   "templates": ["index", "page"],
   "settings": [
     {
