@@ -11,7 +11,7 @@
         "896aa8b4-6729-4de7-bb2d-317038749d9c": {
           "type": "product",
           "settings": {
-            "product": "lorem-ipsum"
+            "product": "lorem-shirt-2"
           }
         },
         "3f6d558e-ce47-418d-ac63-68dc9b1db25c": {
@@ -33,16 +33,16 @@
             "art_direction": "portrait"
           }
         },
-        "0be45de7-d393-4376-9fd8-efdbee7d2cb1": {
-          "type": "product",
-          "settings": {
-            "product": "lorem-shirt-sand"
-          }
-        },
         "ef311fbf-dca0-42c4-bc04-b71891c3b3af": {
           "type": "product",
           "settings": {
             "product": "copy-of-lorem-bottle"
+          }
+        },
+        "0be45de7-d393-4376-9fd8-efdbee7d2cb1": {
+          "type": "product",
+          "settings": {
+            "product": "lorem-shirt-sand"
           }
         },
         "20e40805-f50e-483c-8850-8fc149e546f4": {
@@ -64,8 +64,8 @@
         "3f6d558e-ce47-418d-ac63-68dc9b1db25c",
         "27850d43-2a24-4657-9aac-0ac7919a72d5",
         "40783a2a-f62e-4e40-ad8a-dcf05d433ce9",
-        "0be45de7-d393-4376-9fd8-efdbee7d2cb1",
         "ef311fbf-dca0-42c4-bc04-b71891c3b3af",
+        "0be45de7-d393-4376-9fd8-efdbee7d2cb1",
         "20e40805-f50e-483c-8850-8fc149e546f4",
         "17a49410-1463-4f05-9f30-ae49c3d68d45"
       ],
