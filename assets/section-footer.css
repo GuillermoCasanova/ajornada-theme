@@ -21,7 +21,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:
-      'badge newsletter newsletter'
+      'newsletter newsletter newsletter'
       'links links links';
   }
 }
@@ -300,7 +300,8 @@
 @media screen and (min-width: 940px) {
   .footer__copyright {
     text-align: right;
-    margin-bottom: var(--level10)
+    margin-bottom: var(--level10);
+    padding-right: var(--level7);
   }
 }
 

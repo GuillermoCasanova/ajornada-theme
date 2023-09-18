@@ -271,7 +271,7 @@
 }
 
 .brand-intro__copy__cta a {
-    background-color: #F9EFB2;
+    background-color: var(--color-base-accent);
     padding-left: var(--level1);
     padding-right: var(--level1);
     text-decoration: underline;

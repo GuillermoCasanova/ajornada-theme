@@ -211,12 +211,6 @@ body:not(:-moz-handler-blocked) fieldset {
     font-size: var(--h6);
 }
 
-.custom-field input:active,
-.custom-field input:focus {
-    background-color: transparent
-}
-
-
 .custom-field label {
     font-family: var(--primary-font-family);
     color: rgb(var(--color-base-link));
