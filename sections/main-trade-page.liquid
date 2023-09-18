@@ -1,7 +1,10 @@
+{{ 'template-trade.css' | asset_url | stylesheet_tag }}
+{{ 'component-trade-item-card.css' | asset_url | stylesheet_tag }}
+
 <div class="main-trade-page page-width  section-{{ section.id }}-padding">
   <div class="main-trade-page__inner">
-    {%- for bloock in section.blocks -%}
-      a trade item goes here
+    {%- for block in section.blocks -%}
+      {%- render 'trade-item-card', item: block.settings -%}
     {%- endfor -%}
   </div>
 </div>

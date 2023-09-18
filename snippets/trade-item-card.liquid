@@ -1,0 +1,45 @@
+<div class="trade-item-card">
+  <div class="trade-item-card__inner">
+    <a
+      href="{{ item.image.src }}"
+      title="Download trade material"
+      class="trade-item-card__image-wrapper card__media"
+      download
+    >
+      <div class="trade-item-card__image media">
+        <img
+          srcset="
+            {%- if item.image.src.width >= 165 -%}{{ item.image.src | image_url: width: 165 }} 165w,{%- endif -%}
+            {%- if item.image.src.width >= 360 -%}{{ item.image.src | image_url: width: 360 }} 360w,{%- endif -%}
+            {%- if item.image.src.width >= 533 -%}{{ item.image.src | image_url: width: 533 }} 533w,{%- endif -%}
+            {%- if item.image.src.width >= 720 -%}{{ item.image.src | image_url: width: 720 }} 720w,{%- endif -%}
+            {%- if item.image.src.width >= 1000 -%}{{ item.image.src | image_url: width: 1000 }} 1000w,{%- endif -%}
+            {%- if item.image.src.width >= 1500 -%}{{ item.image.src | image_url: width: 1500 }} 1500w,{%- endif -%}
+            {{ item.image.src | image_url }} {{ item.image.src.width }}w
+          "
+          src="{{ item.image.src | image_url: width: 533 }}"
+          sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
+          alt="{{ item.image.src.alt | escape }}"
+          class="motion-reduce"
+          loading="lazy"
+          width="{{ item.image.width }}"
+          height="{{ item.image.height }}"
+        >
+      </div>
+      <div class="trade-item-card__content">
+        <a
+          title="Download trade material"
+          rel="internal"
+          href="{{ item.image.src }}"
+          tabindex="-1"
+          class="trade-item-card__information"
+          download
+        >
+          <h3 class="trade-item-card__heading">
+            {{ item.headline }}
+          </h3>
+        </a>
+      </div>
+    </a>
+  </div>
+</div>

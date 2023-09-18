@@ -1,0 +1,140 @@
+/*------------------------------------*\
+    #Trade Item Card
+\*------------------------------------*/
+
+
+@media screen and (max-width: 749px) {
+    .articles-wrapper .article {
+        width: 100%;
+    }
+}
+
+
+.trade-item-card {
+    width: 100%;
+}
+
+.trade-item-card__image {
+    padding-bottom: 125%;
+    border-radius: 30px;
+    width: 100%;
+    position: relative;
+    margin-bottom: var(--level5);
+    overflow: hidden;
+    position: relative;
+}
+
+
+.trade-item-card__image-wrapper>a {
+    display: block;
+}
+
+
+.trade-item-card__image,
+.trade-item-card__image {
+    border: 2px solid rgb(var(--color-base-text-2));
+
+}
+
+.trade-item-card__image-wrapper:hover .trade-item-card__image,
+.trade-item-card__image-wrapper:focus .trade-item-card__image {
+    border: 2px solid black;
+}
+
+
+
+/*------------------------------------*\
+      #Information
+  \*------------------------------------*/
+
+
+.trade-item-card__information {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(var(--color-base-text));
+    text-decoration: none;
+    margin-bottom: var(--level10)
+}
+
+.trade-item-card__information:hover .trade-item-card__heading,
+.trade-item-card__information:focus .trade-item-card__heading {
+    border-bottom: 2px solid black;
+}
+
+.trade-item-card__information:hover .trade-item-card__heading,
+a .trade-item-card__information:focus .trade-item-card__heading {
+    background-color: #F9EFB2;
+
+}
+
+.trade-item-card__heading {
+    text-transform: capitalize;
+    font-size: var(--h3);
+    padding-right: var(--level1);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--level1);
+    border-bottom: 2px solid transparent;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+@media only screen and (min-width: 700px) {
+    .trade-item-card__heading {
+        font-size: var(--h4);
+    }
+}
+
+@media only screen and (min-width: 940px) {
+    .trade-item-card__heading {
+        font-size: var(--h3);
+    }
+}
+
+
+
+.trade-item-card__price {
+    text-transform: capitalize;
+    font-size: var(--h4);
+}
+
+@media only screen and (min-width: 700px) {
+    .trade-item-card__price {
+        font-size: var(--h5);
+    }
+}
+
+
+.trade-item-card__date-published {
+    text-align: center;
+    width: 100%;
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Main Trade Page Alignment
+\*------------------------------------*/
+
+@media screen and (min-width: 700px) {
+    .main-trade-page__inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+    }
+
+    .main-trade-page__inner .trade-item-card {
+        flex-basis: calc(50% - 3rem);
+    }
+}
+
+
+@media screen and (min-width: 970px) {
+    .main-trade-page__inner .trade-item-card {
+        flex-basis: calc(33.3% - 5.5%);
+    }
+}
