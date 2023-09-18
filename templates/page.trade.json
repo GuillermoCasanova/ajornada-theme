@@ -1,5 +1,31 @@
 {
   "sections": {
+    "83fcff43-f969-4100-ac6c-b004a32e977f": {
+      "type": "blog-header",
+      "blocks": {
+        "template--16809139732725__83fcff43-f969-4100-ac6c-b004a32e977f-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "About this blog"
+          }
+        },
+        "86bb5c2e-937f-441c-acb7-171a156d97ed": {
+          "type": "body",
+          "settings": {
+            "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--16809139732725__83fcff43-f969-4100-ac6c-b004a32e977f-heading-1",
+        "86bb5c2e-937f-441c-acb7-171a156d97ed"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/v80_882.png",
+        "video": "",
+        "cta-url": ""
+      }
+    },
     "main": {
       "type": "main-trade-page",
       "blocks": {
@@ -35,6 +61,7 @@
     }
   },
   "order": [
+    "83fcff43-f969-4100-ac6c-b004a32e977f",
     "main"
   ]
 }
