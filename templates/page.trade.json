@@ -49,12 +49,20 @@
             "image": "shopify:\/\/shop_images\/Ajornada-Logo_1.png",
             "headline": "Ajornada logo Black"
           }
+        },
+        "1416c966-b968-4a43-ab87-7126a12da846": {
+          "type": "trade_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/v82_1104.png",
+            "headline": "Product Photography"
+          }
         }
       },
       "block_order": [
         "f3ec8c0b-fa62-4491-a7e8-d0cb8478cbf3",
         "54518637-9e32-46c0-88f5-9d4806d93691",
-        "229adf53-92d1-4d6a-a9f9-92aea2d4c269"
+        "229adf53-92d1-4d6a-a9f9-92aea2d4c269",
+        "1416c966-b968-4a43-ab87-7126a12da846"
       ],
       "settings": {
       }
