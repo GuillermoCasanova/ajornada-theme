@@ -136,6 +136,32 @@
         "orientation": "right_to_left"
       }
     },
+    "06739993-5980-4fc8-9137-de0f07a42db5": {
+      "type": "image-slideshow-break",
+      "blocks": {
+        "547ea9c5-9ce1-48d8-ae99-49946962c0f5": {
+          "type": "slideshow_slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Distillary.jpg"
+          }
+        },
+        "89693bd3-23a8-49f5-bd93-26f25ea337b1": {
+          "type": "slideshow_slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/v82_1104.png"
+          }
+        }
+      },
+      "block_order": [
+        "547ea9c5-9ce1-48d8-ae99-49946962c0f5",
+        "89693bd3-23a8-49f5-bd93-26f25ea337b1"
+      ],
+      "settings": {
+        "name": "",
+        "top_border": "no",
+        "bottom_border": "yes"
+      }
+    },
     "845785f8-fb96-4ded-a27b-d90d31c351db": {
       "type": "recipes-featured",
       "blocks": {
@@ -165,6 +191,7 @@
     "3c0fdf85-c0af-4b84-8f17-4c336242cd7d",
     "3d95728d-ae23-4b0e-8ca3-268a5188e23b",
     "a1ec1272-815b-43bc-9e6f-e6f679902ead",
+    "06739993-5980-4fc8-9137-de0f07a42db5",
     "845785f8-fb96-4ded-a27b-d90d31c351db"
   ]
 }
