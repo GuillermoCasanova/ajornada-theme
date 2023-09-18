@@ -9,10 +9,26 @@
             "image": "shopify:\/\/shop_images\/LALO-Server-Card-V2_2022-10-05-210900_qrot.jpg",
             "headline": "Server Card"
           }
+        },
+        "54518637-9e32-46c0-88f5-9d4806d93691": {
+          "type": "trade_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/LALO-Shelf-Talkers-V1_2022-10-05-220316_iywl.png",
+            "headline": "Shelf Talkers"
+          }
+        },
+        "229adf53-92d1-4d6a-a9f9-92aea2d4c269": {
+          "type": "trade_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Ajornada-Logo_1.png",
+            "headline": "Ajornada logo Black"
+          }
         }
       },
       "block_order": [
-        "f3ec8c0b-fa62-4491-a7e8-d0cb8478cbf3"
+        "f3ec8c0b-fa62-4491-a7e8-d0cb8478cbf3",
+        "54518637-9e32-46c0-88f5-9d4806d93691",
+        "229adf53-92d1-4d6a-a9f9-92aea2d4c269"
       ],
       "settings": {
       }
