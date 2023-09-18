@@ -107,7 +107,7 @@
         "image": "shopify:\/\/shop_images\/v82_1099_4cb04999-85c7-4662-9428-725744b9f2ed.jpg",
         "headline": "Write SOmething",
         "richtext": "<p>Your rich text content here.<\/p>",
-        "show_symbol": true,
+        "show_symbol": false,
         "headline_style": "style_1",
         "orientation": "left_to_right"
       }
