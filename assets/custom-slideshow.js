@@ -4,7 +4,7 @@ class ImageSlideshow extends HTMLElement {
     super();
 
     // Extract attributes and convert them into an object
-    const { autoplay, slidesPerView,  a11y, freeMode, pagination, navigation, loop, disableOn, spaceBetween, centeredSlides, breakpoints, numberPagination, effect, controlContainer, fadeOnLargeUp} = this.attributes;
+    const { autoplay, grabCursor, slidesPerView,  a11y, freeMode, pagination, navigation, loop, disableOn, spaceBetween, centeredSlides, breakpoints, numberPagination, effect, controlContainer, fadeOnLargeUp} = this.attributes;
     
     this.mediaQueries = {
       mediumUp: window.matchMedia('(min-width: 700px)'),
@@ -35,6 +35,7 @@ class ImageSlideshow extends HTMLElement {
         loop: loop && loop.value == 'true' || false,
         speed: 200,
         effect: effect ? effect.value : 'slide',
+        grabCursor: grabCursor ? grabCursor.value : true,
         navigation: false,
         spaceBetween: spaceBetween ? parseInt(spaceBetween.value) : 20,
         touchReleaseOnEdges: true,
@@ -42,7 +43,7 @@ class ImageSlideshow extends HTMLElement {
         centeredSlides: centeredSlides && centeredSlides.value === "true",
         breakpoints: breakpoints ? convertToObject(breakpoints.value) : false,
         centeredSlidesBounds: centeredSlides && centeredSlides.value === "true",
-        controlContainer: controlContainer ? controlContainer.value : false
+        controlContainer: controlContainer ? controlContainer.value : false,
     }
 
 
