@@ -66,7 +66,11 @@
 .trade-item-card__information:hover .trade-item-card__heading,
 a .trade-item-card__information:focus .trade-item-card__heading {
     background-color: #F9EFB2;
+}
 
+.trade-item-card__information:hover .trade-item-card__download-label,
+.trade-item-card__information:focus .trade-item-card__download-label {
+    text-decoration: none;
 }
 
 .trade-item-card__heading {
@@ -92,23 +96,10 @@ a .trade-item-card__information:focus .trade-item-card__heading {
     }
 }
 
-
-
-.trade-item-card__price {
-    text-transform: capitalize;
-    font-size: var(--h4);
-}
-
-@media only screen and (min-width: 700px) {
-    .trade-item-card__price {
-        font-size: var(--h5);
-    }
-}
-
-
-.trade-item-card__date-published {
-    text-align: center;
-    width: 100%;
+.trade-item-card__download-label {
+    font-size: var(--h5);
+    text-decoration: underline;
+    text-transform: uppercase;
 }
 
 
