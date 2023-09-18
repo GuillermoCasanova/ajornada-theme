@@ -157,6 +157,7 @@
     z-index: 1;
     margin-bottom: var(--level4);
     flex-direction: row-reverse;
+    background-color: rgb(var(--color-base-background-1));
 }
 
 @media screen and (min-width: 940px) {

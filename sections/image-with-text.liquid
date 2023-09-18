@@ -11,7 +11,7 @@
 >
   <div class="image-with-text__inner page-width">
     <div class="image-with-text__image">
-      {% if section.settings.show_symbol %}
+      {% if section.settings.show_symbol and section.settings.orientation != 'right_to_left' %}
         <div class="image-with-text__symbol">
           <svg>
             <use href="#illust-flower-default"/>
