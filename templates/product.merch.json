@@ -95,12 +95,27 @@
         "332146d8-89e1-49bf-a5cd-345ec71b3d80",
         "a36ae783-a801-4e9e-b077-e54a13c7164e"
       ],
+      "disabled": true,
       "settings": {
+        "top_border": "no",
+        "bottom_border": "yes"
+      }
+    },
+    "48239fb0-579b-4c1b-b341-259865ddc2fe": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/v82_1099_4cb04999-85c7-4662-9428-725744b9f2ed.jpg",
+        "headline": "Write SOmething",
+        "richtext": "<p>Your rich text content here.<\/p>",
+        "show_symbol": true,
+        "headline_style": "style_1",
+        "orientation": "left_to_right"
       }
     }
   },
   "order": [
     "main",
-    "3d95728d-ae23-4b0e-8ca3-268a5188e23b"
+    "3d95728d-ae23-4b0e-8ca3-268a5188e23b",
+    "48239fb0-579b-4c1b-b341-259865ddc2fe"
   ]
 }
