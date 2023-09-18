@@ -1,5 +1,5 @@
 <section class="lookbook-slideshow-container  {% if section.settings.top_border == 'yes' %}has-top-border{% endif %} {% if section.settings.bottom_border == 'yes' %}has-bottom-border{% endif %}">
-  <lookbook-slideshow>
+  <custom-slideshow>
     <div class="lookbook-slideshow" data-lookbook-images-slideshow>
       <ul class="lookbook-slideshow__inner" data-lookbook-images-slideshow-wrapper>
         {% for block in section.blocks %}
@@ -29,12 +29,14 @@
       </ul>
       <div data-lookbook-images-slideshow-pagination class="lookbook-slideshow__pagination"></div>
     </div>
-  </lookbook-slideshow>
+  </custom-slideshow>
 </section>
+
+<script type="module" src="{{ 'custom-slideshow.js' | asset_url }}" defer="defer"></script>
 
 {% schema %}
 {
-  "name": "Lookbook Slideshow",
+  "name": "Image Slideshow Break",
   "templates": ["page", "index", "product"],
   "settings": [
     {
@@ -90,7 +92,7 @@
   ],
   "presets": [
     {
-      "name": "Lookbook Slideshow"
+      "name": "Image Slideshow Break"
     }
   ]
 }
