@@ -1,0 +1,64 @@
+<link
+  rel="preload"
+  href="{{ 'section-article-product-grid.css' | asset_url }}"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+>
+
+<div class="article-product-grid">
+  <div class="article-product-grid__inner  page-width is-x-small">
+    <h2 class="article-product-grid__heading visually-hidden">
+      {{ section.settings.heading }}
+    </h2>
+
+    <ul class="article-product-grid__products">
+      {% for block in section.blocks %}
+        <li class="grid__item">
+          {% assign product = block.settings.product %}
+          {% render 'product-card',
+            heading_level: 'h3',
+            card_product: product,
+            show_quick_add: 'true',
+            section_id: section.id,
+            product_collection: collection
+          %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product Grid",
+  "templates": ["article"],
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Headline",
+      "id": "heading",
+      "info": "This headline is hidden and only meant to describe the images for SEO and accesibility purposes."
+    }
+  ],
+  "max_blocks": 4,
+  "blocks": [
+    {
+      "type": "product",
+      "name": "product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Grid"
+    }
+  ]
+}
+{% endschema %}

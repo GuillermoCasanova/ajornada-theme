@@ -1,0 +1,19 @@
+/*------------------------------------*\
+    #Article Product Grid
+\*------------------------------------*/
+
+
+@media screen and (min-width: 700px) {
+    .article-product-grid__products {
+        border-radius: 100px;
+        grid-template-columns: 1fr 1fr;
+        display: grid;
+        column-gap: var(--level10);
+    }
+}
+
+@media screen and (min-width: 940px) {
+    .article-product-grid__products {
+        column-gap: calc(var(--level10) + var(--level10));
+    }
+}

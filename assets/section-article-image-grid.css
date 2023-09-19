@@ -1,8 +1,12 @@
+/*------------------------------------*\
+    #Article Image Grid
+\*------------------------------------*/
+
 .article-image-grid__images {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
     column-gap: var(--level6);
+    margin-bottom: calc(-1 * var(--level10));
 }
 
 
