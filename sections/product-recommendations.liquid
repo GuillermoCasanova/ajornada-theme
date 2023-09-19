@@ -16,34 +16,36 @@
   data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}"
 >
   {% if recommendations.performed and recommendations.products_count > 0 %}
-    <div class="product-recommendations__header">
-      <div class="product-recommendations__header__inner">
-        <h2 class="product-recommendations__header__heading {{ section.settings.heading_size }}">
-          {{ section.settings.heading | escape }}
-        </h2>
+    <div class="product-recommendations__inner  page-width is-small">
+      <div class="product-recommendations__header">
+        <div class="product-recommendations__header__inner">
+          <h2 class="product-recommendations__header__heading {{ section.settings.heading_size }}">
+            {{ section.settings.heading | escape }}
+          </h2>
 
-        <p class="product-recommendations__header__subline">Lorem Ipsum</p>
+          <p class="product-recommendations__header__subline">Lorem Ipsum</p>
+        </div>
       </div>
-    </div>
 
-    <ul
-      class="product-recommendations__product-list"
-      role="list"
-    >
-      {% for recommendation in recommendations.products %}
-        {% if product.type == 'Merch' %}
-          <li class="grid__item">
-            {% render 'product-card',
-              heading_level: 'h3',
-              card_product: product,
-              show_quick_add: 'true',
-              section_id: section.id,
-              product_collection: collection
-            %}
-          </li>
-        {% endif %}
-      {% endfor %}
-    </ul>
+      <ul
+        class="product-recommendations__product-list"
+        role="list"
+      >
+        {% for recommendation in recommendations.products %}
+          {% if product.type == 'Merch' %}
+            <li class="grid__item">
+              {% render 'product-card',
+                heading_level: 'h3',
+                card_product: product,
+                show_quick_add: 'true',
+                section_id: section.id,
+                product_collection: collection
+              %}
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
   {% endif %}
 </product-recommendations>
 
