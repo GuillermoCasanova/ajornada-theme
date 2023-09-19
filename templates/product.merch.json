@@ -115,7 +115,7 @@
     "1674ed9e-11bf-48c3-93ce-b31f048094e3": {
       "type": "product-recommendations",
       "settings": {
-        "heading": "You may also like",
+        "heading": "Explore More",
         "products_to_show": 4
       }
     }
