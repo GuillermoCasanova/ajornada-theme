@@ -112,8 +112,8 @@
         "orientation": "left_to_right"
       }
     },
-    "cba5de99-f923-40ac-b31e-e3dada5fdd8b": {
-      "type": "product-recomendations",
+    "1674ed9e-11bf-48c3-93ce-b31f048094e3": {
+      "type": "product-recommendations",
       "settings": {
         "heading": "You may also like",
         "products_to_show": 4
@@ -124,6 +124,6 @@
     "main",
     "3d95728d-ae23-4b0e-8ca3-268a5188e23b",
     "48239fb0-579b-4c1b-b341-259865ddc2fe",
-    "cba5de99-f923-40ac-b31e-e3dada5fdd8b"
+    "1674ed9e-11bf-48c3-93ce-b31f048094e3"
   ]
 }
