@@ -1,0 +1,83 @@
+<link
+  rel="preload"
+  href="{{ 'section-article-image-grid.css' | asset_url }}"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+>
+
+<div class="article-image-grid">
+  <div class="article-image-grid__inner  page-width is-x-small">
+    <h2 class="article-image-grid__heading visually-hidden">
+      {{ section.settings.heading }}
+    </h2>
+
+    <div class="article-image-grid__images">
+      {% for block in section.blocks %}
+        {% assign image_url = block.settings.image %}
+        <div class="article-image-grid__image">
+          <div class="article-image-grid__image__inner">
+            <img
+              srcset="
+                {%- if image_url.width >= 165 -%}{{ image_url | image_url: width: 165 }} 165w,{%- endif -%}
+                {%- if image_url.width >= 360 -%}{{ image_url | image_url: width: 360 }} 360w,{%- endif -%}
+                {%- if image_url.width >= 533 -%}{{ image_url | image_url: width: 533 }} 533w,{%- endif -%}
+                {%- if image_url.width >= 720 -%}{{ image_url | image_url: width: 720 }} 720w,{%- endif -%}
+                {%- if image_url.width >= 800 -%}{{ image_url | image_url: width: 800 }} 800w,{%- endif -%}
+                {{ image_url | image_url }} {{ image_url.width }}w
+              "
+              src="{{ image_url | image_url: width: 533 }}"
+              sizes="(min-width: 700px) 50vw, 90vw"
+              alt="{{ image_url.alt | escape }}"
+              class="responsive-image  motion-reduce"
+              loading="lazy"
+              width="{{ image_url.width }}"
+              height="{{ image_url.height }}"
+            >
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Image Grid (Article)",
+  "templates": ["article"],
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Headline",
+      "id": "heading",
+      "info": "This headline is hidden and only meant to describe the images for SEO and accesibility purposes."
+    }
+  ],
+  "max_blocks": 4,
+  "blocks": [
+    {
+      "type": "image",
+      "name": "ImageBlock",
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "Image",
+          "id": "image"
+        },
+        {
+          "type": "text",
+          "label": "Image Alt Text",
+          "id": "alt_text",
+          "info": "For SEO and accesibility purposes. Describe the image."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Grid (Article)",
+      "category": "Sections"
+    }
+  ]
+}
+{% endschema %}

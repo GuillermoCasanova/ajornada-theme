@@ -4,6 +4,12 @@
   media="print"
   onload="this.media='all'"
 >
+<link
+  rel="preload"
+  href="{{ 'vendor-swiper.css' | asset_url }}"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+>
 
 <div class="image-slideshow-break {% if section.settings.top_border == 'yes' %}has-top-border{% endif %} {% if section.settings.bottom_border == 'yes' %}has-bottom-border{% endif %}">
   <custom-slideshow
@@ -52,7 +58,8 @@
     {
       "type": "text",
       "id": "name",
-      "label": "Collection Name"
+      "label": "Slideshow Description",
+      "info": "The description of the contents of this slideshow, for SEO and accesibility purposes."
     },
     {
       "type": "radio",
