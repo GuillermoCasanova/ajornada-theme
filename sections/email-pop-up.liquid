@@ -9,7 +9,7 @@
     aria-labelledby="modal-title"
     id="buy-near-me-modal"
     aria-hidden="true"
-    class="modal"
+    class="modal  modal-email"
     data-section-id="{{ section.id }}"
     data-email-popup
     data-frequency="{{ settings.pop_up_frequency }}"
@@ -23,18 +23,54 @@
           <span class="button__decorative-elem"></span>
         </button>
       </div>
-      <div class="modal__content">
-        <h1 id="modal-title">{{ settings.email_popup_headline }}</h1>
+      <div class="modal__content modal-email__content">
+        <div class="">
+          <img
+            srcset="
+                {%- if settings.email_popup_image_small.width >= 165 -%}
+                  {{ image | image_url: width: 165 }} 165w,{%- endif -%}
+                {%- if settings.email_popup_image_small.width >= 360 -%}
+                  {{ image | image_url: width: 360 }} 360w,{%- endif -%}
+                {%- if settings.email_popup_image_small.width >= 533 -%}
+                  {{ image | image_url: width: 533 }} 533w,{%- endif -%}
+                {%- if settings.email_popup_image_large.width >= 720 -%}
+                  {{ image | image_url: width: 720 }} 720w,{%- endif -%}
+                  {%- if settings.email_popup_image_large.width >= 800 -%}
+              {{ image | image_url: width: 800 }} 800w,{%- endif -%}
+                {{ image | image_url }} {{ settings.email_popup_image_large.width }}w
+            "
+            src="{{ image | image_url: width: 100, height: 100, width: 200 }}"
+            sizes="(min-width: 1200px) 35vw, (min-width: 940px) 30vw, 90vw"
+            alt="{{ settings.email_popup_image_small.alt | escape }}"
+            class="motion-reduce responsive-image"
+            aria-hidden="true"
+            loading="lazy"
+            width="{{ settings.email_popup_image_small.width }}"
+            height="{{ settings.email_popup_image_small.height }}"
+          >
+        </div>
+        <h1 id="modal-title" class="modal-email__headline">{{ settings.email_popup_headline }}</h1>
         <div>
-          <p>
-            {{ settings.email_popup_body }}
-          </p>
-          <form action="">
-            <button type="submit">
-              {{ settings.email_popup_cta }}
-            </button>
+          <div class="modal-email__body">
+            <p>
+              {{ settings.email_popup_body }}
+            </p>
+          </div>
+
+          <form action="" class="modal-email__form">
+            <div class="form-section">
+              <custom-input-wrapper class="custom-field">
+                <label for="email-newsletter">Your Email</label>
+
+                <input type="email" id="email-newsletter" name="email" required>
+              </custom-input-wrapper>
+
+              <button type="submit" class="button button--primary  button--medium">
+                {{ settings.email_popup_button_cta }}
+              </button>
+            </div>
           </form>
-          <div>
+          <div class="modal-email__disclaimer">
             {{ settings.email_popup_secondary_body }}
           </div>
         </div>
@@ -96,8 +132,6 @@
     }
 
     showEmailPopup() {
-      document.body.style.overflow = 'hidden';
-
       if (this.popUpFrequency === 'first-timers-only') {
         sessionStorage.removeItem(this.modalSessionCookie);
         localStorage.setItem(this.modalSessionCookie, 'true');

@@ -775,55 +775,14 @@ input,
 textarea {
   border: 0;
   outline: 0;
-  background-color: transparent;
+  background-color: white;
   width: 100%;
   border: none;
   border: 1px solid rgb(var(--color-base-text));
-  border-radius: 0;
+  border-radius: 6px;
   font-family: var(--primary-font-family);
   transition: all .4s ease-in-out;
-}
-
-
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="date"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="month"]:focus,
-input[type="week"]:focus,
-input[type="email"]:focus,
-input[type="number"]:focus,
-input[type="search"]:focus,
-input[type="tel"]:focus,
-input[type="time"]:focus,
-input[type="url"]:focus,
-input[type="color"]:focus,
-input:focus,
-textarea:focus {
-  outline: 0;
-  background-color: transparent
-}
-
-
-input[type="text"]:active,
-input[type="password"]:active,
-input[type="date"]:active,
-input[type="datetime"]:active,
-input[type="datetime-local"]:active,
-input[type="month"]:active,
-input[type="week"]:active,
-input[type="email"]:active,
-input[type="number"]:active,
-input[type="search"]:active,
-input[type="tel"]:active,
-input[type="time"]:active,
-input[type="url"]:active,
-input[type="color"]:active,
-input:active,
-textarea:active {
-  outline: 0;
-  background-color: transparent
+  border: 1px solid rgb(var(--color-base-text-1));
 }
 
 label {
@@ -1002,7 +961,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
+  border-radius: 8px;
 }
 
 button:hover {
@@ -1068,7 +1027,7 @@ button:hover {
 .button--medium {
   padding-top: .65rem;
   padding-bottom: .85rem;
-  font-size: var(--h4);
+  font-size: var(--h5);
 }
 
 .button--medium .button__text {

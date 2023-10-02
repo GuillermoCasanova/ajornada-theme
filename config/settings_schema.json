@@ -902,12 +902,12 @@
       },
       {
         "type": "image_picker",
-        "id": "image_small",
+        "id": "email_popup_image_small",
         "label": "The image that will appear on small devices"
       },
       {
         "type": "image_picker",
-        "id": "image_large",
+        "id": "email_popup_image_large",
         "label": "The image that will appear on larger devices"
       },
       {

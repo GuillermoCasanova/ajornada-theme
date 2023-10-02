@@ -226,6 +226,8 @@
      border-radius: 0;
  }
 
+
+
  .email-pop-up__email-field label {
      color: var(--text-base-color-2);
  }
@@ -274,20 +276,29 @@
      font-size: 2rem;
  }
 
- #mc_embed_signup div.mce_inline_error {
-     margin: 0 0 1em 0;
-     padding: 5px 10px;
-     background-color: transparent;
-     font-weight: bold;
-     z-index: 1;
-     color: red;
-     width: 100%;
-     display: block;
-     position: absolute;
-     bottom: -22px;
-     font-size: 0.8rem;
+ .modal-email__headline,
+ .modal-email__body {
+     text-align: center;
  }
 
- .mc-field-group {
-     position: relative;
+ .modal-email__content {
+     max-width: 21rem;
+     margin-left: auto;
+     margin-right: auto;
+ }
+
+ .modal-email__headline {
+     text-transform: uppercase;
+     font-size: var(--h2);
+     font-weight: bold;
+     margin-bottom: var(--level1);
+ }
+
+ .modal-email__body {
+     font-size: var(--h5);
+ }
+
+ .modal-email__disclaimer {
+     font-size: var(--mini);
+     text-align: center;
  }
