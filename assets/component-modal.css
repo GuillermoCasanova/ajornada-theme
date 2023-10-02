@@ -72,7 +72,7 @@
     width: 100%;
     padding: var(--level5);
     padding-top: var(--level2);
-    padding-bottom: var(--level6);
+    padding-bottom: var(--level2);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border: 1px solid rgb(var(--color-base-text-1));
@@ -112,6 +112,5 @@
 }
 
 .modal__content {
-    max-height: 66vh;
     overflow: auto;
 }
