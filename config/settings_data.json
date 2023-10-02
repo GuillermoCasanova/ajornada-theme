@@ -65,6 +65,10 @@
     "predictive_search_show_price": false,
     "favicon": "shopify:\/\/shop_images\/HTG-Favicon_5966b0bc-341b-4eb7-baa2-0b5898f1ddca.png",
     "currency_code_enabled": false,
+    "email_pop_up_active": true,
+    "image_small": "shopify:\/\/shop_images\/v80_882.png",
+    "image_large": "shopify:\/\/shop_images\/v80_995_a76dcc78-634e-46b5-8583-335fbbeba38d.png",
+    "pop_up_frequency": "everytime-site-loads",
     "checkout_logo_image": "shopify:\/\/shop_images\/ajornada-logo_574c18dc-bd7f-4a5f-9b5f-d1e73002c116.png",
     "checkout_body_background_color": "#2d2926",
     "checkout_sidebar_background_color": "#2d2926",
@@ -103,25 +107,6 @@
     "gradient_background_1": "",
     "gradient_background_2": "",
     "sections": {
-      "announcement-bar": {
-        "type": "announcement-bar",
-        "blocks": {
-          "announcement-bar-0": {
-            "type": "announcement",
-            "disabled": true,
-            "settings": {
-              "text": "Complimentary domestic shipping for orders over $200.",
-              "color_scheme": "background-1",
-              "link": ""
-            }
-          }
-        },
-        "block_order": [
-          "announcement-bar-0"
-        ],
-        "settings": {
-        }
-      },
       "header": {
         "type": "header",
         "settings": {
@@ -163,6 +148,11 @@
       },
       "age-verification-modal": {
         "type": "age-verification-modal",
+        "settings": {
+        }
+      },
+      "email-pop-up": {
+        "type": "email-pop-up",
         "settings": {
         }
       }
@@ -278,24 +268,6 @@
       "predictive_search_show_price": false,
       "currency_code_enabled": true,
       "sections": {
-        "announcement-bar": {
-          "type": "announcement-bar",
-          "blocks": {
-            "announcement-bar-0": {
-              "type": "announcement",
-              "settings": {
-                "text": "Welcome to our store",
-                "color_scheme": "background-1",
-                "link": ""
-              }
-            }
-          },
-          "block_order": [
-            "announcement-bar-0"
-          ],
-          "settings": {
-          }
-        },
         "header": {
           "type": "header",
           "settings": {

@@ -898,7 +898,7 @@
         "type": "richtext",
         "id": "email_popup_secondary_body",
         "label": "Any secondary text below the button cta",
-        "default": "<p>By signing up and clicking ‘Continue,’ you agree to receive recurring marketing and automated promotional and personalized messages sent via email from Ajornada at the email used when signing up, and in accordance with the Terms of Use and the Privacy Policy</p>"
+        "default": "<p>By signing up and clicking ‘Continue,’ you agree to receive recurring marketing and automated promotional and personalized messages sent via email from Ajornada at the email used when signing up, and in accordance with the Terms of Use and the Privacy Policy<\/p>"
       },
       {
         "type": "image_picker",
