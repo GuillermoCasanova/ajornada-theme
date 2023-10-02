@@ -65,6 +65,7 @@
     "predictive_search_show_price": false,
     "favicon": "shopify:\/\/shop_images\/HTG-Favicon_5966b0bc-341b-4eb7-baa2-0b5898f1ddca.png",
     "currency_code_enabled": false,
+    "email_pop_up_active": true,
     "pop_up_frequency": "everytime-site-loads",
     "checkout_logo_image": "shopify:\/\/shop_images\/ajornada-logo_574c18dc-bd7f-4a5f-9b5f-d1e73002c116.png",
     "checkout_body_background_color": "#2d2926",
