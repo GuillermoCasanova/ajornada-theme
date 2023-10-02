@@ -333,6 +333,8 @@
 
     <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 
-    {% section 'age-verification-modal' %}
+    {% if settings.email_pop_up_active %}
+      {% section 'age-verification-modal' %}
+    {% endif %}
   </body>
 </html>

@@ -877,11 +877,6 @@
         "info": "This turns on\/off the email pop-up on the site"
       },
       {
-        "type": "image_picker",
-        "id": "email_popup_image",
-        "label": "The image for the pop-up"
-      },
-      {
         "type": "text",
         "id": "email_popup_headline",
         "label": "The headline for the pop-up",
