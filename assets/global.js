@@ -30,9 +30,6 @@ function trapFocus(container, elementToFocus = container) {
   var first = elements[0];
   var last = elements[elements.length - 1];
 
-  console.log(elements);
-  console.log(first);
-  console.log(last); 
 
   //removeTrapFocus();
 
@@ -74,7 +71,6 @@ function trapFocus(container, elementToFocus = container) {
   document.addEventListener('focusin', trapFocusHandlers.focusin);
 
   elementToFocus = first;
-  console.log(elementToFocus); 
   elementToFocus.focus();
 }
 
@@ -1067,7 +1063,11 @@ class GlobalModal extends HTMLElement {
   }
 
   openModal(pEvent) {
-   pEvent.target.closest('button').setAttribute('aria-expanded', true);
+    console.log(pEvent); 
+    if(pEvent) {
+      pEvent.target.closest('button').setAttribute('aria-expanded', true);
+    } 
+
     this.modal.setAttribute('aria-hidden', 'false');
   }
 

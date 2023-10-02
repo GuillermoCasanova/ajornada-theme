@@ -1,0 +1,152 @@
+{{ 'component-email-pop-up.css' | asset_url | stylesheet_tag }}
+{{ 'component-modal.css' | asset_url | stylesheet_tag }}
+
+<modal-email-sign-up id="newsletter-sign-up">
+  <div
+    role="dialog"
+    aria-live="assertive"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+    id="buy-near-me-modal"
+    aria-hidden="true"
+    class="modal"
+    data-section-id="{{ section.id }}"
+    data-email-popup
+    data-frequency="{{ settings.pop_up_frequency }}"
+  >
+    <div class="modal__cover" data-close-modal aria-hidden="true"></div>
+
+    <div class="modal__inner">
+      <div class="modal__close">
+        <button aria-label="Close Modal" data-modal-close>
+          <span class="button__text">Close</span>
+          <span class="button__decorative-elem"></span>
+        </button>
+      </div>
+      <div class="modal__content">
+        <h1 id="modal-title">{{ settings.email_popup_headline }}</h1>
+        <div>
+          <p>
+            {{ settings.email_popup_body }}
+          </p>
+          <form action="">
+            <button type="submit">
+              {{ settings.email_popup_cta }}
+            </button>
+          </form>
+          <div>
+            {{ settings.email_popup_secondary_body }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</modal-email-sign-up>
+
+{% javascript %}
+  class ModalEmailSignUp extends GlobalModal {
+    constructor() {
+      super();
+
+      // Get data attributes
+      this.popUpFrequency = this.dataset.frequency;
+      this.modalSessionCookie = 'first-time-visitor-saw-pop-up';
+
+      // Selectors
+      this.selectors = {
+        modalClose: '[data-close-modal]',
+        emailPopup: '[data-email-popup]',
+        emailPopUpImg: '[data-email-popup-image]',
+        signUpButton: '[data-sign-up-button]',
+        hideOnSubmit: '[data-hide-on-submit]',
+      };
+
+      // Event listener for the custom element
+      this.addEventListener('click', (event) => {
+        if (event.target.dataset.emailPopup) {
+          this.showEmailPopup();
+        }
+      });
+
+      // Initialize the popup after the element is created
+      this.initPopup();
+    }
+
+    initPopup() {
+      // Check if the user has already seen the popup
+      if (this.checkPopupDisplay()) {
+        console.log('already seen');
+        return;
+      }
+
+      // Show the popup after a delay (4000ms in this case)
+      setTimeout(() => {
+        console.log('display');
+        this.showEmailPopup();
+      }, 1000);
+    }
+
+    checkPopupDisplay() {
+      return false;
+      if (this.popUpFrequency === 'first-timers-only') {
+        return localStorage.getItem(this.modalSessionCookie);
+      } else {
+        return sessionStorage.getItem(this.modalSessionCookie);
+      }
+    }
+
+    showEmailPopup() {
+      document.body.style.overflow = 'hidden';
+
+      if (this.popUpFrequency === 'first-timers-only') {
+        sessionStorage.removeItem(this.modalSessionCookie);
+        localStorage.setItem(this.modalSessionCookie, 'true');
+      } else {
+        sessionStorage.setItem(this.modalSessionCookie, 'true');
+        localStorage.removeItem(this.modalSessionCookie);
+      }
+
+      this.animCtrl = null;
+      this.imageEntryAnim = null;
+
+      this.openModal();
+
+      //   document.querySelector(this.selectors.modalClose).addEventListener('click', (event) => {
+      //     if (event.target === event.currentTarget) {
+      //       this.hideEmailPopup();
+      //     }
+      //   });
+    }
+
+    setUpPopup() {
+      const form = document.querySelector('[data-newsletter-form]');
+
+      if (form) {
+        form.addEventListener('submit', (event) => {
+          event.preventDefault();
+          this.handleFormSubmit(form);
+        });
+      }
+    }
+
+    handleFormSubmit(form) {
+      setTimeout(() => {
+        const successResponse = document.querySelector('#mce-success-response');
+        if (successResponse && this.checkIfFormFilled(form)) {
+          const hideOnSubmitElements = document.querySelectorAll(this.selectors.hideOnSubmit);
+          hideOnSubmitElements.forEach((element) => {
+            element.style.display = 'none';
+          });
+          successResponse.style.margin = '0';
+        }
+      }, 200);
+    }
+
+    checkIfFormFilled(form) {
+      return form.checkValidity();
+    }
+  }
+
+  // Define the custom HTML element
+  customElements.define('modal-email-sign-up', ModalEmailSignUp);
+{% endjavascript %}

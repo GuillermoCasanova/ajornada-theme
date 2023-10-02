@@ -1,7 +1,7 @@
 {
   "sections": {
     "main": {
-      "type": "section-faqs",
+      "type": "faqs",
       "blocks": {
         "97e89cb5-05ca-478d-853d-cfd51f98b511": {
           "type": "faq_block",
