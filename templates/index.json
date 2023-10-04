@@ -58,7 +58,7 @@
         "cta_url": "shopify:\/\/blogs\/all",
         "top_border": "yes",
         "bottom_border": "yes",
-        "trigger_email_popup": false
+        "trigger_email_popup": true
       }
     },
     "1fb290d3-1160-424c-8641-e536b754d192": {
