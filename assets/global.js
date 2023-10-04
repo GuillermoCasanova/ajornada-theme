@@ -1063,7 +1063,9 @@ class GlobalModal extends HTMLElement {
   }
 
   openModal(pEvent) {
-    console.log(pEvent); 
+    this.modal.style.display = 'flex'; 
+    console.log(this.modal); 
+
     if(pEvent) {
       pEvent.target.closest('button').setAttribute('aria-expanded', true);
     } 

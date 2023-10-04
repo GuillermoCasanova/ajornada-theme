@@ -10,14 +10,13 @@
     width: 100%;
     display: flex;
     align-items: flex-end;
+    display: none;
 }
 
 @media screen and (min-width: 940px) {
     .modal {
         align-items: center;
-
     }
-
 }
 
 .modal[aria-hidden="true"] {

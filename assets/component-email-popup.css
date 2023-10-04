@@ -2,6 +2,32 @@
     #Email Pop Up 
 \*------------------------------------*/
 
+ .modal-email__image {
+     position: relative;
+     padding-bottom: 60%;
+     overflow: hidden;
+     margin-bottom: var(--level4);
+     border-radius: 36px;
+ }
+
+ @media screen and (min-width: 940px) {
+     .modal-email__image {
+         position: relative;
+         padding-bottom: 140%;
+         border-radius: 24px;
+         margin-bottom: 0;
+     }
+ }
+
+
+
+
+
+ /*------------------------------------*\
+    #Copy
+\*------------------------------------*/
+
+
  .modal-email__headline,
  .modal-email__body {
      text-align: center;
@@ -57,23 +83,6 @@
 
  }
 
- .modal-email__image {
-     position: relative;
-     padding-bottom: 60%;
-     overflow: hidden;
-     margin-bottom: var(--level4);
-     border-radius: 36px;
- }
-
- @media screen and (min-width: 940px) {
-     .modal-email__image {
-         position: relative;
-         padding-bottom: 140%;
-         border-radius: 24px;
-         margin-bottom: 0;
-     }
- }
-
  .modal-email__headline {
      text-transform: uppercase;
      font-size: var(--h2);
@@ -114,6 +123,14 @@
  .modal-email__disclaimer p {
      line-height: 1.25;
  }
+
+
+
+
+
+ /*------------------------------------*\
+    #Form (Klaviyo Overrides)
+\*------------------------------------*/
 
  .modal-email__form form {
      background: transparent !important;

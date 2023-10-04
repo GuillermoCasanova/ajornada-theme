@@ -531,6 +531,8 @@
                   {% endfor %}
                 </custom-color-picker>
                 <script src="{{ 'custom-color-picker.js' | asset_url }}" defer="defer"></script>
+              {%- when 'back-in-stock' -%}
+                <back-in-stock> Back in stock test </back-in-stock>
               {%- when 'buy_buttons' -%}
                 <div class="product-form" {{ block.shopify_attributes }}>
                   <product-form data-section="{{ section.id }}" data-desktop>
