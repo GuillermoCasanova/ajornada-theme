@@ -16,8 +16,7 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/Screen_Shot_2023-06-18_at_9.38_1.png",
-        "video": "",
-        "cta-url": "shopify:\/\/pages\/summer-23"
+        "video": ""
       }
     },
     "a91f73fa-9991-492c-bca6-4dfe59bea098": {
@@ -58,7 +57,8 @@
         "cta_text": "Explore Community & Recipes",
         "cta_url": "shopify:\/\/blogs\/all",
         "top_border": "yes",
-        "bottom_border": "yes"
+        "bottom_border": "yes",
+        "trigger_email_popup": true
       }
     },
     "1fb290d3-1160-424c-8641-e536b754d192": {
@@ -132,7 +132,8 @@
       ],
       "settings": {
         "top_border": "no",
-        "bottom_border": "yes"
+        "bottom_border": "yes",
+        "trigger_email_popup": false
       }
     },
     "2bb814ef-d55a-470e-bc5c-8bf06b1dfe81": {
@@ -179,7 +180,8 @@
         "cards_background": "shopify:\/\/shop_images\/v82_1085.png",
         "cta_url": "shopify:\/\/blogs\/news",
         "top_border": "no",
-        "bottom_border": "yes"
+        "bottom_border": "yes",
+        "trigger_email_popup": false
       }
     },
     "1655920347d426af19": {
@@ -187,7 +189,8 @@
       "settings": {
         "heading": "Follow Us",
         "top_border": "no",
-        "bottom_border": "yes"
+        "bottom_border": "yes",
+        "trigger_email_popup": false
       }
     }
   },
