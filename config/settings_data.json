@@ -68,10 +68,10 @@
     "email_pop_up_active": true,
     "email_popup_image_small": "shopify:\/\/shop_images\/v80_882.png",
     "email_popup_image_large": "shopify:\/\/shop_images\/Bottle_BG_00391917-22bd-43d2-8423-e51622bdd9be.jpg",
-    "pop_up_frequency": "everytime-site-loads",
     "checkout_logo_image": "shopify:\/\/shop_images\/ajornada-logo_574c18dc-bd7f-4a5f-9b5f-d1e73002c116.png",
     "checkout_body_background_color": "#2d2926",
     "checkout_sidebar_background_color": "#2d2926",
+    "pop_up_frequency": "everytime-site-loads",
     "image_small": "shopify:\/\/shop_images\/v80_882.png",
     "image_large": "shopify:\/\/shop_images\/v80_995_a76dcc78-634e-46b5-8583-335fbbeba38d.png",
     "social_tumblr_link": "",
@@ -150,19 +150,24 @@
       },
       "age-verification-modal": {
         "type": "age-verification-modal",
-        "settings": {}
+        "settings": {
+        }
       },
       "email-popup": {
         "type": "email-popup",
-        "settings": {}
+        "settings": {
+        }
       }
     },
-    "content_for_index": [],
+    "content_for_index": [
+
+    ],
     "blocks": {
       "855628211100114053": {
         "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": false,
-        "settings": {}
+        "settings": {
+        }
       }
     }
   },
