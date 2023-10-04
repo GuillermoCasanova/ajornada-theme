@@ -114,3 +114,82 @@
  .modal-email__disclaimer p {
      line-height: 1.25;
  }
+
+ .modal-email__form form {
+     background: transparent !important;
+     padding: 0 !important;
+ }
+
+ .modal-email__form form>div {
+     min-height: auto !important;
+ }
+
+ .modal-email__form button {
+     text-transform: uppercase !important;
+     line-height: 1 !important;
+     text-align: center !important;
+     position: relative !important;
+     width: 100% !important;
+     font-family: var(--primary-font-family) !important;
+     margin: 0 !important;
+     display: flex !important;
+     align-items: center !important;
+     justify-content: center !important;
+     border-radius: 8px !important;
+ }
+
+ .modal-email__form button {
+     background-color: rgb(var(--color-base-background-2)) !important;
+     border: 1px solid rgb(var(--color-base-text)) !important;
+     color: rgb(var(--color-base-text-2)) !important;
+     font-weight: var(--font-weight-bold) !important;
+     letter-spacing: .5px !important;
+     padding-top: .85rem !important;
+     padding-bottom: 1rem !important;
+     font-size: var(--h5) !important;
+     height: auto !important;
+     margin-bottom: var(--level5) !important;
+ }
+
+ .modal-email__form button:hover,
+ .modal-email__form button:focus {
+     background-color: black !important;
+     color: #fff !important;
+ }
+
+ .modal-email__form label {
+     opacity: 0 !important;
+     position: absolute !important;
+ }
+
+ .modal-email__form div {
+     padding: 0 !important
+ }
+
+ .modal-email__form input {
+     border: 0 !important;
+     outline: 0 !important;
+     background-color: white !important;
+     width: 100% !important;
+     border: none !important;
+     border: 1px solid rgb(var(--color-base-text)) !important;
+     border-radius: 6px !important;
+     font-family: var(--primary-font-family) !important;
+     transition: all .4s ease-in-out !important;
+     border: 1px solid rgb(var(--color-base-text-1)) !important;
+     letter-spacing: 0 !important;
+     font-family: var(--primary-font-family) !important;
+     padding-top: .85rem !important;
+     padding-bottom: 1rem !important;
+     padding-left: var(--level2) !important;
+     height: auto !important;
+     font-size: var(--h5) !important;
+     margin-bottom: var(--level5) !important;
+ }
+
+ .modal-email__form input.go106882768:active,
+ .modal-email__form input.go106882768:hover {
+     border: 1px solid rgb(var(--color-base-text)) !important;
+     border-width: 1px !important;
+     border-color: black !important;
+ }

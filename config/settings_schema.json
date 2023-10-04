@@ -912,7 +912,7 @@
       },
       {
         "type": "select",
-        "id": "pop_up_frequency",
+        "id": "email_pop_up_frequency",
         "label": "How often do you wan to show the pop-up?",
         "options": [
           {
@@ -926,6 +926,13 @@
             "label": "Everytime site loads"
           }
         ]
+      },
+      {
+        "type": "number",
+        "id": "email_pop_up_time_delay",
+        "label": "Time Delay",
+        "default": 0,
+        "info": "The amount of seconds the pop up should wait after being triggered to display."
       }
     ]
   }
