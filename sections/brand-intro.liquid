@@ -3,7 +3,9 @@
 <div
   class="brand-intro-section {% if section.settings.top_border == 'yes' %}has-top-border{% endif %} {% if section.settings.bottom_border == 'yes' %}has-bottom-border{% endif %}"
   id="brand-intro"
-  data-trigger-pop-up
+  {% if section.settings.trigger_email_popup %}
+    data-trigger-pop-up
+  {% endif %}
 >
   <div class="brand-intro__inner page-width">
     <div class="brand-intro__image">
@@ -106,24 +108,28 @@
     {
       "type": "image_picker",
       "label": "Image",
-      "id": "image"
+      "id": "image",
+      "info": "Upload an image for your brand intro section."
     },
     {
       "type": "text",
       "label": "Headline",
       "id": "headline",
-      "default": "Lorem Ipsum"
+      "default": "Lorem Ipsum",
+      "info": "Enter the headline for your brand intro section."
     },
     {
       "type": "text",
       "label": "Subline",
       "id": "subline",
-      "default": "About"
+      "default": "About",
+      "info": "Enter a subline or description for your brand intro."
     },
     {
       "type": "richtext",
       "label": "Rich Text",
-      "id": "body"
+      "id": "body",
+      "info": "Add detailed information about your brand here using rich text formatting."
     },
     {
       "type": "header",
@@ -133,12 +139,14 @@
       "type": "text",
       "label": "CTA Text",
       "id": "cta_text",
-      "default": "Lorem Ipsum"
+      "default": "Lorem Ipsum",
+      "info": "Enter the text for the Call To Action button."
     },
     {
       "type": "url",
       "label": "CTA URL",
-      "id": "cta_url"
+      "id": "cta_url",
+      "info": "Enter the URL that the Call To Action button should link to."
     },
     {
       "type": "radio",
@@ -154,7 +162,8 @@
           "label": "No"
         }
       ],
-      "default": "no"
+      "default": "no",
+      "info": "Choose whether to display a top border for the brand intro section."
     },
     {
       "type": "radio",
@@ -170,7 +179,15 @@
           "label": "No"
         }
       ],
-      "default": "yes"
+      "default": "yes",
+      "info": "Choose whether to display a bottom border for the brand intro section."
+    },
+    {
+      "type": "checkbox",
+      "id": "trigger_email_popup",
+      "label": "Trigger Email Pop Up",
+      "info": "If checked, this section will trigger the email pop up.",
+      "default": false
     }
   ],
   "blocks": [
@@ -183,12 +200,13 @@
           "label": "Name",
           "id": "name",
           "default": "Block 1 Title",
-          "info": "This text doesn't appar on the DOM, it is only for screen readers and SEO."
+          "info": "Enter the name or title for this award or accolade."
         },
         {
           "type": "image_picker",
           "label": "Graphic",
-          "id": "graphic"
+          "id": "graphic",
+          "info": "Upload a graphic or image for this award or accolade."
         }
       ]
     }

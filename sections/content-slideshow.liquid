@@ -1,6 +1,11 @@
 {{ 'section-content-slideshow.css' | asset_url | stylesheet_tag }}
 
-<section class="content-slideshow {% if section.settings.top_border == 'yes' %}has-top-border{% endif %} {% if section.settings.bottom_border == 'yes' %}has-bottom-border{% endif %}">
+<div
+  class="content-slideshow {% if section.settings.top_border == 'yes' %}has-top-border{% endif %} {% if section.settings.bottom_border == 'yes' %}has-bottom-border{% endif %}"
+  {% if section.settings.trigger_email_popup %}
+    data-trigger-pop-up
+  {% endif %}
+>
   <div class="content-slideshow__inner page-width-on-medium-up">
     <div class="content-slideshow__images-slideshow">
       <div class="content-slideshow__images-slideshow__inner">
@@ -79,7 +84,7 @@
       </custom-slideshow>
     </div>
   </div>
-</section>
+</div>
 
 <script type="module" src="{{ 'custom-slideshow.js' | asset_url }}" defer="defer"></script>
 
@@ -87,6 +92,7 @@
 {
   "name": "Content Slideshow",
   "max_blocks": 7,
+  "tag": "section",
   "templates": ["index", "product", "page"],
   "settings": [
     {
@@ -120,6 +126,13 @@
         }
       ],
       "default": "yes"
+    },
+    {
+      "type": "checkbox",
+      "id": "trigger_email_popup",
+      "label": "Trigger Email Pop Up",
+      "info": "If checked, this section will trigger the email pop up.",
+      "default": false
     }
   ],
   "blocks": [
