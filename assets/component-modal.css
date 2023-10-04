@@ -15,6 +15,7 @@
 @media screen and (min-width: 940px) {
     .modal {
         align-items: center;
+
     }
 
 }
@@ -120,6 +121,7 @@
     border: 1px solid rgb(var(--color-base-text-1));
     background-color: rgb(var(--color-base-background-1));
     z-index: 1;
+    transform: translateY(100%);
 }
 
 @media screen and (min-width: 940px) {
@@ -133,6 +135,8 @@
         padding: var(--level10);
         max-width: 68rem;
         overflow: hidden;
+        opacity: 0;
+        transform: translateY(0);
     }
 }
 

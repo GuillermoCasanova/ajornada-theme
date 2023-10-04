@@ -1,7 +1,7 @@
 {{ 'component-email-popup.css' | asset_url | stylesheet_tag }}
 {{ 'component-modal.css' | asset_url | stylesheet_tag }}
 
-<modal-email-sign-up id="newsletter-sign-up">
+<modal-email-sign-up id="newsletter-sign-up-modal">
   <div
     role="dialog"
     aria-live="assertive"
@@ -79,21 +79,6 @@
             <div class="modal-email__form">
               <div class="klaviyo-form-Wn3WBQ"></div>
             </div>
-            {% comment %}
-              <form action="" class="modal-email__form">
-                <div class="form-section">
-                  <custom-input-wrapper class="custom-field">
-                    <label for="email-newsletter">Your Email</label>
-
-                    <input type="email" id="email-newsletter" name="email" required>
-                  </custom-input-wrapper>
-
-                  <button type="submit" disabled class="button button--primary  button--medium">
-                    {{ settings.email_popup_button_cta }}
-                  </button>
-                </div>
-              </form>
-            {% endcomment %}
             <div class="modal-email__disclaimer">
               {{ settings.email_popup_secondary_body }}
             </div>
@@ -105,6 +90,7 @@
 </modal-email-sign-up>
 
 {% javascript %}
+  //Inlined for performance
   class ModalEmailSignUp extends GlobalModal {
     constructor() {
       super();
@@ -199,12 +185,6 @@
       setTimeout(() => {
         this.openModal();
       }, timeDelay);
-
-      //   document.querySelector(this.selectors.modalClose).addEventListener('click', (event) => {
-      //     if (event.target === event.currentTarget) {
-      //       this.hideEmailPopup();
-      //     }
-      //   });
     }
 
     setUpPopup() {

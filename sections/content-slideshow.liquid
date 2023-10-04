@@ -1,6 +1,6 @@
 {{ 'section-content-slideshow.css' | asset_url | stylesheet_tag }}
 
-<div
+<section
   class="content-slideshow {% if section.settings.top_border == 'yes' %}has-top-border{% endif %} {% if section.settings.bottom_border == 'yes' %}has-bottom-border{% endif %}"
   {% if section.settings.trigger_email_popup %}
     data-trigger-pop-up
@@ -84,7 +84,7 @@
       </custom-slideshow>
     </div>
   </div>
-</div>
+</section>
 
 <script type="module" src="{{ 'custom-slideshow.js' | asset_url }}" defer="defer"></script>
 
@@ -92,7 +92,6 @@
 {
   "name": "Content Slideshow",
   "max_blocks": 7,
-  "tag": "section",
   "templates": ["index", "product", "page"],
   "settings": [
     {
@@ -109,7 +108,8 @@
           "label": "No"
         }
       ],
-      "default": "no"
+      "default": "no",
+      "info": "Choose whether to display a top border for the content slideshow section."
     },
     {
       "type": "radio",
@@ -125,7 +125,8 @@
           "label": "No"
         }
       ],
-      "default": "yes"
+      "default": "yes",
+      "info": "Choose whether to display a bottom border for the content slideshow section."
     },
     {
       "type": "checkbox",
@@ -143,17 +144,20 @@
         {
           "type": "image_picker",
           "label": "Image",
-          "id": "image"
+          "id": "image",
+          "info": "Upload an image for this slide."
         },
         {
           "type": "text",
           "label": "Heading",
-          "id": "heading"
+          "id": "heading",
+          "info": "Enter the heading for this slide."
         },
         {
           "type": "richtext",
           "label": "Rich Text",
-          "id": "body"
+          "id": "body",
+          "info": "Add detailed information for this slide using rich text formatting."
         }
       ]
     }

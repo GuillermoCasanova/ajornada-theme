@@ -1,15 +1,22 @@
 <link rel="stylesheet" href="{{ 'section-recipes-featured.css' | asset_url }}" media="print" onload="this.media='all'">
 
-<section class="recipes-featured-section {% if section.settings.top_border == 'yes' %}has-top-border{% endif %} {% if section.settings.bottom_border == 'yes' %}has-bottom-border{% endif %}">
+<section
+  class="recipes-featured-section {% if section.settings.top_border == 'yes' %}has-top-border{% endif %} {% if section.settings.bottom_border == 'yes' %}has-bottom-border{% endif %}"
+  {% if section.settings.trigger_email_popup %}
+    data-trigger-pop-up
+  {% endif %}
+>
   <div class="recipes-featured__inner">
     <div class="page-width">
-      <div class="recipes-featured__header">
-        <h2 class="recipes-featured__heading">
-          {{ section.settings.headline }}
-        </h2>
-        <p class="recipes-featured__subline">
-          {{ section.settings.subline }}
-        </p>
+      <div class="recipes-featured-header">
+        <div class="recipes-featured-header__inner">
+          <h2 class="recipes-featured-header__heading">
+            {{ section.settings.headline }}
+          </h2>
+          <p class="recipes-featured-header__subline">
+            {{ section.settings.subline }}
+          </p>
+        </div>
       </div>
 
       <div class="recipes-featured__card-list">
@@ -180,22 +187,26 @@
     {
       "type": "text",
       "id": "headline",
-      "label": "Headline"
+      "label": "Headline",
+      "info": "Enter the headline for the Recipes Featured section."
     },
     {
       "type": "text",
       "id": "subline",
-      "label": "Subline"
+      "label": "Subline",
+      "info": "Enter a subline or description for the Recipes Featured section."
     },
     {
       "type": "image_picker",
       "id": "cards_background",
-      "label": "Cards Back Image"
+      "label": "Cards Back Image",
+      "info": "Select an image for the background of recipe cards."
     },
     {
       "type": "url",
       "id": "cta_url",
-      "label": "Section Call To Action"
+      "label": "Section Call To Action",
+      "info": "Enter the URL for the call to action button in this section (if applicable)."
     },
     {
       "type": "radio",
@@ -211,7 +222,8 @@
           "label": "No"
         }
       ],
-      "default": "no"
+      "default": "no",
+      "info": "Choose whether to display a top border for the Recipes Featured section."
     },
     {
       "type": "radio",
@@ -227,7 +239,15 @@
           "label": "No"
         }
       ],
-      "default": "yes"
+      "default": "yes",
+      "info": "Choose whether to display a bottom border for the Recipes Featured section."
+    },
+    {
+      "type": "checkbox",
+      "id": "trigger_email_popup",
+      "label": "Trigger Email Pop Up",
+      "info": "If checked, this section will trigger the email pop up.",
+      "default": false
     }
   ],
   "blocks": [
@@ -238,12 +258,14 @@
         {
           "type": "richtext",
           "id": "recipe_preview",
-          "label": "Recipe Preview"
+          "label": "Recipe Preview",
+          "info": "Provide a preview of the recipe to be displayed on the card."
         },
         {
           "type": "article",
           "id": "recipe_post",
-          "label": "Recipe Post"
+          "label": "Recipe Post",
+          "info": "Select the full recipe post to be linked from this card."
         }
       ]
     }

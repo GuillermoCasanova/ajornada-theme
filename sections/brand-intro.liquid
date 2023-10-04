@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="{{ 'section-brand-intro.css' | asset_url }}" media="print" onload="this.media='all'">
 
-<div
+<section
   class="brand-intro-section {% if section.settings.top_border == 'yes' %}has-top-border{% endif %} {% if section.settings.bottom_border == 'yes' %}has-bottom-border{% endif %}"
   id="brand-intro"
   {% if section.settings.trigger_email_popup %}
@@ -71,7 +71,13 @@
               {% for block in section.blocks %}
                 <div class="brand-intro__awards__award">
                   <div>
-                    <img src="{{ block.settings.graphic | image_url }}" alt="{{ block.settings.name }}">
+                    <img
+                      src="{{ block.settings.graphic | image_url }}"
+                      alt="{{ block.settings.name }}"
+                      width="100"
+                      height="auto"
+                      loading="lazy"
+                    >
                   </div>
                 </div>
               {% endfor %}
@@ -80,7 +86,13 @@
             {% for block in section.blocks %}
               <div class="brand-intro__awards__award">
                 <div>
-                  <img src="{{ block.settings.graphic | image_url }}" alt="{{ block.settings.name }}">
+                  <img
+                    src="{{ block.settings.graphic | image_url }}"
+                    alt="{{ block.settings.name }}"
+                    width="100"
+                    height="auto"
+                    loading="lazy"
+                  >
                 </div>
               </div>
             {% endfor %}
@@ -89,9 +101,10 @@
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <script type="module" src="{{ 'custom-slideshow.js' | asset_url }}" defer="defer"></script>
+
 <link
   rel="preload"
   href="{{ 'vendor-swiper.css' | asset_url }}"
@@ -102,7 +115,6 @@
 {% schema %}
 {
   "name": "Brand Intro",
-  "tag": "section",
   "templates": ["index", "page"],
   "settings": [
     {

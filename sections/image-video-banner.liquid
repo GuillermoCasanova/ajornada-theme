@@ -1,4 +1,82 @@
-{{ 'section-image-video-banner.css' | asset_url | stylesheet_tag }}
+{% comment %} {{ 'section-image-video-banner.css' | asset_url | stylesheet_tag }} {% endcomment %}
+
+{% style %}
+  /*------------------------------------*\
+    #Image Video Banner  (inlined for performance)
+\*------------------------------------*/
+
+  image-video-banner {
+    display: block;
+  }
+
+  .image-banner-container {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    background-color: rgb(var(--color-base-background-2));
+  }
+
+  .image-banner {
+    position: relative;
+    width: 100%;
+    padding-bottom: 90%;
+  }
+
+  @media screen and (min-width: 700px) {
+    .image-banner {
+      min-width: 42rem;
+      padding-bottom: 60%;
+    }
+  }
+
+  @media screen and (min-width: 940px) {
+    .image-banner {
+      min-width: 42rem;
+      padding-bottom: 50%;
+    }
+  }
+
+  .image-banner a:hover .image-banner__cta,
+  .image-banner a:focus .image-banner__cta {
+    opacity: 1;
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .image-banner__media {
+    width: 100%;
+    height: 100%;
+  }
+
+  .image-banner video {
+    opacity: 0;
+  }
+
+  .image-banner video.is-loaded {
+    animation: fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .image-banner__media__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .image-banner__content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+  }
+{% endstyle %}
 
 <image-video-banner id="Banner-{{ section.id }}" class="image-banner">
   <div data-banner-media>
@@ -44,99 +122,7 @@
   </div>
 </image-video-banner>
 
-<script defer>
-  class ImageVideoBanner extends HTMLElement {
-    constructor() {
-      super();
-      this.initCursorEffect();
-      this.initEvents();
-      if (this.querySelector('video')) {
-        this.initVideo();
-      }
-    }
-
-    initVideo() {
-      window.addEventListener('DOMContentLoaded', function () {
-        let mediaQueries = {
-          mediumDown: window.matchMedia('(max-width: 974px)'),
-          largeUp: window.matchMedia('(min-width: 975px)'),
-        };
-
-        let vidSrc = document.querySelector('#hero-video').dataset.lazySrc;
-
-        function startVideo(pSource) {
-          document.querySelector('#hero-video').querySelector('[type="video/mp4"]').src = pSource;
-          document.querySelector('#hero-video').load();
-
-          setTimeout(function () {
-            document.querySelector('#hero-video').classList.add('is-loaded');
-            document.querySelector('#hero-video').play();
-          }, 500);
-        }
-
-        startVideo(vidSrc);
-      });
-    }
-
-    initEvents() {
-      function smoothScrollToSection(pElementId, pOffsetPixels) {
-        // Find the target section element by its ID
-        const targetSection = document.getElementById(pElementId);
-        // Check if the target section exists
-        if (targetSection) {
-          // Get the final scroll position
-          const scrollPosition = targetSection.offsetTop;
-          // Scroll to the target section with smooth behavior
-          window.scrollTo({
-            top: scrollPosition,
-            behavior: 'smooth',
-          });
-        }
-      }
-
-      this.addEventListener('click', () => {
-        console.log('click');
-        const sectionIdToScroll = 'brand-intro';
-        smoothScrollToSection(sectionIdToScroll);
-      });
-    }
-
-    initCursorEffect() {
-      function setCursorToSVG(elementId, svgCode, pContainer) {
-        const element = pContainer.querySelector('[data-banner-media]');
-
-        if (element) {
-          element.style.cursor = `url("data:image/svg+xml,${encodeURIComponent(svgCode)}"), auto`;
-        } else {
-          console.error(`Element with ID '${elementId}' not found.`);
-        }
-      }
-
-      // SVG code for the cursor
-      const customCursorSVG = `
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="111" fill="none"><path fill="#fff" d="M7.293 110.707a1 1 0 0 0 1.414 0l6.364-6.364a1 1 0 1 0-1.414-1.414L8 108.586l-5.657-5.657a1 1 0 1 0-1.414 1.414l6.364 6.364ZM7 0v110h2V0H7Z"/></svg>
-          `;
-
-      // Add event listener to the target element
-      const targetElement = this.querySelector('[data-banner-media]');
-
-      if (targetElement) {
-        targetElement.addEventListener('mouseenter', () => {
-          setCursorToSVG('targetElement', customCursorSVG, this);
-        });
-
-        targetElement.addEventListener('mouseleave', () => {
-          targetElement.style.cursor = 'auto';
-        });
-      } else {
-        console.error('Target element not found.');
-      }
-    }
-  }
-
-  customElements.define('image-video-banner', ImageVideoBanner);
-</script>
-
+<script src="{{ 'image-video-banner.js' | asset_url }}" defer="defer"></script>
 {% schema %}
 {
   "name": "Image Video Banner",
@@ -147,12 +133,14 @@
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Background Image"
+      "label": "Background Image",
+      "info": "Select a background image for the banner section."
     },
     {
       "type": "text",
       "id": "video",
-      "label": "Background Video"
+      "label": "Background Video",
+      "info": "Enter the URL of a background video for the banner section (if applicable)."
     }
   ],
   "blocks": [
@@ -165,7 +153,8 @@
           "type": "text",
           "id": "heading",
           "default": "Image banner",
-          "label": "t:sections.image-banner.blocks.heading.settings.heading.label"
+          "label": "t:sections.image-banner.blocks.heading.settings.heading.label",
+          "info": "Enter the heading for the image video banner section."
         }
       ]
     }

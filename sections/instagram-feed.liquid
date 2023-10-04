@@ -1,7 +1,12 @@
 <link rel="stylesheet" href="{{ 'instagram-feed.css' | asset_url }}" media="print" onload="this.media='all'">
 <script type="module" src="{{ 'instagram-feed.js' | asset_url }}" defer="defer"></script>
 
-<section class="instagram-feed  {% if section.settings.top_border == 'yes' %}has-top-border{% endif %} {% if section.settings.bottom_border == 'yes' %}has-bottom-border{% endif %}">
+<section
+  class="instagram-feed  {% if section.settings.top_border == 'yes' %}has-top-border{% endif %} {% if section.settings.bottom_border == 'yes' %}has-bottom-border{% endif %}"
+  {% if section.settings.trigger_email_popup %}
+    data-trigger-pop-up
+  {% endif %}
+>
   <instagram-feed class="instagram-feed__inner page-width">
     <div class="instagram-feed__header">
       <h2 class="instagram-feed__heading">
@@ -36,7 +41,8 @@
     {
       "type": "text",
       "id": "heading",
-      "label": "Heading"
+      "label": "Heading",
+      "info": "Enter the heading for the Instagram Feed section."
     },
     {
       "type": "header",
@@ -56,7 +62,8 @@
           "label": "No"
         }
       ],
-      "default": "no"
+      "default": "no",
+      "info": "Choose whether to display a top border for the Instagram Feed section."
     },
     {
       "type": "radio",
@@ -72,7 +79,15 @@
           "label": "No"
         }
       ],
-      "default": "yes"
+      "default": "yes",
+      "info": "Choose whether to display a bottom border for the Instagram Feed section."
+    },
+    {
+      "type": "checkbox",
+      "id": "trigger_email_popup",
+      "label": "Trigger Email Pop Up",
+      "info": "If checked, this section will trigger the email pop up.",
+      "default": false
     }
   ],
   "templates": ["index", "page"],

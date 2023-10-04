@@ -999,7 +999,7 @@ button:hover {
 
 .button--secondary:hover,
 .button--secondary:focus {
-  background-color: rgb(var(--color-base-background-3));
+  background-color: rgb(var(--color-base-background-1));
   color: rgb(var(--color-base-background-2));
 }
 
