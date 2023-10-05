@@ -35,6 +35,13 @@
             "picker_type": "button"
           }
         },
+        "5e2f8c5e-7d65-4bac-8cac-6831126031b3": {
+          "type": "back-in-stock",
+          "settings": {
+            "button_cta_text": "",
+            "form_success_text": ""
+          }
+        },
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {
@@ -54,6 +61,7 @@
         "description",
         "8f1a3c21-14f1-4a1f-8eae-52aacc399720",
         "variant_picker",
+        "5e2f8c5e-7d65-4bac-8cac-6831126031b3",
         "quantity_selector",
         "buy_buttons"
       ],
@@ -98,7 +106,8 @@
       "disabled": true,
       "settings": {
         "top_border": "no",
-        "bottom_border": "yes"
+        "bottom_border": "yes",
+        "trigger_email_popup": false
       }
     },
     "48239fb0-579b-4c1b-b341-259865ddc2fe": {
