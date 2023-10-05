@@ -596,7 +596,6 @@ class VariantSelects extends HTMLElement {
   }
 
   onVariantChange() {
-    console.log('quantity change'); 
     this.updateOptions();
     this.updateMasterVariantId();
     this.setSoldOutOptions()
@@ -802,7 +801,33 @@ class VariantRadios extends VariantSelects {
     }
   }
 
-  toggleAddButton(pSoldOutStatus, pDisableButton, pQuickAddButton) {
+  alertAvailability(pAvailable, pVariant) {
+    let productForm =  document.querySelector(`product-form[data-section="${this.dataset.section}"]`);
+
+    // Create a custom event
+    const notInStockEvent = new CustomEvent('alert-not-in-stock', {
+      bubbles: true, // Allow the event to bubble up the DOM tree
+      cancelable: true, // Allow the event to be cancelable,
+      detail: pVariant
+    });
+
+
+    // Create a custom event
+    const inStockEvent = new CustomEvent('alert-in-stock', {
+      bubbles: true, // Allow the event to bubble up the DOM tree
+      cancelable: true, // Allow the event to be cancelable
+      detail: pVariant
+    });
+
+    //Dispatch Event on product form
+    if(pAvailable) {
+      productForm.dispatchEvent(inStockEvent); 
+    } else {
+      productForm.dispatchEvent(notInStockEvent); 
+    }
+  }
+
+  toggleAddButton(pSoldOutStatus, pDisableButton) {
 
     if(document.querySelector(`[data-product-card][data-section="${this.dataset.section}"]`)) {
       let quickAddButton = document.querySelector(`[data-product-card][data-section="${this.dataset.section}"]`).querySelector('quick-add-button').querySelector('button');
@@ -810,7 +835,7 @@ class VariantRadios extends VariantSelects {
       this.toggleQuickAddButton(pSoldOutStatus, pDisableButton, quickAddButton, quickAddButtonText);
     }
 
-    let productForm =  document.querySelector(`product-form[data-section="${this.dataset.section}"][data-desktop]`);
+    let productForm =  document.querySelector(`product-form[data-section="${this.dataset.section}"]`);
 
     let disable = pDisableButton; 
     if (!productForm) return;
@@ -849,8 +874,8 @@ class VariantRadios extends VariantSelects {
 
     productForms.forEach((productForm) => {
       
-      if(productForm.querySelector('input[name="id"][data-desktop]')) {
-        const input = productForm.querySelector('input[name="id"][data-desktop]');
+      if(productForm.querySelector('input[name="id"]')) {
+        const input = productForm.querySelector('input[name="id"]');
         input.value = this.currentVariant.id;
         input.dispatchEvent(new Event('change', { bubbles: true }));
       } 
@@ -863,6 +888,7 @@ class VariantRadios extends VariantSelects {
   }
 
   setSoldOutOptions() {
+    
     let data = {
       productVariants: JSON.parse(this.querySelector('[type="application/json"]').innerHTML)
     }; 
@@ -889,7 +915,7 @@ class VariantRadios extends VariantSelects {
              }
            })
          }
-       }  
+       }    
 
        if(!this.currentVariant.available) {
          if(this.querySelectorAll("input[type='radio']:not([disabled])").length === 0) {
@@ -912,6 +938,8 @@ class VariantRadios extends VariantSelects {
           }
          this.toggleAddButton(false, false, true);
        }
+
+      this.alertAvailability(this.currentVariant.available, this.currentVariant); 
   }
 
   setUpEvents() {
@@ -964,24 +992,6 @@ class VariantRadios extends VariantSelects {
 }
 
 customElements.define('variant-radios', VariantRadios);
-
-
-// function enableLazyImgAnimations() {
-
-//   document.querySelectorAll('img').forEach((elem) => 
-//   elem.addEventListener('load', (event) => {
-//     console.log(event);
-//     event.target.classList.add('loaded');
-// }, {once: true}));
-// }
-
-// window.addEventListener('DOMContentLoaded', function() {
-//   document.querySelector('variant-radios').setUpEvents(); 
-// }); 
-
-
-
-
 
 
 
@@ -1064,7 +1074,6 @@ class GlobalModal extends HTMLElement {
 
   openModal(pEvent) {
     this.modal.style.display = 'flex'; 
-    console.log(this.modal); 
 
     if(pEvent) {
       pEvent.target.closest('button').setAttribute('aria-expanded', true);

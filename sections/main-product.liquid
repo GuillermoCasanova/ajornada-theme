@@ -220,7 +220,6 @@
                                     data-handle="{{ product.handle }}"
                                     data-product-url="{{ product.url }}"
                                     data-product-id="{{ product.id }}"
-                                    data-product-first-variant="{{ product.selected_variant.id }}"
                                     data-swatch="{{ product.metafields.color_swatch.name }}"
                                     class="custom-color-picker__input"
                                   >
@@ -259,7 +258,7 @@
                 </div>
               {%- when 'description' -%}
                 {%- if product.description != blank -%}
-                  <div class="product__text">
+                  <div class="product__text" data-product-description-container>
                     {{ product.description }}
                   </div>
                 {%- endif -%}
@@ -532,10 +531,22 @@
                 </custom-color-picker>
                 <script src="{{ 'custom-color-picker.js' | asset_url }}" defer="defer"></script>
               {%- when 'back-in-stock' -%}
-                <back-in-stock> Back in stock test </back-in-stock>
+                <back-in-stock
+                  data-variant-id
+                  data-section="{{ section.id }}"
+                  class="{% if product.selected_or_first_available_variant.available == false %} is-visible {%else%} is-visible {% endif %}"
+                >
+                  <form id="back-in-stock-form" aria-label="Back in Stock Form" name="Back in stock form">
+                    <button type="submit" aria-label="Sign up and get notified when this item comes back in stock.">
+                      Notify Me
+                    </button>
+                    <label for="email" class="visually-hidden">Your valid email (required)</label>
+                    <input type="email" id="email" name="email" required>
+                  </form>
+                </back-in-stock>
               {%- when 'buy_buttons' -%}
                 <div class="product-form" {{ block.shopify_attributes }}>
-                  <product-form data-section="{{ section.id }}" data-desktop>
+                  <product-form data-section="{{ section.id }}">
                     {%- form 'product',
                       product,
                       id: product_form_id,
@@ -548,7 +559,6 @@
                         name="id"
                         value="{{ product.selected_or_first_available_variant.id }}"
                         data-active-product-id
-                        data-desktop
                         class="show-for-large-up"
                       >
                       <div class="product-form__buttons">
@@ -558,14 +568,17 @@
                           class="
                             product-form__submit button button--full-width
                             button--large
-                                  button--secondary
-                            {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}
+                            button--primary
                           "
                           {% if product.selected_or_first_available_variant.available == false %}
                             disabled
                           {% endif %}
                         >
-                          <span class="product-form__submit__text"> Add to Cart </span>
+                          {% if product.selected_or_first_available_variant.available == false %}
+                            <span class="product-form__submit__text"> Sold Out </span>
+                          {% else %}
+                            <span class="product-form__submit__text"> Add to Cart </span>
+                          {% endif %}
                         </button>
                       </div>
                     {%- endform -%}
@@ -653,10 +666,15 @@
       ]
     }
   </script>
+
+  <script type="application/json" id="product-json">
+    {{ product | json }}
+  </script>
 </section>
 
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'modal-buy-near-me.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'back-in-stock.js' | asset_url }}" defer="defer"></script>
 <script type="module" src="{{ 'product-images.js' | asset_url }}" defer="defer"></script>
 
 {% schema %}
@@ -676,7 +694,8 @@
           "type": "text",
           "id": "text",
           "default": "Text block",
-          "label": "t:sections.main-product.blocks.text.settings.text.label"
+          "label": "t:sections.main-product.blocks.text.settings.text.label",
+          "info": "Enter the text for this block."
         },
         {
           "type": "select",
@@ -696,7 +715,8 @@
             }
           ],
           "default": "body",
-          "label": "t:sections.main-product.blocks.text.settings.text_style.label"
+          "label": "t:sections.main-product.blocks.text.settings.text_style.label",
+          "info": "Select the style for the text."
         }
       ]
     },
@@ -708,7 +728,8 @@
           "type": "richtext",
           "id": "text",
           "default": "<p>Lorem Ipsum</p>",
-          "label": "Content"
+          "label": "Content",
+          "info": "Enter the rich text content."
         }
       ]
     },
@@ -771,7 +792,8 @@
             }
           ],
           "default": "button",
-          "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.label"
+          "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.label",
+          "info": "Select the type of variant picker."
         }
       ]
     },
@@ -783,7 +805,8 @@
         {
           "type": "text",
           "id": "picker_label",
-          "label": "Picker Label"
+          "label": "Picker Label",
+          "info": "Enter the label for the color picker."
         }
       ]
     },
@@ -797,7 +820,7 @@
           "id": "show_dynamic_checkout",
           "default": true,
           "label": "t:sections.main-product.blocks.buy_buttons.settings.show_dynamic_checkout.label",
-          "info": "t:sections.main-product.blocks.buy_buttons.settings.show_dynamic_checkout.info"
+          "info": "If checked, the dynamic checkout will be shown."
         }
       ]
     },
@@ -814,35 +837,20 @@
           "type": "text",
           "id": "heading",
           "default": "Collapsible tab",
-          "info": "t:sections.main-product.blocks.collapsible_tab.settings.heading.info",
-          "label": "t:sections.main-product.blocks.collapsible_tab.settings.heading.label"
+          "label": "t:sections.main-product.blocks.collapsible_tab.settings.heading.label",
+          "info": "Enter the heading for the collapsible tab."
         },
         {
           "type": "richtext",
           "id": "content",
-          "label": "t:sections.main-product.blocks.collapsible_tab.settings.content.label"
+          "label": "t:sections.main-product.blocks.collapsible_tab.settings.content.label",
+          "info": "Enter the content for the collapsible tab."
         },
         {
           "type": "page",
           "id": "page",
-          "label": "t:sections.main-product.blocks.collapsible_tab.settings.page.label"
-        }
-      ]
-    },
-    {
-      "type": "popup",
-      "name": "t:sections.main-product.blocks.popup.name",
-      "settings": [
-        {
-          "type": "text",
-          "id": "link_label",
-          "default": "Pop-up link text",
-          "label": "t:sections.main-product.blocks.popup.settings.link_label.label"
-        },
-        {
-          "id": "page",
-          "type": "page",
-          "label": "t:sections.main-product.blocks.popup.settings.page.label"
+          "label": "t:sections.main-product.blocks.collapsible_tab.settings.page.label",
+          "info": "Select the linked page for the collapsible tab."
         }
       ]
     },
@@ -854,12 +862,14 @@
           "type": "text",
           "id": "headline",
           "default": "Text block",
-          "label": "Headline"
+          "label": "Headline",
+          "info": "Enter the headline for the product support section."
         },
         {
           "type": "richtext",
           "id": "body",
-          "label": "Body"
+          "label": "Body",
+          "info": "Enter the body content for the product support section."
         }
       ]
     },
@@ -870,12 +880,32 @@
         {
           "type": "text",
           "id": "name",
-          "label": "Chart Name"
+          "label": "Chart Name",
+          "info": "Enter the name of the size chart."
         },
         {
           "type": "page",
           "id": "size-chart",
-          "label": "Size Chart"
+          "label": "Size Chart",
+          "info": "Select the linked size chart page."
+        }
+      ]
+    },
+    {
+      "name": "Back In Stock",
+      "type": "back-in-stock",
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_cta_text",
+          "label": "Button CTA Text",
+          "info": "The text the button will have"
+        },
+        {
+          "type": "text",
+          "id": "form_success_text",
+          "label": "Subscription Success Text",
+          "info": "The text that will appear when subscribed."
         }
       ]
     }
@@ -890,13 +920,15 @@
       "type": "checkbox",
       "id": "enable_sticky_info",
       "default": true,
-      "label": "t:sections.main-product.settings.enable_sticky_info.label"
+      "label": "t:sections.main-product.settings.enable_sticky_info.label",
+      "info": "If checked, enable sticky info."
     },
     {
       "type": "checkbox",
       "id": "enable_video_looping",
       "default": false,
-      "label": "t:sections.main-product.settings.enable_video_looping.label"
+      "label": "t:sections.main-product.settings.enable_video_looping.label",
+      "info": "If checked, enable video looping."
     }
   ]
 }
