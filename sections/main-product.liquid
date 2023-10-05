@@ -543,7 +543,7 @@
                       aria-label="Back in stock form toggle"
                       class="back-in-stock__summary button  button--primary  button--large"
                     >
-                      Notify Me
+                      {{ block.settings.button_cta_text }}
                     </summary>
                     <div class="back-in-stock__content">
                       <form
@@ -922,11 +922,13 @@
           "type": "text",
           "id": "button_cta_text",
           "label": "Button CTA Text",
+          "default": "Notify Me",
           "info": "The text the button will have"
         },
         {
           "type": "text",
           "id": "form_success_text",
+          "default": "Success",
           "label": "Subscription Success Text",
           "info": "The text that will appear when subscribed."
         }

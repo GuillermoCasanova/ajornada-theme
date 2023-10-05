@@ -951,7 +951,8 @@ body:not(:-moz-handler-blocked) fieldset {
 \*------------------------------------*/
 
 
-button {
+button,
+.button {
   text-transform: uppercase;
   line-height: 1;
   text-align: center;
@@ -965,7 +966,8 @@ button {
   border-radius: 8px;
 }
 
-button:hover {
+button:hover,
+.button:hover {
   cursor: pointer;
 }
 

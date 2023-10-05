@@ -1349,6 +1349,7 @@ modal-buy-near-me {
 back-in-stock {
   width: 100%;
   display: block;
+  margin-bottom: var(--level4);
 }
 
 back-in-stock.is-hidden {
@@ -1359,6 +1360,6 @@ back-in-stock.is-visible {
   display: block;
 }
 
-.back-in-stock-form__button {
+.back-in-stock__summary {
   background-color: black;
 }
