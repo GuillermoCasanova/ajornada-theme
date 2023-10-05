@@ -42,6 +42,13 @@
             "picker_type": "button"
           }
         },
+        "248e0a76-b430-457b-abe2-1884f11e85e2": {
+          "type": "back-in-stock",
+          "settings": {
+            "button_cta_text": "",
+            "form_success_text": ""
+          }
+        },
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {
@@ -67,6 +74,7 @@
         "description",
         "collapsible-row-0",
         "variant_picker",
+        "248e0a76-b430-457b-abe2-1884f11e85e2",
         "quantity_selector",
         "buy_buttons",
         "4a4006c8-0436-4eae-ac13-f3f73fc097c4"
@@ -122,7 +130,8 @@
       ],
       "settings": {
         "top_border": "no",
-        "bottom_border": "no"
+        "bottom_border": "no",
+        "trigger_email_popup": false
       }
     },
     "a1ec1272-815b-43bc-9e6f-e6f679902ead": {
@@ -182,7 +191,8 @@
         "cards_background": "shopify:\/\/shop_images\/RecipeCard2_ea1c8201-91d8-4fb9-9d64-b51e83347173.png",
         "cta_url": "shopify:\/\/blogs\/recipes",
         "top_border": "no",
-        "bottom_border": "no"
+        "bottom_border": "no",
+        "trigger_email_popup": false
       }
     }
   },
