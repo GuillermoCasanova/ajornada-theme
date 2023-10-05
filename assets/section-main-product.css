@@ -1067,16 +1067,6 @@ variant-selects {
 
 
 
-/*------------------------------------*\
-    #Product Buy near Me
-\*------------------------------------*/
-
-.product__buy-near-me {
-  width: 100%;
-  margin-top: var(--level2);
-}
-
-
 
 /*------------------------------------*\
     #Product Custom Color Picker
@@ -1291,6 +1281,13 @@ variant-selects {
     #Buy Near Me
 \*------------------------------------*/
 
+.product__buy-near-me {
+  width: 100%;
+  margin-top: var(--level2);
+  margin-bottom: var(--level4);
+}
+
+
 modal-buy-near-me {
   display: block;
   width: 100%;
@@ -1360,4 +1357,8 @@ back-in-stock.is-hidden {
 
 back-in-stock.is-visible {
   display: block;
+}
+
+.back-in-stock-form__button {
+  background-color: black;
 }

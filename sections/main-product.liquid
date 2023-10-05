@@ -536,13 +536,36 @@
                   data-section="{{ section.id }}"
                   class="{% if product.selected_or_first_available_variant.available == false %} is-visible {%else%} is-visible {% endif %}"
                 >
-                  <form id="back-in-stock-form" aria-label="Back in Stock Form" name="Back in stock form">
-                    <button type="submit" aria-label="Sign up and get notified when this item comes back in stock.">
+                  <details>
+                    <summary
+                      aria-expanded="false"
+                      role="button"
+                      aria-label="Back in stock form toggle"
+                      class="back-in-stock__summary button  button--primary  button--large"
+                    >
                       Notify Me
-                    </button>
-                    <label for="email" class="visually-hidden">Your valid email (required)</label>
-                    <input type="email" id="email" name="email" required>
-                  </form>
+                    </summary>
+                    <div class="back-in-stock__content">
+                      <form
+                        id="back-in-stock__form"
+                        aria-label="Display back in stock form"
+                        name="Back in stock form"
+                        class="back-in-stock-form"
+                      >
+                        <button
+                          type="submit"
+                          class="back-in-stock__form__submit-button"
+                          aria-label="Sign up and get notified when this item comes back in stock."
+                        >
+                          <span class="visually-hidden"> Sign Up </span>
+                        </button>
+                        <div>
+                          <label for="email" class="visually-hidden">Your valid email (required)</label>
+                          <input type="email" id="email" name="email" required>
+                        </div>
+                      </form>
+                    </div>
+                  </details>
                 </back-in-stock>
               {%- when 'buy_buttons' -%}
                 <div class="product-form" {{ block.shopify_attributes }}>

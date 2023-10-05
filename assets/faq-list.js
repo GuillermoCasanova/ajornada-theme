@@ -31,8 +31,6 @@ class FAQList extends HTMLElement {
         
       pDrawer.setAttribute('aria-expanded', true);
     
-      console.log(pDrawer.dataset.id); 
-      
       if (pDrawer.dataset.id == this.activeDrawer) {
         this.closeDrawer(pDrawer.closest('details'));
         return;
