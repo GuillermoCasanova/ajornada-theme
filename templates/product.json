@@ -45,8 +45,8 @@
         "248e0a76-b430-457b-abe2-1884f11e85e2": {
           "type": "back-in-stock",
           "settings": {
-            "button_cta_text": "",
-            "form_success_text": ""
+            "button_cta_text": "Notify Me",
+            "form_success_text": "Success! You'll be notified as soon as it comes back in stock."
           }
         },
         "quantity_selector": {
