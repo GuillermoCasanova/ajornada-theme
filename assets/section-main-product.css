@@ -1360,6 +1360,74 @@ back-in-stock.is-visible {
   display: block;
 }
 
+back-in-stock details[open] summary {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
 .back-in-stock__summary {
-  background-color: black;
+  background-color: rgb(var(--color-base-background-3));
+  transition: all .2s ease-in-out;
+}
+
+.back-in-stock__summary:hover,
+.back-in-stock__summary:focus {
+  background-color: rgb(var(--color-base-background-3));
+}
+
+.back-in-stock__summary__loader {
+  display: none;
+  position: absolute;
+}
+
+.back-in-stock__summary__success {
+  display: none;
+  position: absolute;
+}
+
+
+.back-in-stock__content {
+  overflow: hidden;
+  position: relative;
+  transition: all .2s ease-in-out;
+}
+
+.back-in-stock__form {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.back-in-stock-form__section {
+  width: 100%;
+  flex-grow: 1;
+}
+
+.back-in-stock__form__submit-button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 5rem;
+  height: 2rem;
+  margin: auto;
+  margin-right: var(--level2);
+  background-color: transparent;
+  outline: 0;
+  border: 0;
+  transition: all .2s ease-in-out;
+}
+
+.back-in-stock__form__submit-button:hover,
+.back-in-stock__form__submit-button:focus {
+  transform: translateX(6px);
+}
+
+.back-in-stock__form__submit-button .button__icon {
+  color: rgb(var(--color-base-background-3))
+}
+
+.back-in-stock__form__input[type="email"] {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
 }

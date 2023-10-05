@@ -543,14 +543,24 @@
                       aria-label="Back in stock form toggle"
                       class="back-in-stock__summary button  button--primary  button--large"
                     >
-                      {{ block.settings.button_cta_text }}
+                      <span class="back-in-stock__summary__default" data-default-text>
+                        {{ block.settings.button_cta_text }}
+                      </span>
+
+                      <span class="back-in-stock__summary__loader" data-loader>
+                        <div class="loader"></div>
+                      </span>
+
+                      <alert class="back-in-stock__summary__success" data-success-text>
+                        {{ block.settings.button_success_text }}
+                      </alert>
                     </summary>
-                    <div class="back-in-stock__content">
+                    <div class="back-in-stock__content" data-content>
                       <form
-                        id="back-in-stock__form"
+                        id="back-in-stock-form"
                         aria-label="Display back in stock form"
                         name="Back in stock form"
-                        class="back-in-stock-form"
+                        class="back-in-stock__form"
                       >
                         <button
                           type="submit"
@@ -558,10 +568,20 @@
                           aria-label="Sign up and get notified when this item comes back in stock."
                         >
                           <span class="visually-hidden"> Sign Up </span>
+                          <svg class="button__icon">
+                            <use href="#arrow-right"/>
+                          </svg>
                         </button>
-                        <div>
-                          <label for="email" class="visually-hidden">Your valid email (required)</label>
-                          <input type="email" id="email" name="email" required>
+                        <div class="back-in-stock-form__section">
+                          <label for="email" class="visually-hidden">Email (required)</label>
+                          <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            placeholder="Enter your email"
+                            class="back-in-stock__form__input  input--large"
+                          >
                         </div>
                       </form>
                     </div>
@@ -927,7 +947,7 @@
         },
         {
           "type": "text",
-          "id": "form_success_text",
+          "id": "button_success_text",
           "default": "Success",
           "label": "Subscription Success Text",
           "info": "The text that will appear when subscribed."

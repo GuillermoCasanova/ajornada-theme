@@ -9,6 +9,13 @@ class FAQList extends HTMLElement {
       this.init();
     }
   
+ 
+    toggleDrawer(event) {
+      event.preventDefault();
+      const currentTarget = event.currentTarget;
+      this.openDrawer(currentTarget);
+    }
+
     closeDrawer(pElem) {
       this.activeDrawer = null;
       const faqAnswer = pElem.querySelector('[data-faq-answer]');
@@ -20,15 +27,8 @@ class FAQList extends HTMLElement {
       }, 450);
     }
   
-    toggleDrawer(event) {
-      event.preventDefault();
-      const currentTarget = event.currentTarget;
-      this.openDrawer(currentTarget);
-    }
   
     openDrawer(pDrawer) {
-        console.log(pDrawer); 
-        
       pDrawer.setAttribute('aria-expanded', true);
     
       if (pDrawer.dataset.id == this.activeDrawer) {

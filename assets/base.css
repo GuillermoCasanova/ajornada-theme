@@ -786,6 +786,21 @@ textarea {
 
 }
 
+
+.input--medium {
+  padding-top: .85rem;
+  padding-bottom: 1rem;
+  padding-left: var(--level2);
+  font-size: var(--h6);
+}
+
+.input--large {
+  padding-top: var(--level6);
+  padding-bottom: var(--level6);
+  font-size: var(--h5);
+  padding-left: var(--level3);
+}
+
 label {
   font-family: var(--primary-font-family);
   letter-spacing: 1px;
@@ -1177,4 +1192,31 @@ button:hover,
 
 .rte p+h3 {
   margin-top: var(--level7);
+}
+
+
+
+
+
+/*------------------------------------*\
+  #Global Loader
+\*------------------------------------*/
+
+
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  padding: 6px;
+  background:
+    radial-gradient(farthest-side at bottom left, #0000 calc(100% - 6px), currentColor calc(100% - 5px) 99%, #0000) top right/50% 50% content-box content-box,
+    radial-gradient(farthest-side at top, #0000 calc(100% - 6px), currentColor calc(100% - 5px) 99%, #0000) bottom /100% 50% content-box content-box;
+  background-repeat: no-repeat;
+  animation: l11 1s infinite linear;
+}
+
+@keyframes l11 {
+  100% {
+    transform: rotate(1turn)
+  }
 }

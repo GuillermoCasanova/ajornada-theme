@@ -4,7 +4,12 @@ class BackInStockComponent extends HTMLElement {
   
       // Add event listener for the "back in stock" event on the parent form div
       this.productForm =  document.querySelector(`product-form[data-section="${this.dataset.section}"]`);
-      this.form = this.querySelector('form'); 
+      this.form = this.querySelector('form');
+      this.drawerTrigger = this.querySelector('summary');  
+      this.drawerContent = this.querySelector('[data-content]');
+      this.loader = this.querySelector('[data-loader]');
+      this.successText = this.querySelector('[data-success-text]');
+      this.defaultText = this.querySelector('[data-default-text]');
       this.initEvents(); 
       this.getVariantData(); 
       this.updateVariantId(); 
@@ -18,6 +23,12 @@ class BackInStockComponent extends HTMLElement {
             event.preventDefault(); // Prevent the default form submission
             this.subscribeUser(); // Call the subscribe function
         });
+
+        this.drawerTrigger.addEventListener('click', (event)=> {
+            this.toggleDrawer(event); 
+        }); 
+
+        this.drawerContent.style.height = 0; 
     }
 
 
@@ -44,6 +55,8 @@ class BackInStockComponent extends HTMLElement {
 
 
     subscribeUser() {
+        this.defaultText.style.opacity = 0; 
+        this.loader.style.display = 'block'; 
         const emailInput = this.form.querySelector('[type="email"]').value;
         const variantId = this.dataset.variantId; 
         const payload = {
@@ -81,9 +94,14 @@ class BackInStockComponent extends HTMLElement {
             body: JSON.stringify(payload),
         };
 
+        function showSuccess(pContainer) {
+            pContainer.loader.style.display = 'none'; 
+            pContainer.successText.style.display = 'block'; 
+        };
+
         fetch("https://a.klaviyo.com/client/back-in-stock-subscriptions/?company_id=TeNSXA", requestOptions)
-            .then(response => response.json())
-            .then(result => console.log(result))
+            .then(response => response)
+            .then(result => { console.log(result); showSuccess(this);} )
             .catch(error => console.log('error', error));
     }
 
@@ -102,42 +120,37 @@ class BackInStockComponent extends HTMLElement {
         }
     }
 
+    toggleDrawer(event) {
+        event.preventDefault();
+        const currentTarget = event.currentTarget;
+        this.openDrawer(currentTarget);
+      }
 
+    closeDrawer(pDrawerTrigger) {
+        const content = pDrawerTrigger.closest('details').querySelector('[data-content]');
+        content.style.height = 0;
 
-    closeDrawer(pElem) {
-        this.activeDrawer = null;
-        const faqAnswer = pElem.querySelector('[data-faq-answer]');
-        faqAnswer.style.height = 0;
-        pElem.querySelector('summary').setAttribute('aria-expanded', false);
+        pDrawerTrigger.setAttribute('aria-expanded', false);
     
         setTimeout(() => {
-          pElem.removeAttribute('open');
+            pDrawerTrigger.closest('details').removeAttribute('open');
         }, 450);
       }
     
     
-      openDrawer(pDrawer) {
-        pDrawer.setAttribute('aria-expanded', true);
+      openDrawer(pDrawerTrigger) {
+         pDrawerTrigger.setAttribute('aria-expanded', true);
       
-        if (pDrawer.dataset.id == this.activeDrawer) {
-          this.closeDrawer(pDrawer.closest('details'));
-          return;
-        }
+         if (pDrawerTrigger.closest('details').getAttribute('open')) {
+           this.closeDrawer(pDrawerTrigger);
+           return;
+         }
     
-        this.querySelectorAll('details').forEach((elem) => {
-          if (elem.querySelector('summary').dataset.id !== pDrawer.dataset.id) {
-            this.closeDrawer(elem.closest('details'));
-          }
-        });
-    
-        pDrawer.closest('details').setAttribute('open', true);
-    
-        const faqAnswer = pDrawer.closest('details').querySelector('[data-faq-answer]');
-        faqAnswer.style.height = faqAnswer.querySelector('p').offsetHeight + 'px';
-    
-        this.activeDrawer = pDrawer.dataset.id;
+        pDrawerTrigger.closest('details').setAttribute('open', true);
+        const content = pDrawerTrigger.closest('details').querySelector('[data-content]');
+        content.style.height = content.querySelector('form').offsetHeight + 'px';
       }
-      
+
   }
   
   // Define the custom element name and register it
