@@ -126,12 +126,6 @@ summary::before {
   object-fit: cover;
 }
 
-main {
-  min-height: calc(70vw - 300px);
-  overflow: hidden;
-  position: relative;
-}
-
 
 
 
@@ -496,12 +490,16 @@ h6:empty {
 \*------------------------------------*/
 
 main {
-  margin-top: 5rem;
+  margin-top: 4rem;
+  min-height: calc(70vw - 300px);
+  overflow: hidden;
+  position: relative;
 }
+
 
 @media screen and (min-width: 700px) {
   main {
-    margin-top: 6rem;
+    margin-top: 5rem;
   }
 }
 

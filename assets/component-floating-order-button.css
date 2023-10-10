@@ -1,0 +1,79 @@
+/*------------------------------------*\
+    #Floating Order Button Component
+\*------------------------------------*/
+
+floating-order-button {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    margin-right: 0;
+    margin-bottom: var(--level2);
+    display: block;
+    opacity: 0;
+    transition: all .4s ease-in-out .6s;
+}
+
+@media screen and (min-width: 940px) {
+    floating-order-button {
+        margin-right: var(--level2);
+        margin-bottom: var(--level4);
+    }
+
+}
+
+floating-order-button.is-visible {
+    opacity: 1;
+}
+
+.floating-order-button__inner {
+    position: relative;
+    display: block;
+    width: 7rem;
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (min-width: 700px) {
+    .floating-order-button__inner {
+        width: 8rem;
+        height: 8rem;
+    }
+}
+
+
+@media screen and (min-width: 1200px) {
+    .floating-order-button__inner {
+        width: 9rem;
+        height: 9rem;
+    }
+}
+
+.floating-order-button__flower-graphic {
+    width: 100%;
+    height: 100%;
+}
+
+.floating-order-button__text {
+    position: absolute;
+    text-transform: uppercase;
+    font-size: var(--micro);
+    padding: .15rem;
+    margin-bottom: var(--level3);
+    background-color: rgb(var(--color-base-background-1));
+    opacity: 0;
+    transition: all .2s ease-in-out;
+}
+
+
+.floating-order-button__inner.is-order-state .floating-order-button__text {
+    opacity: 1;
+}
+
+.floating-order-button__inner:hover .floating-order-button__text,
+.floating-order-button__inner:focus .floating-order-button__text {
+    opacity: 1;
+    text-decoration: underline;
+}
