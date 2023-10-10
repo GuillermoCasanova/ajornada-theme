@@ -192,6 +192,14 @@
         "bottom_border": "yes",
         "trigger_email_popup": false
       }
+    },
+    "2f73c840-9de8-4701-aed1-27c8e0d14e8e": {
+      "type": "floating-shop-button",
+      "settings": {
+        "button_text": "Order",
+        "button_link": "shopify:\/\/products\/lorem-ipsum",
+        "is_active": true
+      }
     }
   },
   "order": [
@@ -199,6 +207,7 @@
     "a91f73fa-9991-492c-bca6-4dfe59bea098",
     "1fb290d3-1160-424c-8641-e536b754d192",
     "2bb814ef-d55a-470e-bc5c-8bf06b1dfe81",
-    "1655920347d426af19"
+    "1655920347d426af19",
+    "2f73c840-9de8-4701-aed1-27c8e0d14e8e"
   ]
 }
