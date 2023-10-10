@@ -11,7 +11,7 @@ floating-order-button {
     margin-bottom: var(--level2);
     display: block;
     opacity: 0;
-    transition: all .4s ease-in-out .6s;
+    transition: opacity .4s ease-in-out;
 }
 
 @media screen and (min-width: 940px) {

@@ -3,6 +3,7 @@ class FloatingOrderButton extends HTMLElement {
         super();
         this.initEvents(); 
         this.button = this.querySelector('[data-order-link]')
+        this.showFlower(); 
     }
 
     initEvents() {
@@ -13,14 +14,12 @@ class FloatingOrderButton extends HTMLElement {
         this.observeTrigger(hideOrderStateTrigger, this.hideOrderState.bind(this),  {root: null, rootMargin: '100px', threshold: 1});
         //Shows the "order" text state
         this.observeTrigger(showOrderStateTrigger, this.showOrderState.bind(this),  {root: null, rootMargin: '100px', threshold: .8});
-        //Shows the flower
-        this.observeTrigger(showFlowerTrigger, this.showFlower.bind(this),  {root: null, rootMargin: '0%', threshold: 1});
     }
     
     showFlower() {
         setTimeout(()=> {
             this.classList.add('is-visible'); 
-        }, 100); 
+        }, 200); 
     }
 
     hideOrderState() {

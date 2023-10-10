@@ -195,11 +195,11 @@
 .footer__block__link:hover,
 .footer__block__link:focus {
   text-decoration: underline;
-  color: rgb(var(--color-base-accent));
+  color: var(--color-base-accent);
 }
 
 .footer__block__link:active {
-  color: #F9EFB2;
+  color: var(--color-base-accent);
   text-decoration: none;
 }
 
