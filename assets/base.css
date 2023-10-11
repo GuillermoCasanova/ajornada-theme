@@ -178,7 +178,7 @@ summary::before {
 
 
 /*------------------------------------*\
-    #Root Typography Resizing
+    #Typography Resizing
 \*------------------------------------*/
 
 :root {
@@ -242,7 +242,7 @@ summary::before {
 /*X-LARGE-UP*/
 @media screen and (min-width: 1300px) {
   :root {
-    font-size: .9rem;
+    font-size: .8rem;
   }
 }
 
@@ -503,11 +503,6 @@ main {
   }
 }
 
-@media screen and (min-width: 940px) {
-  main {
-    margin-top: 6.5rem;
-  }
-}
 
 .master-padding-top {
   padding-top: var(--level6);
@@ -546,21 +541,18 @@ main {
 }
 
 
-
-@media screen and (min-width: 940px) {
+@media screen and (min-width: 700px) {
   .page-width {
     padding-left: var(--level8);
     padding-right: var(--level8);
-    max-width: var(--max-width-large);
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 940px) {
   .page-width {
-    /* max-width: 98rem; */
     max-width: var(--max-width-large);
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .page-width.is-small {
@@ -569,6 +561,14 @@ main {
 
   .page-width.is-x-small {
     max-width: var(--max-width-x-small);
+  }
+
+}
+
+@media screen and (min-width: 1300px) {
+  .page-width {
+    /* max-width: 98rem; */
+    max-width: var(--max-width-large);
   }
 }
 

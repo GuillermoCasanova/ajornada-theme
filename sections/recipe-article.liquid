@@ -1,6 +1,10 @@
 {{ 'section-recipe-post.css' | asset_url | stylesheet_tag }}
 
-<article class="article-template section--main" itemscope itemtype="http://schema.org/BlogPosting">
+<article
+  class="article-template section--main"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
   <div class="page-width is-small ">
     <div class="recipe-header master-padding-top">
       <div class="recipe-header__inner ">
@@ -10,38 +14,40 @@
         <p class="recipe-header__heading">Recipe</p>
       </div>
     </div>
-    <div class="recipe-body">
+    <div class="recipe-body" data-gsap-pin-trigger>
       <div class="recipe-images">
-        <scroll-opacity-images>
+        <recipe-scroll-animations>
           <div class="recipe-images__inner">
             {{ article.content }}
           </div>
-        </scroll-opacity-images>
+        </recipe-scroll-animations>
       </div>
-      <div class="recipe-information">
-        <div class="recipe-information__inner">
-          <recipe-information-toggle>
-            <button class="recipe-information__toggle" aria-label="Slide up information panel">
-              <span>Slide Up</span>
-            </button>
-          </recipe-information-toggle>
+      <div class="recipe-pinning-container" data-gsap-pin-element>
+        <div class="recipe-information">
+          <div class="recipe-information__inner">
+            <recipe-information-toggle>
+              <button class="recipe-information__toggle" aria-label="Slide up information panel">
+                <span>Slide Up</span>
+              </button>
+            </recipe-information-toggle>
 
-          <div class="recipe-information__header">
-            <p class="recipe-information__name">{{ article.title }}</p>
-            <p class="recipe-information__description">
-              {{ article.excerpt }}
-            </p>
-          </div>
-          <div class="recipe-information__section">
-            <h2 class="recipe-information__section__heading">Ingredients:</h2>
-            <div class="recipe-information__section__body  ingredients-list">
-              {{ article.metafields.recipe_details.ingredients | metafield_tag }}
+            <div class="recipe-information__header">
+              <p class="recipe-information__name">{{ article.title }}</p>
+              <p class="recipe-information__description">
+                {{ article.excerpt }}
+              </p>
             </div>
-          </div>
-          <div class="recipe-information__section">
-            <h2 class="recipe-information__section__heading">Ingredients:</h2>
-            <div class="recipe-information__section__body  instructions-list">
-              {{ article.metafields.recipe_details.instructions | metafield_tag }}
+            <div class="recipe-information__section">
+              <h2 class="recipe-information__section__heading">Ingredients:</h2>
+              <div class="recipe-information__section__body  ingredients-list">
+                {{ article.metafields.recipe_details.ingredients | metafield_tag }}
+              </div>
+            </div>
+            <div class="recipe-information__section">
+              <h2 class="recipe-information__section__heading">Steps:</h2>
+              <div class="recipe-information__section__body  instructions-list">
+                {{ article.metafields.recipe_details.instructions | metafield_tag }}
+              </div>
             </div>
           </div>
         </div>
@@ -50,7 +56,6 @@
   </div>
 </article>
 
-<!-- Include GSAP 3 from the Shopify CDN -->
 <script defer type="module">
   // Define the custom element
   class RecipeInformationToggle extends HTMLElement {
@@ -75,35 +80,51 @@
 
   // Define the custom element's tag name
   customElements.define('recipe-information-toggle', RecipeInformationToggle);
-  class ScrollOpacityImages extends HTMLElement {
+
+  class RecipeScrollAnimations extends HTMLElement {
     constructor() {
       super();
       this.images = this.querySelectorAll('img');
     }
     connectedCallback() {
-      this.setUpDOM();
-      this.setUpImagesAnimation();
+      this.setUpDOM().then(() => {
+        this.setUpImagesAnimation();
+        this.setUpPinning();
+      });
     }
 
-    setUpDOM() {
+    async setUpDOM() {
       function wrap(el, wrapper) {
         el.parentNode.insertBefore(wrapper, el);
         wrapper.appendChild(el);
       }
 
-      this.images.forEach((image, index) => {
-        image.style.webkitFilter = 'blur(10px)';
-        image.style.opacity = 0;
-        const wrapper = document.createElement('div');
-        wrapper.classList.add('recipes-images__image');
-        wrap(image, wrapper);
+      // Wrap the entire logic in a Promise
+      return new Promise((resolve, reject) => {
+        this.images.forEach(async (image, index) => {
+          image.style.webkitFilter = 'blur(10px)';
+          image.style.opacity = 0;
+          const wrapper = document.createElement('div');
+          wrapper.classList.add('recipes-images__image');
+          wrap(image, wrapper);
+
+          // Simulate an asynchronous operation (you can replace this with actual async work)
+          await new Promise((innerResolve) => setTimeout(innerResolve, 100));
+
+          if (index === this.images.length - 1) {
+            resolve(); // Resolve the outer Promise when all images are processed
+          }
+        });
       });
     }
+
     setUpImagesAnimation() {
       let container = this;
 
+      // Load GSAP from the Shopify CDN
       loadScript('https://cdn.shopify.com/s/files/1/0638/6201/4197/files/gsap.min.js?v=1694471182')
         .then(() => {
+          // Load ScrollTrigger Plugin from the Shopify CDN
           loadScript('https://cdn.shopify.com/s/files/1/0638/6201/4197/files/ScrollTrigger.min.js?v=1694471189"').then(
             () => {
               gsap.registerPlugin('ScrollTrigger');
@@ -129,21 +150,32 @@
           console.error('Script loading failed! Handle this error');
         });
     }
+
+    setUpPinning() {
+      loadScript('https://cdn.shopify.com/s/files/1/0638/6201/4197/files/gsap.min.js?v=1694471182')
+        .then(() => {
+          loadScript('https://cdn.shopify.com/s/files/1/0638/6201/4197/files/ScrollTrigger.min.js?v=1694471189"').then(
+            () => {
+              let mm = gsap.matchMedia();
+
+              gsap.registerPlugin('ScrollTrigger');
+
+              mm.add('(min-width: 700px)', () => {
+                let pt = ScrollTrigger.create({
+                  trigger: '[data-gsap-pin-trigger]',
+                  pin: '[data-gsap-pin-element]',
+                  start: 'top 15%',
+                  end: 'bottom 85%',
+                });
+              });
+            }
+          );
+        })
+        .catch(() => {
+          console.error('Script loading failed! Handle this error');
+        });
+    }
   }
 
-  customElements.define('scroll-opacity-images', ScrollOpacityImages);
+  customElements.define('recipe-scroll-animations', RecipeScrollAnimations);
 </script>
-
-{% schema %}
-{
-  "name": "Recipe Post",
-  "settings": [],
-  "blocks": [
-    {
-      "type": "images",
-      "name": "Image Block",
-      "settings": []
-    }
-  ]
-}
-{% endschema %}
