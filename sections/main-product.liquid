@@ -542,7 +542,7 @@
                 <back-in-stock
                   data-variant-id
                   data-section="{{ section.id }}"
-                  class="{%- if product.selected_or_first_available_variant.available == false -%} is-visible {%else%} is-visible {% endif %}"
+                  class="{%- if product.selected_or_first_available_variant.available == false -%} is-visible {%else%} is-hidden {% endif %}"
                 >
                   <details>
                     <summary

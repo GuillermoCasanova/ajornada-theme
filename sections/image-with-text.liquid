@@ -9,7 +9,7 @@
     {% endif %}
   "
 >
-  <div class="image-with-text__inner page-width is-small">
+  <div class="image-with-text__inner page-width">
     <div class="image-with-text__image">
       {% if section.settings.show_symbol and section.settings.orientation != 'right_to_left' %}
         <div class="image-with-text__symbol">
@@ -34,11 +34,11 @@
       <div class="image-with-text__copy__inner">
         <h2
           class="
-            image-with-text__copy__heading   {% if section.settings.headline_style == 'style_1' %}
-              is-style-1
-            {% else %}
-              is-style-2
-            {% endif %}
+              image-with-text__copy__heading   {% if section.settings.headline_style == 'style_1' %}
+                is-style-1
+            {% else %}nas
+                is-style-2
+              {% endif %}
           "
         >
           {{ section.settings.headline }}
@@ -47,6 +47,17 @@
         <div class="image-with-text__copy__body">
           {{ section.settings.richtext }}
         </div>
+        {% if section.settings.show_directional_arrow == true %}
+          <directional-arrow class="image-with-text__directional-arrow">
+            <button>
+              <svg>
+                <use href="#directional-arrow"></use>
+              </svg>
+              <span class="visually-hidden"> Scroll to next section </span>
+            </button>
+          </directional-arrow>
+          <script type="module" src="{{ 'component-directional-arrow.js' | asset_url }}" defer="defer"></script>
+        {% endif %}
       </div>
     </div>
   </div>
@@ -83,6 +94,13 @@
       "id": "show_symbol",
       "default": true,
       "info": "Toggle to show/hide the symbol input."
+    },
+    {
+      "type": "checkbox",
+      "label": "Show Directional Arrow",
+      "id": "show_directional_arrow",
+      "default": false,
+      "info": "Toggle to show/hide the arrow that if clicked scrolls to the next section."
     },
     {
       "type": "select",

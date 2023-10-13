@@ -17,9 +17,7 @@
     border-bottom: 2px solid black;
 }
 
-.content-slideshow__inner {
-    padding-top: var(--level10);
-}
+.content-slideshow__inner {}
 
 @media screen and (min-width:700px) {
     .content-slideshow__inner {

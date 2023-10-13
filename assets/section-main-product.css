@@ -733,7 +733,7 @@
   z-index: -1;
 }
 
-.quantity__input {
+.quantity__input[type='number'] {
   color: rgb(var(--color-base-background-2));
   text-align: center;
   background-color: transparent;
@@ -744,6 +744,7 @@
   appearance: none;
   font-size: var(--h2);
   padding-bottom: var(--level1);
+  border: none;
 }
 
 .quantity__button {

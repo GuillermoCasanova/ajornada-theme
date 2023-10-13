@@ -17,7 +17,7 @@
 @media screen and (min-width: 700px) {
     .image-with-text__inner {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1.25fr 1fr;
         align-items: center;
         column-gap: var(--level7);
         padding-bottom: var(--level5)
@@ -27,7 +27,6 @@
 @media screen and (min-width: 940px) {
     .image-with-text__inner {
         display: grid;
-        grid-template-columns: 1fr .75fr;
         align-items: center;
         column-gap: var(--level10);
     }
@@ -44,7 +43,7 @@
 .image-with-text__image__inner {
     position: relative;
     padding-bottom: 56.2%;
-    border-radius: 30px;
+    border-radius: 20px;
     overflow: hidden;
 }
 
@@ -53,10 +52,11 @@
     .image-with-text__image__inner {
         position: relative;
         padding-bottom: 60%;
-        border-radius: 30px;
         overflow: hidden;
     }
 }
+
+
 
 
 
@@ -73,7 +73,6 @@
 
 @media screen and (min-width: 700px) {
     .image-with-text__copy p {
-        font-size: var(--h6);
         line-height: 1.35;
     }
 }
@@ -108,13 +107,7 @@
     font-size: var(--h3);
 }
 
-@media screen and (min-width: 700px) {
-    .image-with-text__copy__heading {
-        font-size: var(--h2);
-    }
-}
-
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 940px) {
     .image-with-text__copy__heading {
         font-size: var(--h1);
         margin-bottom: var(--level8)
@@ -136,8 +129,6 @@
         font-size: var(--h3);
     }
 }
-
-
 
 
 .image-with-text__copy__body {
@@ -184,4 +175,31 @@
 .image-with-text__symbol svg {
     width: 100%;
     height: 100%;
+}
+
+
+
+
+/*------------------------------------*\
+    #Directional Arrow
+\*------------------------------------*/
+
+
+.image-with-text__directional-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-with-text__directional-arrow button {
+    background-color: transparent;
+    outline: 0;
+    border: none;
+    width: 2rem;
+    transition: all .2s ease-in-out;
+}
+
+.image-with-text__directional-arrow button:hover,
+.image-with-text__directional-arrow button:focus {
+    transform: translateY(10px);
 }

@@ -168,10 +168,6 @@ summary::before {
   --level8: 2.5rem;
   --level9: 3rem;
   --level10: 3.5rem;
-  --max-width-x-small: 70rem;
-  --max-width-small: 90rem;
-  --max-width-medium: 105rem;
-  --max-width-large: 115rem;
 }
 
 
@@ -523,6 +519,12 @@ main {
     #Page Width Container
 \*------------------------------------*/
 
+:root {
+  --max-width-x-small: 70rem;
+  --max-width-small: 90rem;
+  --max-width-medium: 105rem;
+  --max-width-large: 105rem;
+}
 
 .page-width {
   max-width: var(--max-width-medium);
