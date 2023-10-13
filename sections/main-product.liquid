@@ -272,7 +272,11 @@
                             {{ block.settings.heading | default: block.settings.page.title }}
                           </h2>
                         </div>
-                        {% render 'icon-caret' %}
+                        <div class="accordion__icon">
+                          <svg>
+                            <use href="#icon-plus-sign"></use>
+                          </svg>
+                        </div>
                       </summary>
                       <div class="accordion__content rte">
                         <div
@@ -320,7 +324,11 @@
                       <div class="summary__title">
                         <h2 class="h4 accordion__title">{{ block.settings.heading }}</h2>
                       </div>
-                      {% render 'icon-caret' %}
+                      <div class="accordion__icon">
+                        <svg>
+                          <use href="#icon-plus-sign"></use>
+                        </svg>
+                      </div>
                     </summary>
                     <div class="accordion__content rte" data-product-description-container>
                       {{ block.settings.content }}
@@ -534,7 +542,7 @@
                 <back-in-stock
                   data-variant-id
                   data-section="{{ section.id }}"
-                  class="{% if product.selected_or_first_available_variant.available == false %} is-visible {%else%} is-visible {% endif %}"
+                  class="{%- if product.selected_or_first_available_variant.available == false -%} is-visible {%else%} is-visible {% endif %}"
                 >
                   <details>
                     <summary

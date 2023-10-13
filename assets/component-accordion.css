@@ -2,6 +2,15 @@
     #Accordions
 \*------------------------------------*/
 
+.accordion summary {
+  display: flex;
+  align-items: center;
+}
+
+.accordion details[open] .accordion__icon {
+  transform: rotate(45deg);
+}
+
 .accordion .summary__title {
   display: flex;
   flex: 1;
@@ -46,13 +55,20 @@ details[open] .summary__title {
   }
 }
 
-.accordion .icon-accordion {
+.accordion__icon {
   align-self: center;
   fill: rgb(var(--color-foreground));
-  height: calc(var(--font-heading-scale) * 2rem);
-  margin-right: calc(var(--font-heading-scale) * 1rem);
-  width: calc(var(--font-heading-scale) * 2rem);
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: var(--level2);
+  transition: all .2s ease-in-out;
 }
+
+.accordion__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
 
 .accordion details[open]>summary .icon-caret {
   transform: rotate(180deg);
