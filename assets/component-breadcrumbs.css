@@ -43,6 +43,7 @@
   position: relative;
   font-size: var(--normal);
   text-transform: capitalize;
+  padding-right: var(--level1);
 }
 
 .breadcrumbs__inner a:hover,

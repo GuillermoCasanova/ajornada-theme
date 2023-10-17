@@ -90,7 +90,7 @@ a:focus {
   padding-right: var(--level1);
 }
 
-.login__screen__headline {
+.customer__heading {
   text-transform: uppercase;
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--level7);
@@ -98,7 +98,7 @@ a:focus {
 }
 
 @media screen and (min-width: 700px) {
-  .login__screen__headline {
+  .customer__heading {
     margin-bottom: var(--level10);
   }
 }
@@ -276,9 +276,33 @@ a:focus {
   }
 }
 
+
+.account-header__heading {
+  text-transform: uppercase;
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--level7);
+  font-size: var(--h2);
+}
+
+@media screen and (min-width: 940px) {
+  .account-header__heading {
+    font-size: var(--h1);
+    margin-bottom: var(--level3);
+  }
+}
+
+
+
 .logout-link {
   font-size: var(--h6);
   text-transform: uppercase;
+}
+
+@media screen and (min-width: 940px) {
+  .logout-link {
+    font-size: var(--h4);
+    display: inline-block;
+  }
 }
 
 .logout-link:hover,
@@ -318,8 +342,22 @@ a:focus {
   }
 }
 
+
+
+
+
+/*------------------------------------*\
+    #Order History
+\*------------------------------------*/
+
 .order-history {
   margin-bottom: var(--level10);
+}
+
+@media screen and (min-width: 1200px) {
+  .order-history {
+    margin-right: var(--level7);
+  }
 }
 
 .order-history__header {
@@ -327,6 +365,19 @@ a:focus {
   margin-bottom: var(--level4);
   border-bottom: 1px solid black;
   text-transform: capitalize;
+}
+
+
+.order-history__header__heading {
+  text-transform: uppercase;
+  font-size: var(--h4);
+}
+
+@media screen and (min-width: 940px) {
+  .order-history__header__heading {
+    text-transform: uppercase;
+    font-size: var(--h3);
+  }
 }
 
 @media screen and (min-width: 940px) {
@@ -349,6 +400,13 @@ a:focus {
   }
 }
 
+
+
+
+
+/*------------------------------------*\
+    #Account Details
+\*------------------------------------*/
 
 .account-details {
   margin-bottom: var(--level6);
@@ -375,6 +433,32 @@ a:focus {
   }
 }
 
+
+.account-details__header__heading {
+  text-transform: uppercase;
+  font-size: var(--h4);
+}
+
+@media screen and (min-width: 940px) {
+  .account-details__header__heading {
+    text-transform: uppercase;
+    font-size: var(--h3);
+  }
+}
+
+
+.account-details__header__subheading {
+  text-transform: uppercase;
+  font-size: var(--h6);
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 940px) {
+  .account-details__header__subheading {
+    font-size: var(--h5);
+  }
+}
+
 .account-details__address {
   font-size: var(--h5);
   margin-bottom: var(--level4);
@@ -392,22 +476,10 @@ a:focus {
   }
 }
 
-
 .account-details__edit-cta {
-  font-size: var(--h5);
-  display: block;
   max-width: 12rem;
-  text-align: center;
-  text-decoration: none;
+  margin-top: var(--level8);
 }
-
-@media screen and (min-width: 940px) {
-  .account-details__edit-cta {
-    font-size: var(--h4);
-  }
-}
-
-
 
 
 
@@ -498,9 +570,6 @@ a:focus {
     #Order Page
 \*------------------------------------*/
 
-
-
-
 .order-header {
   font-size: var(--h6);
   margin-bottom: var(--level6);
@@ -534,7 +603,7 @@ a:focus {
   border-bottom: 1px solid black;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 700px) {
 
   .order thead th:nth-last-child(-n + 3),
   .order td:nth-last-child(-n + 3) {
@@ -603,7 +672,7 @@ a:focus {
   font-size: 1.2rem;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 700px) {
   .order td .cart-discount {
     display: none;
   }
@@ -618,7 +687,7 @@ a:focus {
   margin-bottom: 0;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 700px) {
   .order tbody ul {
     text-align: left;
   }
@@ -631,7 +700,7 @@ a:focus {
   align-items: flex-end;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 700px) {
   .order tbody tr:first-of-type td:first-of-type>div {
     align-items: flex-start;
   }
@@ -739,7 +808,7 @@ a:focus {
   margin-top: 0rem;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 700px) {
   .addresses li>button:first-of-type {
     margin-top: 3rem;
   }
@@ -793,11 +862,6 @@ label[for='AddressProvinceNew'] {
   max-width: 25rem;
 }
 
-.default-address-label {
-  text-transform: uppercase;
-  font-size: var(--h4);
-  text-align: left;
-}
 
 .addresses-item {
   margin-bottom: var(--level7);
@@ -808,16 +872,19 @@ label[for='AddressProvinceNew'] {
   text-align: left;
 }
 
+
+.addresses-item__actions {
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
 .addresses-item__actions button {
   max-width: 10rem;
   margin-bottom: var(--level5);
   margin-right: var(--level2);
 }
-
-.addresses-item__actions {
-  text-align: left;
-}
-
 
 .current-address-header,
 .new-address-header,
@@ -838,6 +905,46 @@ label[for='AddressProvinceNew'] {
     margin-bottom: var(--level7);
   }
 }
+
+.current-address-header__heading {
+  text-transform: uppercase;
+  font-size: var(--h4);
+}
+
+@media screen and (min-width: 940px) {
+  .current-address-header__heading {
+    text-transform: uppercase;
+    font-size: var(--h3);
+  }
+}
+
+.address-label {
+  text-transform: uppercase;
+  font-size: var(--h6);
+  text-decoration: underline;
+  text-align: left;
+}
+
+@media screen and (min-width: 940px) {
+  .address-label {
+    font-size: var(--h5);
+  }
+}
+
+
+
+.new-address-header__heading {
+  text-transform: uppercase;
+  font-size: var(--h4);
+}
+
+@media screen and (min-width: 940px) {
+  .new-address-header__heading {
+    text-transform: uppercase;
+    font-size: var(--h3);
+  }
+}
+
 
 .edit-address-header {
   margin-top: var(--level5);

@@ -749,6 +749,27 @@ summary::-webkit-details-marker {
 \*------------------------------------*/
 
 
+@media screen and (min-width: 940px) {
+  .form-section--50 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--level4);
+  }
+}
+
+
+@media screen and (min-width: 940px) {
+  .form-section--75 {
+    display: grid;
+    grid-template-columns: .70fr .30fr;
+    column-gap: var(--level4);
+  }
+}
+
+
+
+
+
 /*------------------------------------*\
     #Inputs 
 \*------------------------------------*/
@@ -985,6 +1006,160 @@ body:not(:-moz-handler-blocked) fieldset {
 
 
 
+
+
+/*------------------------------------*\
+  #Custom Select 
+\*------------------------------------*/
+
+/* .custom-field input:active+label,
+.custom-field input:focus+label {} */
+
+.custom-select label {
+  position: absolute;
+  left: var(--level4);
+  font-family: var(--primary-font-family);
+  top: 0;
+  bottom: -.15rem;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.custom-select {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-bottom: var(--level4)
+}
+
+
+.custom-select select {
+  padding-top: var(--level3);
+  padding-bottom: var(--level3);
+  padding-left: var(--level2);
+  font-size: var(--h6);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  background-color: transparent;
+  border-radius: 6px;
+  border-color: rgb(var(--color-base-text-1))
+}
+
+.custom-select select:hover {
+  cursor: pointer;
+}
+
+.custom-select svg {
+  position: absolute;
+  right: var(--level4);
+  top: 1rem;
+  bottom: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  pointer-events: none;
+}
+
+
+
+
+
+
+/*------------------------------------*\
+  #Disclaimer Checkbox
+\*------------------------------------*/
+
+.disclaimer-checkbox {
+  display: flex;
+  margin-top: calc(var(--level1) / 2);
+  margin-bottom: var(--level5);
+}
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  font-size: var(--h6);
+  text-transform: uppercase;
+}
+
+.custom-checkbox:hover {
+  cursor: pointer;
+}
+
+.custom-checkbox input {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+}
+
+
+.custom-checkbox .checkbox span,
+.custom-checkbox .checkbox span {
+  display: none;
+}
+
+.custom-checkbox .checkbox input:checked+span {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.custom-checkbox .checkbox input:focus+span {
+  display: block;
+  opacity: .5;
+}
+
+.custom-checkbox .checkbox span:after,
+.custom-checkbox .checkbox span:before {
+  content: " ";
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.custom-checkbox .checkbox span:after {
+  transform: rotate(45deg);
+}
+
+.custom-checkbox .checkbox span:before {
+  transform: rotate(-45deg);
+}
+
+.custom-checkbox input:checked span {
+  display: block;
+}
+
+
+.custom-checkbox .checkbox {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid black;
+  border-radius: 6px;
+  display: block;
+  margin-right: var(--level2);
+  position: relative;
+}
+
+
+
+
 /*------------------------------------*\
   #Buttons 
 \*------------------------------------*/
@@ -1044,6 +1219,22 @@ button:hover,
   color: rgb(var(--color-base-background-2));
 }
 
+.button--tertiary {
+  border: 1px solid rgb(var(--color-base-text-1));
+  color: rgb(var(--color-base-text-1));
+  text-decoration: none;
+  letter-spacing: .5px;
+  font-weight: var(--font-weight-bold);
+  background-color: transparent;
+}
+
+.button--tertiary:hover,
+.button--tertiary:focus {
+  background-color: rgb(var(--color-base-background-3));
+  color: rgb(var(--color-base-background-1));
+}
+
+
 .styled-link {
   text-transform: uppercase;
   position: relative;
@@ -1069,7 +1260,7 @@ button:hover,
 .button--medium {
   padding-top: .85rem;
   padding-bottom: 1rem;
-  font-size: var(--h5);
+  font-size: var(--h6);
 }
 
 .button--medium .button__text {

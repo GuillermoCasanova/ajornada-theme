@@ -1,5 +1,4 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
-{{ 'base-forms.css' | asset_url | stylesheet_tag }}
 {{ 'component-breadcrumbs.css' | asset_url | stylesheet_tag }}
 
 <div class="page-width master-padding-top account-breadcrumbs">
@@ -129,18 +128,18 @@
       </div>
 
       <div class="account-details__address">
+        <h3 class="address-label">Default Address</h3>
         {{ customer.default_address | format_address }}
       </div>
-
-      <a href="{{ routes.account_addresses_url }}"  class="account-details__edit-cta  button  button--secondary  button--large" aria-label="Edit account addresses">
-        {% if customer.default_address != blank %}
-          Edit
-        {%else%}
-          Add Address
-        {% endif %}
-      </a>
+      <div class="account-details__edit-cta">
+        <a href="{{ routes.account_addresses_url }}"  class="button  button--tertiary  button--large" aria-label="Edit account addresses">
+          {% if customer.default_address != blank %}
+            Edit
+          {%else%}
+            Add Address
+          {% endif %}
+        </a>
+      </div>
     </div>
-
   </div>
-
 </section>
