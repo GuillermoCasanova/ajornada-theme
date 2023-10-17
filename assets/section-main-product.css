@@ -695,31 +695,29 @@
   max-width: 8rem;
 }
 
-.quantity {
+.product-form__quantity input {
+  padding-top: var(--level2);
+  padding-bottom: var(--level4);
+}
+
+.product-form__quantity .quantity {
   color: rgba(var(--color-foreground));
   position: relative;
   display: flex;
   border-radius: var(--inputs-radius);
   border: 2px solid rgb(var(--color-base-background-2));
   border-radius: 12px;
-  min-height: 4.75rem;
   width: 100%;
 }
 
-@media screen and (min-width: 940px) {
-  .quantity {
-    min-height: 6rem;
-  }
-}
-
-.quantity:after {
+.product-form__quantity .quantity:after {
   pointer-events: none;
   content: '';
   position: absolute;
   z-index: 1;
 }
 
-.quantity:before {
+.product-form__quantity .quantity:before {
   background: rgb(var(--color-background));
   pointer-events: none;
   content: '';
@@ -733,7 +731,7 @@
   z-index: -1;
 }
 
-.quantity__input[type='number'] {
+.product-form__quantity .quantity__input[type='number'] {
   color: rgb(var(--color-base-background-2));
   text-align: center;
   background-color: transparent;
@@ -743,11 +741,11 @@
   -webkit-appearance: none;
   appearance: none;
   font-size: var(--h2);
-  padding-bottom: var(--level1);
   border: none;
+
 }
 
-.quantity__button {
+.product-form__quantity .product-form__quantity .quantity__button {
   flex-shrink: 0;
   border: 0;
   background-color: transparent;
@@ -761,15 +759,17 @@
   color: rgb(var(--color-base-text-3));
 }
 
-.quantity__button:first-child {
+.product-form__quantity .quantity .quantity__button:first-child {
   padding-left: 1rem;
+  border: 0;
 }
 
-.quantity__button:last-child {
+.product-form__quantity .quantity .quantity__button:last-child {
   padding-right: 1rem;
+  border: 0;
 }
 
-.quantity__button svg {
+.product-form__quantity .quantity__button svg {
   width: 1rem;
   pointer-events: none;
   color: rgb(var(--color-base-background-2));
@@ -777,41 +777,46 @@
   stroke: rgb(var(--color-base-background-2));
 }
 
-.quantity__button:focus-visible,
+.product-form__quantity .quantity__button:focus-visible,
 .quantity__input:focus-visible {
   z-index: 2;
 }
 
-.quantity__button:focus,
+.product-form__quantity .quantity__button:focus,
 .quantity__input:focus {
   z-index: 2;
 }
 
-.quantity__button:not(:focus-visible):not(.focused),
-.quantity__input:not(:focus-visible):not(.focused) {
+.product-form__quantity .quantity__button:not(:focus-visible):not(.focused),
+.product-form__quantity .quantity__input:not(:focus-visible):not(.focused) {
   box-shadow: inherit;
   background-color: inherit;
 }
 
-.quantity__input:-webkit-autofill,
-.quantity__input:-webkit-autofill:hover,
-.quantity__input:-webkit-autofill:active {
+.product-form__quantity .quantity__input:-webkit-autofill,
+.product-form__quantity .quantity__input:-webkit-autofill:hover,
+.product-form__quantity .quantity__input:-webkit-autofill:active {
   box-shadow: 0 0 0 10rem rgb(var(--color-background)) inset !important;
   -webkit-box-shadow: 0 0 0 10rem rgb(var(--color-background)) inset !important;
 }
 
-.quantity__input::-webkit-outer-spin-button,
-.quantity__input::-webkit-inner-spin-button {
+.product-form__quantity .quantity__input::-webkit-outer-spin-button,
+.product-form__quantity .quantity__input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.quantity__input[type='number'] {
+.product-form__quantity .quantity__input[type='number'] {
   -moz-appearance: textfield;
 }
 
 
 
+
+
+/*------------------------------------*\
+    #Dropdowns & Selects
+\*------------------------------------*/
 
 variant-selects {
   width: 47%;
@@ -1324,10 +1329,6 @@ modal-buy-near-me {
     overflow: hidden;
   }
 }
-
-
-
-
 
 @media screen and (min-width: 940px) {
   modal-buy-near-me .modal__cover {
