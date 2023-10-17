@@ -1,21 +1,16 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
-{{ 'base-forms.css' | asset_url | stylesheet_tag }}
 {{ 'component-breadcrumbs.css' | asset_url | stylesheet_tag }}
-
 
 <div class="page-width master-padding-top">
   {% render 'breadcrumbs' %}
 </div>
- 
 
 <section class="customer login">
-
-  <div class="login__recover-screen"  id="recover" >
-  
+  <div class="login__recover-screen" id="recover">
     <h1 tabindex="-1" class="form-headline">
       {{ 'customer.recover_password.title' | t }}
     </h1>
-    
+
     <div>
       <p>
         {{ 'customer.recover_password.subtext' | t }}
@@ -25,13 +20,15 @@
     {%- form 'recover_customer_password' -%}
       {% assign recover_success = form.posted_successfully? %}
       <custom-input-wrapper class="custom-field">
-        <input type="email"
+        <input
+          type="email"
           value=""
           name="email"
           id="RecoverEmail"
           autocorrect="off"
           autocapitalize="off"
           autocomplete="email"
+          class="input--secondary"
           {% if form.errors %}
             aria-invalid="true"
             aria-describedby="RecoverEmail-email-error"
@@ -44,11 +41,11 @@
       </custom-input-wrapper>
 
       {%- if form.errors -%}
-        <div  class="form__message form__message--error">
-        <small id="RecoverEmail-email-error">
-          {{ form.errors.messages['form'] }}
-        </small>
-      </div>
+        <div class="form__message form__message--error">
+          <small id="RecoverEmail-email-error">
+            {{ form.errors.messages.form }}
+          </small>
+        </div>
       {%- endif -%}
 
       <button class="button  button--primary  button--large" aria-label="Get email to recover password">
@@ -62,8 +59,7 @@
   </div>
 
   <div class="login__screen" id="login">
-
-    <h1  tabindex="-1" class="form-headline">
+    <h1 tabindex="-1" class="login__screen__headline">
       {{ 'customer.login_page.title' | t }}
     </h1>
 
@@ -89,7 +85,7 @@
         </div>
       {%- endif -%}
 
-      <custom-input-wrapper class="custom-field">        
+      <custom-input-wrapper class="custom-field  custom-field--secondary custom-field--large">
         <input
           type="email"
           name="customer[email]"
@@ -97,52 +93,47 @@
           autocomplete="email"
           autocorrect="off"
           autocapitalize="off"
+          class="input--secondary"
           {% if form.errors contains 'form' %}
             aria-invalid="true"
           {% endif %}
         >
-        <label for="CustomerEmail">
-          {{ 'customer.login_page.email' | t }}
-        </label>
+        <label for="CustomerEmail"> {{ 'customer.login_page.email' | t }}* </label>
       </custom-input-wrapper>
 
       {%- if form.password_needed -%}
-        <custom-input-wrapper class="custom-field">          
+        <custom-input-wrapper class="custom-field custom-field--secondary custom-field--large">
           <input
             type="password"
             value=""
             name="customer[password]"
             id="CustomerPassword"
             autocomplete="current-password"
+            class="input--secondary"
             {% if form.errors contains 'form' %}
               aria-invalid="true"
             {% endif %}
           >
-          <label for="CustomerPassword">
-            {{ 'customer.login_page.password' | t }}
-          </label>
+          <label for="CustomerPassword"> {{ 'customer.login_page.password' | t }}* </label>
         </custom-input-wrapper>
       {%- endif -%}
 
-      <button class="button  button--primary  button--large" aria-label="Sign in to your account" >
+      <button class="button  button--primary  button--large" aria-label="Sign in to your account">
         {{ 'customer.login_page.sign_in' | t }}
       </button>
 
       <div class="login-footer">
-      
         <a href="{{ routes.account_register_url }}" class="styled-link">
           {{ 'customer.login_page.create_account' | t }}
         </a>
-        
+
         <a href="#recover" class="styled-link">
           {{ 'customer.login_page.forgot_password' | t }}
         </a>
-  
       </div>
-    
     {%- endform -%}
   </div>
-  
+
   {%- if shop.checkout.guest_login -%}
     <div>
       <hr>

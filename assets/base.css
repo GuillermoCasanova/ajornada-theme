@@ -174,7 +174,7 @@ summary::before {
 
 
 /*------------------------------------*\
-    #Typography Resizing
+    #Typography
 \*------------------------------------*/
 
 :root {
@@ -238,7 +238,7 @@ summary::before {
 /*X-LARGE-UP*/
 @media screen and (min-width: 1300px) {
   :root {
-    font-size: .8rem;
+    font-size: .9rem;
   }
 }
 
@@ -254,7 +254,7 @@ summary::before {
 /*WIDESCREEN-UP*/
 @media screen and (min-width: 2000px) {
   :root {
-    font-size: .95rem;
+    font-size: 1rem;
   }
 }
 
@@ -778,14 +778,16 @@ textarea {
   background-color: white;
   width: 100%;
   border: none;
-  border: 1px solid rgb(var(--color-base-text));
   border-radius: 6px;
   font-family: var(--primary-font-family);
   transition: all .4s ease-in-out;
   border: 1px solid rgb(var(--color-base-text-1));
-
 }
 
+
+.input--primary {
+  border-radius: 6px;
+}
 
 .input--medium {
   padding-top: .85rem;
@@ -909,7 +911,7 @@ body:not(:-moz-handler-blocked) fieldset {
   position: relative;
   display: block;
   width: 100%;
-  margin-bottom: var(--level3)
+  margin-bottom: var(--level4)
 }
 
 .custom-field label {
@@ -936,6 +938,7 @@ body:not(:-moz-handler-blocked) fieldset {
   padding-bottom: 1rem;
   padding-left: var(--level2);
   font-size: var(--h6);
+  border: 1px solid rgb(var(--color-base-text-1));
 }
 
 .custom-field label {
@@ -955,9 +958,30 @@ body:not(:-moz-handler-blocked) fieldset {
   display: flex;
   align-items: center;
   text-transform: capitalize;
-
 }
 
+
+.custom-field--secondary input {
+  background-color: transparent;
+}
+
+.custom-field--secondary label {
+  text-transform: uppercase;
+  color: rgb(var(--color-base-text-1));
+  opacity: 1;
+  font-size: var(--normal)
+}
+
+
+.custom-field--large input {
+  padding-top: var(--level4);
+  padding-bottom: var(--level4);
+  font-size: var(--h5);
+}
+
+.custom-field--large label {
+  padding-bottom: .15rem;
+}
 
 
 
@@ -1064,17 +1088,9 @@ button:hover,
 }
 
 .button--large {
-  padding-top: var(--level6);
-  padding-bottom: var(--level6);
+  padding-top: var(--level5);
+  padding-bottom: var(--level5);
   font-size: var(--h5);
-}
-
-@media screen and (min-width: 940px) {
-  .button--large {
-    padding-top: var(--level7);
-    padding-bottom: var(--level7);
-    font-size: var(--h4);
-  }
 }
 
 .styled-link:hover,

@@ -1,17 +1,14 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
-{{ 'base-forms.css' | asset_url | stylesheet_tag }}
 {{ 'component-breadcrumbs.css' | asset_url | stylesheet_tag }}
 
 <div class="page-width master-padding-top">
   {% render 'breadcrumbs' %}
 </div>
- 
 
 <section class="customer register">
-  
-    <h1 class="headline">
-      {{ 'customer.register.title' | t }}
-    </h1>
+  <h1 class="login__screen__headline">
+    {{ 'customer.register.title' | t }}
+  </h1>
 
   {%- form 'create_customer', novalidate: 'novalidate' -%}
     {%- if form.errors -%}
@@ -21,7 +18,7 @@
         </svg>
         {{ 'templates.contact.form.error_heading' | t }}
       </h2>
-      <ul> 
+      <ul>
         {%- for field in form.errors -%}
           <li>
             {%- if field == 'form' -%}
@@ -36,36 +33,38 @@
         {%- endfor -%}
       </ul>
     {%- endif -%}
-    <custom-input-wrapper  class="custom-field">      
+    <custom-input-wrapper class="custom-field  custom-field--large custom-field--secondary">
       <input
         type="text"
         name="customer[first_name]"
         id="RegisterForm-FirstName"
-        {% if form.first_name %}value="{{ form.first_name }}"{% endif %}
+        {% if form.first_name %}
+          value="{{ form.first_name }}"
+        {% endif %}
         autocomplete="given-name"
       >
-      <label for="RegisterForm-FirstName">
-        {{ 'customer.register.first_name' | t }}
-      </label>
+      <label for="RegisterForm-FirstName"> {{ 'customer.register.first_name' | t }}* </label>
     </custom-input-wrapper>
-    <custom-input-wrapper  class="custom-field">
+    <custom-input-wrapper class="custom-field  custom-field--large custom-field--secondary">
       <input
         type="text"
         name="customer[last_name]"
         id="RegisterForm-LastName"
-        {% if form.last_name %}value="{{ form.last_name }}"{% endif %}
+        {% if form.last_name %}
+          value="{{ form.last_name }}"
+        {% endif %}
         autocomplete="family-name"
       >
-      <label for="RegisterForm-LastName">
-        {{ 'customer.register.last_name' | t }}
-      </label>
+      <label for="RegisterForm-LastName"> {{ 'customer.register.last_name' | t }}* </label>
     </custom-input-wrapper>
-    <custom-input-wrapper  class="custom-field">      
+    <custom-input-wrapper class="custom-field  custom-field--large custom-field--secondary">
       <input
         type="email"
         name="customer[email]"
         id="RegisterForm-email"
-        {% if form.email %} value="{{ form.email }}"{% endif %}
+        {% if form.email %}
+          value="{{ form.email }}"
+        {% endif %}
         spellcheck="false"
         autocapitalize="off"
         autocomplete="email"
@@ -75,19 +74,18 @@
           aria-describedby="RegisterForm-email-error"
         {% endif %}
       >
-      <label for="RegisterForm-email">
-        {{ 'customer.register.email' | t }}
-      </label>
+      <label for="RegisterForm-email"> {{ 'customer.register.email' | t }}* </label>
     </custom-input-wrapper>
     {%- if form.errors contains 'email' -%}
       <span id="RegisterForm-email-error" class="form__message">
         <svg aria-hidden="true" focusable="false" role="presentation">
           <use href="#icon-error" />
         </svg>
-        {{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.
+        {{ form.errors.translated_fields.email | capitalize }}
+        {{ form.errors.messages.email }}.
       </span>
     {%- endif -%}
-    <custom-input-wrapper  class="custom-field">     
+    <custom-input-wrapper class="custom-field  custom-field--large custom-field--secondary">
       <input
         type="password"
         name="customer[password]"
@@ -98,16 +96,15 @@
           aria-describedby="RegisterForm-password-error"
         {% endif %}
       >
-      <label for="RegisterForm-password">
-        {{ 'customer.register.password' | t }}
-      </label>
+      <label for="RegisterForm-password"> {{ 'customer.register.password' | t }}* </label>
     </custom-input-wrapper>
     {%- if form.errors contains 'password' -%}
       <span id="RegisterForm-password-error" class="form__message">
         <svg aria-hidden="true" focusable="false" role="presentation">
           <use href="#icon-error" />
         </svg>
-        {{ form.errors.translated_fields['password'] | capitalize }} {{ form.errors.messages['password'] }}.
+        {{ form.errors.translated_fields.password | capitalize }}
+        {{ form.errors.messages.password }}.
       </span>
     {%- endif -%}
     <button class="button  button--primary  button--large">
