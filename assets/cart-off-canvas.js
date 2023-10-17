@@ -460,7 +460,7 @@ class CartOffCanvas extends HTMLElement {
   
                   <div class="cart-notification__remove-btn"> 
                     <cart-remove-button id="Remove-${productIndex}" data-index="${productIndex}">
-                      <a href="${pProduct.url}" class="button button--tertiary">
+                      <a href="${pProduct.url}" class="button">
                       
                           <svg class="icon">
                               <use href="#icon-close">
