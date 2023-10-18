@@ -2,20 +2,6 @@
 
 <noscript>{{ 'section-rich-text.css' | asset_url | stylesheet_tag }}</noscript>
 
-{%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-  }
-{%- endstyle -%}
-
 <div class="rich-text">
   <div class="rich-text__inner page-width is-x-small">
     <div class="rich-text__blocks {{ section.settings.content_alignment }}">
@@ -90,6 +76,17 @@
                 >
               </div>
             </div>
+          {%- when 'cta' %}
+            <div class="rich-text__cta">
+              <a
+                href="{{ block.setings.cta_link }}"
+                {% if block.settings.new_window == true %}
+                  target="_blank"
+                {% endif %}
+              >
+                {{ block.settings.cta_text }}
+              </a>
+            </div>
         {%- endcase -%}
       {%- endfor -%}
     </div>
@@ -100,108 +97,7 @@
 {
   "name": "t:sections.rich-text.name",
   "tag": "section",
-  "class": "section",
-  "settings": [
-    {
-      "type": "select",
-      "id": "desktop_content_position",
-      "options": [
-        {
-          "value": "left",
-          "label": "t:sections.rich-text.settings.desktop_content_position.options__1.label"
-        },
-        {
-          "value": "center",
-          "label": "t:sections.rich-text.settings.desktop_content_position.options__2.label"
-        },
-        {
-          "value": "right",
-          "label": "t:sections.rich-text.settings.desktop_content_position.options__3.label"
-        }
-      ],
-      "default": "center",
-      "label": "t:sections.rich-text.settings.desktop_content_position.label",
-      "info": "t:sections.rich-text.settings.desktop_content_position.info"
-    },
-    {
-      "type": "select",
-      "id": "content_alignment",
-      "options": [
-        {
-          "value": "left",
-          "label": "t:sections.rich-text.settings.content_alignment.options__1.label"
-        },
-        {
-          "value": "center",
-          "label": "t:sections.rich-text.settings.content_alignment.options__2.label"
-        },
-        {
-          "value": "right",
-          "label": "t:sections.rich-text.settings.content_alignment.options__3.label"
-        }
-      ],
-      "default": "center",
-      "label": "t:sections.rich-text.settings.content_alignment.label"
-    },
-    {
-      "type": "select",
-      "id": "color_scheme",
-      "options": [
-        {
-          "value": "accent-1",
-          "label": "t:sections.all.colors.accent_1.label"
-        },
-        {
-          "value": "accent-2",
-          "label": "t:sections.all.colors.accent_2.label"
-        },
-        {
-          "value": "background-1",
-          "label": "t:sections.all.colors.background_1.label"
-        },
-        {
-          "value": "background-2",
-          "label": "t:sections.all.colors.background_2.label"
-        },
-        {
-          "value": "inverse",
-          "label": "t:sections.all.colors.inverse.label"
-        }
-      ],
-      "default": "background-1",
-      "label": "t:sections.all.colors.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "full_width",
-      "default": true,
-      "label": "t:sections.rich-text.settings.full_width.label"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 40
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 52
-    }
-  ],
+  "settings": [],
   "blocks": [
     {
       "type": "heading",
@@ -211,7 +107,7 @@
         {
           "type": "text",
           "id": "heading",
-          "default": "Headline",
+          "default": "LOREM IPSUM",
           "label": "t:sections.rich-text.blocks.heading.settings.heading.label"
         }
       ]
@@ -273,7 +169,7 @@
         {
           "type": "richtext",
           "id": "text",
-          "default": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
+          "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum aute irure dolor.</p>",
           "label": "t:sections.rich-text.blocks.text.settings.text.label"
         }
       ]
@@ -290,45 +186,28 @@
       ]
     },
     {
-      "type": "buttons",
-      "name": "t:sections.rich-text.blocks.buttons.name",
-      "limit": 2,
+      "type": "cta",
+      "name": "Call To Action Link",
       "settings": [
         {
-          "type": "text",
-          "id": "button_label_1",
-          "default": "Button label",
-          "label": "t:sections.rich-text.blocks.buttons.settings.button_label_1.label",
-          "info": "t:sections.rich-text.blocks.buttons.settings.button_label_1.info"
-        },
-        {
           "type": "url",
-          "id": "button_link_1",
-          "label": "t:sections.rich-text.blocks.buttons.settings.button_link_1.label"
-        },
-        {
-          "type": "checkbox",
-          "id": "button_style_secondary_1",
-          "default": false,
-          "label": "t:sections.rich-text.blocks.buttons.settings.button_style_secondary_1.label"
+          "id": "cta_link",
+          "label": "Link",
+          "info": "The link or page this cta should link out to."
         },
         {
           "type": "text",
-          "id": "button_label_2",
-          "default": "Button label",
-          "label": "t:sections.rich-text.blocks.buttons.settings.button_label_2.label",
-          "info": "t:sections.rich-text.blocks.buttons.settings.button_label_2.info"
-        },
-        {
-          "type": "url",
-          "id": "button_link_2",
-          "label": "t:sections.rich-text.blocks.buttons.settings.button_link_2.label"
+          "id": "cta_text",
+          "label": "CTA Text",
+          "default": "CTA Button",
+          "info": "The text for the link to display."
         },
         {
           "type": "checkbox",
-          "id": "button_style_secondary_2",
+          "id": "new_window",
+          "label": "Open in a New Tab",
           "default": false,
-          "label": "t:sections.rich-text.blocks.buttons.settings.button_style_secondary_2.label"
+          "info": "Should the link open in a new tab or the same window?"
         }
       ]
     }
@@ -342,9 +221,6 @@
         },
         {
           "type": "text"
-        },
-        {
-          "type": "buttons"
         }
       ]
     }

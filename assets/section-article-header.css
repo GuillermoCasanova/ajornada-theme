@@ -1,0 +1,36 @@
+/*------------------------------------*\
+    #Article Header
+\*------------------------------------*/
+
+.article-header__inner {
+    padding-top: var(--level5);
+}
+
+@media screen and (min-width: 700px) {
+    .article-header__inner {
+        padding-top: calc(var(--level10));
+    }
+}
+
+@media screen and (min-width: 940px) {
+    .article-header__inner {
+        padding-top: calc(var(--level10) + var(--level10));
+    }
+}
+
+.article-header__heading {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--h3);
+}
+
+@media screen and (min-width: 700px) {
+
+    .article-header__heading {
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: var(--font-weight-bold);
+        font-size: var(--h2);
+    }
+}

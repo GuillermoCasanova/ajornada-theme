@@ -33,7 +33,7 @@
         {%- endfor -%}
       </ul>
     {%- endif -%}
-    <custom-input-wrapper class="custom-field  custom-field--large custom-field--secondary">
+    <custom-input-wrapper class="custom-field  custom-field--large custom-field--primary">
       <input
         type="text"
         name="customer[first_name]"
@@ -45,7 +45,7 @@
       >
       <label for="RegisterForm-FirstName"> {{ 'customer.register.first_name' | t }}* </label>
     </custom-input-wrapper>
-    <custom-input-wrapper class="custom-field  custom-field--large custom-field--secondary">
+    <custom-input-wrapper class="custom-field  custom-field--large custom-field--primary">
       <input
         type="text"
         name="customer[last_name]"
@@ -57,7 +57,7 @@
       >
       <label for="RegisterForm-LastName"> {{ 'customer.register.last_name' | t }}* </label>
     </custom-input-wrapper>
-    <custom-input-wrapper class="custom-field  custom-field--large custom-field--secondary">
+    <custom-input-wrapper class="custom-field  custom-field--large custom-field--primary">
       <input
         type="email"
         name="customer[email]"
@@ -85,7 +85,7 @@
         {{ form.errors.messages.email }}.
       </span>
     {%- endif -%}
-    <custom-input-wrapper class="custom-field  custom-field--large custom-field--secondary">
+    <custom-input-wrapper class="custom-field  custom-field--large custom-field--primary">
       <input
         type="password"
         name="customer[password]"

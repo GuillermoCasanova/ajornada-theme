@@ -1,0 +1,127 @@
+/*------------------------------------*\
+    #Article Image With Text (Side by side)
+\*------------------------------------*/
+
+.article-image-with-text__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    column-gap: var(--level6);
+}
+
+
+@media screen and (min-width: 700px) {
+    .article-image-with-text__inner {
+        column-gap: var(--level10);
+    }
+}
+
+@media screen and (min-width: 940px) {
+    .article-image-with-text__inner {
+        column-gap: calc(var(--level8) + var(--level8));
+    }
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Copy
+\*------------------------------------*/
+
+.article-image-with-text--left .article-image-with-text__copy {
+    order: 2;
+}
+
+
+
+
+/*------------------------------------*\
+    #Heading
+\*------------------------------------*/
+
+.article-image-with-text__heading {
+    text-transform: uppercase;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--level2);
+    font-size: var(--h5);
+}
+
+@media screen and (min-width: 700px) {
+    .article-image-with-text__heading {
+        font-size: var(--h3);
+        margin-bottom: var(--level4);
+    }
+}
+
+@media screen and (min-width: 940px) {
+    .article-image-with-text__heading {
+        font-size: var(--h2);
+        margin-bottom: var(--level8);
+    }
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Body
+\*------------------------------------*/
+
+.article-image-with-text__body {
+    margin-bottom: var(--level5);
+    text-align: justify;
+}
+
+@media screen and (min-width: 700px) {
+    .article-image-with-text__body {
+        font-size: var(--h5);
+    }
+
+    .article-image-with-text__body p {
+        line-height: 1.65;
+    }
+}
+
+@media screen and (min-width: 940px) {
+    .article-image-with-text__body {
+        font-size: var(--h4);
+    }
+}
+
+
+
+
+
+
+/*------------------------------------*\
+    #Image
+\*------------------------------------*/
+
+
+.article-image-with-text--left .article-image-with-text__image {
+    order: 1;
+}
+
+.article-image-with-text__image__inner {
+    position: relative;
+    padding-bottom: 150%;
+    overflow: hidden;
+    border-radius: 50px;
+}
+
+@media screen and (min-width: 700px) {
+    .article-image-with-text__image__inner {
+        border-radius: 130px;
+        padding-bottom: 140%;
+    }
+}
+
+@media screen and (min-width: 940px) {
+    .article-image-with-text__image__inner {
+        border-radius: 13rem;
+        padding-bottom: 140%;
+    }
+}

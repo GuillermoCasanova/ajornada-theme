@@ -2,7 +2,9 @@
     #Image Slideshow Break  
 \*------------------------------------*/
 
-.image-slideshow-break {}
+.image-slideshow-break {
+    margin-bottom: var(--level3);
+}
 
 .image-slideshow-break__inner {
     position: relative;

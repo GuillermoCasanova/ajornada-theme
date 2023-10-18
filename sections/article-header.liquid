@@ -1,0 +1,35 @@
+<link
+  rel="preload"
+  href="{{ 'section-article-header.css' | asset_url }}"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+>
+
+<div class="article-header">
+  <div class="article-header__inner">
+    <h1 class="article-header__heading">
+      {{ section.settings.heading }}
+    </h1>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Article Header",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading Text",
+      "default": "Name of Article",
+      "info": "Enter the text for your article or post here."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Article Header"
+    }
+  ]
+}
+{% endschema %}

@@ -53,7 +53,7 @@
 
 
 /*------------------------------------*\
-    #Heading
+    #Text
 \*------------------------------------*/
 
 .rich-text__heading {
@@ -75,13 +75,20 @@
   }
 }
 
+
+
+
+/*------------------------------------*\
+    #Text
+\*------------------------------------*/
+
 @media screen and (min-width: 700px) {
   .rich-text__text {
     font-size: var(--h5);
   }
 
   .rich-text__text p {
-    line-height: 1.75;
+    line-height: 1.65;
   }
 }
 
@@ -104,7 +111,8 @@
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  margin-bottom: var(--level8)
+  margin-top: var(--level8);
+  margin-bottom: var(--level8);
 }
 
 @media screen and (min-width: 940px) {
@@ -118,4 +126,26 @@
 .rich-text__image__inner {
   position: relative;
   padding-bottom: 52.2%;
+}
+
+
+
+
+/*------------------------------------*\
+    #CTA
+\*------------------------------------*/
+
+.rich-text__cta {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: var(--h5);
+  margin-top: var(--level4);
+  margin-bottom: var(--level4);
+}
+
+@media screen and (min-width: 940px) {
+  .rich-text__cta {
+    margin-top: var(--level5);
+    margin-bottom: var(--level7);
+  }
 }

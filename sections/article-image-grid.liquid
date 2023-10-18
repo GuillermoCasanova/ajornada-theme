@@ -12,37 +12,80 @@
     </h2>
 
     <div class="article-image-grid__images">
-      {% for block in section.blocks %}
-        {% assign image_url = block.settings.image %}
+      {% if section.blocks.size > 0 %}
+        {% for block in section.blocks %}
+          {% assign image_url = block.settings.image %}
+          <div class="article-image-grid__image">
+            <div class="article-image-grid__image__inner">
+              <img
+                srcset="
+                  {%- if image_url.width >= 165 -%}{{ image_url | image_url: width: 165 }} 165w,{%- endif -%}
+                  {%- if image_url.width >= 360 -%}{{ image_url | image_url: width: 360 }} 360w,{%- endif -%}
+                  {%- if image_url.width >= 533 -%}{{ image_url | image_url: width: 533 }} 533w,{%- endif -%}
+                  {%- if image_url.width >= 720 -%}{{ image_url | image_url: width: 720 }} 720w,{%- endif -%}
+                  {%- if image_url.width >= 800 -%}{{ image_url | image_url: width: 800 }} 800w,{%- endif -%}
+                  {{ image_url | image_url }} {{ image_url.width }}w
+                "
+                src="{{ image_url | image_url: width: 533 }}"
+                sizes="(min-width: 700px) 50vw, 90vw"
+                alt="{{ image_url.alt | escape }}"
+                class="responsive-image  motion-reduce"
+                loading="lazy"
+                width="{{ image_url.width }}"
+                height="{{ image_url.height }}"
+              >
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
         <div class="article-image-grid__image">
           <div class="article-image-grid__image__inner">
             <img
-              srcset="
-                {%- if image_url.width >= 165 -%}{{ image_url | image_url: width: 165 }} 165w,{%- endif -%}
-                {%- if image_url.width >= 360 -%}{{ image_url | image_url: width: 360 }} 360w,{%- endif -%}
-                {%- if image_url.width >= 533 -%}{{ image_url | image_url: width: 533 }} 533w,{%- endif -%}
-                {%- if image_url.width >= 720 -%}{{ image_url | image_url: width: 720 }} 720w,{%- endif -%}
-                {%- if image_url.width >= 800 -%}{{ image_url | image_url: width: 800 }} 800w,{%- endif -%}
-                {{ image_url | image_url }} {{ image_url.width }}w
-              "
-              src="{{ image_url | image_url: width: 533 }}"
-              sizes="(min-width: 700px) 50vw, 90vw"
-              alt="{{ image_url.alt | escape }}"
-              class="responsive-image  motion-reduce"
+              alt="placeholder image"
+              src="https://cdn.shopify.com/s/files/1/0638/6201/4197/files/v80_995_003f6351-e25d-4e00-9d4f-99cd3ff68103.png?v=1692212195"
               loading="lazy"
-              width="{{ image_url.width }}"
-              height="{{ image_url.height }}"
+              class="responsive-image"
             >
           </div>
         </div>
-      {% endfor %}
+        <div class="article-image-grid__image">
+          <div class="article-image-grid__image__inner">
+            <img
+              alt="placeholder image"
+              src="https://cdn.shopify.com/s/files/1/0638/6201/4197/files/v80_995_003f6351-e25d-4e00-9d4f-99cd3ff68103.png?v=1692212195"
+              loading="lazy"
+              class="responsive-image"
+            >
+          </div>
+        </div>
+        <div class="article-image-grid__image">
+          <div class="article-image-grid__image__inner">
+            <img
+              alt="placeholder image"
+              src="https://cdn.shopify.com/s/files/1/0638/6201/4197/files/v80_995_003f6351-e25d-4e00-9d4f-99cd3ff68103.png?v=1692212195"
+              loading="lazy"
+              class="responsive-image"
+            >
+          </div>
+        </div>
+        <div class="article-image-grid__image">
+          <div class="article-image-grid__image__inner">
+            <img
+              alt="placeholder image"
+              src="https://cdn.shopify.com/s/files/1/0638/6201/4197/files/v80_995_003f6351-e25d-4e00-9d4f-99cd3ff68103.png?v=1692212195"
+              loading="lazy"
+              class="responsive-image"
+            >
+          </div>
+        </div>
+      {% endif %}
     </div>
   </div>
 </div>
 
 {% schema %}
 {
-  "name": "Image Grid",
+  "name": "Article Image Grid",
   "templates": ["article"],
   "tag": "section",
   "settings": [
@@ -75,7 +118,7 @@
   ],
   "presets": [
     {
-      "name": "Image Grid",
+      "name": "Article Image Grid",
       "category": "Sections"
     }
   ]

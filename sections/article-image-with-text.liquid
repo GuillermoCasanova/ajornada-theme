@@ -1,0 +1,98 @@
+<link
+  rel="preload"
+  href="{{ 'section-article-image-with-text.css' | asset_url }}"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+>
+
+<div class="article-image-with-text {% if section.settings.image_position == "left" %} article-image-with-text--left {% endif %}">
+  <div class="article-image-with-text__inner page-width is-x-small">
+    <div class="article-image-with-text__copy">
+      <h2 class="article-image-with-text__heading">{{ section.settings.heading }}</h2>
+
+      <div class="article-image-with-text__body">
+        {{ section.settings.body | strip_html }}
+      </div>
+    </div>
+
+    <div class="article-image-with-text__image">
+      <div class="article-image-with-text__image__inner">
+        {% if section.settings.section_image != blank %}
+          <img
+            srcset="
+              {%- if block.settings.image.width >= 165 -%}{{ block.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
+              {%- if block.settings.image.width >= 360 -%}{{ block.settings.image | image_url: width: 360 }} 360w,{%- endif -%}
+              {%- if block.settings.image.width >= 533 -%}{{ block.settings.image | image_url: width: 533 }} 533w,{%- endif -%}
+              {%- if block.settings.image.width >= 720 -%}{{ block.settings.image | image_url: width: 720 }} 720w,{%- endif -%}
+              {%- if block.settings.image.width >= 940 -%}{{ block.settings.image | image_url: width: 940 }} 940w,{%- endif -%}
+              {{ block.settings.image | image_url }} {{ block.settings.image.width }}w
+            "
+            src="{{ block.settings.image | image_url: width: 533 }}"
+            sizes="(min-width: 940px) 50vw, (min-width: 700px) 30vw, 100vw"
+            alt="{{ block.settings.image.alt | escape }}"
+            loading="lazy"
+            width="{{ block.settings.image.width }}"
+            height="{{ block.settings.image.height }}"
+            class="responsive-image"
+          >
+        {% else %}
+          image default
+          <img
+            alt="placeholder image"
+            src="https://cdn.shopify.com/s/files/1/0638/6201/4197/files/v80_995_003f6351-e25d-4e00-9d4f-99cd3ff68103.png?v=1692212195"
+            loading="lazy"
+            class="responsive-image"
+          >
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Article Image & Text",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "LOREM IPSUM"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body",
+      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquipe.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Section Image"
+    },
+    {
+      "type": "select",
+      "label": "Image Position",
+      "id": "image_position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "right",
+      "info": "Select the placement of the image."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Article Image & text"
+    }
+  ]
+}
+{% endschema %}

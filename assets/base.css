@@ -360,7 +360,7 @@ a {
 \*------------------------------------*/
 
 section {
-  padding-bottom: var(--level7);
+  padding-bottom: var(--level10);
 }
 
 @media only screen and (min-width: 940px) {
@@ -899,7 +899,7 @@ body:not(:-moz-handler-blocked) fieldset {
 
 
 /*------------------------------------*\
-  #Default Fields
+  #Text Areas
 \*------------------------------------*/
 
 .field textarea {
@@ -919,6 +919,11 @@ body:not(:-moz-handler-blocked) fieldset {
   font-size: var(--h5);
 }
 
+
+textarea {
+  margin-bottom: var(--level4);
+  background-color: rgb(var(--color-base-background-1));
+}
 
 
 
@@ -982,17 +987,17 @@ body:not(:-moz-handler-blocked) fieldset {
 }
 
 
-.custom-field--secondary input {
-  background-color: transparent;
+
+.custom-field--primary input {
+  background-color: rgb(var(--color-base-background-1));
 }
 
-.custom-field--secondary label {
+.custom-field--primary label {
   text-transform: uppercase;
   color: rgb(var(--color-base-text-1));
   opacity: 1;
   font-size: var(--normal)
 }
-
 
 .custom-field--large input {
   padding-top: var(--level4);
