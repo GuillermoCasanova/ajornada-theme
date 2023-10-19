@@ -4,7 +4,7 @@ class ImageSlideshow extends HTMLElement {
     super();
 
     // Extract attributes and convert them into an object
-    const { autoplay, grabCursor, slidesPerView,  a11y, freeMode, pagination, navigation, loop, disableOn, spaceBetween, centeredSlides, breakpoints, numberPagination, effect, controlContainer, fadeOnLargeUp} = this.attributes;
+    const { autoplay, autoHeight, allowTouchMove, draggable, grabCursor, slidesPerView,  a11y, freeMode, pagination, navigation, loop, disableOn, spaceBetween, centeredSlides, breakpoints, numberPagination, effect, controlContainer, fadeOnLargeUp, hoverArrowNav} = this.attributes;
     
     this.mediaQueries = {
       mediumUp: window.matchMedia('(min-width: 700px)'),
@@ -16,16 +16,23 @@ class ImageSlideshow extends HTMLElement {
       this.checkForMediaQueries = true; 
     }
 
+   
+
    this.options = {
         autoplay: autoplay && autoplay.value === 'true' ? {
           enabled: true,
           delay: 0 
         } : false,
-
+        autoHeight: autoHeight && autoHeight.value == 'true' || false,
         pagination:  pagination && pagination.value === 'true' ?  {
           el: '.swiper-pagination',
           type: 'bullets',
         } : false,
+        navigation: navigation && navigation.value == 'true' ? 
+          {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          } : false,
         preloadImages: true,
         freeMode: freeMode && freeMode.value === 'true' ? {
           enabled: true,
@@ -34,9 +41,9 @@ class ImageSlideshow extends HTMLElement {
         resistance: false,
         loop: loop && loop.value == 'true' || false,
         speed: 200,
+        draggable: draggable && draggable.value == 'true' || false, 
         effect: effect ? effect.value : 'slide',
         grabCursor: grabCursor ? grabCursor.value : true,
-        navigation: false,
         spaceBetween: spaceBetween ? parseInt(spaceBetween.value) : 20,
         touchReleaseOnEdges: true,
         slidesPerView: slidesPerView ? slidesPerView.value : 1,
@@ -44,6 +51,7 @@ class ImageSlideshow extends HTMLElement {
         breakpoints: breakpoints ? convertToObject(breakpoints.value) : false,
         centeredSlidesBounds: centeredSlides && centeredSlides.value === "true",
         controlContainer: controlContainer ? controlContainer.value : false,
+        allowTouchMove: allowTouchMove && allowTouchMove.value == 'true' || true
     }
 
 
@@ -97,7 +105,8 @@ class ImageSlideshow extends HTMLElement {
       if(this.checkForMediaQueries && this.mediaQueries[this.disableOn].matches) {
         return
       } else {
-          this.initSwiper(); 
+          this.initSwiper();
+         
       }
   } 
 
@@ -140,7 +149,9 @@ class ImageSlideshow extends HTMLElement {
             .map(child => `<div class="swiper-slide">${child.outerHTML}</div>`)
             .join('')}
         </div>
-        <div class="swiper-pagination"></div>
+        ${pOptions.navigation ? `<div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>`:  ''}
+        ${pOptions.pagination ? `<div class="swiper-pagination"></div>`:  ''}
       </div>
     `;
 
@@ -169,7 +180,6 @@ class ImageSlideshow extends HTMLElement {
       import('./swiper.module.js')
         .then((Swiper) => {
           if (this.options.controlContainer) {
-            console.log('has control container');
             const controlElement = document.querySelector(this.options.controlContainer);
             controlElement.setAttribute('preventLoad', 'false');
             return controlElement.initSwiper().then(()=> {
@@ -182,13 +192,14 @@ class ImageSlideshow extends HTMLElement {
               this.setUpHtml(this.options);
               this.swiper = new Swiper.default(this.querySelector('.swiper-container'), this.options);
               controlElement.getSwiper().controller.control = this.swiper; 
+              if(true) {
+                this.initHoverArrowNav(); 
+              } 
             }); // Return the promise from initSwiper
           }
   
-  
           this.setUpHtml(this.options);
           this.swiper = new Swiper.default(this.querySelector('.swiper-container'), this.options);
-  
           resolve(this.swiper); // Resolve the promise with the initialized swiper instance
          ///return Promise.resolve(); // Return a resolved promise if no controlContainer
         })
@@ -198,6 +209,49 @@ class ImageSlideshow extends HTMLElement {
     });
   }
 
+  initHoverArrowNav() {
+
+      function setCursorToSVG(pTargetElement, svgCode) {
+
+        if (pTargetElement) {
+          pTargetElement.style.cursor = `url("data:image/svg+xml,${encodeURIComponent(svgCode)}"), auto`;
+        } else {
+          console.error(`Element with ID '${elementId}' not found.`);
+        }
+      }
+
+      // SVG code for the cursors
+      const prevCursorSVG = `<svg xmlns="http://www.w3.org/2000/svg" width="120" height="20" fill="none"><path fill="black" d="M6.7,14.4c0.4,0.4,1,0.4,1.4,0c0.4-0.4,0.4-1,0-1.4L2.4,7.4l5.7-5.7c0.4-0.4,0.4-1,0-1.4c-0.4-0.4-1-0.4-1.4,0L0.3,6.7 c-0.4,0.4-0.4,1,0,1.4L6.7,14.4z M111,6.4L1,6.4v2l110,0V6.4z"/></svg>`;  
+      const nextCursorSVG = `<svg xmlns="http://www.w3.org/2000/svg" width="120" height="20"><path fill="black" d="M110.7,8.1c0.4-0.4,0.4-1,0-1.4l-6.4-6.4c-0.4-0.4-1-0.4-1.4,0c-0.4,0.4-0.4,1,0,1.4l5.7,5.7l-5.7,5.7c-0.4,0.4-0.4,1,0,1.4 c0.4,0.4,1,0.4,1.4,0L110.7,8.1z M0,8.4l110,0v-2L0,6.4L0,8.4z"/></svg>`;
+
+      // Add event listener to the target element
+      const prevTargetElement = this.querySelector('.swiper-button-prev');
+      const nextTargetElement = this.querySelector('.swiper-button-next');
+
+      if (prevTargetElement) {
+        prevTargetElement.addEventListener('mouseenter', () => {
+          setCursorToSVG(prevTargetElement, prevCursorSVG);
+        });
+
+        prevTargetElement.addEventListener('mouseleave', () => {
+          prevTargetElement.style.cursor = 'auto';
+        });
+      } else {
+        console.error('Target element not found.');
+      }
+
+      if(nextTargetElement) {
+        nextTargetElement.addEventListener('mouseenter', () => {
+          console.log('hover'); 
+          setCursorToSVG(nextTargetElement, nextCursorSVG);
+        });
+
+        nextTargetElement.addEventListener('mouseleave', () => {
+          nextTargetElement.style.cursor = 'auto';
+        });
+      }
+  }
+  
   getSwiper() {
     return this.swiper; 
   }

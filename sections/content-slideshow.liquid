@@ -10,15 +10,16 @@
     <div class="content-slideshow__images-slideshow">
       <div class="content-slideshow__images-slideshow__inner">
         <custom-slideshow
-          slidesPerView="auto"
-          pagination="false"
-          spaceBetween="20"
           centeredSlides="true"
-          freeMode="false"
           centeredSlidesBounds="true"
           content-slideshow-images
           fadeOnLargeUp="true"
+          freeMode="false"
+          pagination="false"
           preventLoad="true"
+          navigation="true"
+          slidesPerView="auto"
+          spaceBetween="20"
         >
           {% for block in section.blocks %}
             <div class="content-slideshow__image">
@@ -53,18 +54,22 @@
         </custom-slideshow>
       </div>
     </div>
-    <div class="content-slideshow__copy-slideshow">
+    <div class="content-slideshow__copy-slideshow ">
       <custom-slideshow
-        slidesPerView="1"
-        pagination="true"
-        spaceBetween="20"
-        centeredSlides="true"
-        freeMode="false"
-        centeredSlidesBounds="true"
-        numberPagination="true"
-        effect="fade"
-        controlContainer="[content-slideshow-images]"
         content-slideshow-copy
+        autoHeight="false"
+        centeredSlides="true"
+        centeredSlidesBounds="true"
+        controlContainer="[content-slideshow-images]"
+        effect="fade"
+        freeMode="false"
+        numberPagination="true"
+        pagination="true"
+        slidesPerView="1"
+        spaceBetween="20"
+        draggable="false"
+        navigation="true"
+        breakpoints='{"700px": {"allowTouchMove": false}}'
       >
         {% for block in section.blocks %}
           <div class="content-slideshow__copy">
