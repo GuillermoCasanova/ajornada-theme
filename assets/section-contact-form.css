@@ -4,6 +4,7 @@
 
 .contact-form {
   position: relative;
+  padding-bottom: 0;
 }
 
 .contact-form__inner {

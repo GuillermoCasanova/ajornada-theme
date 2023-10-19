@@ -1,6 +1,6 @@
 {{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
 
-<div class="contact-form">
+<section class="contact-form">
   <div class="contact-form__bg">
     <img
       srcset="
@@ -16,7 +16,7 @@
       src="{{ section.settings.background | image_url: width: 533 }}"
       sizes="(min-width: 700px) 50vw, 90vw"
       alt="{{ section.settings.background.alt | escape }}"
-      class="motion-reduce"
+      class="responsive-image motion-reduce"
       loading="lazy"
       width="{{ section.settings.background.width }}"
       height="{{ section.settings.background.height }}"
@@ -170,13 +170,11 @@
       {%- endform -%}
     </div>
   </div>
-</div>
+</section>
 
 {% schema %}
 {
   "name": "t:sections.contact-form.name",
-  "tag": "section",
-  "class": "section",
   "settings": [
     {
       "type": "text",
