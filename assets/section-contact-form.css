@@ -17,6 +17,7 @@
 @media screen and (min-width: 700px) {
   .contact-form__inner {
     max-width: 40rem;
+    padding-bottom: calc(var(--level10) + var(--level10));
   }
 }
 
