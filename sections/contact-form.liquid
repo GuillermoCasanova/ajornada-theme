@@ -56,13 +56,29 @@
           <custom-input-wrapper class="custom-field custom-field--primary custom-field--large">
             <input
               autocomplete="name"
+              required
               type="text"
               id="ContactForm-name"
+              aria-required="true"
               name="contact[{{ 'templates.contact.form.name' | t }}]"
               value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+              {% if form.errors contains 'name' %}
+                aria-invalid="true"
+                aria-describedby="ContactForm-name-error"
+              {% endif %}
             >
             <label for="ContactForm-name">{{ 'templates.contact.form.name' | t }}</label>
           </custom-input-wrapper>
+          {%- if form.errors contains 'name' -%}
+            <small class="contact__field-error" id="ContactForm-name-error">
+              <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+              <span class="form__message">
+                {%- render 'icon-error' -%}
+                {{- form.errors.translated_fields.name | capitalize }}
+                {{ form.errors.messages.name -}}
+              </span>
+            </small>
+          {%- endif -%}
 
           <custom-input-wrapper class="custom-field custom-field--primary custom-field--large">
             <input
@@ -84,17 +100,17 @@
               {{- 'templates.contact.form.email' | t }}
               <span aria-hidden="true">*</span></label
             >
-            {%- if form.errors contains 'email' -%}
-              <small class="contact__field-error" id="ContactForm-email-error">
-                <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
-                <span class="form__message">
-                  {%- render 'icon-error' -%}
-                  {{- form.errors.translated_fields.email | capitalize }}
-                  {{ form.errors.messages.email -}}
-                </span>
-              </small>
-            {%- endif -%}
           </custom-input-wrapper>
+          {%- if form.errors contains 'email' -%}
+            <small class="contact__field-error" id="ContactForm-email-error">
+              <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+              <span class="form__message">
+                {%- render 'icon-error' -%}
+                {{- form.errors.translated_fields.email | capitalize }}
+                {{ form.errors.messages.email -}}
+              </span>
+            </small>
+          {%- endif -%}
 
           <custom-input-wrapper class="custom-field custom-field--primary custom-field--large">
             <input
@@ -103,12 +119,26 @@
               name="contact[title]"
               required
               aria-required="true"
+              {% if form.errors contains 'title' %}
+                aria-invalid="true"
+                aria-describedby="ContactForm-title-error"
+              {% endif %}
             >
             <label class="field__label" for="ContactForm-name">Title*</label>
           </custom-input-wrapper>
+          {%- if form.errors contains 'title' -%}
+            <small class="contact__field-error" id="ContactForm-title-error">
+              <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+              <span class="form__message">
+                {%- render 'icon-error' -%}
+                {{- form.errors.translated_fields.title | capitalize }}
+                {{ form.errors.messages.title -}}
+              </span>
+            </small>
+          {%- endif -%}
         </div>
 
-        <div class="">
+        <div class="form-section">
           <label class="visually-hidden" for="ContactForm-body">
             {{- 'templates.contact.form.comment' | t -}}
           </label>
@@ -117,7 +147,6 @@
             id="ContactForm-body"
             class="text-area field__input"
             name="contact[{{ 'templates.contact.form.comment' | t }}]"
-            placeholder="{{ 'templates.contact.form.comment' | t }}"
             class="input  input--primary"
             required
             aria-required="true"
@@ -127,8 +156,15 @@
         </div>
 
         <div class="contact-form__cta">
-          <button type="submit" class="button  button--secondary  button--large">
-            {{ 'templates.contact.form.send' | t }}
+          <button type="submit" class="button  button--secondary  button--medium  button--contact-form">
+            <span class="button__text">
+              {{ 'templates.contact.form.send' | t }}
+            </span>
+            <span class="button__icon">
+              <svg>
+                <use href="#arrow-right"/>
+              </svg>
+            </span>
           </button>
         </div>
       {%- endform -%}

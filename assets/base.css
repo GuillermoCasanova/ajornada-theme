@@ -839,25 +839,6 @@ input:-webkit-autofill {
 }
 
 
-textarea {
-  width: 100%;
-  padding: 1.5rem;
-}
-
-
-textarea:active,
-textarea:focus {
-  border-color: #fff;
-  background-color: #fff
-}
-
-textarea:active+label,
-textarea:focus+label {
-  color: #fff;
-}
-
-
-
 .form-section {
   margin-bottom: 1.5rem;
 }
@@ -923,7 +904,17 @@ body:not(:-moz-handler-blocked) fieldset {
 textarea {
   margin-bottom: var(--level4);
   background-color: rgb(var(--color-base-background-1));
+  width: 100%;
+  padding: var(--level2);
 }
+
+
+textarea:active,
+textarea:focus {
+  background-color: #fff;
+}
+
+
 
 
 
@@ -1172,17 +1163,17 @@ textarea {
 
 button,
 .button {
-  text-transform: uppercase;
-  line-height: 1;
-  text-align: center;
-  position: relative;
-  width: 100%;
-  font-family: var(--primary-font-family);
-  margin: 0;
-  display: flex;
   align-items: center;
-  justify-content: center;
   border-radius: 8px;
+  display: flex;
+  font-family: var(--primary-font-family);
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
 }
 
 button:hover,
@@ -1192,8 +1183,8 @@ button:hover,
 
 .button,
 .styled-link {
-  text-transform: uppercase;
   color: rgb(var(--color-base-text));
+  text-transform: uppercase;
 }
 
 .button--primary {
@@ -1204,55 +1195,56 @@ button:hover,
   letter-spacing: .5px;
 }
 
-.button--primary:hover,
-.button--primary:focus {
+.button--primary:focus,
+.button--primary:hover {
   background-color: black;
   color: #fff;
 }
 
 .button--secondary {
   background-color: rgb(var(--color-base-background-2));
-  border: 2px solid rgb(var(--color-base-text-2));
+  border: 1px solid rgb(var(--color-base-text-2));
   color: rgb(var(--color-base-text-2));
-  letter-spacing: .5px;
   font-weight: var(--font-weight-bold);
+  letter-spacing: .5px;
 }
 
-.button--secondary:hover,
-.button--secondary:focus {
+.button--secondary:focus,
+.button--secondary:hover {
   background-color: rgb(var(--color-base-background-1));
   color: rgb(var(--color-base-background-2));
 }
 
 .button--tertiary {
+  background-color: transparent;
   border: 1px solid rgb(var(--color-base-text-1));
   color: rgb(var(--color-base-text-1));
-  text-decoration: none;
-  letter-spacing: .5px;
   font-weight: var(--font-weight-bold);
-  background-color: transparent;
+  letter-spacing: .5px;
+  text-decoration: none;
 }
 
-.button--tertiary:hover,
-.button--tertiary:focus {
+.button--tertiary:focus,
+.button--tertiary:hover {
   background-color: rgb(var(--color-base-background-3));
   color: rgb(var(--color-base-background-1));
 }
 
-
 .styled-link {
-  text-transform: uppercase;
-  position: relative;
-  z-index: 0;
   padding-left: var(--level1);
   padding-right: var(--level1);
+  position: relative;
   text-decoration: underline;
+  text-transform: uppercase;
+  z-index: 0;
 }
 
-.styled-link:hover,
-.styled-link:focus {
+.styled-link:focus,
+.styled-link:hover {
   text-decoration: none;
 }
+
+
 
 
 

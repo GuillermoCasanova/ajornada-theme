@@ -155,7 +155,7 @@
 }
 
 @media screen and (min-width: 940px) {
-    .button__text {
+    .modal .button__text {
         opacity: 0;
         position: absolute;
     }
