@@ -914,7 +914,9 @@ textarea:focus {
   background-color: #fff;
 }
 
-
+.textarea--large {
+  font-size: var(--h5);
+}
 
 
 
@@ -955,6 +957,7 @@ textarea:focus {
   padding-bottom: 1rem;
   padding-left: var(--level2);
   font-size: var(--h6);
+  line-height: 1;
   border: 1px solid rgb(var(--color-base-text-1));
 }
 
