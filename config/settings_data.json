@@ -9,7 +9,7 @@
     "heading_scale": 100,
     "type_body_font": "assistant_n4",
     "body_scale": 100,
-    "show_announcement_bar": true,
+    "show_announcement_bar": false,
     "social_twitter_link": "https:\/\/twitter.com\/shopify",
     "social_facebook_link": "https:\/\/facebook.com\/shopify",
     "social_pinterest_link": "",
@@ -163,6 +163,11 @@
       },
       "email-popup": {
         "type": "email-popup",
+        "settings": {
+        }
+      },
+      "announcement-bar": {
+        "type": "announcement-bar",
         "settings": {
         }
       }
