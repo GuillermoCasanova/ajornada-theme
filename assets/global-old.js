@@ -432,7 +432,7 @@ function getFocusableElements(container) {
     }
   }
   
-  customElements.define('header-drawer', HeaderDrawer);
+  //customElements.define('header-drawer', HeaderDrawer);
   
   class ModalDialog extends HTMLElement {
     constructor() {

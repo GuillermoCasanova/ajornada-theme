@@ -38,6 +38,11 @@
       assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
     %}
 
+    {%- if localization.available_countries.size > 1 or localization.available_languages.size > 1 -%}
+      {{ 'component-localization-form.css' | asset_url | stylesheet_tag: preload: true }}
+      <script src="{{ 'localization-form.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
+
     <link rel="stylesheet" href="https://use.typekit.net/bdo5qpe.css">
 
     {% style %}
@@ -272,7 +277,7 @@
   </head>
 
   <body class="gradient">
-    <a class="skip-to-content-link button visually-hidden" href="#MainContent">
+    <a class="skip-to-content-link visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
 

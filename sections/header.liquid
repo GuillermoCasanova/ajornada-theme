@@ -112,41 +112,50 @@
                       {%- endfor -%}
                     </ul>
 
-                    <div class="menu-drawer__utility-links  hide-for-large-up">
-                      <ul>
-                        {%- for link in section.settings['footer-menu'].links -%}
-                          <li>
-                            <a
-                              href="{{ link.url }}"
-                              class="menu-drawer__menu-item {% if link.current %} menu-drawer__menu-item--active{% endif %}"
-                              {% if link.current %}
-                                aria-current="page"
-                              {% endif %}
-                            >
-                              {{ link.title | escape }}
-                            </a>
-                          </li>
-                        {% endfor %}
-
+                    <ul>
+                      {%- for link in section.settings['footer-menu'].links -%}
                         <li>
-                          <button
-                            aria-label="Open modal to sign up for the Ajornada newsletter"
-                            aria-expanded="false"
-                            aria-controls="newsletter-sign-up-modal"
-                            aria-haspopup="dialog"
-                            data-modal="newsletter-sign-up-modal"
-                            class="button  button--secondary  button--medium menu-drawer__utility-links__button"
+                          <a
+                            href="{{ link.url }}"
+                            class="menu-drawer__menu-item {% if link.current %} menu-drawer__menu-item--active{% endif %}"
+                            {% if link.current %}
+                              aria-current="page"
+                            {% endif %}
                           >
-                            <span class="button__text"> Get Updates </span>
-                            <span class="button__icon">
-                              <svg aria-hidden="true" focusable="false">
-                                <use href="#arrow-right">
-                              </svg>
-                            </span>
-                          </button>
+                            {{ link.title | escape }}
+                          </a>
                         </li>
-                      </ul>
-                    </div>
+                      {% endfor %}
+
+                      <li>
+                        <button
+                          aria-label="Open modal to sign up for the Ajornada newsletter"
+                          aria-expanded="false"
+                          aria-controls="newsletter-sign-up-modal"
+                          aria-haspopup="dialog"
+                          data-modal="newsletter-sign-up-modal"
+                          class="button  button--secondary  button--medium menu-drawer__utility-links__button"
+                        >
+                          <span class="button__text"> Get Updates </span>
+                          <span class="button__icon">
+                            <svg aria-hidden="true" focusable="false">
+                              <use href="#arrow-right">
+                            </svg>
+                          </span>
+                        </button>
+                      </li>
+                    </ul>
+
+                    <localization-form class="small-hide medium-hide no-js-hidden">
+                      {%- form 'localization', id: 'HeaderCountryForm', class: 'localization-form' -%}
+                        <div>
+                          <h2 class="visually-hidden" id="HeaderCountryLabel">
+                            {{ 'localization.country_label' | t }}
+                          </h2>
+                          {%- render 'country-localization', localPosition: 'HeaderCountry' -%}
+                        </div>
+                      {%- endform -%}
+                    </localization-form>
                   </nav>
                 </div>
               </div>

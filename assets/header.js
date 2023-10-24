@@ -6,7 +6,9 @@ class HeaderDrawer  extends MenuDrawer {
     this.setUpEvents(); 
   }
   
-  closeDrawer() {
+  closeDrawer(event, pElementToFocus) {
+      super.closeMenuDrawer(event, pElementToFocus);
+      //this.header.classList.remove('menu-open');
       this.changeToggleText('menu', 'closed');
       this.header = this.header || document.getElementById('shopify-section-header');
       document.body.classList.remove(`overflow-hidden-${this.dataset.breakpoint}`);
@@ -33,7 +35,7 @@ class HeaderDrawer  extends MenuDrawer {
       }
   }
   
-  openDrawer() {
+  openDrawer(pSummaryElement) {
       
       this.header = this.header || document.getElementById('shopify-section-header');
       this.borderOffset = this.borderOffset || this.closest('.header-wrapper').classList.contains('header-wrapper--border-bottom') ? 1 : 0;
@@ -43,14 +45,22 @@ class HeaderDrawer  extends MenuDrawer {
       this.querySelector('aside').style.height = `calc(101vh - ${document.querySelector('[data-sticky-header]').clientHeight + 'px'})`
       trapFocus(this, this.headerDrawerToggle);
 
+      setTimeout(() => {
+        this.mainDetailsToggle.classList.add('menu-opening');
+      });
+  
+      pSummaryElement.setAttribute('aria-expanded', true);
+      trapFocus(this.mainDetailsToggle, pSummaryElement);
+      document.body.classList.add(`overflow-hidden-${this.dataset.breakpoint}`);
+
   }
 
-  toggleHeaderMenus() {
+  toggleHeaderMenus(pSummaryElement) {
       
       if(this.headerDrawerMenuContainer.hasAttribute('open')) {
           this.closeDrawer();
       } else {
-          this.openDrawer();
+          this.openDrawer(pSummaryElement);
       }
   }
 
@@ -70,16 +80,17 @@ class HeaderDrawer  extends MenuDrawer {
       this.headerDrawerMenu = this.querySelector('[data-header-drawer-menu]');
       this.headerDrawerMenuContainer = this.querySelector('[data-menu-drawer-container]');
      
-      this.headerDrawerToggle.addEventListener('click', () => {
-          this.toggleHeaderMenus(); 
+      this.headerDrawerToggle.addEventListener('click', (event) => {
+          this.toggleHeaderMenus(event.currentTarget); 
       }); 
 
       this.headerClose.forEach((elem)=> {
         elem.addEventListener('click', (event) => {
-          this.closeDrawer();
-          this.closeMenuDrawer(event); 
+          this.closeDrawer(event);
         }); 
       });
+      
+      this.toggleHeaderMenus(); 
   }
 }
 
