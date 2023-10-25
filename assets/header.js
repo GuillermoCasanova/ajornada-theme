@@ -74,7 +74,7 @@ class HeaderDrawer  extends MenuDrawer {
   setUpEvents() {
       this.offCanvasCart = document.querySelector('cart-notification');
       this.headerDrawerToggle = this.querySelector('[data-header-drawer-toggle]'); 
-      this.headerClose = this.querySelectorAll('a, button'); 
+      this.headerClose = this.querySelectorAll('button'); 
       this.headerDrawerMenu = this.querySelector('[data-header-drawer-menu]');
       this.headerDrawerMenuContainer = this.querySelector('[data-menu-drawer-container]');
      

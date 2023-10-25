@@ -111,7 +111,14 @@
                         </li>
                       {%- endfor -%}
                     </ul>
-
+                    <localization-form class="no-js-hidden">
+                      <div>
+                        <h2 class="visually-hidden" id="HeaderCountryLabel">
+                          {{ 'localization.language_label' | t }}
+                        </h2>
+                        {%- render 'country-localization', localPosition: 'HeaderCountry' -%}
+                      </div>
+                    </localization-form>
                     <ul>
                       {%- for link in section.settings['footer-menu'].links -%}
                         <li>
@@ -145,17 +152,6 @@
                         </button>
                       </li>
                     </ul>
-
-                    <localization-form class="small-hide medium-hide no-js-hidden">
-                      {%- form 'localization', id: 'HeaderCountryForm', class: 'localization-form' -%}
-                        <div>
-                          <h2 class="visually-hidden" id="HeaderCountryLabel">
-                            {{ 'localization.country_label' | t }}
-                          </h2>
-                          {%- render 'country-localization', localPosition: 'HeaderCountry' -%}
-                        </div>
-                      {%- endform -%}
-                    </localization-form>
                   </nav>
                 </div>
               </div>
@@ -304,6 +300,12 @@
             </li>
           </ul>
         </nav>
+        <localization-form class="no-js-hidden">
+          <h2 class="visually-hidden" id="HeaderCountryLabel">
+            {{ 'localization.language_label' | t }}
+          </h2>
+          {%- render 'country-localization', localPosition: 'HeaderCountry' -%}
+        </localization-form>
       {%- endif -%}
 
       <cart-toggle class="hide-for-large-up" data-toggle-type="icon">

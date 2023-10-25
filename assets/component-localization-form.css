@@ -1,0 +1,85 @@
+/*------------------------------------*\
+    #Localization Form
+\*------------------------------------*/
+
+@media screen and (min-width: 940px) {
+    localization-form {
+        display: block;
+        height: 1rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    localization-form {
+        height: 1.75rem;
+    }
+}
+
+
+.localization-form__inner {
+    display: flex;
+    margin-left: calc(-1 * var(--level1));
+    margin-bottom: var(--level6);
+    right: 0;
+}
+
+@media screen and (min-width: 940px) {
+    .localization-form__inner {
+        z-index: 1;
+        display: flex;
+        position: absolute;
+        margin: auto;
+        padding-right: var(--level2);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .localization-form__inner {
+        padding-right: var(--level7);
+    }
+}
+
+@media screen and (min-width: 1700px) {
+    .localization-form__inner {
+        padding-right: var(--level10);
+    }
+}
+
+.localization-form__lang-option {
+    background-color: transparent;
+    border: 0;
+    text-align: left;
+    color: rgb(var(--color-base-text-2));
+    font-size: var(--h5);
+}
+
+@media screen and (min-width: 940px) {
+    .localization-form__lang-option {
+        color: rgb(var(--color-base-text-1));
+        font-size: var(--micro);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .localization-form__lang-option {
+        font-size: var(--h6);
+    }
+}
+
+.localization-form__lang-option:active,
+.localization-form__lang-option:hover,
+.localization-form__lang-option:focus {
+    text-decoration: underline;
+}
+
+.localization-form__lang-option:after {
+    content: "|";
+    position: absolute;
+    right: 0;
+    top: 0;
+    right: -.25rem;
+}
+
+.localization-form__inner .localization-form__item:last-child .localization-form__lang-option:after {
+    content: "";
+}

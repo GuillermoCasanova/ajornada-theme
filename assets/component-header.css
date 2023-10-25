@@ -575,17 +575,16 @@ header-drawer .menu-drawer {
 }
 
 .menu-drawer__navigation-container {
-    display: grid;
+    /* display: grid;
     grid-template-rows: 1fr auto;
-    align-content: space-between;
+    align-content: space-between; */
     overflow-y: auto;
     height: 100%;
-    padding-top: 2rem;
+    padding-left: var(--level6);
+    padding-top: var(--level8);
 }
 
-.menu-drawer__navigation {
-    padding-left: var(--level6);
-}
+.menu-drawer__navigation {}
 
 .menu-drawer__inner-submenu {
     height: 100%;
@@ -610,7 +609,8 @@ header-drawer .menu-drawer {
 
 
 .menu-drawer__menu {
-    padding-top: var(--level4)
+    padding-top: var(--level4);
+    margin-bottom: var(--level4);
 }
 
 .menu-drawer__menu-item {
@@ -733,6 +733,7 @@ a.menu-drawer__menu-item:focus {
     margin-top: var(--level1);
     padding-left: .1rem;
     padding-right: .1rem;
+    margin-bottom: var(--level5);
 }
 
 
@@ -766,16 +767,16 @@ a.menu-drawer__menu-item:focus {
         width: 100%;
         max-width: 100%;
         margin-right: 0;
-        grid-template-areas: ;
     }
 
     .header__menu__list-menu {
         display: flex;
         align-items: center;
-        width: 100%;
+        width: 92%;
         justify-content: space-between;
         flex-direction: row;
-
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .header__menu__list-menu li:nth-child(2) {
@@ -826,6 +827,12 @@ a.menu-drawer__menu-item:focus {
 
 }
 
+
+@media screen and (min-width: 1200px) {
+    .header__menu__list-menu {
+        width: 84%;
+    }
+}
 
 .header__menu-item svg {
     position: fixed;
