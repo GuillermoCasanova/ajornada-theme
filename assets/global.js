@@ -1080,6 +1080,8 @@ class GlobalModal extends HTMLElement {
     } 
 
     this.modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add(`overflow-hidden`);
+
   }
 
   closeModal() {
@@ -1088,6 +1090,7 @@ class GlobalModal extends HTMLElement {
       });
 
     this.modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove(`overflow-hidden`);
   }
 
 }

@@ -383,6 +383,11 @@ section {
   overflow: hidden;
 }
 
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
 /* @media screen and (min-width: 750px) {
   .overflow-hidden-mobile {
     overflow: auto;

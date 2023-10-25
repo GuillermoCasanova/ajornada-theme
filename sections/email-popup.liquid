@@ -17,7 +17,7 @@
   >
     <div class="modal__cover" data-close-modal aria-hidden="true"></div>
 
-    <div class="modal__inner">
+    <div class="modal__inner" data-email-popup-swipe>
       <div class="modal__close">
         <button aria-label="Close Modal" data-modal-close>
           <span class="button__text">Close</span>
@@ -158,7 +158,30 @@
         return;
       }
 
+      //Init Swipe behavior
+      this.initSwipeGestures();
       this.observeTrigger('[data-trigger-pop-up]', this.showEmailPopup.bind(this));
+    }
+
+    initSwipeGestures() {
+      this.swipeDetection = null;
+      // Load HAMMER JS Plugin from the Shopify CDN
+      //loadScript('https://cdn.shopify.com/s/files/1/0638/6201/4197/files/hammer.min.js?v=1698261229').then(() => {
+      // console.log(Hammer);
+
+      // var swipeElement = this.querySelector('[data-email-popup-swipe]');
+      // console.log(swipeElement);
+      // console.log('work');
+      // this.swipeDetection = new Hammer(swipeElement);
+
+      // console.log(this.swipeDetection);
+      // console.log('test');
+
+      // this.swipeDetection.on('swipe', function (e) {
+      //   console.log(e);
+      //   console.log(e.direction);
+      // });
+      //});
     }
 
     checkPopupDisplay() {

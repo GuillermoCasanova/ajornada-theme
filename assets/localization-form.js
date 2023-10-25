@@ -1,7 +1,6 @@
 
 class LocalizationForm extends HTMLElement {
     constructor() {
-      console.log('locale form js active'); 
       super();
       this.elements = {
         panel: this.querySelector('.disclosure__list-wrapper'),
@@ -64,20 +63,18 @@ class LocalizationForm extends HTMLElement {
     configure() {
         var languageList = this.getLanguages(); 
         var primaryLanguage = languageList.find(function (x) { return x.primary; });
-        console.log(primaryLanguage); 
         var redirectUrlBuilder = this.redirectUrlBuilderFunction(primaryLanguage.iso_code);
 
         // Check local storage for selected langauge and set it as the default locale on page load
-        console.log(localStorage.getItem('selected-lang')); 
 
-        if(primaryLanguage.iso_code !== localStorage.getItem('selected-lang')) {
-            var redirectUrl = redirectUrlBuilder(localStorage.getItem('selected-lang'));
-            redirectUrl && window.location.assign(redirectUrl);
-        }
+        // if(primaryLanguage.iso_code !== localStorage.getItem('selected-lang')) {
+        //     var redirectUrl = redirectUrlBuilder(localStorage.getItem('selected-lang'));
+        //     redirectUrl && window.location.assign(redirectUrl);
+        // }
 
-        if (!primaryLanguage || !primaryLanguage.iso_code) {
-            return;
-        }
+        // if (!primaryLanguage || !primaryLanguage.iso_code) {
+        //     return;
+        // }
 
        function languageChangeCallback(lang, elementText) {
            console.log('new language set')
