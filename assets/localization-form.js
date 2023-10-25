@@ -26,7 +26,7 @@ class LocalizationForm extends HTMLElement {
         let useInternationalDomains = false;
         var shopDomain = window.location.origin;
         if (window.Shopify && window.Shopify.designMode) {
-            shopDomain = 'https://ajornada.myshopify.com';
+            //shopDomain = 'https://ajornada.myshopify.com';
         }
         var currentLocale = this.getLanguages().find(function (x) { return x.current; }).iso_code.toLowerCase();
         var currentLocaleRegEx = new RegExp('^\/' + currentLocale, "ig");
