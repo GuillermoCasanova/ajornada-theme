@@ -83,7 +83,7 @@ class LocalizationForm extends HTMLElement {
         this.elements.languages.forEach(function(el) {
             el.addEventListener('click', (event) => {
                 let elem = event.currentTarget; 
-                languageChangeHandler(elem.dataset.value, elem.children[0].innerText, languageChangeCallback)();
+                languageChangeHandler(elem.dataset.value.replace('-BR', ''), elem.children[0].innerText, languageChangeCallback)();
             }); 
         });
 
