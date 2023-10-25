@@ -14,7 +14,7 @@ class LocalizationForm extends HTMLElement {
         this.elements.languages.forEach((elem)=> {
             let language = {
                 primary: JSON.parse(elem.dataset.primary), 
-                iso_code: elem.dataset.value,
+                iso_code: elem.dataset.value.replace('-BR', ''),
                 current:  JSON.parse(elem.dataset.current || false) 
             }
             languages.push(language); 
