@@ -3,6 +3,9 @@
 class HeaderDrawer  extends MenuDrawer {
   constructor() {
     super();
+    this.header = this.header || document.getElementById('shopify-section-header');
+    this.borderOffset = this.borderOffset || this.closest('.header-wrapper').classList.contains('header-wrapper--border-bottom') ? 1 : 0;
+
     this.setUpEvents(); 
   }
   
@@ -10,7 +13,6 @@ class HeaderDrawer  extends MenuDrawer {
       super.closeMenuDrawer(event, pElementToFocus);
       //this.header.classList.remove('menu-open');
       this.changeToggleText('menu', 'closed');
-      this.header = this.header || document.getElementById('shopify-section-header');
       document.body.classList.remove(`overflow-hidden-${this.dataset.breakpoint}`);
       document.querySelector('header').classList.remove('menu-is-open'); 
      // document.documentElement.style.removeProperty('--header-bottom-position', `${parseInt(this.header.getBoundingClientRect().bottom - this.borderOffset)}px`);
@@ -36,10 +38,6 @@ class HeaderDrawer  extends MenuDrawer {
   }
   
   openDrawer(pSummaryElement) {
-      
-      this.header = this.header || document.getElementById('shopify-section-header');
-      this.borderOffset = this.borderOffset || this.closest('.header-wrapper').classList.contains('header-wrapper--border-bottom') ? 1 : 0;
-
       this.changeToggleText('menu');
       document.querySelector('header').classList.add('menu-is-open'); 
       this.querySelector('aside').style.height = `calc(101vh - ${document.querySelector('[data-sticky-header]').clientHeight + 'px'})`
@@ -90,7 +88,6 @@ class HeaderDrawer  extends MenuDrawer {
         }); 
       });
       
-      this.toggleHeaderMenus(); 
   }
 }
 
