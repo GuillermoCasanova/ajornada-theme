@@ -78,7 +78,6 @@ class ImageSlideshow extends HTMLElement {
       const inputString = pStringObject;
       const jsonString = inputString.replace(/'/g, '"'); // Replace single quotes with double quotes
       const result = JSON.parse(jsonString);
-      console.log(result); 
       return result; 
     }
 
@@ -106,7 +105,6 @@ class ImageSlideshow extends HTMLElement {
         return
       } else {
           this.initSwiper();
-         
       }
   } 
 

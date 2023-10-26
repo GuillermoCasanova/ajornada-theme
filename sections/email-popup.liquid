@@ -165,23 +165,23 @@
 
     initSwipeGestures() {
       this.swipeDetection = null;
+
       // Load HAMMER JS Plugin from the Shopify CDN
-      //loadScript('https://cdn.shopify.com/s/files/1/0638/6201/4197/files/hammer.min.js?v=1698261229').then(() => {
-      // console.log(Hammer);
+      loadScript('https://cdn.shopify.com/s/files/1/0638/6201/4197/files/hammer.min.js?v=1698261229').then(() => {
+        var swipeElement = this.querySelector('[data-email-popup-swipe]');
+        this.swipeDetection = new Hammer(swipeElement);
 
-      // var swipeElement = this.querySelector('[data-email-popup-swipe]');
-      // console.log(swipeElement);
-      // console.log('work');
-      // this.swipeDetection = new Hammer(swipeElement);
+        this.swipeDetection.get('pinch').set({ enable: true });
+        this.swipeDetection.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
 
-      // console.log(this.swipeDetection);
-      // console.log('test');
-
-      // this.swipeDetection.on('swipe', function (e) {
-      //   console.log(e);
-      //   console.log(e.direction);
-      // });
-      //});
+        this.swipeDetection.on('swipe', (e) => {
+          console.log(e.direction);
+          if (e.direction === 16) {
+            console.log('close');
+            this.closeModal();
+          }
+        });
+      });
     }
 
     checkPopupDisplay() {

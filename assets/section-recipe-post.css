@@ -205,8 +205,14 @@
     transform: translateY(70vh);
     bottom: 0;
     overflow: auto;
+    transition: all .2s ease-in-out;
 }
 
+
+.recipe-information.is-active {
+    transform: translateY(7rem);
+    top: 0;
+}
 
 .recipe-body:after {
     content: " ";
@@ -244,10 +250,6 @@
     }
 }
 
-.recipe-information.is-active {
-    transform: translateY(7rem);
-    top: 0;
-}
 
 .recipe-information__inner {
     padding-bottom: var(--level8)

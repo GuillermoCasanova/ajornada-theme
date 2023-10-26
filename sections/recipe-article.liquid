@@ -23,7 +23,7 @@
         </recipe-scroll-animations>
       </div>
       <div class="recipe-pinning-container" data-gsap-pin-element>
-        <div class="recipe-information">
+        <div class="recipe-information" data-hammer-swipe-element>
           <div class="recipe-information__inner">
             <recipe-information-toggle>
               <button class="recipe-information__toggle" aria-label="Slide up information panel">
@@ -61,19 +61,52 @@
   class RecipeInformationToggle extends HTMLElement {
     constructor() {
       super();
+      // Find the parent element with the class ".recipe-information"
+      this.recipeInfo = this.closest('.recipe-information');
 
       // Create a button element inside the shadow DOM
       const button = this.querySelector('button');
 
       // Attach a click event listener to the button
       button.addEventListener('click', () => {
-        // Find the parent element with the class ".recipe-information"
-        const recipeInfo = this.closest('.recipe-information');
-
         // Toggle a CSS class on the parent element
-        if (recipeInfo) {
-          recipeInfo.classList.toggle('is-active');
+        if (this.recipeInfo) {
+          this.recipeInfo.classList.toggle('is-active');
         }
+      });
+
+      this.initSwipeGestures();
+    }
+
+    showInformation() {
+      this.recipeInfo.classList.add('is-active');
+    }
+
+    hideInformation() {
+      this.recipeInfo.classList.remove('is-active');
+    }
+
+    initSwipeGestures() {
+      this.swipeDetection = null;
+
+      // Load HAMMER JS Plugin from the Shopify CDN
+      loadScript('https://cdn.shopify.com/s/files/1/0638/6201/4197/files/hammer.min.js?v=1698261229').then(() => {
+        var swipeElement = this.closest('[data-hammer-swipe-element]');
+        this.swipeDetection = new Hammer(swipeElement);
+
+        this.swipeDetection.get('pinch').set({ enable: true });
+        this.swipeDetection.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
+
+        this.swipeDetection.on('swipe', (e) => {
+          console.log(e.direction);
+          if (e.direction === 16) {
+            this.hideInformation();
+          }
+
+          if (e.direction === 8) {
+            this.showInformation();
+          }
+        });
       });
     }
   }
