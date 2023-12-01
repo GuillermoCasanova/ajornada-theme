@@ -23,6 +23,7 @@
     "email_pop_up_active": true,
     "email_popup_image_small": "shopify:\/\/shop_images\/v80_882.png",
     "email_popup_image_large": "shopify:\/\/shop_images\/Bottle_BG_00391917-22bd-43d2-8423-e51622bdd9be.jpg",
+    "email_pop_up_frequency": "everytime-site-loads",
     "checkout_logo_image": "shopify:\/\/shop_images\/Logo-Black-checkout-page.png",
     "checkout_logo_position": "center",
     "checkout_logo_size": "medium",
