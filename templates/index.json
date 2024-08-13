@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "image_banner": {
@@ -59,6 +68,23 @@
         "top_border": "yes",
         "bottom_border": "yes",
         "trigger_email_popup": true
+      }
+    },
+    "video_section_dy89XM": {
+      "type": "video-section",
+      "blocks": {
+        "video_shopify_hosted_fD3pc7": {
+          "type": "video-shopify-hosted",
+          "settings": {
+            "video_asset": "shopify:\/\/files\/videos\/ajornada-desktop-compressed.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "video_shopify_hosted_fD3pc7"
+      ],
+      "settings": {
+        "heading": "Video Section"
       }
     },
     "1fb290d3-1160-424c-8641-e536b754d192": {
@@ -205,6 +231,7 @@
   "order": [
     "image_banner",
     "a91f73fa-9991-492c-bca6-4dfe59bea098",
+    "video_section_dy89XM",
     "1fb290d3-1160-424c-8641-e536b754d192",
     "2bb814ef-d55a-470e-bc5c-8bf06b1dfe81",
     "1655920347d426af19",
