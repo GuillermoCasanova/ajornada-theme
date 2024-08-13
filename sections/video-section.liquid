@@ -1,11 +1,11 @@
-{% comment %} {{ 'section-image-video-banner.css' | asset_url | stylesheet_tag }} {% endcomment %}
+{% comment %} {{ 'section-video-section.css' | asset_url | stylesheet_tag }} {% endcomment %}
 
 <style>
   /*------------------------------------*\
       #Image Video Banner
   \*------------------------------------*/
 
-  .image-video-banner-container {
+  .video-section-container {
     padding-bottom: var(--level7);
   }
 
@@ -15,15 +15,15 @@
     width: 100%;
   }
 
-  .image-video-banner__inner {
+  .video-section__inner {
     height: 100%;
     width: 100%;
     background-color: rgb(var(--base-background-color-3));
     padding-top: var(--level7);
   }
 
-  .image-video-banner a:hover .image-video-banner__cta,
-  .image-video-banner a:focus .image-video-banner__cta {
+  .video-section a:hover .video-section__cta,
+  .video-section a:focus .video-section__cta {
     opacity: 1;
   }
 
@@ -37,7 +37,7 @@
     }
   }
 
-  video-section.video-loaded .image-video-banner__poster {
+  video-section.video-loaded .video-section__poster {
     opacity: 0;
     pointer-events: none;
   }
@@ -50,7 +50,7 @@
       #Media
   \*------------------------------------*/
 
-  .image-video-banner__media {
+  .video-section__media {
     padding-bottom: 56%;
     overflow: hidden;
     margin-left: auto;
@@ -60,7 +60,7 @@
     width: 100%;
   }
 
-  .image-video-banner__poster {
+  .video-section__poster {
     position: absolute;
     z-index: 1;
     top: 0;
@@ -71,30 +71,30 @@
     transition: all 0.4s ease-in-out 0.5s;
   }
 
-  image-video-banner video {
+  video-section video {
     opacity: 0.85;
   }
 
-  .image-video-banner__media.is-loaded {
+  .video-section__media.is-loaded {
     animation: fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
-  .image-video-banner__media__image {
+  .video-section__media__image {
     position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  .image-video-banner__content {
+  .video-section__content {
     position: absolute;
     width: 100%;
     height: 100%;
     bottom: 0;
   }
 
-  .image-video-banner__media video,
-  .image-video-banner__media iframe {
+  .video-section__media video,
+  .video-section__media iframe {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -144,12 +144,12 @@
 </style>
 
 <video-section id="Banner-{{ section.id }}">
-  <div class="image-video-banner__inner page-width" data-banner-media>
+  <div class="video-section__inner page-width" data-banner-media>
     <h2 class="visually-hidden">
       {{ section.settings.heading }}
     </h2>
 
-    <div class="image-video-banner__media">
+    <div class="video-section__media">
       {% for block in section.blocks %}
         {% case block.type %}
           {% when 'video-shopify-hosted' %}
@@ -160,7 +160,7 @@
               {{ block.settings.video_asset | video_tag: controls: false, autoplay: false }}
             </div>
           {% when 'external-video' %}
-            {% assign image = section.settings.image %}
+            {% assign image = block.settings.image %}
             <img
               srcset="
                 {%- if image.width >= 165 -%}{{ image | image_url: width: 165 }} 165w,{%- endif -%}
@@ -174,7 +174,7 @@
               src="{{ image | image_url: width: 533 }}"
               sizes="(min-width: 1200px) 45vw, (min-width: 940px) 100vw-60vw, 90vw"
               alt="{{ image.alt | escape }}"
-              class="motion-reduce responsive-image image-video-banner__poster"
+              class="motion-reduce responsive-image video-section__poster"
               aria-hidden="true"
               width="{{ image.width }}"
               height="{{ image.height }}"
@@ -206,7 +206,7 @@
 {
   "name": "Video Section",
   "tag": "section",
-  "class": "image-video-banner-container",
+  "class": "video-section-container",
   "max_blocks": 1,
   "enabled_on": {
     "templates": ["page", "index", "blog"]
@@ -217,12 +217,6 @@
       "id": "heading",
       "label": "Heading",
       "info": "Enter the heading for this section for accesibility purposes (hidden)."
-    },
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Video Thumbnail Image",
-      "info": "Select an image to serve as the thumbnail for the video while it loads."
     }
   ],
   "blocks": [
@@ -254,6 +248,12 @@
           "id": "video_description",
           "label": "Video alt text",
           "info": "Describe the video for customers using screen readers."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Video Thumbnail Image",
+          "info": "Select an image to serve as the thumbnail for the iframe while it loads."
         }
       ]
     }
