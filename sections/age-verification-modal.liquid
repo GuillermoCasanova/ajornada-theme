@@ -5,10 +5,8 @@
 <script type="module" src="{{ 'age-verification-modal.js' | asset_url }}" defer="defer"></script>
 
 <age-verification-modal>
-  <div
-    tabindex="-1"
+  <dialog
     data-modal
-    role="alertdialog"
     class="age-verification-modal"
     open
     aria-describedby="#age-verification-modal-headline"
@@ -35,5 +33,5 @@
         <div class="alert__inner">You Must Be Of Legal Drinking Age For Entry</div>
       </alert>
     </div>
-  </div>
+  </dialog>
 </age-verification-modal>

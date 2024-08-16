@@ -298,7 +298,7 @@ class CartOffCanvas extends HTMLElement {
           this.resetCartState(); 
         }
   
-        trapFocus(this);
+        // trapFocus(this);
         this.notification.querySelector('button').focus();
   
         

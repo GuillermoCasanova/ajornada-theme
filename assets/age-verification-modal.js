@@ -20,9 +20,7 @@ class AgeVerificationModal extends HTMLElement {
     openModal() {
       this.modal.style.display = 'block';
       this.body.style.overflow = 'hidden';
-      setTimeout(()=> {
-        trapFocus(this.modal);
-      }, 200); 
+      trapFocus(this.modal);
     }
     closeModal(pPreventAnimation) {
       if(pPreventAnimation) {
