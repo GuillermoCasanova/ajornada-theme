@@ -667,6 +667,7 @@
             aria-labelledby="modal-title"
             id="buy-near-me-modal"
             aria-hidden="true"
+            data-allow-scroll="true"
             class="modal"
           >
             <div class="modal__inner">
@@ -679,7 +680,7 @@
               <div class="modal__content">
                 <h1 id="modal-title" class="visually-hidden">Find Ajornada Near You</h1>
                 <div class="buy-near-me-map-container">
-                  {{ block.settings.html }}
+                  {{ product.metafields.custom.near_me_embed }}
                 </div>
               </div>
             </div>

@@ -2,7 +2,7 @@ class ModalBuyNearMe extends GlobalModal {
     constructor() {
       super();
       this.modal = document.querySelector("#buy-near-me-modal");
-
+      this.modal.style.display = "none";
             
       this.mediaQueries = {
         mediumUp: window.matchMedia('(min-width: 700px)'),
@@ -22,8 +22,8 @@ class ModalBuyNearMe extends GlobalModal {
     closeModal(pEvent) {
       super.closeModal(pEvent); 
       if(this.mediaQueries.largeUp.matches === true) {
-      this.collapseModal(); 
-    }
+        this.collapseModal(); 
+      }
     }
 
     scrollToSection() {

@@ -1080,7 +1080,12 @@ class GlobalModal extends HTMLElement {
     } 
 
     this.modal.setAttribute('aria-hidden', 'false');
-    document.body.classList.add(`overflow-hidden`);
+    
+    console.log(this.modal.dataset.allowScroll); 
+    
+    if(!this.modal.dataset.allowScroll) {
+      document.body.classList.add(`overflow-hidden`);
+    }
 
   }
 
@@ -1090,7 +1095,12 @@ class GlobalModal extends HTMLElement {
       });
 
     this.modal.setAttribute('aria-hidden', 'true');
+    
     document.body.classList.remove(`overflow-hidden`);
+
+    setTimeout(()=> {
+      this.modal.style.display = 'none';
+    }, 600);
   }
 
 }

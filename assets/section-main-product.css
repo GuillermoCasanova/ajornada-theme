@@ -1307,13 +1307,22 @@ modal-buy-near-me {
 
 .buy-near-me-map-container {
   padding-bottom: 140%;
-  background: peru
+  position: relative;
+  width: 100%; 
 }
 
 @media screen and (min-width: 940px) {
   .buy-near-me-map-container {
-    padding-bottom: 50%;
+    padding-bottom: 78%;
+    padding-bottom: 81%;
   }
+}
+
+.buy-near-me-map-container iframe {
+  position: absolute;
+  object-fit: cover;
+  width: 100%; 
+  height: 100%; 
 }
 
 
