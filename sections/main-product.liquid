@@ -656,31 +656,39 @@
     </div>
   </div>
 
-  <modal-buy-near-me id="buy-near-me">
-    <div
-      role="dialog"
-      aria-live="assertive"
-      aria-modal="true"
-      aria-labelledby="modal-title"
-      id="buy-near-me-modal"
-      aria-hidden="true"
-      class="modal"
-    >
-      <div class="modal__inner">
-        <div class="modal__close">
-          <button aria-label="Close Modal" data-modal-close>
-            <span class="button__text">Close</span>
-            <span class="button__decorative-elem"></span>
-          </button>
-        </div>
-        <div class="modal__content">
-          <h1 id="modal-title" class="visually-hidden">Find Ajornada Near You</h1>
-          <div class="buy-near-me-map-container">ssd</div>
-        </div>
-      </div>
-      <div class="modal__cover" aria-hidden="true"></div>
-    </div>
-  </modal-buy-near-me>
+  {% for block in section.blocks %}
+    {%- case block.type -%}
+      {% when 'buy_near_me' %}
+        <modal-buy-near-me id="buy-near-me">
+          <div
+            role="dialog"
+            aria-live="assertive"
+            aria-modal="true"
+            aria-labelledby="modal-title"
+            id="buy-near-me-modal"
+            aria-hidden="true"
+            class="modal"
+          >
+            <div class="modal__inner">
+              <div class="modal__close">
+                <button aria-label="Close Modal" data-modal-close>
+                  <span class="button__text">Close</span>
+                  <span class="button__decorative-elem"></span>
+                </button>
+              </div>
+              <div class="modal__content">
+                <h1 id="modal-title" class="visually-hidden">Find Ajornada Near You</h1>
+                <div class="buy-near-me-map-container">
+                  {{ block.settings.html }}
+                </div>
+              </div>
+            </div>
+            <div class="modal__cover" aria-hidden="true"></div>
+          </div>
+        </modal-buy-near-me>
+        <script src="{{ 'modal-buy-near-me.js' | asset_url }}" defer="defer"></script>
+    {% endcase %}
+  {%- endfor -%}
 
   <script type="application/ld+json">
     {
@@ -724,7 +732,6 @@
 </section>
 
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'modal-buy-near-me.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'back-in-stock.js' | asset_url }}" defer="defer"></script>
 <script type="module" src="{{ 'product-images.js' | asset_url }}" defer="defer"></script>
 
@@ -801,6 +808,11 @@
         {
           "type": "paragraph",
           "content": "Pulls up the Buy Near Me User Experience"
+        },
+        {
+          "type": "html",
+          "id": "iframe_code",
+          "label": "Iframe Code"
         }
       ]
     },
