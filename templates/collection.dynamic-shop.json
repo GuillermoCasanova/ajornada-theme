@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "banner": {
@@ -8,10 +17,10 @@
     "product-grid": {
       "type": "dynamic-collection-grid",
       "blocks": {
-        "896aa8b4-6729-4de7-bb2d-317038749d9c": {
+        "product_rG3Twp": {
           "type": "product",
           "settings": {
-            "product": "lorem-ipsum"
+            "product": "prata"
           }
         },
         "3f6d558e-ce47-418d-ac63-68dc9b1db25c": {
@@ -60,7 +69,7 @@
         }
       },
       "block_order": [
-        "896aa8b4-6729-4de7-bb2d-317038749d9c",
+        "product_rG3Twp",
         "3f6d558e-ce47-418d-ac63-68dc9b1db25c",
         "27850d43-2a24-4657-9aac-0ac7919a72d5",
         "40783a2a-f62e-4e40-ad8a-dcf05d433ce9",
