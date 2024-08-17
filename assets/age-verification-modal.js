@@ -51,7 +51,7 @@ class AgeVerificationModal extends HTMLElement {
         // Load GSAP from the Shopify CDN
         loadScript('https://cdn.shopify.com/s/files/1/0638/6201/4197/files/gsap.min.js?v=1694471182')
         .then(() => {
-          // Load ScrollTrigger Plugin from the Shopify CDN
+
           this.tl = gsap.timeline(); 
 
          // Animate the logo
@@ -91,7 +91,7 @@ class AgeVerificationModal extends HTMLElement {
         this.modal.style.display = "block"; 
         this.addEventListener('DOMContentLoaded', this.openModal);
       } else {
-       this.closeModal(true);
+        this.closeModal(true);
       }
 
       this.addEventListener('loading-finished', ()=> {
