@@ -223,7 +223,7 @@
       "type": "floating-shop-button",
       "settings": {
         "button_text": "Order",
-        "button_link": "shopify:\/\/products\/lorem-ipsum",
+        "button_link": "shopify:\/\/products\/prata",
         "is_active": true
       }
     }
