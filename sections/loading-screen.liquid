@@ -16,6 +16,12 @@
   class LoadingScreen extends HTMLElement {
     constructor() {
       super();
+
+      if (sessionStorage.getItem('site-loaded')) {
+        this.style.display = 'none';
+        return;
+      }
+
       this.logo = this.querySelector('[data-loader-logo] svg');
       this.ageVerified = localStorage.getItem('ageVerified');
       this.initLoadingAnim();
@@ -139,6 +145,7 @@
           ease: 'power1.inOut',
           onComplete: () => {
             this.pauseLoadingAnim();
+            this.setSiteLoaded();
           },
         },
         '-=.2'
@@ -171,10 +178,17 @@
             scale: 0.7,
             duration: 0.8,
             ease: 'power1.inOut',
+            onComplete: () => {
+              this.setSiteLoaded();
+            },
           },
           '-=1'
         );
       }
+    }
+
+    setSiteLoaded() {
+      sessionStorage.setItem('site-loaded', 'true');
     }
   }
 
