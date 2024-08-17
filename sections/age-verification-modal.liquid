@@ -14,19 +14,21 @@
   >
     <div class="age-verification-modal__inner">
       <div class="age-verification-form">
-        <div class="age-verification__logo">
+        <div class="age-verification__logo" data-brand-logo>
           <svg title="Ajornada" focusable="false">
             <use href="#brand-logo">
           </svg>
         </div>
-        <h2 id="age-verification-modal-headline" class="age-verification-modal__headline">
-          Are you of legal drinking age?
-        </h2>
-        <fieldset>
-          <legend>Continue if you are of legal drinking age.</legend>
-          <button class="age-verification-modal__button" data-action="confirm">Yes</button>
-          <button class="age-verification-modal__button" data-action="deny">No</button>
-        </fieldset>
+        <span data-text>
+          <h2 id="age-verification-modal-headline" class="age-verification-modal__headline">
+            Are you of legal drinking age?
+          </h2>
+          <fieldset>
+            <legend>Continue if you are of legal drinking age.</legend>
+            <button class="age-verification-modal__button" data-action="confirm">Yes</button>
+            <button class="age-verification-modal__button" data-action="deny">No</button>
+          </fieldset>
+        </span>
       </div>
 
       <alert style="display: none;">

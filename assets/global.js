@@ -32,7 +32,6 @@ function trapFocus(container, elementToFocus = container) {
 
 
   removeTrapFocus();
-  console.log('trap focus'); 
 
   trapFocusHandlers.focusin = (event) => {
     if (event.target !== container && event.target !== last && event.target !== first) return;
@@ -45,19 +44,16 @@ function trapFocus(container, elementToFocus = container) {
   };
 
   trapFocusHandlers.keydown = function (event) {
-    console.log(event); 
     if (event.code.toUpperCase() !== 'TAB') return; // If not TAB key
+
     // On the last focusable element and tab forward, focus the first element.
-    console.log(event.target); 
     if (event.target === last && !event.shiftKey) {
-      console.log('focus first');
       event.preventDefault();
       first.focus();
     }
 
     //  On the first focusable element and tab backward, focus the last element.
     if ((event.target === container || event.target === first) && event.shiftKey) {
-      console.log('focus last');
       event.preventDefault();
       last.focus();
     }
