@@ -86,12 +86,36 @@
         "top_border": "no",
         "bottom_border": "no"
       }
+    },
+    "rich_text_jxCPWF": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_GybayJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "A Legacy of Excellence"
+          }
+        },
+        "text_Nt6ryr": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Join us on a journey steeped in Brazilian tradition and culture. As the national spirit of Brazil, cachaça holds a special place in our hearts—and at Ajornada, we honor this legacy with every bottle. Led by Master Distiller Mauricio Maia, our family farm epitomizes the essence of artisanal craftsmanship, creating a cachaça that's truly unparalleled.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_GybayJ",
+        "text_Nt6ryr"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
     "main",
     "rich_text_Wi7Vrg",
     "rich_text_EFzFG4",
-    "image_slideshow_break_ycGtyU"
+    "image_slideshow_break_ycGtyU",
+    "rich_text_jxCPWF"
   ]
 }
