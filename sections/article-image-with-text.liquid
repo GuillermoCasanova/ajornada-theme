@@ -11,28 +11,28 @@
       <h2 class="article-image-with-text__heading">{{ section.settings.heading }}</h2>
 
       <div class="article-image-with-text__body">
-        {{ section.settings.body | strip_html }}
+        {{ section.settings.body }}
       </div>
     </div>
 
     <div class="article-image-with-text__image">
       <div class="article-image-with-text__image__inner">
-        {% if section.settings.section_image != blank %}
+        {% if section.settings.image != blank %}
           <img
             srcset="
-              {%- if section.settings.section_image.width >= 165 -%}{{ section.settings.section_image | image_url: width: 165 }} 165w,{%- endif -%}
-              {%- if section.settings.section_image.width >= 360 -%}{{ section.settings.section_image | image_url: width: 360 }} 360w,{%- endif -%}
-              {%- if section.settings.section_image.width >= 533 -%}{{ section.settings.section_image | image_url: width: 533 }} 533w,{%- endif -%}
-              {%- if section.settings.section_image.width >= 720 -%}{{ section.settings.section_image | image_url: width: 720 }} 720w,{%- endif -%}
-              {%- if section.settings.section_image.width >= 940 -%}{{ section.settings.section_image | image_url: width: 940 }} 940w,{%- endif -%}
-              {{ section.settings.section_image | image_url }} {{ section.settings.section_image.width }}w
+              {%- if section.settings.image.width >= 165 -%}{{ section.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
+              {%- if section.settings.image.width >= 360 -%}{{ section.settings.image | image_url: width: 360 }} 360w,{%- endif -%}
+              {%- if section.settings.image.width >= 533 -%}{{ section.settings.image | image_url: width: 533 }} 533w,{%- endif -%}
+              {%- if section.settings.image.width >= 720 -%}{{ section.settings.image | image_url: width: 720 }} 720w,{%- endif -%}
+              {%- if section.settings.image.width >= 940 -%}{{ section.settings.image | image_url: width: 940 }} 940w,{%- endif -%}
+              {{ section.settings.image | image_url }} {{ section.settings.image.width }}w
             "
-            src="{{ section.settings.section_image | image_url: width: 533 }}"
+            src="{{ section.settings.image | image_url: width: 533 }}"
             sizes="(min-width: 940px) 50vw, (min-width: 700px) 30vw, 100vw"
-            alt="{{ section.settings.section_image.alt | escape }}"
+            alt="{{ section.settings.image.alt | escape }}"
             loading="lazy"
-            width="{{ section.settings.section_image.width }}"
-            height="{{ section.settings.section_image.height }}"
+            width="{{ section.settings.image.width }}"
+            height="{{ section.settings.image.height }}"
             class="responsive-image"
           >
         {% else %}
