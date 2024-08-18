@@ -16,16 +16,19 @@ class BackInStockComponent extends HTMLElement {
     }
 
     initEvents() {
-        this.productForm.addEventListener('alert-not-in-stock', this.handleBackInStock.bind(this)); 
-        this.productForm.addEventListener('alert-in-stock', this.handleBackInStock.bind(this)); 
 
+        if(this.productForm) {
+            this.productForm.addEventListener('alert-not-in-stock', this.handleBackInStock.bind(this)); 
+            this.productForm.addEventListener('alert-in-stock', this.handleBackInStock.bind(this)); 
+        }
+        
         this.form.addEventListener('submit', (event) => {
             event.preventDefault(); // Prevent the default form submission
             this.subscribeUser(); // Call the subscribe function
         });
 
         this.drawerTrigger.addEventListener('click', (event)=> {
-            this.toggleDrawer(event); 
+            this.openDrawer(event); 
         }); 
 
         this.drawerContent.style.height = 0; 
@@ -94,9 +97,10 @@ class BackInStockComponent extends HTMLElement {
             body: JSON.stringify(payload),
         };
 
-        function showSuccess(pContainer) {
+        const showSuccess = (pContainer) => {
             pContainer.loader.style.display = 'none'; 
             pContainer.successText.style.display = 'block'; 
+            this.closeDrawer(this.drawerTrigger); 
         };
 
         fetch("https://a.klaviyo.com/client/back-in-stock-subscriptions/?company_id=TeNSXA", requestOptions)
@@ -120,12 +124,6 @@ class BackInStockComponent extends HTMLElement {
         }
     }
 
-    toggleDrawer(event) {
-        event.preventDefault();
-        const currentTarget = event.currentTarget;
-        this.openDrawer(currentTarget);
-      }
-
     closeDrawer(pDrawerTrigger) {
         const content = pDrawerTrigger.closest('details').querySelector('[data-content]');
         content.style.height = 0;
@@ -138,17 +136,20 @@ class BackInStockComponent extends HTMLElement {
       }
     
     
-      openDrawer(pDrawerTrigger) {
-         pDrawerTrigger.setAttribute('aria-expanded', true);
+      openDrawer(pEvent) {
+        event.preventDefault();
+        let trigger = pEvent.currentTarget; 
+        
+         trigger.setAttribute('aria-expanded', true);
       
-         if (pDrawerTrigger.closest('details').getAttribute('open')) {
-           this.closeDrawer(pDrawerTrigger);
+         if (trigger.closest('details').getAttribute('open')) {
+           this.closeDrawer(trigger);
            return;
          }
     
-        pDrawerTrigger.closest('details').setAttribute('open', true);
-        const content = pDrawerTrigger.closest('details').querySelector('[data-content]');
-        content.style.height = content.querySelector('form').offsetHeight + 'px';
+        trigger.closest('details').setAttribute('open', true);
+        const content = trigger.closest('details').querySelector('[data-content]');
+        content.style.height = content.querySelector('form').offsetHeight + 5 +  'px';
       }
 
   }
