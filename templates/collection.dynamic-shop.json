@@ -23,16 +23,16 @@
             "product": "prata"
           }
         },
-        "product_LJYgfc": {
-          "type": "product",
-          "settings": {
-            "product": "carvalho"
-          }
-        },
         "27850d43-2a24-4657-9aac-0ac7919a72d5": {
           "type": "product",
           "settings": {
             "product": "lorem-shirt-amber"
+          }
+        },
+        "product_LJYgfc": {
+          "type": "product",
+          "settings": {
+            "product": "carvalho"
           }
         },
         "17a49410-1463-4f05-9f30-ae49c3d68d45": {
@@ -40,24 +40,6 @@
           "settings": {
             "video": "shopify:\/\/files\/videos\/ajornada-desktop-compressed.mp4",
             "autoplay": "true"
-          }
-        },
-        "ef311fbf-dca0-42c4-bc04-b71891c3b3af": {
-          "type": "product",
-          "settings": {
-            "product": "copy-of-lorem-bottle"
-          }
-        },
-        "0be45de7-d393-4376-9fd8-efdbee7d2cb1": {
-          "type": "product",
-          "settings": {
-            "product": "lorem-shirt-sand"
-          }
-        },
-        "20e40805-f50e-483c-8850-8fc149e546f4": {
-          "type": "product",
-          "settings": {
-            "product": "copy-of-lorem-bottle-101"
           }
         },
         "40783a2a-f62e-4e40-ad8a-dcf05d433ce9": {
@@ -70,12 +52,9 @@
       },
       "block_order": [
         "product_rG3Twp",
-        "product_LJYgfc",
         "27850d43-2a24-4657-9aac-0ac7919a72d5",
+        "product_LJYgfc",
         "17a49410-1463-4f05-9f30-ae49c3d68d45",
-        "ef311fbf-dca0-42c4-bc04-b71891c3b3af",
-        "0be45de7-d393-4376-9fd8-efdbee7d2cb1",
-        "20e40805-f50e-483c-8850-8fc149e546f4",
         "40783a2a-f62e-4e40-ad8a-dcf05d433ce9"
       ],
       "settings": {
