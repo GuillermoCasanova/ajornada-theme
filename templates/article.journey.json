@@ -109,6 +109,32 @@
       ],
       "settings": {
       }
+    },
+    "article_image_grid_nbTHXf": {
+      "type": "article-image-grid",
+      "blocks": {
+        "image_CGfyxj": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-06-18_at_10.23_3.png",
+            "alt_text": "Artistic black and white image of furniture and a plant."
+          }
+        },
+        "image_tYg4qQ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-06-18_at_10.23_3.png",
+            "alt_text": "Artistic black and white image of furniture and a plant."
+          }
+        }
+      },
+      "block_order": [
+        "image_CGfyxj",
+        "image_tYg4qQ"
+      ],
+      "settings": {
+        "heading": ""
+      }
     }
   },
   "order": [
@@ -116,6 +142,7 @@
     "rich_text_Wi7Vrg",
     "rich_text_EFzFG4",
     "image_slideshow_break_ycGtyU",
-    "rich_text_jxCPWF"
+    "rich_text_jxCPWF",
+    "article_image_grid_nbTHXf"
   ]
 }
