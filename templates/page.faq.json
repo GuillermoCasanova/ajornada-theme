@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "main": {
@@ -6,29 +15,29 @@
         "97e89cb5-05ca-478d-853d-cfd51f98b511": {
           "type": "faq_block",
           "settings": {
-            "question": "Question Ipsum This?",
-            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum aute irure dolor.<\/p>"
+            "question": "What is cachaça?",
+            "answer": "<p>Cachaça is a Brazilian distilled spirit made from fermented sugarcane juice. It is the main ingredient in Brazil's national cocktail, the caipirinha.<\/p>"
           }
         },
         "e00f2a91-4f7c-4e5a-b9d2-e609293e2cf7": {
           "type": "faq_block",
           "settings": {
-            "question": "Lorem ipsum dolor sit amet?",
-            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum aute irure dolor.<\/p>"
+            "question": "How is cachaça different from rum?",
+            "answer": "<p>While both cachaça and rum are made from sugarcane, cachaça is distilled directly from fresh sugarcane juice, whereas rum is typically made from molasses, a byproduct of sugar production.<\/p>"
           }
         },
         "a59fd2a2-e0f2-41c0-83a6-a0340c31b109": {
           "type": "faq_block",
           "settings": {
-            "question": "Lorem ipsum dolor sit amet?",
-            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum aute irure dolor.<\/p>"
+            "question": "What does Ajornada cachaça taste like?",
+            "answer": "<p>The taste of cachaça can vary widely depending on the expressions and the individual production process and aging. It can range from light and fruity with a grassy aroma to rich and complex with notes of vanilla, caramel, and wood from barrel aging.<\/p>"
           }
         },
         "07e8ca04-f6ce-4334-9590-a20fef831ea8": {
           "type": "faq_block",
           "settings": {
-            "question": "Lorem ipsum dolor sit amet?",
-            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum aute irure dolor.<\/p>"
+            "question": "How do you pronounce cachaça?",
+            "answer": "<p>Cachaça is pronounced kah-SHAH-sah.<\/p>"
           }
         },
         "3c9e2e35-318d-4ee5-aadc-ef5256badb1f": {
@@ -37,6 +46,20 @@
             "question": "Lorem ipsum dolor sit amet?",
             "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum aute irure dolor.<\/p>"
           }
+        },
+        "faq_block_znR8zw": {
+          "type": "faq_block",
+          "settings": {
+            "question": "How should I drink cachaça?",
+            "answer": "<p>Cachaça can be enjoyed neat, on the rocks, or as part of a cocktail. The most famous cocktail is the Caipirinha [can \"Caipirinha\" be an active link to the recipe for the caipirinha], made with cachaça, lime, sugar, and ice.<\/p>"
+          }
+        },
+        "faq_block_VEJe7n": {
+          "type": "faq_block",
+          "settings": {
+            "question": "What makes your cachaça brand unique?",
+            "answer": "<p>Our cachaça is crafted using traditional methods, with a focus on quality and authenticity. We source the finest sugarcane and employ artisanal distillation techniques to produce a spirit that embodies the true essence of Brazil.<\/p>"
+          }
         }
       },
       "block_order": [
@@ -44,7 +67,9 @@
         "e00f2a91-4f7c-4e5a-b9d2-e609293e2cf7",
         "a59fd2a2-e0f2-41c0-83a6-a0340c31b109",
         "07e8ca04-f6ce-4334-9590-a20fef831ea8",
-        "3c9e2e35-318d-4ee5-aadc-ef5256badb1f"
+        "3c9e2e35-318d-4ee5-aadc-ef5256badb1f",
+        "faq_block_znR8zw",
+        "faq_block_VEJe7n"
       ],
       "settings": {
         "heading": "Frequently Asked Questions"
