@@ -35,17 +35,17 @@
             "product": "carvalho"
           }
         },
-        "17a49410-1463-4f05-9f30-ae49c3d68d45": {
-          "type": "video_embed",
+        "image_h7NenF": {
+          "type": "image",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/ajornada-desktop-compressed.mp4",
-            "autoplay": "true"
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-06-18_at_2.43-1.png",
+            "art_direction": "wide"
           }
         },
         "40783a2a-f62e-4e40-ad8a-dcf05d433ce9": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/v82_1105.png",
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-06-18_at_2.43.png",
             "art_direction": "portrait"
           }
         }
@@ -54,7 +54,7 @@
         "product_rG3Twp",
         "27850d43-2a24-4657-9aac-0ac7919a72d5",
         "product_LJYgfc",
-        "17a49410-1463-4f05-9f30-ae49c3d68d45",
+        "image_h7NenF",
         "40783a2a-f62e-4e40-ad8a-dcf05d433ce9"
       ],
       "settings": {
