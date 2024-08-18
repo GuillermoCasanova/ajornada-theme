@@ -157,7 +157,7 @@
         "e7b8f891-f0e0-4772-a2c4-cc4e9624ebd8"
       ],
       "settings": {
-        "top_border": "no",
+        "top_border": "yes",
         "bottom_border": "yes",
         "trigger_email_popup": false
       }
