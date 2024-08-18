@@ -12,6 +12,7 @@
     "main": {
       "type": "article-header",
       "settings": {
+        "heading": "Welcome To The Journey"
       }
     }
   },
