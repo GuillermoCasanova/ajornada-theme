@@ -9,7 +9,7 @@
 
       <div class="faq-section__questions-list">
         {% for block in section.blocks %}
-          <details class="faq-item" data-id="faq-{{ forloop.index }}">
+          <details class="faq-item" data-id="faq-{{ forloop.index }}" {{ block.shopify_attributes }}>
             <summary
               class="faq-item__question"
               aria-expanded="false"

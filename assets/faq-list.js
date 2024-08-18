@@ -3,6 +3,11 @@ class FAQList extends HTMLElement {
     constructor() {
       super();
       this.activeDrawer = null;
+      console.log('hello');
+      if (Shopify.designMode) {
+        console.log('design mode');
+        document.addEventListener('shopify:block:select', this.onBlockSelect.bind(this));
+      }
     }
   
     connectedCallback() {
@@ -27,7 +32,10 @@ class FAQList extends HTMLElement {
       }, 450);
     }
   
-  
+    onBlockSelect(pEvent) {
+      console.log(pEvent);
+    }
+
     openDrawer(pDrawer) {
       pDrawer.setAttribute('aria-expanded', true);
     
