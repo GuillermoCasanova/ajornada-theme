@@ -95,7 +95,7 @@
 
 @media screen and (min-width: 1200px) {
     .faq-item__question {
-        font-size: var(--h3);
+        font-size: var(--h2);
     }
 }
 
