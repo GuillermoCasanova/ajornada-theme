@@ -71,13 +71,6 @@
             "show_dynamic_checkout": true
           }
         },
-        "back_in_stock_MVwRUY": {
-          "type": "back-in-stock",
-          "settings": {
-            "button_cta_text": "Notify Me",
-            "button_success_text": "Success"
-          }
-        },
         "4a4006c8-0436-4eae-ac13-f3f73fc097c4": {
           "type": "buy_near_me",
           "settings": {
@@ -96,7 +89,6 @@
         "248e0a76-b430-457b-abe2-1884f11e85e2",
         "quantity_selector",
         "buy_buttons",
-        "back_in_stock_MVwRUY",
         "4a4006c8-0436-4eae-ac13-f3f73fc097c4"
       ],
       "settings": {
@@ -107,20 +99,52 @@
     "845785f8-fb96-4ded-a27b-d90d31c351db": {
       "type": "recipes-featured",
       "blocks": {
+        "recipe_card_E8ANKx": {
+          "type": "recipe_card",
+          "settings": {
+            "recipe_preview": "",
+            "recipe_post": "recipes\/macunaima"
+          }
+        },
+        "recipe_card_N8C6xy": {
+          "type": "recipe_card",
+          "settings": {
+            "recipe_preview": "",
+            "recipe_post": "news\/flor-de-mango"
+          }
+        },
         "11246dca-e060-45f2-a722-229ccd5a2a52": {
           "type": "recipe_card",
           "settings": {
             "recipe_preview": "<p>Preview Text for Recipe here<\/p>",
             "recipe_post": "recipes\/flor-de-jamaica"
           }
+        },
+        "recipe_card_3FEEzH": {
+          "type": "recipe_card",
+          "settings": {
+            "recipe_preview": "",
+            "recipe_post": "recipes\/infusion-tension"
+          }
+        },
+        "recipe_card_BgApea": {
+          "type": "recipe_card",
+          "settings": {
+            "recipe_preview": "",
+            "recipe_post": "recipes\/batida-de-coco-recipe"
+          }
         }
       },
       "block_order": [
-        "11246dca-e060-45f2-a722-229ccd5a2a52"
+        "recipe_card_E8ANKx",
+        "recipe_card_N8C6xy",
+        "11246dca-e060-45f2-a722-229ccd5a2a52",
+        "recipe_card_3FEEzH",
+        "recipe_card_BgApea"
       ],
       "settings": {
         "headline": "Recipes",
-        "subline": "Ajornada",
+        "subline": "Our Cocktails",
         "cards_background": "shopify:\/\/shop_images\/RecipeCard2_ea1c8201-91d8-4fb9-9d64-b51e83347173.png",
         "cta_url": "shopify:\/\/blogs\/recipes",
         "top_border": "no",
