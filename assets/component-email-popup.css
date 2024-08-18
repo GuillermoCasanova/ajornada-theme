@@ -103,8 +103,7 @@
 
  @media screen and (min-width: 940px) {
      .modal-email__body {
-         font-size: var(--h4);
-         margin-bottom: calc(var(--level10) + var(--level10));
+         margin-bottom: calc(var(--level10));
      }
  }
 
