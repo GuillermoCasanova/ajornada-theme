@@ -90,6 +90,7 @@
         },
         "0dbdc3d5-ccef-4e10-85f2-993f076e4008": {
           "type": "blog",
+          "disabled": true,
           "settings": {
             "blog": "news"
           }
