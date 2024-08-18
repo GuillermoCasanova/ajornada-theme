@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "5c8f955f-ef36-4d0d-ab49-e2f71b13568f": {
@@ -6,13 +15,13 @@
         "template--16783451619573__5c8f955f-ef36-4d0d-ab49-e2f71b13568f-heading-1": {
           "type": "heading",
           "settings": {
-            "heading": "Lorem Headline Is This Ipsum"
+            "heading": "The Journey"
           }
         },
         "86bf2952-b1dd-481b-bc60-0d2006f0fed1": {
           "type": "body",
           "settings": {
-            "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>"
+            "body": "<p>With newly opened eyes, consumers have begun searching for something different, but more so....something New. And that's where our Journey begins.<\/p>"
           }
         }
       },
