@@ -188,8 +188,13 @@
     }
 
     toggleHighlight(pEvent) {
-      this.closeOtherCards();
-      pEvent.target.querySelector('[data-card]').classList.toggle('is-active');
+      let card = this.querySelector('[data-card]');
+      if (card.classList.contains('is-active')) {
+        card.classList.remove('is-active');
+      } else {
+        this.closeOtherCards();
+        pEvent.target.closest('[data-flip-trigger]').querySelector('[data-card]').classList.toggle('is-active');
+      }
     }
   }
 
@@ -206,7 +211,9 @@
 {% schema %}
 {
   "name": "Recipes Featured",
-  "templates": ["index", "page", "product", "blog", "article"],
+  "enabled_on": {
+    "templates": ["index", "page", "product", "blog", "article"]
+  },
   "settings": [
     {
       "type": "text",
