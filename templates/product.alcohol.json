@@ -71,13 +71,6 @@
             "show_dynamic_checkout": true
           }
         },
-        "back_in_stock_MVwRUY": {
-          "type": "back-in-stock",
-          "settings": {
-            "button_cta_text": "Notify Me",
-            "button_success_text": "Success"
-          }
-        },
         "4a4006c8-0436-4eae-ac13-f3f73fc097c4": {
           "type": "buy_near_me",
           "settings": {
@@ -96,7 +89,6 @@
         "248e0a76-b430-457b-abe2-1884f11e85e2",
         "quantity_selector",
         "buy_buttons",
-        "back_in_stock_MVwRUY",
         "4a4006c8-0436-4eae-ac13-f3f73fc097c4"
       ],
       "settings": {
