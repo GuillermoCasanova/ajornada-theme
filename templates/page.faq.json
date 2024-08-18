@@ -40,13 +40,6 @@
             "answer": "<p>Cachaça is pronounced kah-SHAH-sah.<\/p>"
           }
         },
-        "3c9e2e35-318d-4ee5-aadc-ef5256badb1f": {
-          "type": "faq_block",
-          "settings": {
-            "question": "Lorem ipsum dolor sit amet?",
-            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum aute irure dolor.<\/p>"
-          }
-        },
         "faq_block_znR8zw": {
           "type": "faq_block",
           "settings": {
@@ -60,6 +53,41 @@
             "question": "What makes your cachaça brand unique?",
             "answer": "<p>Our cachaça is crafted using traditional methods, with a focus on quality and authenticity. We source the finest sugarcane and employ artisanal distillation techniques to produce a spirit that embodies the true essence of Brazil.<\/p>"
           }
+        },
+        "faq_block_DUKgkW": {
+          "type": "faq_block",
+          "settings": {
+            "question": "Where is your cachaça produced?",
+            "answer": "<p>Our cachaça is produced in Minas Gerais, where we have access to high-quality sugarcane and a rich tradition of cachaça making. Also, widely known as the champagne region of cachaça and where cachaça began over 500 years ago.<\/p>"
+          }
+        },
+        "faq_block_CwaXdE": {
+          "type": "faq_block",
+          "settings": {
+            "question": "Is cachaça gluten-free?",
+            "answer": "<p>Yes, cachaça is gluten-free as it is made from sugarcane, which does not contain gluten.<\/p>"
+          }
+        },
+        "faq_block_kXCPHE": {
+          "type": "faq_block",
+          "settings": {
+            "question": "Are there any additives in Ajornada cachaça?",
+            "answer": "<p>No, there are no additives or sugar, of any kind used in the production of Ajornada cachaça.<\/p>"
+          }
+        },
+        "faq_block_nrKxt4": {
+          "type": "faq_block",
+          "settings": {
+            "question": "What cocktails can I make with cachaça?",
+            "answer": "<p>In addition to the classic caipirinha, you can use cachaça in a variety of cocktails such as the Macunaíma, <a href=\"\/blogs\/recipes\/flor-de-jamaica\" target=\"_blank\" title=\"Rabo De Galo\">Rabo de Galo<\/a>, and even in place of rum in drinks like the <a href=\"\/blogs\/recipes\/batida-de-coco-recipe\" target=\"_blank\" title=\"Hemingway Special\">Hemingway Daiquiri<\/a>.<\/p>"
+          }
+        },
+        "faq_block_wUrHfQ": {
+          "type": "faq_block",
+          "settings": {
+            "question": "Where can I buy your cachaça?",
+            "answer": "<p>Ajornda cachaça is available for purchase online here and at select retailers and bars across the U.S. Check our <a href=\"\/pages\/find-us\" target=\"_blank\" title=\"Find Us\">store locator page<\/a> for more information.<\/p>"
+          }
         }
       },
       "block_order": [
@@ -67,9 +95,13 @@
         "e00f2a91-4f7c-4e5a-b9d2-e609293e2cf7",
         "a59fd2a2-e0f2-41c0-83a6-a0340c31b109",
         "07e8ca04-f6ce-4334-9590-a20fef831ea8",
-        "3c9e2e35-318d-4ee5-aadc-ef5256badb1f",
         "faq_block_znR8zw",
-        "faq_block_VEJe7n"
+        "faq_block_VEJe7n",
+        "faq_block_DUKgkW",
+        "faq_block_CwaXdE",
+        "faq_block_kXCPHE",
+        "faq_block_nrKxt4",
+        "faq_block_wUrHfQ"
       ],
       "settings": {
         "heading": "Frequently Asked Questions"
