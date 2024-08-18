@@ -1,0 +1,231 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "main": {
+      "type": "article-header",
+      "settings": {
+        "heading": "Welcome To The Journey"
+      }
+    },
+    "rich_text_Wi7Vrg": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_7rM6pe": {
+          "type": "heading",
+          "settings": {
+            "heading": "Discover the World's Finest Cachaça: Ajornada"
+          }
+        },
+        "text_3RwtrD": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Welcome to Ajornada, where tradition meets excellence in every sip. As the proud recipient of numerous awards in Brazil, the US, and Europe, Ajornada stands as a testament to superior taste and quality. Crafted on a small family farm in the lush foothills of Minas Gerais, our cachaça is organically grown, non-GMO, and free from additives—ensuring a clean and smooth sipping experience that's second to none.<\/p>"
+          }
+        },
+        "image_xUw9RG": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-06-18_at_10.24_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "heading_7rM6pe",
+        "text_3RwtrD",
+        "image_xUw9RG"
+      ],
+      "settings": {
+      }
+    },
+    "rich_text_EFzFG4": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_8MpxRb": {
+          "type": "heading",
+          "settings": {
+            "heading": "Unveiling the Flavor Journey"
+          }
+        },
+        "text_3ddi9N": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Indulge your senses in Ajornada's light sweetness, accentuated by delightful hints of grassy, floral, and herbaceous notes. Our artisanal production process begins with hand-cut and pressed sugarcane, harvested within 8 hours for optimal freshness. Using wild active yeast for fermentation and copper pot distillation, we preserve the integrity of the sugarcane, resulting in the purest cachaça imaginable.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_8MpxRb",
+        "text_3ddi9N"
+      ],
+      "settings": {
+      }
+    },
+    "image_slideshow_break_ycGtyU": {
+      "type": "image-slideshow-break",
+      "blocks": {
+        "slideshow_slide_p3XY6W": {
+          "type": "slideshow_slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-06-18_at_9.38_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "slideshow_slide_p3XY6W"
+      ],
+      "settings": {
+        "name": "",
+        "top_border": "no",
+        "bottom_border": "no"
+      }
+    },
+    "rich_text_jxCPWF": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_GybayJ": {
+          "type": "heading",
+          "settings": {
+            "heading": "A Legacy of Excellence"
+          }
+        },
+        "text_Nt6ryr": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Join us on a journey steeped in Brazilian tradition and culture. As the national spirit of Brazil, cachaça holds a special place in our hearts—and at Ajornada, we honor this legacy with every bottle. Led by Master Distiller Mauricio Maia, our family farm epitomizes the essence of artisanal craftsmanship, creating a cachaça that's truly unparalleled.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_GybayJ",
+        "text_Nt6ryr"
+      ],
+      "settings": {
+      }
+    },
+    "article_image_grid_nbTHXf": {
+      "type": "article-image-grid",
+      "blocks": {
+        "image_CGfyxj": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-06-18_at_10.23_3.png",
+            "alt_text": "Artistic black and white image of furniture and a plant."
+          }
+        },
+        "image_tYg4qQ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-06-18_at_10.23_3.png",
+            "alt_text": "Artistic black and white image of furniture and a plant."
+          }
+        }
+      },
+      "block_order": [
+        "image_CGfyxj",
+        "image_tYg4qQ"
+      ],
+      "settings": {
+        "heading": ""
+      }
+    },
+    "rich_text_im6h4R": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_J9YJ4A": {
+          "type": "heading",
+          "settings": {
+            "heading": "Craft Cocktails, Elevated"
+          }
+        },
+        "text_EXyzyL": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Elevate your cocktail experience with Ajornada Cachaça. From the iconic Caipirinha to unique creations like the Rabo de Galo and Macunaíma our versatile spirit offers endless possibilities for cocktail enthusiasts. Explore our website for exclusive recipes and inspiration to elevate your mixology game.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_J9YJ4A",
+        "text_EXyzyL"
+      ],
+      "settings": {
+      }
+    },
+    "rich_text_XWtynQ": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_nYDchq": {
+          "type": "heading",
+          "settings": {
+            "heading": "Unlock the Essence of Brazil with Ajornada"
+          }
+        },
+        "text_EUTkqK": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Experience the true spirit of Brazil with Ajornada Cachaça. Crafted with passion, integrity, and a commitment to excellence, our award-winning spirit invites you to savor the essence of tradition in every sip. Raise your glass to Ajornada—the world's best cachaça awaits.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_nYDchq",
+        "text_EUTkqK"
+      ],
+      "settings": {
+      }
+    },
+    "article_product_grid_HwzPtB": {
+      "type": "article-product-grid",
+      "blocks": {
+        "product_BLqXQm": {
+          "type": "product",
+          "settings": {
+            "product": "carvalho"
+          }
+        },
+        "product_mBVXLg": {
+          "type": "product",
+          "settings": {
+            "product": "prata"
+          }
+        }
+      },
+      "block_order": [
+        "product_BLqXQm",
+        "product_mBVXLg"
+      ],
+      "settings": {
+        "heading": ""
+      }
+    },
+    "article_image_with_text_C6gyfX": {
+      "type": "article-image-with-text",
+      "settings": {
+        "heading": "Where to find us",
+        "body": "<p>Ready to experience the world's finest cachaça for yourself?<\/p><p>Join us as we celebrate International Cachaça Day on June 12, National Cachaça Day on September 13th, and Carnival in Rio from February 28th to March 8th — mark your calendars for a toast to excellence! And don’t forget to follow us on Instagram @Ajornada.<\/p>",
+        "image": "shopify:\/\/shop_images\/Screen_Shot_2023-06-18_at_10.50_1.png",
+        "image_position": "left"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_Wi7Vrg",
+    "rich_text_EFzFG4",
+    "image_slideshow_break_ycGtyU",
+    "rich_text_jxCPWF",
+    "article_image_grid_nbTHXf",
+    "rich_text_im6h4R",
+    "rich_text_XWtynQ",
+    "article_product_grid_HwzPtB",
+    "article_image_with_text_C6gyfX"
+  ]
+}
