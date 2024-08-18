@@ -32,7 +32,7 @@
             breakpoints='{"940": {"pagination": false, "spaceBetween": 80, "freeMode": true}}'
           >
             {%- for block in section.blocks -%}
-              <click-to-flip>
+              <click-to-flip {{ block.shopify_attributes }}>
                 <div class="recipe-card" data-flip-trigger>
                   <div class="recipe-card__inner">
                     <div class="recipe-card__flip-card">
@@ -162,10 +162,34 @@
 
       // Attach the click event listener to each element
       this.querySelector('[data-flip-trigger]').addEventListener('click', this.toggleHighlight.bind(this));
+
+      if (Shopify.designMode) {
+        if (this.closest('[data-shopify-editor-section]')) {
+          this.sectionId = this.closest('[data-shopify-editor-section]').id;
+        }
+
+        document.addEventListener('shopify:block:select', this.onCardBlockSelect.bind(this));
+      }
     }
 
-    toggleHighlight(event) {
-      this.querySelector('[data-card]').classList.toggle('is-active');
+    onCardBlockSelect(event) {
+      if (this.sectionId !== event.sectionId) {
+        return;
+      }
+      this.toggleHighlight(event);
+    }
+
+    closeOtherCards() {
+      document.querySelectorAll('click-to-flip').forEach((element) => {
+        if (element.querySelector('[data-card]').classList.contains('is-active')) {
+          element.querySelector('[data-card]').classList.remove('is-active');
+        }
+      });
+    }
+
+    toggleHighlight(pEvent) {
+      this.closeOtherCards();
+      pEvent.target.querySelector('[data-card]').classList.toggle('is-active');
     }
   }
 
