@@ -28,30 +28,6 @@
     </h2>
     <div class="contact-form__body">
       {%- form 'contact', id: 'ContactForm', class: 'isolate' -%}
-        <div class="contact-form__states">
-          {%- if form.posted_successfully? -%}
-            <div class="form-status form-status-list form__message" tabindex="-1" autofocus>
-              {% render 'icon-success' %}
-              {{ 'templates.contact.form.post_success' | t }}
-            </div>
-          {%- elsif form.errors -%}
-            <div class="form__message">
-              <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
-                {% render 'icon-error' %}
-                {{ 'templates.contact.form.error_heading' | t }}
-              </h2>
-            </div>
-            <ul class="form-status-list caption-large" role="list">
-              <li>
-                <a href="#ContactForm-email" class="link">
-                  {{ form.errors.translated_fields.email | capitalize }}
-                  {{ form.errors.messages.email }}
-                </a>
-              </li>
-            </ul>
-          {%- endif -%}
-        </div>
-
         <div class="form-section">
           <custom-input-wrapper class="custom-field custom-field--primary custom-field--large">
             <input
@@ -73,7 +49,6 @@
             <small class="contact__field-error" id="ContactForm-name-error">
               <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
               <span class="form__message">
-                {%- render 'icon-error' -%}
                 {{- form.errors.translated_fields.name | capitalize }}
                 {{ form.errors.messages.name -}}
               </span>
@@ -101,11 +76,11 @@
               <span aria-hidden="true">*</span></label
             >
           </custom-input-wrapper>
+
           {%- if form.errors contains 'email' -%}
             <small class="contact__field-error" id="ContactForm-email-error">
               <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
               <span class="form__message">
-                {%- render 'icon-error' -%}
                 {{- form.errors.translated_fields.email | capitalize }}
                 {{ form.errors.messages.email -}}
               </span>
@@ -130,7 +105,6 @@
             <small class="contact__field-error" id="ContactForm-title-error">
               <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
               <span class="form__message">
-                {%- render 'icon-error' -%}
                 {{- form.errors.translated_fields.title | capitalize }}
                 {{ form.errors.messages.title -}}
               </span>
@@ -145,7 +119,6 @@
           <textarea
             rows="10"
             id="ContactForm-body"
-            class="text-area field__input"
             name="contact[{{ 'templates.contact.form.comment' | t }}]"
             class="input  input--primary  textarea--large"
             required
@@ -156,16 +129,50 @@
         </div>
 
         <div class="contact-form__cta">
-          <button type="submit" class="button  button--secondary  button--medium  button--contact-form">
-            <span class="button__text">
-              {{ 'templates.contact.form.send' | t }}
-            </span>
-            <span class="button__icon">
-              <svg>
-                <use href="#arrow-right"/>
-              </svg>
-            </span>
-          </button>
+          {%- if form.posted_successfully? -%}
+            <button disabled class="button  button--secondary  button--medium  button--contact-form is-submitted">
+              <span class="button__text"> Submitted! </span>
+              <span class="button__icon">
+                <svg>
+                  <use href="#arrow-right"/>
+                </svg>
+              </span>
+            </button>
+          {% else %}
+            <button type="submit" class="button  button--secondary  button--medium  button--contact-form">
+              <span class="button__text">
+                {{ 'templates.contact.form.send' | t }}
+              </span>
+              <span class="button__icon">
+                <svg>
+                  <use href="#arrow-right"/>
+                </svg>
+              </span>
+            </button>
+          {%- endif -%}
+        </div>
+        <div class="contact-form__states">
+          {%- if form.posted_successfully? -%}
+            <div class="form-status form-status-list form__message" tabindex="-1" autofocus>
+              {{ 'templates.contact.form.post_success' | t }}
+            </div>
+          {%- elsif form.errors -%}
+            <alert class="contact-form__states__errors" tabindex="-1" autofocus>
+              <div class="form__message">
+                <h2 class="contact-form__states__heading">
+                  {{ 'templates.contact.form.error_heading' | t }}
+                </h2>
+              </div>
+              <ul class="form-status-list caption-large" role="list">
+                <li>
+                  <a href="#ContactForm-email" class="link">
+                    {{ form.errors.translated_fields.email | capitalize }}
+                    {{ form.errors.messages.email }}
+                  </a>
+                </li>
+              </ul>
+            </alert>
+          {%- endif -%}
         </div>
       {%- endform -%}
     </div>
