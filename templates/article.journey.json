@@ -14,9 +14,84 @@
       "settings": {
         "heading": "Welcome To The Journey"
       }
+    },
+    "rich_text_Wi7Vrg": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_7rM6pe": {
+          "type": "heading",
+          "settings": {
+            "heading": "Discover the World's Finest Cachaça: Ajornada"
+          }
+        },
+        "text_3RwtrD": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Welcome to Ajornada, where tradition meets excellence in every sip. As the proud recipient of numerous awards in Brazil, the US, and Europe, Ajornada stands as a testament to superior taste and quality. Crafted on a small family farm in the lush foothills of Minas Gerais, our cachaça is organically grown, non-GMO, and free from additives—ensuring a clean and smooth sipping experience that's second to none.<\/p>"
+          }
+        },
+        "image_xUw9RG": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-06-18_at_10.24_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "heading_7rM6pe",
+        "text_3RwtrD",
+        "image_xUw9RG"
+      ],
+      "settings": {
+      }
+    },
+    "rich_text_EFzFG4": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_8MpxRb": {
+          "type": "heading",
+          "settings": {
+            "heading": "Unveiling the Flavor Journey"
+          }
+        },
+        "text_3ddi9N": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Indulge your senses in Ajornada's light sweetness, accentuated by delightful hints of grassy, floral, and herbaceous notes. Our artisanal production process begins with hand-cut and pressed sugarcane, harvested within 8 hours for optimal freshness. Using wild active yeast for fermentation and copper pot distillation, we preserve the integrity of the sugarcane, resulting in the purest cachaça imaginable.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_8MpxRb",
+        "text_3ddi9N"
+      ],
+      "settings": {
+      }
+    },
+    "image_slideshow_break_ycGtyU": {
+      "type": "image-slideshow-break",
+      "blocks": {
+        "slideshow_slide_p3XY6W": {
+          "type": "slideshow_slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-06-18_at_9.38_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "slideshow_slide_p3XY6W"
+      ],
+      "settings": {
+        "name": "",
+        "top_border": "no",
+        "bottom_border": "no"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "rich_text_Wi7Vrg",
+    "rich_text_EFzFG4",
+    "image_slideshow_break_ycGtyU"
   ]
 }
