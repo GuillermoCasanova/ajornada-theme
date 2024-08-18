@@ -81,6 +81,7 @@
         "4a4006c8-0436-4eae-ac13-f3f73fc097c4": {
           "type": "buy_near_me",
           "settings": {
+            "iframe_code": ""
           }
         }
       },
@@ -103,8 +104,33 @@
         "enable_video_looping": false
       }
     },
+    "845785f8-fb96-4ded-a27b-d90d31c351db": {
+      "type": "recipes-featured",
+      "blocks": {
+        "11246dca-e060-45f2-a722-229ccd5a2a52": {
+          "type": "recipe_card",
+          "settings": {
+            "recipe_preview": "<p>Preview Text for Recipe here<\/p>",
+            "recipe_post": "recipes\/flor-de-jamaica"
+          }
+        }
+      },
+      "block_order": [
+        "11246dca-e060-45f2-a722-229ccd5a2a52"
+      ],
+      "settings": {
+        "headline": "Recipes",
+        "subline": "Ajornada",
+        "cards_background": "shopify:\/\/shop_images\/RecipeCard2_ea1c8201-91d8-4fb9-9d64-b51e83347173.png",
+        "cta_url": "shopify:\/\/blogs\/recipes",
+        "top_border": "no",
+        "bottom_border": "no",
+        "trigger_email_popup": false
+      }
+    },
     "3c0fdf85-c0af-4b84-8f17-4c336242cd7d": {
       "type": "image-with-text",
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/Distillary.jpg",
         "headline": "Lorem Ipsum",
@@ -148,6 +174,7 @@
         "332146d8-89e1-49bf-a5cd-345ec71b3d80",
         "a36ae783-a801-4e9e-b077-e54a13c7164e"
       ],
+      "disabled": true,
       "settings": {
         "top_border": "no",
         "bottom_border": "no",
@@ -156,6 +183,7 @@
     },
     "a1ec1272-815b-43bc-9e6f-e6f679902ead": {
       "type": "image-with-text",
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/v80_1062.png",
         "headline": "\"The Ritual of The Everyday\"",
@@ -186,43 +214,20 @@
         "547ea9c5-9ce1-48d8-ae99-49946962c0f5",
         "89693bd3-23a8-49f5-bd93-26f25ea337b1"
       ],
+      "disabled": true,
       "settings": {
         "name": "",
         "top_border": "no",
         "bottom_border": "no"
       }
-    },
-    "845785f8-fb96-4ded-a27b-d90d31c351db": {
-      "type": "recipes-featured",
-      "blocks": {
-        "11246dca-e060-45f2-a722-229ccd5a2a52": {
-          "type": "recipe_card",
-          "settings": {
-            "recipe_preview": "<p>Preview Text for Recipe here<\/p>",
-            "recipe_post": "recipes\/flor-de-jamaica"
-          }
-        }
-      },
-      "block_order": [
-        "11246dca-e060-45f2-a722-229ccd5a2a52"
-      ],
-      "settings": {
-        "headline": "Recipes",
-        "subline": "Ajornada",
-        "cards_background": "shopify:\/\/shop_images\/RecipeCard2_ea1c8201-91d8-4fb9-9d64-b51e83347173.png",
-        "cta_url": "shopify:\/\/blogs\/recipes",
-        "top_border": "no",
-        "bottom_border": "no",
-        "trigger_email_popup": false
-      }
     }
   },
   "order": [
     "main",
+    "845785f8-fb96-4ded-a27b-d90d31c351db",
     "3c0fdf85-c0af-4b84-8f17-4c336242cd7d",
     "3d95728d-ae23-4b0e-8ca3-268a5188e23b",
     "a1ec1272-815b-43bc-9e6f-e6f679902ead",
-    "06739993-5980-4fc8-9137-de0f07a42db5",
-    "845785f8-fb96-4ded-a27b-d90d31c351db"
+    "06739993-5980-4fc8-9137-de0f07a42db5"
   ]
 }
