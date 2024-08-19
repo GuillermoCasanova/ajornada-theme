@@ -24,7 +24,7 @@
 
 
 .header {
-    transition: all .6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all .6s var(--default-easing);
     position: relative;
     border-bottom: 1px solid rgb(var(--color-base-text-1));
     background-color: rgb(var(--color-base-background-1));
@@ -34,6 +34,7 @@ header.menu-open {
     background-color: rgb(var(--color-base-background-2));
     border-bottom: 1px solid rgb(var(--color-base-background-1));
 }
+
 .header__inner {
     padding-top: var(--level1);
     padding-bottom: var(--level1);
@@ -122,7 +123,7 @@ header.menu-open {
     margin-right: auto;
     margin-left: auto;
     fill: rgb(var(--color-base-text-1));
-    transition: all var(--duration-default) cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all var(--duration-default) var(--default-easing);
     z-index: 0;
 }
 
@@ -191,15 +192,9 @@ header.menu-open {
 
 .header__icons {
     position: relative;
+    display: flex;
+    justify-content: flex-end;
 }
-
-
-@media screen and (min-width: 940px) {
-    .header__icons {
-        top: 0;
-    }
-}
-
 
 @media screen and (max-width: 989px) {
     menu-drawer~.header__icons .header__icon--account {

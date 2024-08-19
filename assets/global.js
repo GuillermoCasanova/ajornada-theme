@@ -31,9 +31,6 @@ function trapFocus(container, elementToFocus = container) {
   var first = elements[0];
   var last = elements[elements.length - 1];
 
-
-  console.log(container); 
-
   removeTrapFocus();
 
   trapFocusHandlers.focusin = (event) => {
@@ -1061,7 +1058,6 @@ class HeaderDrawer extends MenuDrawer {
       '--header-bottom-position',
       `${parseInt(this.header.getBoundingClientRect().bottom - this.borderOffset)}px`
     );
-
 
     setTimeout(() => {
       this.mainDetailsToggle.classList.remove('menu-close');

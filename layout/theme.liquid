@@ -74,6 +74,9 @@
           --color-base-accent: #F9EFB2;
           --color-error: 192, 76, 76;
 
+
+          --default-easing: cubic-bezier(0.165, 0.84, 0.44, 1);
+
           --color-base-background-1: {{ settings.colors_background_1.red }}, {{ settings.colors_background_1.green }}, {{ settings.colors_background_1.blue }};
           --color-base-background-2: {{ settings.colors_background_2.red }}, {{ settings.colors_background_2.green }}, {{ settings.colors_background_2.blue }};
           --color-base-background-3: {{ settings.colors_background_3.red }}, {{ settings.colors_background_3.green }}, {{ settings.colors_background_3.blue }};
@@ -238,15 +241,6 @@
       if (Shopify.designMode) {
         document.documentElement.classList.add('shopify-design-mode');
       }
-    </script>
-
-    {% comment %} Prevents someone from accessing the default cart page, takes them to home with an open cart instead {% endcomment %}
-    <script>
-      window.addEventListener('load', function (event) {
-        if (window.location.pathname == '/cart') {
-          window.location = '/#cart';
-        }
-      });
     </script>
 
     <script>

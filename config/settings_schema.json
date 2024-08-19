@@ -272,5 +272,16 @@
         "info": "The amount of seconds the pop up should wait after being triggered to display."
       }
     ]
+  },
+  {
+    "name": "t:settings_schema.cart.name",
+    "settings": [
+      {
+        "type": "url",
+        "label": "Continue Shopping URL",
+        "id": "continue_shopping_url",
+        "info": "The URL the user gets taken to when they click the continue link"
+      }
+    ]
   }
 ]

@@ -138,7 +138,7 @@ summary::before {
   --duration-short: 100ms;
   --duration-default: 200ms;
   --duration-medium: 300ms;
-  --duration-long: 500ms;
+  --duration-long: 600ms;
 }
 
 
@@ -1211,6 +1211,7 @@ button,
   text-align: center;
   text-transform: uppercase;
   width: 100%;
+  text-decoration: none;
 }
 
 button:hover,
@@ -1295,6 +1296,8 @@ button:hover,
   padding-top: .85rem;
   padding-bottom: 1rem;
   font-size: var(--h6);
+  padding-left: var(--level4); 
+  padding-right: var(--level4); 
 }
 
 .button--medium .button__text {

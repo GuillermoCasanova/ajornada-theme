@@ -8,9 +8,10 @@
     position: relative;
     display: flex;
     border-radius: var(--inputs-radius);
-    height: 2.15rem;
-    background: rgb(var(--color-base-background-3));
-    border-radius: 10rem
+    height: 2.5rem;
+    background: rgb(var(--color-base-background-1));
+    border-radius: 10rem;
+    border: 1px solid rgb(var(--color-base-text-1)); 
   }
   
   
@@ -106,7 +107,6 @@
   }
   
   quantity-popover {
-    position: relative;
     display: block;
   }
   
