@@ -274,6 +274,8 @@
     </script>
   </head>
 
+  {% section 'loading-screen' %}
+
   <body class="gradient">
     <a class="skip-to-content-link visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
@@ -337,7 +339,6 @@
       };
     </script>
 
-    {% section 'loading-screen' %}
     {% section 'age-verification-modal' %}
 
     <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>

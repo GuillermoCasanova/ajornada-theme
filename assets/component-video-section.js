@@ -17,8 +17,8 @@ class VideoSection extends HTMLElement {
     initVideo() {
       window.addEventListener('DOMContentLoaded', () => {
         let mediaQueries = {
-          mediumDown: window.matchMedia('(max-width: 974px)'),
-          largeUp: window.matchMedia('(min-width: 975px)'),
+          mediumDown: window.matchMedia('(max-width: 939px)'),
+          largeUp: window.matchMedia('(min-width: 940px)'),
         };
 
         let vidSrc = this.querySelector('video').dataset.lazySrc;
