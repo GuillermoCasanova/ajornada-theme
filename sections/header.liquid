@@ -1,342 +1,1157 @@
+<link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
+{% comment %} <link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'"> {% endcomment %}
+<link rel="stylesheet" href="{{ 'component-cart-notification.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'component-product-card.css' | asset_url }}" media="print" onload="this.media='all'">
+ {% comment %} <link rel="stylesheet" href="{{ 'component-header.css' | asset_url }}" media="print" onload="this.media='all'">  {% endcomment %}
+<link rel="stylesheet" href="{{ 'component-mega-menu.css' | asset_url }}" media="print" onload="this.media='all'">
 
-{{ 'component-header.css' | asset_url | stylesheet_tag }}
+  {{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
+  {{ 'component-cart.css' | asset_url | stylesheet_tag }}
+  {{ 'component-totals.css' | asset_url | stylesheet_tag }}
+  {{ 'component-price.css' | asset_url | stylesheet_tag }}
+  {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
 
-<link rel="stylesheet" href="{{ 'component-loading-overlay.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'component-cart-off-canvas.css' | asset_url }}" media="print" onload="this.media='all'">
-{{ 'component-modal.css' | asset_url | stylesheet_tag }}
+<noscript>{{ 'component-list-menu.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-menu-drawer.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-cart-notification.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-cart-items.css' | asset_url | stylesheet_tag }}</noscript>
+
 
 <script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'header.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'cart-off-canvas.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
 
-<sticky-header class="header-wrapper">
-  <header class="header ">
-    <div class="header__inner  page-width">
-      <div class="header-drawer-blocker"></div>
+<style>
 
-      {%- if section.settings.menu != blank -%}
-        <header-drawer data-breakpoint="tablet">
-          <details id="Details-menu-drawer-container" class="header-menu-drawer-container" data-menu-drawer-container>
-            <summary
-              class="header__icon header__icon--menu header__icon--summary link focus-inset"
-              aria-label="{{ 'sections.header.menu' | t }}"
-              aria-expanded="false"
-              data-header-drawer-toggle
-            >
-              <span class="header__icon__inner"> </span>
-              <span class="header__icon__text visually-hidden" data-text> Open Menu </span>
-            </summary>
-            <aside class="menu-drawer  header-menu-drawer motion-reduce" tabindex="-1" data-header-drawer-menu>
-              <div class="menu-drawer__inner-container">
-                <div class="menu-drawer__navigation-container">
-                  <nav class="menu-drawer__navigation">
-                    <ul class="menu-drawer__menu" role="list">
-                      {%- for link in section.settings.menu.links -%}
-                        <li>
-                          {%- if link.links != blank -%}
-                            <div class="menu-drawer__menu-item  " id="{{ link.title | escape }}">
-                              {{ link.title | escape }}
-                            </div>
-                            <ul
-                              class="menu-drawer__menu__list"
-                              role="list"
-                              tabindex="-1"
-                              aria-labelledby="{{ link.title | escape }}"
-                            >
-                              {%- for childlink in link.links -%}
-                                <li>
-                                  {%- if childlink.links == blank -%}
-                                    <a
-                                      href="{{ childlink.url }}"
-                                      class="menu-drawer__menu-item   menu-drawer__menu-subitem  list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}"
-                                      {% if childlink.current %}
-                                        aria-current="page"
-                                      {% endif %}
-                                    >
-                                      {{ childlink.title | escape }}
-                                    </a>
-                                  {%- else -%}
-                                    <div
-                                      class="menu-drawer__menu-item menu-drawer__menu-subitem"
-                                      id="{{ childlink.title | escape }}"
-                                    >
-                                      {{ childlink.title | escape }}
-                                    </div>
-                                    <ul
-                                      class="menu-drawer__menu__list menu-drawer__menu__child-list"
-                                      role="list"
-                                      tabindex="-1"
-                                      aria-labelledby="{{ childlink.title | escape }}"
-                                    >
-                                      {%- for grandchildlink in childlink.links -%}
-                                        <li>
-                                          <a
-                                            href="{{ grandchildlink.url }}"
-                                            class="menu-drawer__menu-item  menu-drawer__menu-child-item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"
-                                            {% if grandchildlink.current %}
-                                              aria-current="page"
-                                            {% endif %}
-                                          >
-                                            {{ grandchildlink.title | escape }}
-                                          </a>
-                                        </li>
-                                      {%- endfor -%}
-                                    </ul>
-                                  {%- endif -%}
-                                </li>
-                              {%- endfor -%}
-                            </ul>
-                          {%- else -%}
-                            <a
-                              href="{{ link.url }}"
-                              class="menu-drawer__menu-item  menu-drawer__menu-item--no-children   focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"
-                              {% if link.current %}
-                                aria-current="page"
-                              {% endif %}
-                            >
-                              {{ link.title | escape }}
-                            </a>
-                          {%- endif -%}
-                        </li>
-                      {%- endfor -%}
-                    </ul>
-                    <localization-form class="no-js-hidden">
-                      <div>
-                        <h2 class="visually-hidden" id="HeaderCountryLabel">
-                          {{ 'localization.language_label' | t }}
-                        </h2>
-                        {%- render 'country-localization', localPosition: 'HeaderCountry' -%}
-                      </div>
-                    </localization-form>
-                    <ul>
-                      {%- for link in section.settings['footer-menu'].links -%}
-                        <li>
-                          <a
-                            href="{{ link.url }}"
-                            class="menu-drawer__menu-item {% if link.current %} menu-drawer__menu-item--active{% endif %}"
-                            {% if link.current %}
-                              aria-current="page"
-                            {% endif %}
-                          >
-                            {{ link.title | escape }}
-                          </a>
-                        </li>
-                      {% endfor %}
 
-                      <li>
-                        <button
-                          aria-label="Open modal to sign up for the Ajornada newsletter"
-                          aria-expanded="false"
-                          aria-controls="newsletter-sign-up-modal"
-                          aria-haspopup="dialog"
-                          data-modal="newsletter-sign-up-modal"
-                          class="button  button--secondary  button--medium menu-drawer__utility-links__button"
-                        >
-                          <span class="button__text"> Get Updates </span>
-                          <span class="button__icon">
-                            <svg aria-hidden="true" focusable="false">
-                              <use href="#arrow-right">
-                            </svg>
-                          </span>
-                        </button>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-              </div>
-            </aside>
-          </details>
-        </header-drawer>
-      {%- endif -%}
+/*------------------------------------*\
+    #Menu Drawer
+\*------------------------------------*/
 
-      {%- if request.page_type == 'index' -%}
-        <h1 class="header__heading">
-      {% else %}
-        <div class="header__heading">
-      {%- endif -%}
-      <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
-        <svg class="header__logo" title="Ajornada" focusable="false">
-          <use href="#brand-logo">
-        </svg>
-      </a>
-      {%- if request.page_type == 'index' -%}
-        </h1>
-      {% else %}
+.header__icon--menu {
+  position: initial;
+}
+
+.js menu-drawer > details > summary::before,
+.js menu-drawer > details[open]:not(.menu-opening) > summary::before {
+  content: '';
+  position: absolute;
+  cursor: default;
+  width: 100%;
+  height: calc(100vh - 100%);
+  height: calc(var(--viewport-height, 100vh) - (var(--header-bottom-position, 100%)));
+  top: 100%;
+  left: 0;
+  background: rgba(var(--color-foreground), 0.5);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 2;
+  transition: opacity 0s, visibility 0s;
+}
+
+menu-drawer > details[open] > summary::before {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity var(--duration-default) ease, visibility var(--duration-default) ease;
+}
+
+.menu-drawer {
+  position: absolute;
+  transform: translateX(-100%);
+  visibility: hidden;
+  z-index: 3;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  padding: 0;
+  background-color: rgb(var(--color-base-background-2));
+  overflow-x: hidden;
+  filter: drop-shadow(
+    var(--drawer-shadow-horizontal-offset) var(--drawer-shadow-vertical-offset) var(--drawer-shadow-blur-radius)
+      rgba(var(--color-shadow), var(--drawer-shadow-opacity))
+  );
+}
+
+.menu-drawer__heading {
+  padding-left: var(--level6); 
+  text-transform: uppercase;
+  color: rgb(var(--color-base-text-3)); 
+  font-family: var(--secondary-font-family);
+  font-size: var(--h2);
+}
+
+.js .menu-drawer {
+  height: calc(100vh - 100%);
+  height: calc(var(--viewport-height, 100vh) - (var(--header-bottom-position, 100%)));
+}
+
+.js details[open] > .menu-drawer,
+.js details[open] > .menu-drawer__submenu {
+  transition: transform var(--duration-default) ease, visibility var(--duration-default) ease;
+}
+
+.no-js details[open] > .menu-drawer,
+.js details[open].menu-opening > .menu-drawer,
+details[open].menu-opening > .menu-drawer__submenu {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.js .menu-drawer__navigation .submenu-open {
+  visibility: hidden; /* hide menus from screen readers when hidden by submenu */
+}
+
+@media screen and (min-width: 750px) {
+  .menu-drawer {
+    width: 40rem;
+    border-width: 0 var(--drawer-border-width) 0 0;
+    border-style: solid;
+    border-color: rgba(var(--color-foreground), var(--drawer-border-opacity));
+  }
+
+  .no-js .menu-drawer {
+    height: auto;
+  }
+}
+
+.menu-drawer__inner-container {
+  position: relative;
+  height: 100%;
+}
+
+.menu-drawer__navigation-container {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  align-content: space-between;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.menu-drawer__navigation {
+  padding-top: var(--level4); 
+}
+
+.menu-drawer__inner-submenu {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.no-js .menu-drawer__navigation {
+  padding: 0;
+}
+
+.no-js .menu-drawer__navigation > ul > li {
+  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.04);
+}
+
+.no-js .menu-drawer__submenu ul > li {
+  border-top: 0.1rem solid rgba(var(--color-foreground), 0.04);
+}
+
+
+.menu-drawer__menu.is-secondary-menu {
+    padding-top: var(--level4); 
+    margin-top: var(--level2); 
+    position: relative;
+}
+
+.menu-drawer__menu.is-secondary-menu:after {
+  content: " ";
+  position: absolute;
+  left: 0; 
+  right: 0; 
+  background-color: rgb(var(--color-base-text-2));
+  height: 1px;
+  top: 0; 
+  width: 90%;
+  margin-right: auto; 
+  margin-left: auto; 
+}
+
+
+
+
+/*------------------------------------*\
+    #Contents
+\*------------------------------------*/
+
+
+.menu-drawer__menu-item {
+  padding-left: var(--level6); 
+  text-decoration: none;
+  font-size: var(--h3);
+  text-transform: uppercase;
+  color: rgb(var(--color-base-text-3));
+  font-weight: bold;
+  font-family: var(--secondary-font-family); 
+}
+
+.menu-drawer__menu.is-secondary-menu .menu-drawer__menu-link {
+  font-size: var(--h3);
+  margin-bottom: var(--level1); 
+  padding-bottom: 0; 
+}
+
+.menu-drawer__menu .menu-drawer__menu-item:last-child {
+  margin-top: var(--level1);
+}
+
+.no-js .menu-drawer__menu-item {
+  font-size: 1.6rem;
+}
+
+.no-js .menu-drawer__submenu .menu-drawer__menu-item {
+  padding: 1.2rem 5.2rem 1.2rem 6rem;
+}
+
+.no-js .menu-drawer__submenu .menu-drawer__submenu .menu-drawer__menu-item {
+  padding-left: 9rem;
+}
+
+.menu-drawer summary.menu-drawer__menu-item {
+  padding-right: 5.2rem;
+}
+
+.no-js .menu-drawer__menu-item .icon-caret {
+  right: 3rem;
+}
+
+.menu-drawer__menu-link {
+  color: rgb(var(--color-base-text-3));
+  text-decoration: none;
+  padding-bottom: var(--level2);
+  padding-top: var(--level2); 
+}
+
+.menu-drawer__menu-item__image {
+  margin-right: var(--level4); 
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.menu-drawer__menu-item__image-inner {
+  width: 4.25rem;
+  border-radius: 20px;
+  position: relative;
+  padding-bottom: 100%;
+}
+
+.menu-drawer__menu-item--active,
+.menu-drawer__menu-item:focus,
+.menu-drawer__close-button:focus,
+.menu-drawer__menu-item:hover,
+.menu-drawer__close-button:hover {
+  color: rgb(var(--color-base-text-3));
+  background-color: rgba(var(--color-foreground), 0.04);
+}
+
+.menu-drawer__menu-item--active:hover {
+  background-color: rgba(var(--color-foreground), 0.08);
+}
+
+.js .menu-drawer__menu-item .icon-caret,
+.no-js .menu-drawer .icon-arrow {
+  display: none;
+}
+
+.menu-drawer__menu-item > .icon-arrow {
+  position: absolute;
+  right: 3rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.js .menu-drawer__submenu {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(var(--color-background));
+  z-index: 1;
+  transform: translateX(100%);
+  visibility: hidden;
+}
+
+.js .menu-drawer__submenu .menu-drawer__submenu {
+  overflow-y: auto;
+}
+
+.menu-drawer__close-button {
+  margin-top: 1.5rem;
+  padding: 1.2rem 2.6rem 1.2rem 3rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  width: 100%;
+  background-color: transparent;
+  font-family: var(--font-body-family);
+  font-style: var(--font-body-style);
+  text-align: left;
+}
+
+.no-js .menu-drawer__close-button {
+  display: none;
+}
+
+.menu-drawer__close-button .icon-arrow {
+  transform: rotate(180deg);
+  margin-right: 1rem;
+}
+
+.menu-drawer__utility-links {
+  padding: 0;
+  background-color: rgba(var(--color-foreground), 0.03);
+  position: relative;
+}
+
+.header--has-social .menu-drawer__utility-links {
+  padding: 2rem 3rem;
+}
+
+@media screen and (max-width: 749px) {
+  .header--has-account:where(:not(.header--has-social):not(.header--has-localizations)) .menu-drawer__utility-links {
+    padding: 2rem 3rem;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .header--has-localizations:where(:not(.header--has-social)) .menu-drawer__utility-links {
+    padding: 2rem 3rem;
+  }
+}
+
+.menu-drawer__account {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 1rem 0;
+  font-size: 1.4rem;
+  color: rgb(var(--color-foreground));
+  margin-bottom: 0;
+}
+
+.menu-drawer__utility-links:has(.menu-drawer__localization) .menu-drawer__account {
+  margin: 0;
+}
+
+.menu-drawer__account .icon-account {
+  height: 2rem;
+  width: 2rem;
+  margin-right: 1rem;
+}
+
+.menu-drawer__account:hover .icon-account {
+  transform: scale(1.07);
+}
+
+.menu-drawer .list-social {
+  justify-content: flex-start;
+  margin-left: -1.25rem
+}
+
+.menu-drawer .list-social:empty {
+  display: none;
+}
+
+.menu-drawer .list-social__link {
+  padding: 1.1rem 1.1rem;
+}
+
+
+/*------------------------------------*\
+    #Header
+\*------------------------------------*/
+
+.header-wrapper {
+    display: block;
+    position: relative;
+    background-color: rgb(var(--color-base-background-2));
+}
+
+.header-wrapper--border-bottom {
+    border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
+}
+
+.header__inner {
+    display: grid;
+    grid-template-areas: 'left-icons heading icons';
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    padding-top: var(--level1); 
+    padding-bottom: var(--level1); 
+}
+
+
+@media screen and (min-width: 940px) {
+    .header__inner {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 0; 
+        padding-bottom: 0;
+    }
+}
+
+.header *[tabindex='-1']:focus {
+    outline: none;
+}
+
+.header__heading {
+    margin: 0;
+    line-height: 0;
+}
+
+
+@media screen and (min-width: 940px) {
+    .header__heading {
+        left: 0; 
+        right: 0; 
+        margin: auto; 
+        position: absolute;
+        width: 10rem;
+    }
+}
+
+.header__heading,
+.header__heading-link {
+    grid-area: heading;
+    justify-self: center;
+}
+
+.header__heading-link {
+    display: inline-block;
+    padding: 0.75rem;
+    text-decoration: none;
+    word-break: break-word;
+}
+
+.header__heading-logo {
+    height: auto;
+    max-width: 100%;
+}
+
+.header__heading-logo-wrapper {
+    width: 100%;
+    display: inline-block;
+    transition: width 0.3s cubic-bezier(0.52, 0, 0.61, 0.99);
+    width: 9rem;
+    height: 3rem;
+}
+
+@media screen and (min-width: 940px ) {
+    .header__heading-logo-wrapper {
+        width: 10rem;
+    }
+}
+
+.header__heading-logo-wrapper svg {
+    width: 100%; 
+    height: 100%; 
+}
+
+.header__heading,
+.header__heading-link {
+    justify-self: center;
+}
+
+
+
+
+/*------------------------------------*\
+    #Icons
+\*------------------------------------*/
+
+.header__icons {
+    display: flex;
+    grid-area: icons;
+    justify-self: end;
+    padding-right: var(--level1); 
+}
+
+@media screen and (min-width: 940px) {
+    .header__icons {
+        padding-right: 0; 
+    }
+}
+
+.header__icons .shopify-app-block {
+    max-width: 4.4rem;
+    max-height: 4.4rem;
+    overflow: hidden;
+}
+
+.header__icon:not(.header__icon--cart),
+.header__icon span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__icon {
+    color: rgb(var(--color-base-text-3));
+}
+
+.header__icon span {
+    height: 100%;
+}
+
+.header__icon::after {
+    content: none;
+}
+
+.header__icon:hover .icon,
+.modal__close-button:hover .icon {
+    transform: scale(1.07);
+}
+
+.header__icon .icon {
+    height: 2rem;
+    width: 2rem;
+    fill: none;
+    vertical-align: middle;
+}
+
+.header__icon,
+.header__icon--cart .icon {
+    height: 4.4rem;
+    width: 4.4rem;
+    padding: 0;
+}
+
+.header__icon--cart {
+    position: relative;
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+}
+
+@media screen and (min-width: 700px) {
+    .header__icon--cart {
+        justify-content: center;
+    }
+}
+
+.cart-count-bubble {
+    position: absolute;
+    right: 0; 
+    border-radius: 100%; 
+    background: rgb(var(--color-base-accent));
+    color: rgb(var(--color-base-text-1)); 
+    font-size: var(--h6); 
+    width: 1.35rem;
+    height: 1.35rem;
+    top: .75rem;
+    line-height: 1;
+}
+
+@media screen and (min-width: 940px) {
+    .cart-count-bubble {
+        font-size: var(--normal);
+        width: 1.25rem;
+        height: 1.25rem;
+        right: var(--level0); 
+    }
+}
+
+.header__icon--menu[aria-expanded='true']::before {
+    content: '';
+    top: 100%;
+    left: 0;
+    height: calc(var(--viewport-height, 100vh) - (var(--header-bottom-position, 100%)));
+    width: 100%;
+    display: block;
+    position: absolute;
+    background: rgba(var(--color-foreground), 0.5);
+}
+
+
+
+
+/*------------------------------------*\
+    #Menu Drawer
+\*------------------------------------*/
+
+
+.header__icon--menu .icon {
+    display: block;
+    position: absolute;
+    opacity: 1;
+    transform: scale(1);
+    transition: transform 150ms ease, opacity 150ms ease;
+}
+
+details:not([open]) > .header__icon--menu .icon-close,
+details[open] > .header__icon--menu .icon-hamburger {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.js details[open]:not(.menu-opening) > .header__icon--menu .icon-close {
+    visibility: hidden;
+}
+
+.js details[open]:not(.menu-opening) > .header__icon--menu .icon-hamburger {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1.07);
+}
+
+.js details > .header__submenu {
+    opacity: 0;
+    transform: translateY(-1.5rem);
+}
+
+details[open] > .header__submenu {
+    animation: animateMenuOpen var(--duration-default) ease;
+    animation-fill-mode: forwards;
+    z-index: 1;
+}
+
+@media (prefers-reduced-motion) {
+details[open] > .header__submenu {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Inline Menu
+\*------------------------------------*/
+
+.header__inline-menu {
+    grid-area: navigation;
+    display: none;
+}
+
+.header--top-center .header__inline-menu,
+.header--top-center .header__heading-link {
+margin-left: 0;
+}
+
+@media screen and (min-width: 940px) {
+.header__inline-menu {
+    display: block;
+}
+
+.header--top-center .header__inline-menu {
+    justify-self: center;
+}
+
+.header--top-center .header__inline-menu > .list-menu--inline {
+    justify-content: center;
+}
+
+.header--middle-left .header__inline-menu {
+    margin-left: 0;
+}
+}
+
+.header__menu {
+padding: 0 1rem;
+}
+
+
+.header__menu-item {
+    padding: 0;
+    text-decoration: none;
+    color: rgba(var(--color-foreground), 0.75);
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 940px) {
+    .list-menu .header__menu-item:last-child {
+        margin-right: 0; 
+    }
+    
+    .header__menu-item {
+        margin-right: var(--level9); 
+    }
+}
+
+.header__menu-link {
+    color: rgb(var(--color-base-text-3)); 
+    text-transform: uppercase;
+    font-family: var(--secondary-font-family); 
+    font-size: var(--h3);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.header__menu-link:hover, 
+.header__menu-link:focus,
+.header__menu-link:hover:after, 
+.header__menu-link:focus:after {
+    text-decoration: none;
+    opacity: 1;
+}
+
+@media screen and (min-width: 940px) {
+    .header__menu-link {
+        font-size: var(--h4);
+        padding-top: var(--level6); 
+        padding-bottom: var(--level5); 
+        padding-left: var(--level2); 
+        padding-right: var(--level2); 
+        display: block;
+    }
+}
+
+@media screen and (min-width: 940px) {
+    .header__menu-link:after {
+        content: " "; 
+        position: absolute;
+        bottom: 0; 
+        width: 100%; 
+        left: 0;
+        height: 5px; 
+        border-top-right-radius: 10px; 
+        border-top-left-radius: 10px; 
+        background-color: rgb(var(--color-base-accent));
+        opacity: 0;
+        transition: all .2s ease-in-out;
+    }
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Dropdowns
+\*------------------------------------*/
+
+
+details[open] > .header__menu-item {
+text-decoration: underline;
+}
+
+details[open]:hover > .header__menu-item {
+text-decoration-thickness: 0.2rem;
+}
+
+details[open] > .header__menu-item .icon-caret {
+transform: rotate(180deg);
+}
+
+.header__active-menu-item {
+transition: text-decoration-thickness var(--duration-short) ease;
+color: rgb(var(--color-foreground));
+text-underline-offset: 0.3rem;
+}
+
+.header__menu-item:hover .header__active-menu-item {
+text-decoration-thickness: 0.2rem;
+}
+
+.header__submenu {
+transition: opacity var(--duration-default) ease, transform var(--duration-default) ease;
+}
+
+.global-settings-popup,
+.header__submenu.global-settings-popup {
+border-radius: var(--popup-corner-radius);
+border-color: rgba(var(--color-foreground), var(--popup-border-opacity));
+border-style: solid;
+border-width: var(--popup-border-width);
+box-shadow: var(--popup-shadow-horizontal-offset) var(--popup-shadow-vertical-offset) var(--popup-shadow-blur-radius)
+    rgba(var(--color-shadow), var(--popup-shadow-opacity));
+z-index: -1;
+}
+
+.header__submenu.list-menu {
+padding: 1rem 0;
+}
+
+.header__submenu .header__submenu {
+background-color: rgba(var(--color-foreground), 0.03);
+padding: 1rem 0;
+margin: 1rem 0;
+}
+
+.header__submenu .header__menu-item:after {
+right: 2rem;
+}
+
+.header__submenu .header__menu-item {
+justify-content: space-between;
+padding: 0.8rem 2rem;
+}
+
+.header__submenu .header__menu-item:hover {
+text-decoration-line: underline;
+}
+
+.header__menu-item .icon-caret {
+right: 0.8rem;
+}
+
+.header__submenu .icon-caret {
+flex-shrink: 0;
+margin-left: 1rem;
+position: static;
+}
+
+header-menu > details,
+details-disclosure > details {
+position: relative;
+}
+
+@keyframes animateMenuOpen {
+0% {
+    opacity: 0;
+    transform: translateY(-1.5rem);
+}
+
+100% {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
+
+header-drawer {
+    justify-self: start;
+    margin-left: -1.2rem;
+}
+
+@media screen and (min-width: 940px) {
+   header-drawer {
+        display: none;
+    }
+}
+
+.menu-drawer-container {
+display: flex;
+}
+
+.list-menu {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.list-menu--inline {
+display: inline-flex;
+flex-wrap: wrap;
+}
+
+.list-menu__item {
+    display: flex;
+    align-items: center;
+    line-height: 1.35;
+}
+
+
+
+
+/* section-header */
+.section-header.shopify-section-group-header-group {
+    z-index: 3;
+  }
+  
+  .shopify-section-header-sticky {
+    position: sticky;
+    top: 0;
+  }
+  
+  .shopify-section-header-hidden {
+    top: calc(-1 * var(--header-height));
+  }
+  
+  .shopify-section-header-hidden.menu-open {
+    top: 0;
+  }
+  
+  .section-header.animate {
+    transition: top 0.15s ease-out;
+  }
+  
+  .shopify-section-group-header-group {
+    z-index: 4;
+  }
+  
+  .section-header ~ .shopify-section-group-header-group {
+    z-index: initial;
+  }
+  
+  
+  /* Search */
+  menu-drawer + .header__search {
+    display: none;
+  }
+  
+  .header > .header__search {
+    grid-area: left-icons;
+    justify-self: start;
+  }
+  
+  .header--top-center.drawer-menu > .header__search {
+    margin-left: 3.2rem;
+  }
+  
+  .header--top-center header-drawer {
+    grid-area: left-icons;
+  }
+  
+  .header:not(.header--has-menu) * > .header__search {
+    display: none;
+  }
+  
+  .header__search {
+    display: inline-flex;
+    line-height: 0;
+  }
+  
+  .header--top-center > .header__search {
+    display: none;
+  }
+  
+  .header--top-center * > .header__search {
+    display: inline-flex;
+  }
+  
+  @media screen and (min-width: 990px) {
+    .header:not(.header--top-center) * > .header__search,
+    .header--top-center > .header__search {
+      display: inline-flex;
+    }
+  
+    .header:not(.header--top-center) > .header__search,
+    .header--top-center * > .header__search {
+      display: none;
+    }
+  }
+  
+  
+  details[open] .modal-overlay {
+    display: block;
+  }
+  
+  details[open] .modal-overlay::after {
+    position: absolute;
+    content: '';
+    background-color: rgb(var(--color-foreground), 0.5);
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 100vh;
+  }
+  
+</style>
+
+<svg xmlns="http://www.w3.org/2000/svg" class="hidden">
+  <symbol id="icon-search" viewbox="0 0 18 19" fill="none">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.03 11.68A5.784 5.784 0 112.85 3.5a5.784 5.784 0 018.18 8.18zm.26 1.12a6.78 6.78 0 11.72-.7l5.4 5.4a.5.5 0 11-.71.7l-5.41-5.4z" fill="currentColor"/>
+  </symbol>
+
+  <symbol id="icon-reset" class="icon icon-close"  fill="none" viewBox="0 0 18 18" stroke="currentColor">
+    <circle r="8.5" cy="9" cx="9" stroke-opacity="0.2"/>
+    <path d="M6.82972 6.82915L1.17193 1.17097" stroke-linecap="round" stroke-linejoin="round" transform="translate(5 5)"/>
+    <path d="M1.22896 6.88502L6.77288 1.11523" stroke-linecap="round" stroke-linejoin="round" transform="translate(5 5)"/>
+  </symbol>
+
+  <symbol id="icon-close" class="icon icon-close" fill="none" viewBox="0 0 18 17">
+    <path d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z" fill="currentColor">
+  </symbol>
+</svg>
+
+{%- liquid
+  for block in section.blocks
+    if block.type == '@app'
+    endif
+  endfor
+-%}
+
+<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
+  {%- liquid
+
+    if settings.social_twitter_link != blank or settings.social_facebook_link != blank or settings.social_pinterest_link != blank or settings.social_instagram_link != blank or settings.social_youtube_link != blank or settings.social_vimeo_link != blank or settings.social_tiktok_link != blank or settings.social_tumblr_link != blank or settings.social_snapchat_link != blank
+    endif
+
+  -%}
+  
+  <header class="header page-width is-large {% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}">
+   <div class="header__inner">
+
+    {%- render 'header-drawer' -%}
+
+    {% render 'header-mega-menu' %}
+
+    {%- if request.page_type == 'index' -%}
+      <h1 class="header__heading">
+    {%- endif -%}
+    <a href="{{ routes.root_url }}"  title="Go to Blowfish homepage"  {%- if request.page_type != 'index' -%}class="header__heading"{% endif %}>
+            <div class="header__heading-logo-wrapper">
+              <svg>
+                <use href="#brand-logo-white"/>
+              </svg>
+            </div>
+            <span class="visually-hidden">Blowfish For Hangovers</span>
+        </a>
+    {%- if request.page_type == 'index' -%}
+      </h1>
+    {%- endif -%}
+
+    <div class="header__icons">
+      {%- if shop.customer_accounts_enabled -%}
+        <div class="show-for-medium-up">
+        <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset">
+          {% render 'icon-account' %}
+          <span class="visually-hidden">
+            {%- liquid
+              if customer
+                echo 'customer.account_fallback' | t
+              else
+                echo 'customer.log_in' | t
+              endif
+            -%}
+          </span>
+        </a>
         </div>
       {%- endif -%}
 
-      {%- if section.settings.menu != blank -%}
-        <nav class="header__menu">
-          <ul class="header__menu__list-menu " role="list">
-            {%- for link in section.settings.menu.links -%}
-              <li>
-                {%- if link.links != blank -%}
-                  <menu-dropdown>
-                    <button
-                      class="header__menu-item  focus-inset"
-                      id="#{{ link.title | escape }}"
-                      aria-expanded="false"
-                    >
-                      <span
-                        {%- if link.child_active %}
-                          class="header__active-menu-item"
-                        {% endif %}
-                      >
-                        {{- link.title | escape -}}
-                      </span>
-                    </button>
-
-                    {% assign title = link.title | escape %}
-
-                    <div
-                      class="header__submenu  {% if title == 'Shop' %}header__submenu--shop{% endif %} preload"
-                      role="region"
-                      aria-hidden="true"
-                      aria-labelledby="{{ link.title | escape }}"
-                    >
-                      <div class="header__submenu__inner  page-width">
-                        <ol class="header__submenu__list-menu   motion-reduce">
-                          {%- for childlink in link.links -%}
-                            <li>
-                              {%- if childlink.links == blank -%}
-                                <a
-                                  href="{{ childlink.url }}"
-                                  class="header__submenu__list-item    focus-inset {% if childlink.current %} header__submenu__list-item--active{% endif %}"
-                                  {% if childlink.current %}
-                                    aria-current="page"
-                                  {% endif %}
-                                >
-                                  {{ childlink.title | escape }}
-                                </a>
-                              {%- else -%}
-                                <div
-                                  class="header__submenu__list-item  focus-inset"
-                                  id="{{ childlink.title | escape }}"
-                                >
-                                  {{ childlink.title | escape }}
-                                </div>
-                                <div class="header__childmenu">
-                                  <ul
-                                    class="header__submenu__list-menu  header__childmenu__list-menu"
-                                    aria-describedby="{{ childlink.title | escape }}"
-                                  >
-                                    {%- for grandchildlink in childlink.links -%}
-                                      <li>
-                                        <a
-                                          href="{{ grandchildlink.url }}"
-                                          class="header__submenu__list-item  header__childmenu__list-item focus-inset {% if grandchildlink.current %} list-menu__item--active{% endif %}"
-                                          {% if grandchildlink.current %}
-                                            aria-current="page"
-                                          {% endif %}
-                                        >
-                                          {{ grandchildlink.title | escape }}
-                                        </a>
-                                      </li>
-                                    {%- endfor -%}
-                                  </ul>
-                                </div>
-                              {%- endif -%}
-                            </li>
-                          {%- endfor -%}
-                        </ol>
-                      </div>
-                    </div>
-                  </menu-dropdown>
-
-                {%- else -%}
-                  <a
-                    href="{{ link.url }}"
-                    class=" header__menu-item  focus-inset"
-                    {% if link.current %}
-                      aria-current="page"
-                    {% endif %}
-                  >
-                    <span
-                      {%- if link.current %}
-                        class="header__active-menu-item"
-                      {% endif %}
-                    >
-                      {{- link.title | escape -}}
-                    </span>
-                  </a>
-                {%- endif -%}
-              </li>
-            {%- endfor -%}
-            <li>
-              <cart-toggle data-toggle-type="text">
-                <button
-                  class="header__cart-button header__menu-item focus-inset"
-                  id="cart-icon-bubble"
-                  data-cart-toggle
-                  aria-expanded="false"
-                >
-                  <span data-cart-toggle-text>My Bag</span>
-                  <div
-                    data-cart-count-bubble
-                    class="cart-count-bubble {% if cart.item_count == 0 %}is-hidden{% endif %}"
-                  >
-                    <span aria-hidden="true" data-cart-count>
-                      {{ cart.item_count }}
-                    </span>
-                    <span class="visually-hidden" data-cart-count-aria>
-                      {%- if cart.item_count > 0 -%}
-                        {{ 'sections.header.cart_count' | t: count: cart.item_count }}
-                      {%- endif -%}
-                    </span>
-                  </div>
-                </button>
-              </cart-toggle>
-            </li>
-          </ul>
-        </nav>
-        <localization-form class="no-js-hidden  show-for-large-up">
-          <h2 class="visually-hidden" id="HeaderCountryLabel">
-            {{ 'localization.language_label' | t }}
-          </h2>
-          {%- render 'country-localization', localPosition: 'HeaderCountry' -%}
-        </localization-form>
-      {%- endif -%}
-
-      <cart-toggle class="hide-for-large-up" data-toggle-type="icon">
-        <button
-          class="header__icon header__icon--cart  focus-inset"
-          id="cart-icon-bubble"
-          data-cart-toggle
-          aria-expanded="false"
-        >
-          {%- render 'icon-cart' -%}
-          <span class="visually-hidden" data-cart-toggle-text>My Bag</span>
-          <div data-cart-count-bubble class="cart-count-bubble {% if cart.item_count == 0 %}is-hidden{% endif %}">
+      <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
+        {%- liquid
+          if cart == empty
+            render 'icon-cart-empty'
+          else
+            render 'icon-cart'
+          endif
+        -%}
+        <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+        {%- if cart != empty -%}
+          <div class="cart-count-bubble">
             {%- if cart.item_count < 100 -%}
-              <span aria-hidden="true" data-cart-count>
-                {{ cart.item_count }}
-              </span>
+              <span aria-hidden="true">{{ cart.item_count }}</span>
             {%- endif -%}
-            <span class="visually-hidden" data-cart-count-aria>
-              {%- if cart.item_count > 0 -%}
-                {{ 'sections.header.cart_count' | t: count: cart.item_count }}
-              {%- endif -%}
-            </span>
+            <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
           </div>
-        </button>
-      </cart-toggle>
+        {%- endif -%}
+      </a>
     </div>
+   </div>
   </header>
-</sticky-header>
+</{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
 
-{%- render 'cart-off-canvas' -%}
+{% javascript %}
+  class StickyHeader extends HTMLElement {
+    constructor() {
+      super();
+    }
+
+    connectedCallback() {
+      this.header = document.querySelector('.section-header');
+      this.headerIsAlwaysSticky = this.getAttribute('data-sticky-type') === 'always' || this.getAttribute('data-sticky-type') === 'reduce-logo-size';
+      this.headerBounds = {};
+
+      this.setHeaderHeight();
+
+      window.matchMedia('(max-width: 990px)').addEventListener('change', this.setHeaderHeight.bind(this));
+
+      if (this.headerIsAlwaysSticky) {
+        this.header.classList.add('shopify-section-header-sticky');
+      };
+
+      this.currentScrollTop = 0;
+      this.preventReveal = false;
+
+      this.onScrollHandler = this.onScroll.bind(this);
+      this.hideHeaderOnScrollUp = () => this.preventReveal = true;
+
+      this.addEventListener('preventHeaderReveal', this.hideHeaderOnScrollUp);
+      window.addEventListener('scroll', this.onScrollHandler, false);
+
+      this.createObserver();
+    }
+
+    setHeaderHeight() {
+      document.documentElement.style.setProperty('--header-height', `${this.header.offsetHeight}px`);
+    }
+
+    disconnectedCallback() {
+      this.removeEventListener('preventHeaderReveal', this.hideHeaderOnScrollUp);
+      window.removeEventListener('scroll', this.onScrollHandler);
+    }
+
+    createObserver() {
+      let observer = new IntersectionObserver((entries, observer) => {
+        this.headerBounds = entries[0].intersectionRect;
+        observer.disconnect();
+      });
+
+      observer.observe(this.header);
+    }
+
+    onScroll() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop > this.currentScrollTop && scrollTop > this.headerBounds.bottom) {
+        this.header.classList.add('scrolled-past-header');
+        if (this.preventHide) return;
+        requestAnimationFrame(this.hide.bind(this));
+      } else if (scrollTop < this.currentScrollTop && scrollTop > this.headerBounds.bottom) {
+        this.header.classList.add('scrolled-past-header');
+        if (!this.preventReveal) {
+          requestAnimationFrame(this.reveal.bind(this));
+        } else {
+          window.clearTimeout(this.isScrolling);
+
+          this.isScrolling = setTimeout(() => {
+            this.preventReveal = false;
+          }, 66);
+
+          requestAnimationFrame(this.hide.bind(this));
+        }
+      } else if (scrollTop <= this.headerBounds.top) {
+        this.header.classList.remove('scrolled-past-header');
+        requestAnimationFrame(this.reset.bind(this));
+      }
+
+      this.currentScrollTop = scrollTop;
+    }
+
+    hide() {
+      if (this.headerIsAlwaysSticky) return;
+      this.header.classList.add('shopify-section-header-hidden', 'shopify-section-header-sticky');
+      this.closeMenuDisclosure();
+    }
+
+    reveal() {
+      if (this.headerIsAlwaysSticky) return;
+      this.header.classList.add('shopify-section-header-sticky', 'animate');
+      this.header.classList.remove('shopify-section-header-hidden');
+    }
+
+    reset() {
+      if (this.headerIsAlwaysSticky) return;
+      this.header.classList.remove('shopify-section-header-hidden', 'shopify-section-header-sticky', 'animate');
+    }
+
+    closeMenuDisclosure() {
+      this.disclosures = this.disclosures || this.header.querySelectorAll('header-menu');
+      this.disclosures.forEach(disclosure => disclosure.close());
+    }
+
+  }
+
+  customElements.define('sticky-header', StickyHeader);
+{% endjavascript %}
 
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "Organization",
     "name": {{ shop.name | json }},
-    {% if section.settings.logo %}
-      "logo": {{ section.settings.logo | image_url: width: section.settings.logo.width | prepend: "https:" | json }},
+    {% if settings.logo %}
+      "logo": {{ settings.logo | image_url: width: 500 | prepend: "https:" | json }},
     {% endif %}
     "sameAs": [
       {{ settings.social_twitter_link | json }},
@@ -354,7 +1169,7 @@
 </script>
 
 {%- if request.page_type == 'index' -%}
-  {% assign potential_action_target = request.origin | append: routes.search_url | append: '?q={search_term_string}' %}
+  {% assign potential_action_target = request.origin | append: routes.search_url | append: "?q={search_term_string}" %}
   <script type="application/ld+json">
     {
       "@context": "http://schema.org",
@@ -377,19 +1192,104 @@
   "settings": [
     {
       "type": "header",
-      "content": "Navigation"
+      "content": "Mobile Navigation"
+    },
+    {
+      "type": "text",
+      "info": "The heading for the primary navigation",
+      "default": "Shop",
+      "id": "mobile_nav_heading",
+      "label": "Heading"
+    },
+    {
+      "type": "link_list",
+      "id": "mobile_menu_primary",
+      "label": "Primary Mobile Menu",
+      "info": "The primary list of links to display on the mobile nav."
+    },
+    {
+      "type": "link_list",
+      "id": "mobile_menu_secondary",
+      "label": "Secondary Mobile Menu",
+      "info": "The secondary list of links to display on the mobile nav."
+    },
+    {
+      "type": "header",
+      "content": "Desktop Navigation"
     },
     {
       "type": "link_list",
       "id": "menu",
       "default": "main-menu",
-      "label": "Main Menu"
+      "label": "t:sections.header.settings.menu.label"
     },
     {
-      "type": "link_list",
-      "id": "footer-menu",
-      "default": "main-menu",
-      "label": "Mobile Nav Footer Menu"
+      "type": "select",
+      "id": "sticky_header_type",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:sections.header.settings.sticky_header_type.options__1.label"
+        },
+        {
+          "value": "on-scroll-up",
+          "label": "t:sections.header.settings.sticky_header_type.options__2.label"
+        },
+        {
+          "value": "always",
+          "label": "t:sections.header.settings.sticky_header_type.options__3.label"
+        },
+        {
+          "value": "reduce-logo-size",
+          "label": "t:sections.header.settings.sticky_header_type.options__4.label"
+        }
+      ],
+      "default": "on-scroll-up",
+      "label": "t:sections.header.settings.sticky_header_type.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_line_separator",
+      "default": true,
+      "label": "t:sections.header.settings.show_line_separator.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.header.settings.header__1.content"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
+    },
+    {
+      "type": "color_scheme",
+      "id": "menu_color_scheme",
+      "label": "t:sections.header.settings.menu_color_scheme.label",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.header.settings.header__3.content",
+      "info": "t:sections.header.settings.header__4.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_country_selector",
+      "default": false,
+      "label": "t:sections.header.settings.enable_country_selector.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.header.settings.header__5.content",
+      "info": "t:sections.header.settings.header__6.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_language_selector",
+      "default": false,
+      "label": "t:sections.header.settings.enable_language_selector.label"
     }
   ]
 }
