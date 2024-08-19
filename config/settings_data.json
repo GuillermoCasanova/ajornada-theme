@@ -134,7 +134,7 @@
       "header": {
         "type": "header",
         "settings": {
-          "mobile_nav_heading": "Shop",
+          "mobile_nav_heading": "Navigation",
           "mobile_menu_primary": "main-menu",
           "mobile_menu_secondary": "drawer-footer-menu",
           "menu": "main-menu",
