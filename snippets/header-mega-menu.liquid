@@ -41,6 +41,7 @@
                         {%- if childlink.links == blank -%}
                           <a
                             href="{{ childlink.url }}"
+                            data-green-dot-cursor
                             class="header__submenu__list-item    focus-inset {% if childlink.current %} header__submenu__list-item--active{% endif %}"
                             {% if childlink.current %}
                               aria-current="page"
@@ -64,6 +65,7 @@
                                 <li>
                                   <a
                                     href="{{ grandchildlink.url }}"
+                                    data-green-dot-cursor
                                     class="header__submenu__list-item  header__childmenu__list-item focus-inset {% if grandchildlink.current %} list-menu__item--active{% endif %}"
                                     {% if grandchildlink.current %}
                                       aria-current="page"
@@ -86,6 +88,7 @@
           {%- else -%}
             <a
               href="{{ link.url }}"
+              data-green-dot-cursor
               class=" header__menu-item  focus-inset"
               {% if link.current %}
                 aria-current="page"

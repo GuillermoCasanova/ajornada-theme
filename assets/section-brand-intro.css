@@ -156,7 +156,7 @@
 
 @media screen and (min-width: 940px) {
     .brand-intro__copy__header {
-        margin-bottom: calc(var(--level7) + var(--level7));
+        margin-bottom: calc(var(--level5) + var(--level5));
     }
 }
 

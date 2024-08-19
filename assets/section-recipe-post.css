@@ -328,6 +328,11 @@
     }
 }
 
+.instructions-list li {
+    list-style: decimal;
+    margin-left: var(--level4);
+}
+
 
 
 

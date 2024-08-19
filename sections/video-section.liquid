@@ -6,7 +6,7 @@
   \*------------------------------------*/
 
   .video-section-container {
-    padding-bottom: var(--level7);
+    padding-bottom: 0;
   }
 
   video-section {
@@ -19,7 +19,22 @@
     height: 100%;
     width: 100%;
     background-color: rgb(var(--base-background-color-3));
-    padding-top: var(--level7);
+    padding-bottom: var(--level10);
+    padding-top: var(--level10);
+  }
+  @media screen and (min-width: 700px) {
+    .video-section__inner {
+      padding-left: var(--level5);
+      padding-right: var(--level5);
+      padding-bottom: var(--level9);
+    }
+  }
+
+  @media screen and (min-width: 940px) {
+    .video-section__inner {
+      padding-top: calc(var(--level10) + var(--level8));
+      padding-bottom: calc(var(--level10) + var(--level8));
+    }
   }
 
   .video-section a:hover .video-section__cta,
@@ -58,6 +73,8 @@
     overflow: hidden;
     position: relative;
     width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
   }
 
   .video-section__poster {
