@@ -134,8 +134,14 @@
       "header": {
         "type": "header",
         "settings": {
+          "mobile_nav_heading": "Shop",
+          "mobile_menu_primary": "main-menu",
+          "mobile_menu_secondary": "",
           "menu": "main-menu",
-          "footer-menu": "drawer-footer-menu"
+          "sticky_header_type": "on-scroll-up",
+          "show_line_separator": true,
+          "enable_country_selector": false,
+          "enable_language_selector": false
         }
       },
       "footer": {
