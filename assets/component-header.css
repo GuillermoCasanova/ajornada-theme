@@ -6,7 +6,7 @@
 .header-wrapper {
     display: block;
     position: relative;
-    background-color: rgb(var(--color-base-background-2));
+    background-color: rgb(var(--color-base-background-1));
 }
 
 .header-wrapper--border-bottom {
