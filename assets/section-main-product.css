@@ -524,11 +524,11 @@
 
 .product__text {
   max-width: 100%;
-  margin-bottom: var(--level6);
+  margin-bottom: var(--level3);
   padding-left: var(--level4);
   padding-right: var(--level4);
   padding-top: var(--level2);
-  padding-bottom: var(--level6);
+  padding-bottom: var(--level2);
   border-bottom: 1px solid rgb(var(--color-base-background-3));
 }
 
@@ -540,8 +540,17 @@
   .product__text {
     font-size: var(--h5);
     padding-top: var(--level3);
-    padding-bottom: var(--level7);
+    padding-bottom: var(--level5);
+  margin-bottom: var(--level5);
   }
+}
+
+.product__text h1,
+.product__text h2,
+.product__text h3 {
+  text-transform: uppercase;
+  font-size: var(--h5);
+  font-weight: bold;
 }
 
 
@@ -583,8 +592,13 @@
   .product__content__information .product__accordion {
     margin-bottom: var(--level4);
     margin-top: calc(-1 * var(--level4));
-
   }
+}
+
+.product__accordion .accordion__title {
+  font-weight: normal;
+  font-size: var(--h5);
+  padding-top: var(--level5);
 }
 
 .product__content__information div:last-child {
@@ -612,7 +626,6 @@
 .product__flavor-profile {
   border-bottom: 1px solid rgb(var(--color-base-background-3));
   padding-bottom: var(--level2);
-  margin-bottom: var(--level2);
 }
 
 
@@ -737,6 +750,7 @@
   border: 2px solid rgb(var(--color-base-background-2));
   border-radius: 12px;
   width: 100%;
+  height: 4.5rem;
 }
 
 .product-form__quantity .quantity:after {

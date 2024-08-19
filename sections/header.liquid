@@ -62,7 +62,9 @@
 
       {%- if request.page_type == 'index' -%}
         <h1 class="header__heading" >
-      {%- endif -%}
+          {%-else-%}
+          <div class="header__heading">
+      {%-endif-%}
       <a href="{{ routes.root_url }}"   class="header__heading-link" title="Go to homepage"  >
               <div class="header__logo">
                 <svg>
@@ -73,6 +75,8 @@
           </a>
       {%- if request.page_type == 'index' -%}
         </h1>
+      {%-else-%}
+      </div>
       {%- endif -%}
 
     <div class="header__icons">

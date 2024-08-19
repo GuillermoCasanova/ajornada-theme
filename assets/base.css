@@ -504,6 +504,12 @@ main {
   }
 }
 
+@media screen and (min-width: 940px) {
+  main {
+    margin-top: 6rem;
+  }
+}
+
 
 .master-padding-top {
   padding-top: var(--level6);
