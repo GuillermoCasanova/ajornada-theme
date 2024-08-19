@@ -35,18 +35,18 @@
             "product": "carvalho"
           }
         },
-        "image_h7NenF": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-06-18_at_2.43-1.png",
-            "art_direction": "wide"
-          }
-        },
         "40783a2a-f62e-4e40-ad8a-dcf05d433ce9": {
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/Screen_Shot_2023-06-18_at_2.43.png",
             "art_direction": "portrait"
+          }
+        },
+        "image_h7NenF": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-06-18_at_2.43-1.png",
+            "art_direction": "wide"
           }
         }
       },
@@ -54,8 +54,8 @@
         "product_rG3Twp",
         "27850d43-2a24-4657-9aac-0ac7919a72d5",
         "product_LJYgfc",
-        "image_h7NenF",
-        "40783a2a-f62e-4e40-ad8a-dcf05d433ce9"
+        "40783a2a-f62e-4e40-ad8a-dcf05d433ce9",
+        "image_h7NenF"
       ],
       "settings": {
       }
