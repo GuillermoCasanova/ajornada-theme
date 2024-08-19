@@ -114,7 +114,7 @@ header-drawer .menu-drawer {
   height: 100vh;
   z-index: 0;
   color: rgb(var(--color-base-text-2));
-  top: 100%; 
+  top: calc(100% + 1px); 
 }
 
 
