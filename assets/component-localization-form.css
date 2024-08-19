@@ -19,7 +19,7 @@
 .localization-form__inner {
     display: flex;
     margin-left: calc(-1 * var(--level1));
-    margin-bottom: var(--level6);
+    margin-bottom: var(--level10);
     right: 0;
 }
 
