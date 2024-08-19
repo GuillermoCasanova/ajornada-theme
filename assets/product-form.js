@@ -72,21 +72,7 @@ if (!customElements.get('product-form')) {
                 cartData: response,
               });
             this.error = false;
-            const quickAddModal = this.closest('quick-add-modal');
-            if (quickAddModal) {
-              document.body.addEventListener(
-                'modalClosed',
-                () => {
-                  setTimeout(() => {
-                    this.cart.renderContents(response);
-                  });
-                },
-                { once: true }
-              );
-              quickAddModal.hide(true);
-            } else {
-              this.cart.renderContents(response);
-            }
+            this.cart.renderContents(response);
           })
           .catch((e) => {
             console.error(e);

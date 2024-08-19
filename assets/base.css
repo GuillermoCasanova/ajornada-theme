@@ -570,6 +570,10 @@ main {
     max-width: var(--max-width-x-small);
   }
 
+  .page-width.is-full {
+    max-width: 100%; 
+  }
+
 }
 
 @media screen and (min-width: 1300px) {

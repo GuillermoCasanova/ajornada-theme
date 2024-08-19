@@ -366,6 +366,7 @@ a.menu-drawer__menu-item:focus {
       margin-right: auto;
   }
 
+
   .header__menu__list-menu li:nth-child(2) {
       margin-right: 30%;
   }
@@ -457,6 +458,13 @@ a.menu-drawer__menu-item:focus {
   color: rgb(var(--color-foreground));
 }
 
+
+.header__menu__list-menu .header__cart-button__text {
+    position: relative;
+    opacity: 1; 
+    z-index: 0;
+    left: 0;   
+} 
 
 
 
