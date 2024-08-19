@@ -58,6 +58,7 @@
         },
         "bef18de7-667d-46b8-a82d-52de466e41af": {
           "type": "blog",
+          "disabled": true,
           "settings": {
             "blog": "news"
           }
