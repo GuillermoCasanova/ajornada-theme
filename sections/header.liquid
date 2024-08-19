@@ -66,7 +66,7 @@
     <a href="{{ routes.root_url }}"  title="Go to Blowfish homepage"  {%- if request.page_type != 'index' -%}class="header__heading"{% endif %}>
             <div class="header__heading-logo-wrapper">
               <svg>
-                <use href="#brand-logo-white"/>
+                <use href="#brand-logo"/>
               </svg>
             </div>
             <span class="visually-hidden">Blowfish For Hangovers</span>
@@ -76,6 +76,16 @@
     {%- endif -%}
 
     <div class="header__icons">
+
+    <localization-form class="no-js-hidden">
+      <div>
+        <h2 class="visually-hidden" id="HeaderCountryLabel">
+          {{ 'localization.language_label' | t }}
+        </h2>
+        {%- render 'country-localization', localPosition: 'HeaderCountry' -%}
+      </div>
+    </localization-form>
+    
       {%- if shop.customer_accounts_enabled -%}
         <div class="show-for-medium-up">
         <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset">
