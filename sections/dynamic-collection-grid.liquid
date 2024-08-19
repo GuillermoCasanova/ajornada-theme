@@ -33,8 +33,8 @@
                 </div>
               </li>
             {% when 'image' %}
-              <li class="dynamic-product-grid__image">
-                <div class="image-card {% if block.settings.art_direction == 'portrait' %} image-card--portrait{% endif %}">
+              <li class="dynamic-product-grid__image {% if block.settings.art_direction == 'portrait' %} image--portrait {%else%} image--wide {% endif %}">
+                <div class="image-card   {% if block.settings.art_direction == 'portrait' %} image-card--portrait {%else%} image-card--wide {% endif %}">
                   <div class="image-card__inner">
                     <div class="media">
                       <img
