@@ -31,6 +31,10 @@ function trapFocus(container, elementToFocus = container) {
   var first = elements[0];
   var last = elements[elements.length - 1];
 
+  console.log(last); 
+  console.log(container);   
+  console.log(elementToFocus);
+
   removeTrapFocus();
 
   trapFocusHandlers.focusin = (event) => {
@@ -1130,9 +1134,7 @@ class GlobalModal extends HTMLElement {
     } 
 
     this.modal.setAttribute('aria-hidden', 'false');
-    
-    console.log(this.modal.dataset.allowScroll); 
-    
+
     if(!this.modal.dataset.allowScroll) {
       document.body.classList.add(`overflow-hidden`);
     }
