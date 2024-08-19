@@ -484,8 +484,8 @@ class MenuDrawer extends HTMLElement {
       isOpen ? this.closeMenuDrawer(event, summaryElement) : this.openMenuDrawer(summaryElement);
     } else {
       setTimeout(() => {
-        this.mainDetailsToggle.classList.remove('menu-closing');
-        detailsElement.classList.add('menu-opening');
+        this.mainDetailsToggle.classList.remove('menu-close');
+        detailsElement.classList.add('menu-open');
         summaryElement.setAttribute('aria-expanded', true);
         parentMenuElement && parentMenuElement.classList.add('submenu-open');
         !reducedMotion || reducedMotion.matches ? addTrapFocus() : summaryElement.nextElementSibling.addEventListener('transitionend', addTrapFocus);
@@ -495,8 +495,8 @@ class MenuDrawer extends HTMLElement {
 
   openMenuDrawer(summaryElement) {
     setTimeout(() => {
-      this.mainDetailsToggle.classList.remove('menu-closing');
-      this.mainDetailsToggle.classList.add('menu-opening');
+      this.mainDetailsToggle.classList.remove('menu-close');
+      this.mainDetailsToggle.classList.add('menu-open');
     });
     summaryElement.setAttribute('aria-expanded', true);
     trapFocus(this.mainDetailsToggle, summaryElement);
@@ -506,12 +506,12 @@ class MenuDrawer extends HTMLElement {
   closeMenuDrawer(event, elementToFocus = false) {
     if (event === undefined) return;
 
-    this.mainDetailsToggle.classList.remove('menu-opening');
-    this.mainDetailsToggle.classList.add('menu-closing');
+    this.mainDetailsToggle.classList.remove('menu-open');
+    this.mainDetailsToggle.classList.add('menu-close');
     
     this.mainDetailsToggle.querySelectorAll('details').forEach(details => {
       details.removeAttribute('open');
-      details.classList.remove('menu-opening');
+      details.classList.remove('menu-open');
     });
     this.mainDetailsToggle.querySelectorAll('.submenu-open').forEach(submenu => {
       submenu.classList.remove('submenu-open');
@@ -535,7 +535,7 @@ class MenuDrawer extends HTMLElement {
   closeSubmenu(detailsElement) {
     // const parentMenuElement = detailsElement.closest('.submenu-open');
     // parentMenuElement && parentMenuElement.classList.remove('submenu-open');
-    // detailsElement.classList.remove('menu-opening');
+    // detailsElement.classList.remove('menu-open');
     // detailsElement.querySelector('summary').setAttribute('aria-expanded', false);
     // removeTrapFocus(detailsElement.querySelector('summary'));
     // this.closeAnimation(detailsElement);
@@ -1054,29 +1054,34 @@ class HeaderDrawer extends MenuDrawer {
   }
 
   openMenuDrawer(summaryElement) {
-    this.header = this.header || document.querySelector('.section-header');
+    this.header = this.header || document.querySelector('header');
     this.borderOffset =
       this.borderOffset || this.closest('.header-wrapper').classList.contains('header-wrapper--border-bottom') ? 1 : 0;
     document.documentElement.style.setProperty(
       '--header-bottom-position',
       `${parseInt(this.header.getBoundingClientRect().bottom - this.borderOffset)}px`
     );
-    this.header.classList.add('menu-open');
+
 
     setTimeout(() => {
-      this.mainDetailsToggle.classList.add('menu-opening');
+      this.mainDetailsToggle.classList.remove('menu-close');
+      this.mainDetailsToggle.classList.add('menu-open');
+      this.header.classList.add('menu-open');
+      this.header.classList.remove('menu-close');
     });
 
     summaryElement.setAttribute('aria-expanded', true);
     window.addEventListener('resize', this.onResize);
     trapFocus(this.mainDetailsToggle, summaryElement);
-    document.body.classList.add(`overflow-hidden-${this.dataset.breakpoint}`);
+    //document.body.classList.add(`overflow-hidden-${this.dataset.breakpoint}`);
   }
 
   closeMenuDrawer(event, elementToFocus) {
     if (!elementToFocus) return;
     super.closeMenuDrawer(event, elementToFocus);
     this.header.classList.remove('menu-open');
+    this.header.classList.add('menu-close');
+    this.mainDetailsToggle.classList.remove('menu-open');
     window.removeEventListener('resize', this.onResize);
   }
 

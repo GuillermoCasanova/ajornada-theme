@@ -60,24 +60,23 @@
 
     {% render 'header-mega-menu' %}
 
-    {%- if request.page_type == 'index' -%}
-      <h1 class="header__heading">
-    {%- endif -%}
-    <a href="{{ routes.root_url }}"  title="Go to Blowfish homepage"  {%- if request.page_type != 'index' -%}class="header__heading"{% endif %}>
-            <div class="header__heading-logo-wrapper">
-              <svg>
-                <use href="#brand-logo"/>
-              </svg>
-            </div>
-            <span class="visually-hidden">Blowfish For Hangovers</span>
-        </a>
-    {%- if request.page_type == 'index' -%}
-      </h1>
-    {%- endif -%}
+      {%- if request.page_type == 'index' -%}
+        <h1 class="header__heading" >
+      {%- endif -%}
+      <a href="{{ routes.root_url }}"   class="header__heading-link" title="Go to homepage"  >
+              <div class="header__logo">
+                <svg>
+                  <use href="#brand-logo"/>
+                </svg>
+              </div>
+              <span class="visually-hidden">Ajornada</span>
+          </a>
+      {%- if request.page_type == 'index' -%}
+        </h1>
+      {%- endif -%}
 
     <div class="header__icons">
-
-    <localization-form class="no-js-hidden">
+    <localization-form class="no-js-hidden header__localization">
       <div>
         <h2 class="visually-hidden" id="HeaderCountryLabel">
           {{ 'localization.language_label' | t }}
