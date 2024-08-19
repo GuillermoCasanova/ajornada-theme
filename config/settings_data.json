@@ -136,7 +136,7 @@
         "settings": {
           "mobile_nav_heading": "Shop",
           "mobile_menu_primary": "main-menu",
-          "mobile_menu_secondary": "",
+          "mobile_menu_secondary": "drawer-footer-menu",
           "menu": "main-menu",
           "sticky_header_type": "on-scroll-up",
           "show_line_separator": true,
