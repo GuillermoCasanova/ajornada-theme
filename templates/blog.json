@@ -56,8 +56,9 @@
             "blog": "recipes"
           }
         },
-        "bef18de7-667d-46b8-a82d-52de466e41af": {
+        "blog_UBY4Hw": {
           "type": "blog",
+          "disabled": true,
           "settings": {
             "blog": "news"
           }
@@ -67,7 +68,7 @@
         "2922be8a-0a87-4405-bfd0-5bf2905da4b4",
         "template--16783451619573__16805d2d-658b-4e22-8d79-5290de6f24c8-blog-1",
         "82e0c60d-cf85-4edb-abb6-9dbd3a3688ec",
-        "bef18de7-667d-46b8-a82d-52de466e41af"
+        "blog_UBY4Hw"
       ],
       "settings": {
         "name": "Blog Navigation"
