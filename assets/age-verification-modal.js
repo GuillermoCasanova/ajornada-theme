@@ -66,7 +66,7 @@ class AgeVerificationModal extends HTMLElement {
             duration: 0.8,
             opacity: 1,
             ease: "power1.out"
-          }, "-=0.2"); // Start slightly before the logo animation finishes
+          }, "-=0.1"); // Start slightly before the logo animation finishes
           
         })
         .catch(() => {

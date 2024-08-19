@@ -17,7 +17,8 @@
     constructor() {
       super();
 
-      this.logo = this.querySelector('[data-loader-logo] svg');
+      this.logo = this.querySelector('[data-loader-logo]');
+      this.logoSvg = this.querySelector('[data-loader-logo] svg');
       this.ageVerified = localStorage.getItem('ageVerified');
       this.initLoadingAnim();
     }
@@ -131,7 +132,7 @@
       this.style.pointerEvents = 'none';
 
       tl.fromTo(
-        this.logo,
+        this.logoSvg,
         { opacity: 1 },
         {
           opacity: 0,
@@ -180,9 +181,6 @@
             scale: 0.7,
             duration: 0.8,
             ease: 'power1.inOut',
-            onComplete: () => {
-              this.setSiteLoaded();
-            },
           },
           '-=1'
         );
