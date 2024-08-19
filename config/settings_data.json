@@ -37,6 +37,7 @@
     "email_popup_image_large": "shopify:\/\/shop_images\/Hold-Drink_1_5d27f09a-59ea-4f82-bc43-f1729bb55259.png",
     "email_pop_up_frequency": "everytime-site-loads",
     "email_pop_up_time_delay": 1,
+    "continue_shopping_url": "shopify:\/\/collections\/shop",
     "checkout_logo_image": "shopify:\/\/shop_images\/Logo-Black-checkout-page.png",
     "checkout_logo_position": "center",
     "checkout_logo_size": "medium",
