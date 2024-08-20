@@ -129,40 +129,16 @@
     "2bb814ef-d55a-470e-bc5c-8bf06b1dfe81": {
       "type": "recipes-featured",
       "blocks": {
-        "690aeb7b-d9cc-42c3-8aa4-d736de3a7d75": {
+        "recipe_card_XFYWpC": {
           "type": "recipe_card",
           "settings": {
-            "recipe_preview": "<p>1 can (14 oz) coconut milk<br\/>14 oz sweet condensed milk<br\/>1 cup cachaça<br\/>1 cup coconut water<br\/>1\/4 cup toasted coconut (optional)<br\/><br\/>1. Combine all liquid ingredients in a blender.<br\/>2. Blend until frothy.<br\/>3. Pour the cocktail into a glass.<br\/>4. If desired, garnish with toasted coconut.<\/p>",
-            "recipe_post": "recipes\/infusion-tension"
-          }
-        },
-        "becd8793-473f-4c5f-951b-01c7a5dffc6e": {
-          "type": "recipe_card",
-          "settings": {
-            "recipe_preview": "<p>- 1 can (14 oz) coconut milk<br\/>- 14 oz sweet condensed milk<br\/>- 1 cup cachaça<br\/>- 1 cup coconut water<br\/>- 1\/4 cup toasted coconut (optional)<br\/><br\/>1. Combine all liquid ingredients in a blender.<br\/>2. Blend until frothy.<br\/>3. Pour the cocktail into a glass.<br\/>4. If desired, garnish with toasted coconut.<\/p>",
-            "recipe_post": "recipes\/flor-de-jamaica"
-          }
-        },
-        "692b2f02-6b79-450f-9b05-5ef6954d5d33": {
-          "type": "recipe_card",
-          "settings": {
-            "recipe_preview": "<p>- 1 can (14 oz) coconut milk<br\/>- 14 oz sweet condensed milk<br\/>- 1 cup cachaça<br\/>- 1 cup coconut water<br\/>- 1\/4 cup toasted coconut (optional)<br\/><br\/>1. Combine all liquid ingredients in a blender.<br\/>2. Blend until frothy.<br\/>3. Pour the cocktail into a glass.<br\/>4. If desired, garnish with toasted coconut.<\/p>",
-            "recipe_post": "recipes\/batida-de-coco-recipe"
-          }
-        },
-        "f1fcdb93-88f0-4aa3-b5ca-fadd46b65bd0": {
-          "type": "recipe_card",
-          "settings": {
-            "recipe_preview": "<p>1 can (14 oz) coconut milk<br\/>14 oz sweet condensed milk<br\/>1 cup cachaça<br\/>1 cup coconut water<br\/>1\/4 cup toasted coconut (optional)<br\/><br\/>1. Combine all liquid ingredients in a blender.<br\/>2. Blend until frothy.<br\/>3. Pour the cocktail into a glass.<br\/>4. If desired, garnish with toasted coconut.<\/p>",
-            "recipe_post": "news\/flor-de-mango"
+            "recipe_preview": "",
+            "recipe_post": "recipes\/macunaima"
           }
         }
       },
       "block_order": [
-        "690aeb7b-d9cc-42c3-8aa4-d736de3a7d75",
-        "becd8793-473f-4c5f-951b-01c7a5dffc6e",
-        "692b2f02-6b79-450f-9b05-5ef6954d5d33",
-        "f1fcdb93-88f0-4aa3-b5ca-fadd46b65bd0"
+        "recipe_card_XFYWpC"
       ],
       "settings": {
         "headline": "Recipes",
