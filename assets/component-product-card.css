@@ -11,10 +11,10 @@
 }
 
 .product-card {
-  text-align: left;
-  text-decoration: none;
   color: rgb(var(--color-base-text));
   margin-bottom: calc(var(--level7) + var(--level7));
+  text-align: left;
+  text-decoration: none;
 }
 
 .product-card:hover .product-card__heading,
@@ -31,21 +31,16 @@
   opacity: 0;
 }
 
-
-
 .product-card__media {
-  width: 100%;
-  position: relative;
   margin-bottom: var(--level5);
   overflow: hidden;
   position: relative;
+  width: 100%;
 }
 
 .product-card__media .media img:first-child {
   z-index: 1;
 }
-
-.product-card__media img {}
 
 .product-card.product-card--sold-out {
   color: rgba(var(--color-base-link));
@@ -59,13 +54,12 @@
     #Product Card Information
 \*------------------------------------*/
 
-
 .product-card__information {
+  align-items: center;
+  color: rgb(var(--color-base-text));
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  color: rgb(var(--color-base-text));
   text-decoration: none;
 }
 
@@ -75,13 +69,13 @@
 }
 
 .product-card__heading {
-  text-transform: capitalize;
+  border-bottom: 2px solid transparent;
   font-size: var(--h2);
-  padding-right: var(--level1);
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--level1);
-  border-bottom: 2px solid transparent;
+  padding-right: var(--level1);
   text-align: center;
+  text-transform: capitalize;
 }
 
 @media only screen and (min-width: 700px) {
@@ -96,11 +90,9 @@
   }
 }
 
-
-
 .product-card__price {
-  text-transform: capitalize;
   font-size: var(--h4);
+  text-transform: capitalize;
 }
 
 @media only screen and (min-width: 700px) {
@@ -109,31 +101,25 @@
   }
 }
 
-
-
-
-
-
 /*------------------------------------*\
     #Product Card Badge
 \*------------------------------------*/
 
-
 .product-card__badge {
+  font-size: var(--micro);
+  left: var(--level1);
+  letter-spacing: 2px;
   position: absolute;
   text-transform: uppercase;
-  font-size: var(--micro);
   top: var(--level1);
-  left: var(--level1);
   z-index: 3;
-  letter-spacing: 2px;
 }
 
 @media only screen and (min-width: 940px) {
   .product-card__badge {
     font-size: var(--normal);
-    top: var(--level2);
     left: var(--level2);
+    top: var(--level2);
   }
 }
 
@@ -145,12 +131,9 @@
   display: none;
 }
 
-
 .product-card__badge-text.is-hidden {
   display: none;
 }
-
-
 
 .card__badge {
   align-self: flex-end;
@@ -183,8 +166,8 @@
 }
 
 .card__heading {
-  margin-top: 0;
   margin-bottom: 0;
+  margin-top: 0;
   position: relative;
 }
 

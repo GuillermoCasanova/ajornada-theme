@@ -40,7 +40,12 @@
       style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
     >
       {%- if show_image == true and article.image -%}
-        <a href="{{ article.url }}" class="article-card__image-wrapper card__media">
+        <a
+          href="{{ article.url }}"
+          tabindex="-1"
+          data-green-dot-cursor
+          class="article-card__image-wrapper card__media"
+        >
           <div
             class="article-card__image media media--hover-effect"
             {% if section.settings.media_height == 'adapt' %}
@@ -69,13 +74,37 @@
             >
           </div>
         </a>
+      {%- else -%}
+        <a
+          href="{{ article.url }}"
+          tabindex="-1"
+          data-green-dot-cursor
+          class="article-card__image-wrapper card__media"
+        >
+          <div
+            class="article-card__image media media--hover-effect"
+            {% if section.settings.media_height == 'adapt' %}
+              style="padding-bottom: {{ 1 | divided_by: article.image.aspect_ratio | times: 100 }}%;"
+            {% endif %}
+          >
+            <img
+              src="https://cdn.shopify.com/s/files/1/0638/6201/4197/files/placeholder-image.png?v=1724207715"
+              alt="{{ article.image.src.alt | escape }}"
+              class="motion-reduce"
+              {% unless lazy_load == false %}
+                loading="lazy"
+              {% endunless %}
+              width="{{ article.image.width }}"
+              height="{{ article.image.height }}"
+            >
+          </div>
+        </a>
       {%- endif -%}
       <div class="card__content">
         <a
           title="Read about {{ article.title }}"
           rel="internal"
           href="{{ article.url }}"
-          tabindex="-1"
           data-green-dot-cursor
           class="article-card__information"
         >

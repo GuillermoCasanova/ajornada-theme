@@ -37,6 +37,7 @@
           href="{{ product_collection.url }}/products/{{ card_product.handle }}"
           class="media media--portrait"
           data-product-images
+          tabindex="-1"
           data-section="{{ section.id }}-{{ card_product.id }}"
         >
           {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
@@ -91,7 +92,6 @@
         title="Shop {{ card_product.title | escape }}"
         rel="internal"
         href="{{ product_collection.url }}/products/{{ card_product.handle }}"
-        tabindex="-1"
         class="product-card__information"
       >
         {% if heading_level == 'h2' %}
