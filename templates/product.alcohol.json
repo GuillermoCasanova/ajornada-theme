@@ -100,45 +100,12 @@
         "recipe_card_E8ANKx": {
           "type": "recipe_card",
           "settings": {
-            "recipe_preview": "",
             "recipe_post": "recipes\/macunaima"
-          }
-        },
-        "recipe_card_N8C6xy": {
-          "type": "recipe_card",
-          "settings": {
-            "recipe_preview": "",
-            "recipe_post": "news\/flor-de-mango"
-          }
-        },
-        "11246dca-e060-45f2-a722-229ccd5a2a52": {
-          "type": "recipe_card",
-          "settings": {
-            "recipe_preview": "<p>Preview Text for Recipe here<\/p>",
-            "recipe_post": "recipes\/flor-de-jamaica"
-          }
-        },
-        "recipe_card_3FEEzH": {
-          "type": "recipe_card",
-          "settings": {
-            "recipe_preview": "",
-            "recipe_post": "recipes\/infusion-tension"
-          }
-        },
-        "recipe_card_BgApea": {
-          "type": "recipe_card",
-          "settings": {
-            "recipe_preview": "",
-            "recipe_post": "recipes\/batida-de-coco-recipe"
           }
         }
       },
       "block_order": [
-        "recipe_card_E8ANKx",
-        "recipe_card_N8C6xy",
-        "11246dca-e060-45f2-a722-229ccd5a2a52",
-        "recipe_card_3FEEzH",
-        "recipe_card_BgApea"
+        "recipe_card_E8ANKx"
       ],
       "settings": {
         "headline": "Recipes",
