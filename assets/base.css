@@ -238,7 +238,7 @@ summary::before {
 /*X-LARGE-UP*/
 @media screen and (min-width: 1300px) {
   :root {
-    font-size: .9rem;
+    font-size: .85rem;
   }
 }
 
@@ -246,7 +246,7 @@ summary::before {
 /*X-LARGE-UP*/
 @media screen and (min-width: 1681px) {
   :root {
-    font-size: .93rem;
+    font-size: .9rem;
   }
 }
 
@@ -493,7 +493,6 @@ h6:empty {
 main {
   margin-top: 4rem;
   min-height: calc(70vw - 300px);
-  overflow: hidden;
   position: relative;
 }
 

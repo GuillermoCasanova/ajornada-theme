@@ -9,7 +9,7 @@
 
 @media screen and (min-width: 940px) {
     .recipe-header {
-        margin-top: var(--level8);
+        margin-top: var(--level5);
         margin-bottom: var(--level5);
     }
 }
@@ -104,7 +104,6 @@
 
 .recipe-body {
     position: relative;
-    overflow: hidden;
 }
 
 @media screen and (min-width:700px) {
@@ -131,7 +130,7 @@
 
 .recipe-images {
     position: relative;
-    margin-bottom: var(--level10);
+    margin-bottom: 10rem;
     width: 100%;
     z-index: 0;
 }
@@ -165,6 +164,12 @@
     position: relative;
     padding-bottom: 140%;
     margin-bottom: var(--level10);
+}
+
+@media screen and (min-width:940px) {
+    .recipes-images__image {
+        margin-bottom: calc(var(--level10) + var(--level5)); 
+    }
 }
 
 .recipes-images__image img {
@@ -204,7 +209,6 @@
     height: 94vh;
     transform: translateY(70vh);
     bottom: 0;
-    overflow: auto;
     transition: all .2s ease-in-out;
 }
 
@@ -224,7 +228,7 @@
     left: 0;
     width: 100%;
     z-index: 1;
-    width: 100vw;
+    width: 100%;
 }
 
 
@@ -236,20 +240,14 @@
         top: 0;
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
-        /* align-self: self-start; */
         padding-left: 0;
         max-width: 38rem;
         width: 45vw;
         z-index: 0;
+        top: 18vh; 
+        position: sticky;
     }
 }
-
-@media screen and (min-width: 700px) {
-    .recipe-information {
-        max-width: 36rem;
-    }
-}
-
 
 .recipe-information__inner {
     padding-bottom: var(--level8)
@@ -264,6 +262,13 @@
 .recipe-information__header {
     padding: var(--level7);
     padding-bottom: var(--level1);
+}
+
+@media screen and (min-width: 700px) {
+    .recipe-information__header {
+        padding-top: var(--level4);
+        padding-bottom: 0;
+    }
 }
 
 .recipe-information .recipe-information__toggle {
@@ -283,10 +288,10 @@
     margin-bottom: var(--level2);
 }
 
-@media screen and (min-width: 940px) {
+@media screen and (min-width: 700px) {
     .recipe-information__name {
         font-size: var(--h1);
-        margin-bottom: var(--level6);
+        margin-bottom: var(--level5);
     }
 }
 
