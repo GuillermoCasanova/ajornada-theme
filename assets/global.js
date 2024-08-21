@@ -1207,9 +1207,9 @@ function initGreenDotEffect() {
         this.style.cursor = 'auto';
       });
     });
-  } else {
-    console.error('Target element not found.');
-  }
+  } 
 }
 
-initGreenDotEffect()
+setTimeout(()=> {
+  initGreenDotEffect()
+}, 200); 
