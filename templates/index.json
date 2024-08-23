@@ -132,7 +132,6 @@
         "recipe_card_XFYWpC": {
           "type": "recipe_card",
           "settings": {
-            "recipe_preview": "",
             "recipe_post": "recipes\/macunaima"
           }
         }
@@ -143,7 +142,7 @@
       "settings": {
         "headline": "Recipes",
         "subline": "Our Cocktails",
-        "cards_background": "shopify:\/\/shop_images\/v82_1085.png",
+        "cards_background": "shopify:\/\/shop_images\/Background_Recipe_Card.jpg",
         "cta_url": "shopify:\/\/blogs\/news",
         "top_border": "no",
         "bottom_border": "yes",
