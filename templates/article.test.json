@@ -11,43 +11,54 @@
   "sections": {
     "main": {
       "type": "main-article",
+      "settings": {
+      }
+    },
+    "image_slideshow_break_tPMGCF": {
+      "type": "image-slideshow-break",
       "blocks": {
-        "title": {
-          "type": "title",
+        "slideshow_slide_PhhNgc": {
+          "type": "slideshow_slide",
           "settings": {
-            "blog_show_date": true,
-            "blog_show_author": false
-          }
-        },
-        "featured_image": {
-          "type": "featured_image",
-          "settings": {
-            "image_height": "adapt"
-          }
-        },
-        "content": {
-          "type": "content",
-          "settings": {
-          }
-        },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-06-18_at_9.38_1_ba49494a-71db-43c0-966f-a8cff1f61cce.png"
           }
         }
       },
       "block_order": [
-        "title",
-        "featured_image",
-        "content",
-        "share"
+        "slideshow_slide_PhhNgc"
       ],
       "settings": {
+        "name": "",
+        "top_border": "no",
+        "bottom_border": "no"
+      }
+    },
+    "article_header_Qki4tQ": {
+      "type": "article-header",
+      "settings": {
+        "heading": "Name of Article"
+      }
+    },
+    "article_image_grid_tMmtQx": {
+      "type": "article-image-grid",
+      "settings": {
+        "heading": ""
+      }
+    },
+    "article_image_with_text_AKedDA": {
+      "type": "article-image-with-text",
+      "settings": {
+        "heading": "LOREM IPSUM",
+        "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquipe.<\/p>",
+        "image_position": "right"
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "image_slideshow_break_tPMGCF",
+    "article_header_Qki4tQ",
+    "article_image_grid_tMmtQx",
+    "article_image_with_text_AKedDA"
   ]
 }
