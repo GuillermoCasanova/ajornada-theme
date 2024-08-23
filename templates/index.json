@@ -134,10 +134,17 @@
           "settings": {
             "recipe_post": "recipes\/macunaima"
           }
+        },
+        "recipe_card_icAL9G": {
+          "type": "recipe_card",
+          "settings": {
+            "recipe_post": "recipes\/macunaima-1"
+          }
         }
       },
       "block_order": [
-        "recipe_card_XFYWpC"
+        "recipe_card_XFYWpC",
+        "recipe_card_icAL9G"
       ],
       "settings": {
         "headline": "Recipes",
