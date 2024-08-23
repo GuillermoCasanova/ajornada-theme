@@ -112,19 +112,21 @@ a .article-card__information:focus .article-card__heading {
 
 @media screen and (min-width: 700px) {
   .blog-articles {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    column-gap: 3rem;
   }
 
   .blog-articles .article-card {
-    flex-basis: calc(50% - 3rem);
+    flex-basis: calc(50% - 2rem);
   }
 }
 
 
-@media screen and (min-width: 970px) {
-  .blog-articles .article-card {
-    flex-basis: calc(33.3% - 5.5%);
-  }
+@media screen and (min-width: 940px) {
+  .blog-articles {
+    grid-template-columns:1fr 1fr 1fr;
+    column-gap: 6rem; 
+    } 
+ 
 }
