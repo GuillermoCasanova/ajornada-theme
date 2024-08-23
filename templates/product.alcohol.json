@@ -60,11 +60,13 @@
         },
         "quantity_selector": {
           "type": "quantity_selector",
+          "disabled": true,
           "settings": {
           }
         },
         "buy_buttons": {
           "type": "buy_buttons",
+          "disabled": true,
           "settings": {
             "show_dynamic_checkout": true
           }
@@ -102,10 +104,17 @@
           "settings": {
             "recipe_post": "recipes\/macunaima"
           }
+        },
+        "recipe_card_iJjFzD": {
+          "type": "recipe_card",
+          "settings": {
+            "recipe_post": "recipes\/macunaima-1"
+          }
         }
       },
       "block_order": [
-        "recipe_card_E8ANKx"
+        "recipe_card_E8ANKx",
+        "recipe_card_iJjFzD"
       ],
       "settings": {
         "headline": "Recipes",

@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "main": {
@@ -39,7 +48,7 @@
           "type": "back-in-stock",
           "settings": {
             "button_cta_text": "",
-            "form_success_text": ""
+            "button_success_text": "Success"
           }
         },
         "quantity_selector": {
@@ -110,17 +119,6 @@
         "trigger_email_popup": false
       }
     },
-    "48239fb0-579b-4c1b-b341-259865ddc2fe": {
-      "type": "image-with-text",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/v82_1099_4cb04999-85c7-4662-9428-725744b9f2ed.jpg",
-        "headline": "Write SOmething",
-        "richtext": "<p>Your rich text content here.<\/p>",
-        "show_symbol": false,
-        "headline_style": "style_1",
-        "orientation": "left_to_right"
-      }
-    },
     "1674ed9e-11bf-48c3-93ce-b31f048094e3": {
       "type": "product-recommendations",
       "settings": {
@@ -132,7 +130,6 @@
   "order": [
     "main",
     "3d95728d-ae23-4b0e-8ca3-268a5188e23b",
-    "48239fb0-579b-4c1b-b341-259865ddc2fe",
     "1674ed9e-11bf-48c3-93ce-b31f048094e3"
   ]
 }

@@ -1,0 +1,75 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "main": {
+      "type": "article-header",
+      "settings": {
+        "heading": "Test Article"
+      }
+    },
+    "rich_text_9KB4eE": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_jM8E3D": {
+          "type": "heading",
+          "settings": {
+            "heading": "LOREM IPSUM"
+          }
+        },
+        "text_VTWXCp": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum aute irure dolor.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_jM8E3D",
+        "text_VTWXCp"
+      ],
+      "settings": {
+      }
+    },
+    "image_slideshow_break_jLzt3C": {
+      "type": "image-slideshow-break",
+      "blocks": {
+        "slideshow_slide_qRWrem": {
+          "type": "slideshow_slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-06-18_at_9.38_1_ba49494a-71db-43c0-966f-a8cff1f61cce.png"
+          }
+        }
+      },
+      "block_order": [
+        "slideshow_slide_qRWrem"
+      ],
+      "settings": {
+        "name": "",
+        "top_border": "no",
+        "bottom_border": "no"
+      }
+    },
+    "article_image_with_text_RwMtfx": {
+      "type": "article-image-with-text",
+      "settings": {
+        "heading": "LOREM IPSUM",
+        "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquipe.<\/p>",
+        "image_position": "right"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_9KB4eE",
+    "image_slideshow_break_jLzt3C",
+    "article_image_with_text_RwMtfx"
+  ]
+}
