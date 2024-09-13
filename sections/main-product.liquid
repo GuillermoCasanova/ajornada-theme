@@ -662,27 +662,12 @@
                 </div>
               {% when 'buy_third_party' %}
                 <div class="product__buy-near-me">
-                  <a
-                    class="button button--large button--primary"
-                    aria-label="Purhcase via third party vendor."
-                    target="_blank"
-                    href="{{ product.metafields.custom.third_party_buy_link.url }}"
-                  >
-                    Buy Now
-                    <!-- Ensure the metafields exist and are correctly named -->
-                    {% if product.metafields.custom.third_party_buy_link
-                      and product.metafields.custom.third_party_buy_link.text
-                      and product.metafields.custom.third_party_buy_link.url
-                    %}
-                      {{ product.metafields.custom.third_party_buy_link.text }}
-                      {{ product.metafields.custom.third_party_buy_link.url }}
-                    {% else %}
-                      <!-- Optional: Add a fallback or error message -->
-                      <p>Third-party buy link is not available.</p>
-                    {% endif %}
-                  </a>
-
-                  {{ product.metafields.custom.third_party_buy_link | metafield_tag }}
+                  {{
+                    product.metafields.custom.third_party_buy_link
+                    | metafield_tag
+                    | replace: '<a ',
+                      '<a    aria-label="Purhcase via third party vendor" target="_blank"  class="button button--large button--primary" '
+                  }}
                 </div>
             {%- endcase -%}
           {%- endfor -%}
