@@ -681,6 +681,8 @@
                       <p>Third-party buy link is not available.</p>
                     {% endif %}
                   </a>
+
+                  {{ product.metafields.custom.third_party_buy_link | metafield_tag }}
                 </div>
             {%- endcase -%}
           {%- endfor -%}
