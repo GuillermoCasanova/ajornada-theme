@@ -66,14 +66,20 @@
         },
         "buy_buttons": {
           "type": "buy_buttons",
+          "disabled": true,
           "settings": {
             "show_dynamic_checkout": true
           }
         },
         "4a4006c8-0436-4eae-ac13-f3f73fc097c4": {
           "type": "buy_near_me",
+          "disabled": true,
           "settings": {
-            "iframe_code": ""
+          }
+        },
+        "buy_third_party_qXaBC3": {
+          "type": "buy_third_party",
+          "settings": {
           }
         }
       },
@@ -88,7 +94,8 @@
         "248e0a76-b430-457b-abe2-1884f11e85e2",
         "quantity_selector",
         "buy_buttons",
-        "4a4006c8-0436-4eae-ac13-f3f73fc097c4"
+        "4a4006c8-0436-4eae-ac13-f3f73fc097c4",
+        "buy_third_party_qXaBC3"
       ],
       "settings": {
         "enable_sticky_info": false,
