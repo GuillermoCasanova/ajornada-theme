@@ -4,6 +4,9 @@
 
 .image-slideshow-break {
     margin-bottom: var(--level3);
+    overflow: hidden;
+    position: relative;
+    width: 100%;
 }
 
 .image-slideshow-break__inner {

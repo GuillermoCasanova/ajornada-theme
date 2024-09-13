@@ -290,6 +290,12 @@
 \*------------------------------------*/
 
 
+.brand-intro__awards {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
 @media screen and (min-width:700px) {
     .brand-intro__awards {
         width: 100%;

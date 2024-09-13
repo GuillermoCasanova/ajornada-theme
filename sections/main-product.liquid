@@ -660,6 +660,28 @@
                     Buy Near Me
                   </button>
                 </div>
+              {% when 'buy_third_party' %}
+                <div class="product__buy-near-me">
+                  <a
+                    class="button button--large button--primary"
+                    aria-label="Purhcase via third party vendor."
+                    target="_blank"
+                    href="{{ product.metafields.custom.third_party_buy_link.url }}"
+                  >
+                    Buy Now
+                    <!-- Ensure the metafields exist and are correctly named -->
+                    {% if product.metafields.custom.third_party_buy_link
+                      and product.metafields.custom.third_party_buy_link.text
+                      and product.metafields.custom.third_party_buy_link.url
+                    %}
+                      {{ product.metafields.custom.third_party_buy_link.text }}
+                      {{ product.metafields.custom.third_party_buy_link.url }}
+                    {% else %}
+                      <!-- Optional: Add a fallback or error message -->
+                      <p>Third-party buy link is not available.</p>
+                    {% endif %}
+                  </a>
+                </div>
             {%- endcase -%}
           {%- endfor -%}
         </div>
@@ -819,12 +841,17 @@
       "settings": [
         {
           "type": "paragraph",
-          "content": "Pulls up the Buy Near Me User Experience"
-        },
+          "content": "Pulls up the Buy Near Me User Experience. Iframe is pulled from product's metafields."
+        }
+      ]
+    },
+    {
+      "type": "buy_third_party",
+      "name": "Third party Buy Link",
+      "settings": [
         {
-          "type": "html",
-          "id": "iframe_code",
-          "label": "Iframe Code"
+          "type": "paragraph",
+          "content": "Creates a button that goes to a third party site to complete the purchase. URL is pulled from product's metafields."
         }
       ]
     },
