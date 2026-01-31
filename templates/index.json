@@ -135,29 +135,29 @@
             "recipe_post": "recipes/caipirinha"
           }
         },
-        "recipe_card_ArB9AL": {
-          "type": "recipe_card",
-          "settings": {
-            "recipe_post": ""
-          }
-        },
         "recipe_card_AzFHDQ": {
           "type": "recipe_card",
           "settings": {
             "recipe_post": "recipes/macunaima-1"
           }
         },
+        "recipe_card_ArB9AL": {
+          "type": "recipe_card",
+          "settings": {
+            "recipe_post": "recipes/hemingway-special"
+          }
+        },
         "recipe_card_XFYWpC": {
           "type": "recipe_card",
           "settings": {
-            "recipe_post": "recipes/macunaima"
+            "recipe_post": "recipes/rabo-de-galo"
           }
         }
       },
       "block_order": [
         "recipe_card_4f4qPC",
-        "recipe_card_ArB9AL",
         "recipe_card_AzFHDQ",
+        "recipe_card_ArB9AL",
         "recipe_card_XFYWpC"
       ],
       "settings": {
