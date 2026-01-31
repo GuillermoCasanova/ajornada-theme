@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "image_banner": {
@@ -24,7 +24,7 @@
         "heading"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Screen_Shot_2023-06-18_at_9.38_1_ba49494a-71db-43c0-966f-a8cff1f61cce.png",
+        "image": "shopify://shop_images/Screen_Shot_2023-06-18_at_9.38_1_ba49494a-71db-43c0-966f-a8cff1f61cce.png",
         "video": ""
       }
     },
@@ -35,21 +35,21 @@
           "type": "block",
           "settings": {
             "name": "Awards",
-            "graphic": "shopify:\/\/shop_images\/image_1_5ab71236-c6f6-4109-a4db-57687ed9738c.png"
+            "graphic": "shopify://shop_images/image_1_5ab71236-c6f6-4109-a4db-57687ed9738c.png"
           }
         },
         "103bafa0-d500-4162-b4df-7ccf1af13032": {
           "type": "block",
           "settings": {
             "name": "Awards",
-            "graphic": "shopify:\/\/shop_images\/image_1_5ab71236-c6f6-4109-a4db-57687ed9738c.png"
+            "graphic": "shopify://shop_images/image_1_5ab71236-c6f6-4109-a4db-57687ed9738c.png"
           }
         },
         "bf964e86-0b84-4976-84fc-be9d310c3c2e": {
           "type": "block",
           "settings": {
             "name": "Awards",
-            "graphic": "shopify:\/\/shop_images\/image_1_5ab71236-c6f6-4109-a4db-57687ed9738c.png"
+            "graphic": "shopify://shop_images/image_1_5ab71236-c6f6-4109-a4db-57687ed9738c.png"
           }
         }
       },
@@ -59,12 +59,12 @@
         "bf964e86-0b84-4976-84fc-be9d310c3c2e"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Hold-Drink_1.png",
+        "image": "shopify://shop_images/Hold-Drink_1.png",
         "headline": "A New World",
         "subline": "About",
-        "body": "<p>Ajornada is not your Grandfather's spirits brand. Ajornada is more design studio than spirits brand. Founded by creatives from the world of fashion, Ajornada set out to create something uniquely different in the traditional spirits space.<\/p><p>Our mission is simple, To introduce the World to Ajornada, block by block, neighborhood by neighborhood, one city at a time. A brand built for today — for tomorrow.\u2028We are here to wake  a sleeping giant.<\/p>",
+        "body": "<p>Ajornada is not your Grandfather's spirits brand. Ajornada is more design studio than spirits brand. Founded by creatives from the world of fashion, Ajornada set out to create something uniquely different in the traditional spirits space.</p><p>Our mission is simple, To introduce the World to Ajornada, block by block, neighborhood by neighborhood, one city at a time. A brand built for today — for tomorrow. We are here to wake  a sleeping giant.</p>",
         "cta_text": "Explore Community & Recipes",
-        "cta_url": "shopify:\/\/blogs\/all",
+        "cta_url": "shopify://blogs/all",
         "top_border": "yes",
         "bottom_border": "yes",
         "trigger_email_popup": true
@@ -76,7 +76,7 @@
         "video_shopify_hosted_fD3pc7": {
           "type": "video-shopify-hosted",
           "settings": {
-            "video_asset": "shopify:\/\/files\/videos\/ajornada-desktop-compressed.mp4"
+            "video_asset": "shopify://files/videos/ajornada-desktop-compressed.mp4"
           }
         }
       },
@@ -93,25 +93,25 @@
         "0fe329e6-e61b-44e3-81d1-782760b8a2b5": {
           "type": "Slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Figtree_2.png",
+            "image": "shopify://shop_images/Figtree_2.png",
             "heading": "The Journey",
-            "body": "<p>Cachaça, Brazil's national spirit, can be best described as if Tequila and Rum had a secret love child, that in essence, is Cachaça. Over 500 years old, it stands as the oldest known spirit in the Americas. Surprisingly, while it remains relatively undiscovered by many Americans, it holds the prestigious title of the world's third most consumed spirit. Get ready to discover the vibrant flavors and rich history of cachaça—it's a journey worth savoring.<\/p>"
+            "body": "<p>Cachaça, Brazil's national spirit, can be best described as if Tequila and Rum had a secret love child, that in essence, is Cachaça. Over 500 years old, it stands as the oldest known spirit in the Americas. Surprisingly, while it remains relatively undiscovered by many Americans, it holds the prestigious title of the world's third most consumed spirit. Get ready to discover the vibrant flavors and rich history of cachaça—it's a journey worth savoring.</p>"
           }
         },
         "72081c30-9da3-41b4-bd98-c2cc01641c98": {
           "type": "Slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Figtree_3.png",
+            "image": "shopify://shop_images/Figtree_3.png",
             "heading": "The Farm",
-            "body": "<p>Ajornada, hand-crafted in the lush foothills of Minas Gerais, is a labor of love from a small family farm, nestled just hours from Rio de Janeiro. Every step, from growing the sugarcane to hand-cutting and pressing it, is meticulously executed. This artisanal process results in a pure, hand-crafted cachaça, capturing the essence of the beautiful Brazilian culture in every sip.<\/p>"
+            "body": "<p>Ajornada, hand-crafted in the lush foothills of Minas Gerais, is a labor of love from a small family farm, nestled just hours from Rio de Janeiro. Every step, from growing the sugarcane to hand-cutting and pressing it, is meticulously executed. This artisanal process results in a pure, hand-crafted cachaça, capturing the essence of the beautiful Brazilian culture in every sip.</p>"
           }
         },
         "e4cb7365-2305-4d4b-95ed-aee3bf1a266f": {
           "type": "Slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Figtree_1.png",
+            "image": "shopify://shop_images/Figtree_1.png",
             "heading": "The Product",
-            "body": "<p>Ajornada, adorned with medals from across the globe, stands as a pinnacle of Cachaça craftsmanship. Renowned for its unrivaled quality, it offers a sensory journey where you can practically inhale the essence of freshly pressed sugarcane. Pure and untainted, it's organically grown, free from GMOs, sugar, or any additives—a testament to its pristine nature. Immerse yourself in the unparalleled purity of Ajornada—it's a spirit beyond compare.<\/p>"
+            "body": "<p>Ajornada, adorned with medals from across the globe, stands as a pinnacle of Cachaça craftsmanship. Renowned for its unrivaled quality, it offers a sensory journey where you can practically inhale the essence of freshly pressed sugarcane. Pure and untainted, it's organically grown, free from GMOs, sugar, or any additives—a testament to its pristine nature. Immerse yourself in the unparalleled purity of Ajornada—it's a spirit beyond compare.</p>"
           }
         }
       },
@@ -129,28 +129,42 @@
     "2bb814ef-d55a-470e-bc5c-8bf06b1dfe81": {
       "type": "recipes-featured",
       "blocks": {
+        "recipe_card_4f4qPC": {
+          "type": "recipe_card",
+          "settings": {
+            "recipe_post": "recipes/caipirinha"
+          }
+        },
+        "recipe_card_ArB9AL": {
+          "type": "recipe_card",
+          "settings": {
+            "recipe_post": ""
+          }
+        },
+        "recipe_card_AzFHDQ": {
+          "type": "recipe_card",
+          "settings": {
+            "recipe_post": "recipes/macunaima-1"
+          }
+        },
         "recipe_card_XFYWpC": {
           "type": "recipe_card",
           "settings": {
-            "recipe_post": "recipes\/macunaima"
-          }
-        },
-        "recipe_card_icAL9G": {
-          "type": "recipe_card",
-          "settings": {
-            "recipe_post": "recipes\/macunaima-1"
+            "recipe_post": "recipes/macunaima"
           }
         }
       },
       "block_order": [
-        "recipe_card_XFYWpC",
-        "recipe_card_icAL9G"
+        "recipe_card_4f4qPC",
+        "recipe_card_ArB9AL",
+        "recipe_card_AzFHDQ",
+        "recipe_card_XFYWpC"
       ],
       "settings": {
         "headline": "Recipes",
         "subline": "Our Cocktails",
-        "cards_background": "shopify:\/\/shop_images\/Background_Recipe_Card.jpg",
-        "cta_url": "shopify:\/\/blogs\/news",
+        "cards_background": "shopify://shop_images/Background_Recipe_Card.jpg",
+        "cta_url": "shopify://blogs/news",
         "top_border": "no",
         "bottom_border": "yes",
         "trigger_email_popup": false
@@ -169,7 +183,7 @@
       "type": "floating-shop-button",
       "settings": {
         "button_text": "Order",
-        "button_link": "shopify:\/\/products\/prata",
+        "button_link": "shopify://products/prata",
         "is_active": true
       }
     }
