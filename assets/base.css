@@ -1492,3 +1492,10 @@ button:hover,
   max-width: 26px !important;
   max-height: 26px !important;
 }
+/* Hide all language / country selectors */
+.localization-form,
+.header__localization,
+.localization-form__lang-option,
+button.localization-form__lang-option {
+  display: none !important;
+}
