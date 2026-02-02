@@ -172,6 +172,7 @@
     },
     "1655920347d426af19": {
       "type": "instagram-feed",
+      "disabled": true,
       "settings": {
         "heading": "Follow Us",
         "top_border": "no",
