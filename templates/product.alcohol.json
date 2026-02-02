@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -14,34 +14,29 @@
       "blocks": {
         "title": {
           "type": "title",
-          "settings": {
-          }
+          "settings": {}
         },
         "c6eaf4ed-a42d-44fa-a5f0-c1424c20c12a": {
           "type": "product_type",
-          "settings": {
-          }
+          "settings": {}
         },
         "price": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "2dfa20b7-9a1e-469a-bb82-687c339f60e4": {
           "type": "flavor_profile",
-          "settings": {
-          }
+          "settings": {}
         },
         "description": {
           "type": "description",
-          "settings": {
-          }
+          "settings": {}
         },
         "collapsible-row-0": {
           "type": "collapsible_tab",
           "settings": {
             "heading": "Legal",
-            "content": "<p>Enjoy our products responsibly. Must be of legal drinking age in your location to purchase. Please drink in moderation.<\/p>",
+            "content": "<p>Enjoy our products responsibly. Must be of legal drinking age in your location to purchase. Please drink in moderation.</p>",
             "page": ""
           }
         },
@@ -61,8 +56,7 @@
         "quantity_selector": {
           "type": "quantity_selector",
           "disabled": true,
-          "settings": {
-          }
+          "settings": {}
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -74,13 +68,11 @@
         "4a4006c8-0436-4eae-ac13-f3f73fc097c4": {
           "type": "buy_near_me",
           "disabled": true,
-          "settings": {
-          }
+          "settings": {}
         },
         "buy_third_party_qXaBC3": {
           "type": "buy_third_party",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [
@@ -105,28 +97,35 @@
     "845785f8-fb96-4ded-a27b-d90d31c351db": {
       "type": "recipes-featured",
       "blocks": {
+        "recipe_card_pa4WPW": {
+          "type": "recipe_card",
+          "settings": {
+            "recipe_post": "recipes/caipirinha"
+          }
+        },
         "recipe_card_E8ANKx": {
           "type": "recipe_card",
           "settings": {
-            "recipe_post": "recipes\/macunaima"
+            "recipe_post": "recipes/macunaima"
           }
         },
         "recipe_card_iJjFzD": {
           "type": "recipe_card",
           "settings": {
-            "recipe_post": "recipes\/macunaima-1"
+            "recipe_post": "recipes/macunaima-1"
           }
         }
       },
       "block_order": [
+        "recipe_card_pa4WPW",
         "recipe_card_E8ANKx",
         "recipe_card_iJjFzD"
       ],
       "settings": {
         "headline": "Recipes",
         "subline": "Our Cocktails",
-        "cards_background": "shopify:\/\/shop_images\/RecipeCard2_ea1c8201-91d8-4fb9-9d64-b51e83347173.png",
-        "cta_url": "shopify:\/\/blogs\/recipes",
+        "cards_background": "shopify://shop_images/RecipeCard2_ea1c8201-91d8-4fb9-9d64-b51e83347173.png",
+        "cta_url": "shopify://blogs/recipes",
         "top_border": "no",
         "bottom_border": "no",
         "trigger_email_popup": false
@@ -136,9 +135,9 @@
       "type": "image-with-text",
       "disabled": true,
       "settings": {
-        "image": "shopify:\/\/shop_images\/Distillary.jpg",
+        "image": "shopify://shop_images/Distillary.jpg",
         "headline": "Lorem Ipsum",
-        "richtext": "<p>Lorem ipsum dolor sit lovers amet, consectetur  fjid adipiscing elit, sed do ffdwz eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, chis quis nostrud the net fje exercitation<\/p>",
+        "richtext": "<p>Lorem ipsum dolor sit lovers amet, consectetur  fjid adipiscing elit, sed do ffdwz eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, chis quis nostrud the net fje exercitation</p>",
         "show_symbol": true,
         "show_directional_arrow": true,
         "headline_style": "style_1",
@@ -151,25 +150,25 @@
         "96125306-14a4-4032-9a07-157e5111a60d": {
           "type": "Slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/v82_1102.png",
+            "image": "shopify://shop_images/v82_1102.png",
             "heading": "Lorem Ipsum Example",
-            "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum aute irure dolor.<\/p>"
+            "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum aute irure dolor.</p>"
           }
         },
         "332146d8-89e1-49bf-a5cd-345ec71b3d80": {
           "type": "Slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/v82_1079.png",
+            "image": "shopify://shop_images/v82_1079.png",
             "heading": "Lorem Ipsum",
-            "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum aute irure dolor.<\/p>"
+            "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum aute irure dolor.</p>"
           }
         },
         "a36ae783-a801-4e9e-b077-e54a13c7164e": {
           "type": "Slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/v82_1105.png",
+            "image": "shopify://shop_images/v82_1105.png",
             "heading": "Lorem Ipsum Headline 3",
-            "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum aute irure dolor.<\/p>"
+            "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum aute irure dolor.</p>"
           }
         }
       },
@@ -189,9 +188,9 @@
       "type": "image-with-text",
       "disabled": true,
       "settings": {
-        "image": "shopify:\/\/shop_images\/v80_1062.png",
+        "image": "shopify://shop_images/v80_1062.png",
         "headline": "\"The Ritual of The Everyday\"",
-        "richtext": "<p>Lorem ipsum dolor sit lovers amet, consectetur  fjid adipiscing elit, sed do ffdwz eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, chis quis nostrud the net fje exercitation<\/p>",
+        "richtext": "<p>Lorem ipsum dolor sit lovers amet, consectetur  fjid adipiscing elit, sed do ffdwz eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, chis quis nostrud the net fje exercitation</p>",
         "show_symbol": true,
         "show_directional_arrow": false,
         "headline_style": "style_2",
@@ -204,13 +203,13 @@
         "547ea9c5-9ce1-48d8-ae99-49946962c0f5": {
           "type": "slideshow_slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Distillary.jpg"
+            "image": "shopify://shop_images/Distillary.jpg"
           }
         },
         "89693bd3-23a8-49f5-bd93-26f25ea337b1": {
           "type": "slideshow_slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/v82_1104.png"
+            "image": "shopify://shop_images/v82_1104.png"
           }
         }
       },
