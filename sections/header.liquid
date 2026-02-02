@@ -69,14 +69,7 @@
       {%- endif -%}
 
     <div class="header__icons">
-    <localization-form class="no-js-hidden header__localization">
-      <div>
-        <h2 class="visually-hidden" id="HeaderCountryLabel">
-          {{ 'localization.language_label' | t }}
-        </h2>
-        {%- render 'country-localization', localPosition: 'HeaderCountry' -%}
-      </div>
-    </localization-form>
+    
     
       {%- if shop.customer_accounts_enabled -%}
         <div class="show-for-medium-up">
