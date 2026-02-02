@@ -76,7 +76,7 @@
         "video_shopify_hosted_fD3pc7": {
           "type": "video-shopify-hosted",
           "settings": {
-            "video_asset": "shopify://files/videos/ajornada-desktop-compressed.mp4"
+            "video_asset": "shopify://files/videos/ajornada_brand_video.mp4"
           }
         }
       },
