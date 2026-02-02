@@ -1473,3 +1473,22 @@ button:hover,
     transform: rotate(1turn)
   }
 }
+
+/* --- Fix oversized account icon in header --- */
+.header__icon--account {
+  width: 44px !important;
+  height: 44px !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.header__icon--account .icon-account,
+.header__icon--account svg.icon-account,
+.header__icon--account svg.icon {
+  width: 26px !important;
+  height: 26px !important;
+  max-width: 26px !important;
+  max-height: 26px !important;
+}
