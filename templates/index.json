@@ -194,7 +194,7 @@
           "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
           "settings": {
             "title": "Follow us",
-            "title_color": "",
+            "title_color": "#2d2926",
             "title_size_v2": 0,
             "alignment": "center",
             "instafeed_margin_top": 40,
@@ -203,7 +203,7 @@
             "show_instagram_link": false,
             "link_alignment": "left",
             "link_color": "#000000",
-            "background_color": "",
+            "background_color": "#f8f7ef",
             "feed_id": "",
             "html_area": "<style>\n#insta-feed h2 {\n    font-family: var(--tertiary-font-family);\n    font-size: var(--h3);\n    margin-bottom: var(--level6);\n    text-transform: uppercase;\n}\n#insta-feed {\nmargin-top:40px!important;\n}\n</style>"
           }
