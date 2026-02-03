@@ -1,18 +1,17 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
-      "settings": {
-      }
+      "settings": {}
     },
     "product-grid": {
       "type": "dynamic-collection-grid",
@@ -23,42 +22,18 @@
             "product": "prata"
           }
         },
-        "27850d43-2a24-4657-9aac-0ac7919a72d5": {
-          "type": "product",
-          "settings": {
-            "product": "lorem-shirt-amber"
-          }
-        },
         "product_LJYgfc": {
           "type": "product",
           "settings": {
             "product": "carvalho"
           }
-        },
-        "40783a2a-f62e-4e40-ad8a-dcf05d433ce9": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-06-18_at_2.43.png",
-            "art_direction": "portrait"
-          }
-        },
-        "image_h7NenF": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-06-18_at_2.43-1.png",
-            "art_direction": "wide"
-          }
         }
       },
       "block_order": [
         "product_rG3Twp",
-        "27850d43-2a24-4657-9aac-0ac7919a72d5",
-        "product_LJYgfc",
-        "40783a2a-f62e-4e40-ad8a-dcf05d433ce9",
-        "image_h7NenF"
+        "product_LJYgfc"
       ],
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [
