@@ -177,12 +177,36 @@
             "heading": "The Cane",
             "body": "<p>Fresh Pressed Sugarcane</p><p>Unlike rum, cachaça is distilled from freshly pressed sugarcane juice—not molasses.</p><p>The cane is harvested and pressed while it’s still vibrant and alive, capturing the brightness and warmth of the harvest itself.</p><p>What you taste begins here.</p>"
           }
+        },
+        "slide_McPzCT": {
+          "type": "Slide",
+          "settings": {
+            "heading": "The Distillation",
+            "body": "<p>Copper Pot Still</p><p>Slowly distilled in copper pot stills, the spirit is refined with intention.</p><p>No heavy manipulation. No artificial correction.</p><p>Just clarity. Clean lines. Honest character.</p>"
+          }
+        },
+        "slide_DdeVUc": {
+          "type": "Slide",
+          "settings": {
+            "heading": "",
+            "body": ""
+          }
+        },
+        "slide_4GpW4f": {
+          "type": "Slide",
+          "settings": {
+            "heading": "",
+            "body": ""
+          }
         }
       },
       "block_order": [
         "96125306-14a4-4032-9a07-157e5111a60d",
         "332146d8-89e1-49bf-a5cd-345ec71b3d80",
-        "a36ae783-a801-4e9e-b077-e54a13c7164e"
+        "a36ae783-a801-4e9e-b077-e54a13c7164e",
+        "slide_McPzCT",
+        "slide_DdeVUc",
+        "slide_4GpW4f"
       ],
       "settings": {
         "top_border": "no",
