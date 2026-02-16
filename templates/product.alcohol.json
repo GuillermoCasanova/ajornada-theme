@@ -158,8 +158,8 @@
           "type": "Slide",
           "settings": {
             "image": "shopify://shop_images/v82_1102.png",
-            "heading": "Lorem Ipsum Example",
-            "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum aute irure dolor.</p>"
+            "heading": "The Land",
+            "body": "<p>Minas Gerais</p><p>Our cachaça begins in the lush countryside of Minas Gerais, growing under the Brazilian sun in small communities where tradition guides daily life.</p><p>Here, the land is close. The work is personal. And the rhythm is steady.</p><p>This is where the journey starts.</p>"
           }
         },
         "332146d8-89e1-49bf-a5cd-345ec71b3d80": {
@@ -184,7 +184,6 @@
         "332146d8-89e1-49bf-a5cd-345ec71b3d80",
         "a36ae783-a801-4e9e-b077-e54a13c7164e"
       ],
-      "disabled": true,
       "settings": {
         "top_border": "no",
         "bottom_border": "no",
