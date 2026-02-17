@@ -41,29 +41,29 @@
         "f3ec8c0b-fa62-4491-a7e8-d0cb8478cbf3": {
           "type": "trade_item",
           "settings": {
-            "image": "shopify://shop_images/LALO-Server-Card-V2_2022-10-05-210900_qrot.jpg",
-            "headline": "Server Card"
+            "image": "shopify://shop_images/AJORNADA_logos_Page_1.jpg",
+            "headline": "Ajornada Logo White"
           }
         },
         "54518637-9e32-46c0-88f5-9d4806d93691": {
           "type": "trade_item",
           "settings": {
-            "image": "shopify://shop_images/LALO-Shelf-Talkers-V1_2022-10-05-220316_iywl.png",
-            "headline": "Shelf Talkers"
+            "image": "shopify://shop_images/AJORNADA_logos_Page_2.jpg",
+            "headline": "Ajornada Logo Black"
           }
         },
         "229adf53-92d1-4d6a-a9f9-92aea2d4c269": {
           "type": "trade_item",
           "settings": {
-            "image": "shopify://shop_images/Ajornada-Logo_1.png",
-            "headline": "Ajornada logo Black"
+            "image": "shopify://shop_images/Ajornada_Tech_Sheet_Prata.jpg",
+            "headline": "Ajornada Tech Sheet"
           }
         },
         "1416c966-b968-4a43-ab87-7126a12da846": {
           "type": "trade_item",
           "settings": {
-            "image": "shopify://shop_images/v82_1104.png",
-            "headline": "Product Photography"
+            "image": "shopify://shop_images/Ajornada_Trade.png",
+            "headline": "Ajornada Trade"
           }
         }
       },
