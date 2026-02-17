@@ -157,7 +157,7 @@
         "96125306-14a4-4032-9a07-157e5111a60d": {
           "type": "Slide",
           "settings": {
-            "image": "shopify://shop_images/v82_1102.png",
+            "image": "shopify://shop_images/Farm_land_8.jpg",
             "heading": "The Land",
             "body": "<p>Minas Gerais</p><p>Our cachaça begins in the lush countryside of Minas Gerais, growing under the Brazilian sun in small communities where tradition guides daily life.</p><p>Here, the land is close. The work is personal. And the rhythm is steady.</p><p>This is where the journey starts.</p>"
           }
@@ -165,7 +165,7 @@
         "332146d8-89e1-49bf-a5cd-345ec71b3d80": {
           "type": "Slide",
           "settings": {
-            "image": "shopify://shop_images/v82_1079.png",
+            "image": "shopify://shop_images/Farm_land_9.jpg",
             "heading": "The Farm",
             "body": "<p>Small, Family-Made</p><p>Crafted on a small family farm, each batch reflects generations of knowledge passed down, not scaled up.</p><p>Nothing rushed. Nothing industrial.</p><p>Just care, time, and hands that know the land.</p>"
           }
@@ -173,7 +173,7 @@
         "a36ae783-a801-4e9e-b077-e54a13c7164e": {
           "type": "Slide",
           "settings": {
-            "image": "shopify://shop_images/v82_1105.png",
+            "image": "shopify://shop_images/Farm_cane_1.jpg",
             "heading": "The Cane",
             "body": "<p>Fresh Pressed Sugarcane</p><p>Unlike rum, cachaça is distilled from freshly pressed sugarcane juice—not molasses.</p><p>The cane is harvested and pressed while it’s still vibrant and alive, capturing the brightness and warmth of the harvest itself.</p><p>What you taste begins here.</p>"
           }
@@ -181,6 +181,7 @@
         "slide_McPzCT": {
           "type": "Slide",
           "settings": {
+            "image": "shopify://shop_images/Farm_stills_7.jpg",
             "heading": "The Distillation",
             "body": "<p>Copper Pot Still</p><p>Slowly distilled in copper pot stills, the spirit is refined with intention.</p><p>No heavy manipulation. No artificial correction.</p><p>Just clarity. Clean lines. Honest character.</p>"
           }
@@ -188,6 +189,7 @@
         "slide_DdeVUc": {
           "type": "Slide",
           "settings": {
+            "image": "shopify://shop_images/Farm_bottles_10.jpg",
             "heading": "The Final Form",
             "body": "<p>Simple. Clean. Intentional.</p><p>The final spirit is bright and expressive, with a gentle sweetness and a clean, dry finish.</p><p>Like the label itself, it is simple by design.</p><p>A quiet celebration of the Brazilian spirit—</p><p>and of the journey that brings it to you.</p>"
           }
