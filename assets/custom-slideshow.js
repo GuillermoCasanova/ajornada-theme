@@ -256,3 +256,24 @@ class ImageSlideshow extends HTMLElement {
 }
 
 customElements.define('custom-slideshow', ImageSlideshow);
+
+// --- Mobile text height fix ---
+function resetSlideshowTextHeight() {
+  if (window.innerWidth > 768) return;
+
+  document.querySelectorAll(
+    '.content-slideshow__copy, .content-slideshow__text, .slideshow__text, .slider__text'
+  ).forEach(el => {
+    el.style.height = 'auto';
+    el.style.maxHeight = 'none';
+    el.style.position = 'static';
+    el.style.transform = 'none';
+  });
+}
+
+// Run on load
+window.addEventListener('load', resetSlideshowTextHeight);
+
+// Run after slide change / resize
+window.addEventListener('resize', resetSlideshowTextHeight);
+setTimeout(resetSlideshowTextHeight, 500);
