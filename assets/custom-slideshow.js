@@ -23,7 +23,7 @@ class ImageSlideshow extends HTMLElement {
           enabled: true,
           delay: 0 
         } : false,
-        autoHeight: autoHeight && autoHeight.value == 'true' || false,
+        autoHeight: window.innerWidth > 768 && autoHeight && autoHeight.value == 'true' || false,
         pagination:  pagination && pagination.value === 'true' ?  {
           el: '.swiper-pagination',
           type: 'bullets',
