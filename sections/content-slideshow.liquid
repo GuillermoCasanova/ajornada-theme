@@ -93,17 +93,21 @@
 
 <script type="module" src="{{ 'custom-slideshow.js' | asset_url }}" defer="defer"></script>
 <style>
-  @media (max-width: 768px) {
-    .slideshow__text,
-    .content-slideshow__text,
-    .banner__text,
-    .hero__text,
-    .slider__text {
-      position: relative !important;
-      height: auto !important;
-      line-height: 1.4;
-    }
+@media (max-width: 768px) {
+
+  .content-slideshow__copy,
+  .content-slideshow__text,
+  .slideshow__text,
+  .slider__text {
+    position: static !important;
+    height: auto !important;
+    max-height: none !important;
+    transform: none !important;
+    overflow: visible !important;
+    line-height: 1.4;
   }
+
+}
 </style>
 
 {% schema %}
