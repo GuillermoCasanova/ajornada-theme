@@ -277,3 +277,4 @@ window.addEventListener('load', resetSlideshowTextHeight);
 // Run after slide change / resize
 window.addEventListener('resize', resetSlideshowTextHeight);
 setTimeout(resetSlideshowTextHeight, 500);
+document.addEventListener('shopify:section:load', resetSlideshowTextHeight);
