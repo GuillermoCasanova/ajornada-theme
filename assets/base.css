@@ -1499,3 +1499,25 @@ button:hover,
 button.localization-form__lang-option {
   display: none !important;
 }
+
+/* FORCE MOBILE SLIDESHOW TEXT TO FLOW NORMALLY */
+@media (max-width: 768px) {
+
+  .content-slideshow,
+  .content-slideshow__slide,
+  .slideshow__slide,
+  .swiper-slide {
+    height: auto !important;
+    min-height: unset !important;
+  }
+
+  .content-slideshow__text,
+  .content-slideshow__copy,
+  .slideshow__text {
+    position: static !important;
+    transform: none !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+
+}
